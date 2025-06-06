@@ -773,6 +773,126 @@ const translations = {
             'Mobil için tek kod tabanı (Flutter/Dart)',
             'Modern dil özellikleri',
             'Büyüyen ekosistem'
+        ],
+        
+        // Frontend Frameworks - React
+        'tech.react.purpose': 'Modern SPA geliştirme, server-side rendering, statik site oluşturma',
+        'tech.react.projects': 'Dashboard uygulamaları, e-ticaret siteleri, portfolyo web siteleri',
+        'tech.react.why': [
+            'Bileşen tabanlı mimari',
+            'Büyük ekosistem ve topluluk',
+            'Virtual DOM performansı',
+            'Next.js ile SEO optimizasyonu'
+        ],
+        
+        // Frontend Frameworks - Vue.js
+        'tech.vue.purpose': 'Progressive web uygulamaları, hızlı prototipleme, hafif SPA\'lar',
+        'tech.vue.projects': 'İnteraktif web uygulamaları, admin panelleri, prototipler',
+        'tech.vue.why': [
+            'Kolay öğrenme eğrisi',
+            'Mükemmel dokümantasyon',
+            'İki yönlü veri bağlama',
+            'Nuxt.js için server-side rendering'
+        ],
+        
+        // Frontend Frameworks - Angular
+        'tech.angular.purpose': 'Kurumsal uygulamalar, büyük ölçekli SPA\'lar, PWA\'lar',
+        'tech.angular.projects': 'Kurumsal dashboard\'lar, karmaşık iş uygulamaları',
+        'tech.angular.why': [
+            'Tam özellikli framework',
+            'Varsayılan TypeScript desteği',
+            'Bağımlılık enjeksiyonu',
+            'Google\'ın kurumsal desteği'
+        ],
+        
+        // Frontend Frameworks - CSS
+        'tech.css.purpose': 'Responsive tasarım, bileşen stillendirme, hızlı UI geliştirme',
+        'tech.css.projects': 'Responsive layoutlar, bileşen kütüphaneleri, tasarım sistemleri',
+        'tech.css.why': [
+            'Bootstrap - hızlı prototipleme',
+            'Tailwind CSS - utility-first yaklaşımı',
+            'SASS/SCSS - güçlü ön işleme',
+            'CSS Grid ve Flexbox uzmanı'
+        ],
+        
+        // Backend Technologies - Node.js
+        'tech.node.purpose': 'RESTful API\'lar, gerçek zamanlı uygulamalar, mikroservisler, backend hizmetleri',
+        'tech.node.projects': 'REST API\'lar, sohbet uygulamaları, dosya yükleme servisleri',
+        'tech.node.why': [
+            'Her yerde JavaScript - full-stack geliştirme',
+            'Non-blocking I/O performansı',
+            'NPM ekosistemi',
+            'Gerçek zamanlı uygulamalar için mükemmel'
+        ],
+        
+        // Backend Technologies - PHP Frameworks
+        'tech.phpfw.purpose': 'Laravel web applications, WordPress customization, e-commerce',
+        'tech.phpfw.projects': 'CMS platformları, e-ticaret siteleri, özel WordPress temaları',
+        'tech.phpfw.why': [
+            'Laravel\'in zarif söz dizimi',
+            'Dahili ORM (Eloquent)',
+            'Kolay dağıtım',
+            'WordPress esnekliği'
+        ],
+        
+        // Backend Technologies - Django/Flask
+        'tech.django.purpose': 'Robust web applications, APIs, admin panels, data-driven apps',
+        'tech.django.projects': 'Veri dashboard\'ları, admin sistemleri, ML model API\'ları',
+        'tech.django.why': [
+            'Django\'nun "piller dahil" yaklaşımı',
+            'Flask\'ın mikroframework esnekliği',
+            'Güçlü güvenlik özellikleri',
+            'Veri bilimi entegrasyonu için mükemmel'
+        ],
+        
+        // Backend Technologies - Google Apps Script
+        'tech.gas.purpose': 'Rapid web apps, Google Workspace automation, no-cost hosting',
+        'tech.gas.projects': 'İş otomasyonu, form işleyicileri, veri toplayıcıları',
+        'tech.gas.why': [
+            'Sıfır altyapı maliyeti',
+            'Sorunsuz Google servisleri entegrasyonu',
+            'Anında dağıtım',
+            'MVP\'ler için mükemmel'
+        ],
+        
+        // Mobile Development - Native Android
+        'tech.android.purpose': 'Yüksek performanslı Android uygulamaları, donanım entegrasyonu, Play Store uygulamaları',
+        'tech.android.projects': 'Utility uygulamaları, iş uygulamaları, yayınlanmış Play Store uygulamaları',
+        'tech.android.why': [
+            'Maksimum performans ve platform özellikleri',
+            'Kotlin modern dil avantajları',
+            'Android API\'larına doğrudan erişim',
+            'Material Design implementasyonu'
+        ],
+        
+        // Mobile Development - Flutter
+        'tech.flutter.purpose': 'Cross-platform mobil uygulamalar, iOS/Android için tek kod tabanı',
+        'tech.flutter.projects': 'Cross-platform iş uygulamaları, startup MVP\'leri',
+        'tech.flutter.why': [
+            'Tek kod tabanı, çoklu platform',
+            'Dart dil verimliliği',
+            'Google\'ın desteği ve sponsorluğu',
+            'Hot reload geliştirme hızı'
+        ],
+        
+        // Mobile Development - React Native
+        'tech.reactnative.purpose': 'JavaScript tabanlı mobil uygulamalar, hızlı prototipleme, takım aşinalığı',
+        'tech.reactnative.projects': 'Prototip mobil uygulamalar, takım projeleri',
+        'tech.reactnative.why': [
+            'React bilgisi yeniden kullanımı',
+            'Büyük topluluk ve kütüphaneler',
+            'Facebook\'un desteği',
+            'Web ile kod paylaşımı'
+        ],
+        
+        // Mobile Development - iOS
+        'tech.ios.purpose': 'Native iOS uygulamaları, App Store yayıncılığı, iOS\'a özel özellikler',
+        'tech.ios.projects': 'iOS yardımcı uygulamalar, premium mobil çözümler',
+        'tech.ios.why': [
+            'Swift modern dil',
+            'Premium iOS kullanıcı deneyimi',
+            'Xcode geliştirme ortamı',
+            'iOS ekosistem entegrasyonu'
         ]
     },
     en: {
@@ -969,6 +1089,126 @@ const translations = {
             'Single codebase for mobile (Flutter/Dart)',
             'Modern language features',
             'Growing ecosystem'
+        ],
+        
+        // Frontend Frameworks - React
+        'tech.react.purpose': 'Modern SPA development, server-side rendering, static site generation',
+        'tech.react.projects': 'Dashboard applications, e-commerce sites, portfolio websites',
+        'tech.react.why': [
+            'Component-based architecture',
+            'Large ecosystem and community',
+            'Virtual DOM performance',
+            'SEO optimization with Next.js'
+        ],
+        
+        // Frontend Frameworks - Vue.js
+        'tech.vue.purpose': 'Progressive web applications, rapid prototyping, lightweight SPAs',
+        'tech.vue.projects': 'Interactive web applications, admin panels, prototypes',
+        'tech.vue.why': [
+            'Easy learning curve',
+            'Excellent documentation',
+            'Two-way data binding',
+            'Server-side rendering with Nuxt.js'
+        ],
+        
+        // Frontend Frameworks - Angular
+        'tech.angular.purpose': 'Enterprise applications, large-scale SPAs, PWAs',
+        'tech.angular.projects': 'Enterprise dashboards, complex business applications',
+        'tech.angular.why': [
+            'Full-featured framework',
+            'Default TypeScript support',
+            'Dependency injection',
+            'Google enterprise support'
+        ],
+        
+        // Frontend Frameworks - CSS
+        'tech.css.purpose': 'Responsive design, component styling, rapid UI development',
+        'tech.css.projects': 'Responsive layouts, component libraries, design systems',
+        'tech.css.why': [
+            'Bootstrap - rapid prototyping',
+            'Tailwind CSS - utility-first approach',
+            'SASS/SCSS - powerful preprocessing',
+            'CSS Grid and Flexbox expert'
+        ],
+        
+        // Backend Technologies - Node.js
+        'tech.node.purpose': 'RESTful APIs, real-time applications, microservices, backend services',
+        'tech.node.projects': 'REST APIs, chat applications, file upload services',
+        'tech.node.why': [
+            'JavaScript everywhere - full-stack development',
+            'Non-blocking I/O performance',
+            'NPM ecosystem',
+            'Perfect for real-time applications'
+        ],
+        
+        // Backend Technologies - PHP Frameworks
+        'tech.phpfw.purpose': 'Laravel web applications, WordPress customization, e-commerce',
+        'tech.phpfw.projects': 'CMS platforms, e-commerce sites, custom WordPress themes',
+        'tech.phpfw.why': [
+            'Laravel elegant syntax',
+            'Built-in ORM (Eloquent)',
+            'Easy deployment',
+            'WordPress flexibility'
+        ],
+        
+        // Backend Technologies - Django/Flask
+        'tech.django.purpose': 'Robust web applications, APIs, admin panels, data-driven apps',
+        'tech.django.projects': 'Data dashboards, admin systems, ML model APIs',
+        'tech.django.why': [
+            'Django "batteries included" approach',
+            'Flask microframework flexibility',
+            'Strong security features',
+            'Perfect for data science integration'
+        ],
+        
+        // Backend Technologies - Google Apps Script
+        'tech.gas.purpose': 'Rapid web apps, Google Workspace automation, no-cost hosting',
+        'tech.gas.projects': 'Business automation, form handlers, data collectors',
+        'tech.gas.why': [
+            'Zero infrastructure cost',
+            'Seamless Google services integration',
+            'Instant deployment',
+            'Perfect for MVPs'
+        ],
+        
+        // Mobile Development - Native Android
+        'tech.android.purpose': 'High-performance Android applications, hardware integration, Play Store apps',
+        'tech.android.projects': 'Utility applications, business apps, published Play Store applications',
+        'tech.android.why': [
+            'Maximum performance and platform features',
+            'Kotlin modern language advantages',
+            'Direct access to Android APIs',
+            'Material Design implementation'
+        ],
+        
+        // Mobile Development - Flutter
+        'tech.flutter.purpose': 'Cross-platform mobile applications, single codebase for iOS/Android',
+        'tech.flutter.projects': 'Cross-platform business applications, startup MVPs',
+        'tech.flutter.why': [
+            'Single codebase, multiple platforms',
+            'Dart language efficiency',
+            'Google support and sponsorship',
+            'Hot reload development speed'
+        ],
+        
+        // Mobile Development - React Native
+        'tech.reactnative.purpose': 'JavaScript-based mobile applications, rapid prototyping, team familiarity',
+        'tech.reactnative.projects': 'Prototype mobile applications, team projects',
+        'tech.reactnative.why': [
+            'React knowledge reusability',
+            'Large community and libraries',
+            'Facebook support',
+            'Code sharing with web'
+        ],
+        
+        // Mobile Development - iOS
+        'tech.ios.purpose': 'Native iOS applications, App Store publishing, iOS-specific features',
+        'tech.ios.projects': 'iOS utility apps, premium mobile solutions',
+        'tech.ios.why': [
+            'Swift modern language',
+            'Premium iOS user experience',
+            'Xcode development environment',
+            'iOS ecosystem integration'
         ]
     }
 };
@@ -1192,7 +1432,7 @@ function updateTechCardContent(lang) {
             swiftProjects.textContent = translations[lang]['tech.swift.projects'];
         }
         
-        // Update why list
+                // Update why list
         const swiftWhyList = swiftCardContainer.querySelector('.tech-why ul');
         if (swiftWhyList && translations[lang]['tech.swift.why']) {
             const listItems = swiftWhyList.querySelectorAll('li');
@@ -1202,8 +1442,64 @@ function updateTechCardContent(lang) {
                 }
             });
         }
-    }
-}
+      }
+      
+      // Update Frontend Framework cards
+      updateCardByTitle('React & Next.js', 'tech.react', lang);
+      updateCardByTitle('Vue.js & Nuxt', 'tech.vue', lang);
+      updateCardByTitle('Angular', 'tech.angular', lang);
+      updateCardByTitle('CSS Frameworks', 'tech.css', lang);
+      
+      // Update Backend Technology cards
+      updateCardByTitle('Node.js & Express', 'tech.node', lang);
+      updateCardByTitle('PHP Frameworks', 'tech.phpfw', lang);
+      updateCardByTitle('Django & Flask', 'tech.django', lang);
+      updateCardByTitle('Google Apps Script', 'tech.gas', lang);
+      
+      // Update Mobile Development cards
+      updateCardByTitle('Native Android', 'tech.android', lang);
+      updateCardByTitle('Flutter', 'tech.flutter', lang);
+      updateCardByTitle('React Native', 'tech.reactnative', lang);
+      updateCardByTitle('iOS Development', 'tech.ios', lang);
+  }
+  
+  // Helper function to update cards by title
+  function updateCardByTitle(cardTitle, techKey, lang) {
+      const cardHeaders = document.querySelectorAll('.tech-card .tech-name h4');
+      let targetCard = null;
+      
+      cardHeaders.forEach(header => {
+          if (header.textContent.trim() === cardTitle) {
+              targetCard = header.closest('.tech-card');
+              return;
+          }
+      });
+      
+      if (!targetCard) return;
+      
+      // Update purpose
+      const purposeP = targetCard.querySelector('.tech-purpose p');
+      if (purposeP && translations[lang][techKey + '.purpose']) {
+          purposeP.textContent = translations[lang][techKey + '.purpose'];
+      }
+      
+      // Update projects
+      const projectsP = targetCard.querySelector('.tech-projects p');
+      if (projectsP && translations[lang][techKey + '.projects']) {
+          projectsP.textContent = translations[lang][techKey + '.projects'];
+      }
+      
+      // Update why list
+      const whyList = targetCard.querySelector('.tech-why ul');
+      if (whyList && translations[lang][techKey + '.why']) {
+          const listItems = whyList.querySelectorAll('li');
+          translations[lang][techKey + '.why'].forEach((text, index) => {
+              if (listItems[index]) {
+                  listItems[index].textContent = text;
+              }
+          });
+      }
+  }
 
 // Initialize language system when DOM is loaded
 document.addEventListener('DOMContentLoaded', () => {
