@@ -42,9 +42,53 @@ const navMenu = document.querySelector('.nav-menu');
 const navbar = document.querySelector('.navbar');
 const navLinks = document.querySelectorAll('.nav-link');
 
-hamburger.addEventListener('click', () => {
+hamburger.addEventListener('click', (e) => {
+    e.stopPropagation();
+    const isActive = hamburger.classList.contains('active');
+    
     hamburger.classList.toggle('active');
     navMenu.classList.toggle('active');
+    
+    // Enhanced body scroll management
+    if (!isActive) {
+        document.body.style.overflow = 'hidden';
+        document.body.style.position = 'fixed';
+        document.body.style.width = '100%';
+    } else {
+        document.body.style.overflow = '';
+        document.body.style.position = '';
+        document.body.style.width = '';
+    }
+    
+    // Add visual feedback
+    hamburger.style.transform = isActive ? 'scale(1)' : 'scale(1.1)';
+    setTimeout(() => {
+        hamburger.style.transform = 'scale(1)';
+    }, 150);
+});
+
+// Close mobile menu when clicking outside
+document.addEventListener('click', (e) => {
+    if (!hamburger.contains(e.target) && !navMenu.contains(e.target)) {
+        if (hamburger.classList.contains('active')) {
+            hamburger.classList.remove('active');
+            navMenu.classList.remove('active');
+            document.body.style.overflow = '';
+            document.body.style.position = '';
+            document.body.style.width = '';
+        }
+    }
+});
+
+// Handle escape key for mobile menu
+document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && hamburger.classList.contains('active')) {
+        hamburger.classList.remove('active');
+        navMenu.classList.remove('active');
+        document.body.style.overflow = '';
+        document.body.style.position = '';
+        document.body.style.width = '';
+    }
 });
 
 // Navbar scroll effect
@@ -93,11 +137,12 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 });
 
-// Smooth scrolling for navigation links
+// Enhanced smooth scrolling for navigation links
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', function (e) {
         e.preventDefault();
         const target = document.querySelector(this.getAttribute('href'));
+        
         if (target) {
             // Add loading state to clicked link
             const clickedLink = this;
@@ -105,19 +150,33 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
                 navLinks.forEach(link => link.classList.remove('loading'));
                 clickedLink.classList.add('loading');
                 
+                // Enhanced loading timeout with smooth transition
                 setTimeout(() => {
                     clickedLink.classList.remove('loading');
-                }, 1000);
+                }, 800);
             }
             
-            target.scrollIntoView({
-                behavior: 'smooth',
-                block: 'start'
+            // Calculate navbar offset for accurate positioning
+            const navbarHeight = navbar.offsetHeight;
+            const targetPosition = target.offsetTop - navbarHeight;
+            
+            // Smooth scroll with easing
+            window.scrollTo({
+                top: targetPosition,
+                behavior: 'smooth'
             });
+            
+            // Enhanced mobile menu close with transition
+            if (hamburger.classList.contains('active')) {
+                hamburger.classList.remove('active');
+                navMenu.classList.remove('active');
+                
+                // Add visual feedback for mobile nav close
+                setTimeout(() => {
+                    document.body.style.overflow = '';
+                }, 300);
+            }
         }
-        // Close mobile menu after clicking
-        hamburger.classList.remove('active');
-        navMenu.classList.remove('active');
     });
 });
 
