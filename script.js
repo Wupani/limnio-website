@@ -720,24 +720,60 @@ const translations = {
         // Technology Card Content - JavaScript
         'tech.js.purpose': 'Full-stack web geliştirme, SPA uygulamaları, API geliştirme ve mobil uygulamalar',
         'tech.js.projects': 'Web uygulamaları, REST API\'lar, gerçek zamanlı uygulamalar, otomasyon araçları',
+        'tech.js.why': [
+            'Evrensel dil - hem frontend hem backend geliştirme',
+            'TypeScript ile güçlü tip güvenliği',
+            'Geniş ekosistem ve NPM paket desteği',
+            'Modern ES6+ özellikleri ve asenkron programlama'
+        ],
         
         // Technology Card Content - Python
         'tech.python.purpose': 'Backend geliştirme, veri bilimi, otomasyon, AI/ML ve web scraping',
         'tech.python.projects': 'Backend API\'lar, veri analizi, otomasyon scriptleri, ML modelleri',
+        'tech.python.why': [
+            'Temiz ve okunabilir söz dizimi',
+            'Kapsamlı kütüphaneler (Django, Flask, Pandas)',
+            'Hızlı prototipleme için mükemmel',
+            'Güçlü veri bilimi ekosistemi'
+        ],
         
         // Technology Card Content - Java/Kotlin
         'tech.java.purpose': 'Android geliştirme, kurumsal uygulamalar, backend hizmetleri',
         'tech.java.projects': 'Native Android uygulamaları, REST API\'lar, kurumsal sistemler',
+        'tech.java.why': [
+            'Android\'in resmi dili (Kotlin)',
+            'Kurumsal seviye güvenilirlik',
+            'Güçlü tip güvenliği ve performans',
+            'Olgun ekosistem ve Spring framework'
+        ],
         
         // Technology Card Content - PHP
         'tech.php.projects': 'Dinamik web siteleri, CMS platformları, e-ticaret çözümleri',
+        'tech.php.why': [
+            'Web geliştirme için optimize edilmiş',
+            'Laravel ve Symfony framework\'leri',
+            'Kolay dağıtım ve hosting',
+            'WordPress ile içerik yönetimi'
+        ],
         
         // Technology Card Content - C#
         'tech.csharp.purpose': 'Masaüstü uygulamaları, web API\'lar, Unity ile oyun geliştirme',
         'tech.csharp.projects': 'Masaüstü uygulamaları, web API\'lar, Unity oyunları, Windows servisleri',
+        'tech.csharp.why': [
+            'Güçlü tip sistemi ve OOP desteği',
+            'Visual Studio ile mükemmel araç desteği',
+            'Cross-platform .NET Core',
+            'Unity oyun geliştirme için ideal'
+        ],
         
         // Technology Card Content - Swift/Dart
-        'tech.swift.projects': 'iOS uygulamaları, cross-platform mobil uygulamalar'
+        'tech.swift.projects': 'iOS uygulamaları, cross-platform mobil uygulamalar',
+        'tech.swift.why': [
+            'Native iOS performansı (Swift)',
+            'Mobil için tek kod tabanı (Flutter/Dart)',
+            'Modern dil özellikleri',
+            'Büyüyen ekosistem'
+        ]
     },
     en: {
         // Navigation
@@ -880,24 +916,60 @@ const translations = {
         // Technology Card Content - JavaScript
         'tech.js.purpose': 'Full-stack web development, SPA applications, API development and mobile applications',
         'tech.js.projects': 'Web applications, REST APIs, real-time applications, automation tools',
+        'tech.js.why': [
+            'Universal language - both frontend and backend development',
+            'Strong type safety with TypeScript',
+            'Extensive ecosystem and NPM package support',
+            'Modern ES6+ features and asynchronous programming'
+        ],
         
         // Technology Card Content - Python
         'tech.python.purpose': 'Backend development, data science, automation, AI/ML and web scraping',
         'tech.python.projects': 'Backend APIs, data analysis, automation scripts, ML models',
+        'tech.python.why': [
+            'Clean and readable syntax',
+            'Comprehensive libraries (Django, Flask, Pandas)',
+            'Perfect for rapid prototyping',
+            'Strong data science ecosystem'
+        ],
         
         // Technology Card Content - Java/Kotlin
         'tech.java.purpose': 'Android development, enterprise applications, backend services',
         'tech.java.projects': 'Native Android applications, REST APIs, enterprise systems',
+        'tech.java.why': [
+            'Official language of Android (Kotlin)',
+            'Enterprise-level reliability',
+            'Strong type safety and performance',
+            'Mature ecosystem and Spring framework'
+        ],
         
         // Technology Card Content - PHP
         'tech.php.projects': 'Dynamic websites, CMS platforms, e-commerce solutions',
+        'tech.php.why': [
+            'Optimized for web development',
+            'Laravel and Symfony frameworks',
+            'Easy deployment and hosting',
+            'Content management with WordPress'
+        ],
         
         // Technology Card Content - C#
         'tech.csharp.purpose': 'Desktop applications, web APIs, Unity game development',
         'tech.csharp.projects': 'Desktop applications, web APIs, Unity games, Windows services',
+        'tech.csharp.why': [
+            'Strong type system and OOP support',
+            'Excellent tooling with Visual Studio',
+            'Cross-platform .NET Core',
+            'Ideal for Unity game development'
+        ],
         
         // Technology Card Content - Swift/Dart
-        'tech.swift.projects': 'iOS applications, cross-platform mobile applications'
+        'tech.swift.projects': 'iOS applications, cross-platform mobile applications',
+        'tech.swift.why': [
+            'Native iOS performance (Swift)',
+            'Single codebase for mobile (Flutter/Dart)',
+            'Modern language features',
+            'Growing ecosystem'
+        ]
     }
 };
 
@@ -997,6 +1069,17 @@ function updateTechCardContent(lang) {
         if (jsProjects && translations[lang]['tech.js.projects']) {
             jsProjects.textContent = translations[lang]['tech.js.projects'];
         }
+        
+        // Update why list
+        const jsWhyList = jsCardContainer.querySelector('.tech-why ul');
+        if (jsWhyList && translations[lang]['tech.js.why']) {
+            const listItems = jsWhyList.querySelectorAll('li');
+            translations[lang]['tech.js.why'].forEach((text, index) => {
+                if (listItems[index]) {
+                    listItems[index].textContent = text;
+                }
+            });
+        }
     }
     
     // Python card
@@ -1011,6 +1094,17 @@ function updateTechCardContent(lang) {
         }
         if (pythonProjects && translations[lang]['tech.python.projects']) {
             pythonProjects.textContent = translations[lang]['tech.python.projects'];
+        }
+        
+        // Update why list
+        const pythonWhyList = pythonCardContainer.querySelector('.tech-why ul');
+        if (pythonWhyList && translations[lang]['tech.python.why']) {
+            const listItems = pythonWhyList.querySelectorAll('li');
+            translations[lang]['tech.python.why'].forEach((text, index) => {
+                if (listItems[index]) {
+                    listItems[index].textContent = text;
+                }
+            });
         }
     }
     
@@ -1027,6 +1121,17 @@ function updateTechCardContent(lang) {
         if (javaProjects && translations[lang]['tech.java.projects']) {
             javaProjects.textContent = translations[lang]['tech.java.projects'];
         }
+        
+        // Update why list
+        const javaWhyList = javaCardContainer.querySelector('.tech-why ul');
+        if (javaWhyList && translations[lang]['tech.java.why']) {
+            const listItems = javaWhyList.querySelectorAll('li');
+            translations[lang]['tech.java.why'].forEach((text, index) => {
+                if (listItems[index]) {
+                    listItems[index].textContent = text;
+                }
+            });
+        }
     }
     
     // PHP card
@@ -1037,6 +1142,17 @@ function updateTechCardContent(lang) {
         
         if (phpProjects && translations[lang]['tech.php.projects']) {
             phpProjects.textContent = translations[lang]['tech.php.projects'];
+        }
+        
+        // Update why list
+        const phpWhyList = phpCardContainer.querySelector('.tech-why ul');
+        if (phpWhyList && translations[lang]['tech.php.why']) {
+            const listItems = phpWhyList.querySelectorAll('li');
+            translations[lang]['tech.php.why'].forEach((text, index) => {
+                if (listItems[index]) {
+                    listItems[index].textContent = text;
+                }
+            });
         }
     }
     
@@ -1053,6 +1169,17 @@ function updateTechCardContent(lang) {
         if (csharpProjects && translations[lang]['tech.csharp.projects']) {
             csharpProjects.textContent = translations[lang]['tech.csharp.projects'];
         }
+        
+        // Update why list
+        const csharpWhyList = csharpCardContainer.querySelector('.tech-why ul');
+        if (csharpWhyList && translations[lang]['tech.csharp.why']) {
+            const listItems = csharpWhyList.querySelectorAll('li');
+            translations[lang]['tech.csharp.why'].forEach((text, index) => {
+                if (listItems[index]) {
+                    listItems[index].textContent = text;
+                }
+            });
+        }
     }
     
     // Swift & Dart card
@@ -1063,6 +1190,17 @@ function updateTechCardContent(lang) {
         
         if (swiftProjects && translations[lang]['tech.swift.projects']) {
             swiftProjects.textContent = translations[lang]['tech.swift.projects'];
+        }
+        
+        // Update why list
+        const swiftWhyList = swiftCardContainer.querySelector('.tech-why ul');
+        if (swiftWhyList && translations[lang]['tech.swift.why']) {
+            const listItems = swiftWhyList.querySelectorAll('li');
+            translations[lang]['tech.swift.why'].forEach((text, index) => {
+                if (listItems[index]) {
+                    listItems[index].textContent = text;
+                }
+            });
         }
     }
 }
