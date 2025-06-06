@@ -615,6 +615,11 @@ const translations = {
         'contact.title': 'Benimle İletişime Geçin',
         'contact.description': 'Projelerim hakkında sorularınız veya iş birliği önerileriniz için bana ulaşabilirsiniz.',
         'contact.cta': 'Proje Talebi Oluştur',
+        'contact.cta.title': '🚀 Projenizi Hayata Geçirelim!',
+        'contact.cta.desc': 'Fikirlerinizi gerçeğe dönüştürmek için hemen iletişime geçin. Size özel çözümler sunmak için buradayım.',
+        'contact.cta.feature1': 'Hızlı Çözüm',
+        'contact.cta.feature2': 'Kaliteli Kod',
+        'contact.cta.feature3': 'Uzun Vadeli Destek',
         
         // About Details
         'about.details.toggle': 'Daha Fazla Bilgi',
@@ -645,6 +650,13 @@ const translations = {
         // About Connect
         'about.connect.title': 'Benimle Bağlantı Kurun',
         'about.connect.desc': 'Projeleriniz, fikirleriniz veya sadece merhaba demek için bana ulaşabilirsiniz!',
+        'about.social.email': 'E-posta',
+        
+        // About Stats
+        'about.stats.projects': 'Tamamlanan Proje',
+        'about.stats.clients': 'Memnun Müşteri',
+        'about.stats.experience': 'Yıllık Deneyim',
+        'about.stats.satisfaction': 'Müşteri Memnuniyeti',
         
         // About Timeline
         'about.timeline.2020.title': 'Yazılıma İlk Adım',
@@ -741,6 +753,11 @@ const translations = {
         'contact.title': 'Get In Touch',
         'contact.description': 'You can reach me for questions about my projects or collaboration suggestions.',
         'contact.cta': 'Create Project Request',
+        'contact.cta.title': '🚀 Let\'s Bring Your Project to Life!',
+        'contact.cta.desc': 'Get in touch immediately to turn your ideas into reality. I\'m here to provide you with customized solutions.',
+        'contact.cta.feature1': 'Fast Solution',
+        'contact.cta.feature2': 'Quality Code',
+        'contact.cta.feature3': 'Long-term Support',
         
         // About Details
         'about.details.toggle': 'More Information',
@@ -771,6 +788,13 @@ const translations = {
         // About Connect
         'about.connect.title': 'Connect With Me',
         'about.connect.desc': 'You can reach me for your projects, ideas or just to say hello!',
+        'about.social.email': 'Email',
+        
+        // About Stats
+        'about.stats.projects': 'Completed Projects',
+        'about.stats.clients': 'Happy Clients',
+        'about.stats.experience': 'Years Experience',
+        'about.stats.satisfaction': 'Client Satisfaction',
         
         // About Timeline
         'about.timeline.2020.title': 'First Step into Programming',
