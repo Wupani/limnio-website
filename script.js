@@ -933,6 +933,36 @@ const translations = {
             'Branching ve merging stratejileri',
             'GitHub Actions CI/CD',
             'Açık kaynak işbirliği'
+        ],
+        
+        // Design & Creative Tools - Figma
+        'tech.figma.purpose': 'UI/UX tasarım, prototipleme, tasarım sistemleri, takım işbirliği',
+        'tech.figma.projects': 'Uygulama maketleri, web sitesi tasarımları, kullanıcı akış diyagramları',
+        'tech.figma.why': [
+            'Gerçek zamanlı işbirliği',
+            'Bileşen tabanlı tasarım sistemleri',
+            'İnteraktif prototipleme',
+            'Geliştirici teslim araçları'
+        ],
+        
+        // Design & Creative Tools - Adobe
+        'tech.adobe.purpose': 'Photoshop, Illustrator, XD ile grafik tasarım, ikonlar, markalaşma',
+        'tech.adobe.projects': 'Logo tasarımı, uygulama ikonları, pazarlama materyalleri',
+        'tech.adobe.why': [
+            'Endüstri standardı araçlar',
+            'Gelişmiş görüntü düzenleme',
+            'Vektör grafik oluşturma',
+            'Profesyonel tasarım yetenekleri'
+        ],
+        
+        // Design & Creative Tools - Unity
+        'tech.unity.purpose': '2D/3D oyun geliştirme, interaktif uygulamalar, AR/VR deneyimleri',
+        'tech.unity.projects': 'Mobil oyunlar, interaktif demolar, eğitim uygulamaları',
+        'tech.unity.why': [
+            'Cross-platform oyun dağıtımı',
+            'Görsel betik oluşturma seçenekleri',
+            'Asset store ekosistemi',
+            'C# programlama entegrasyonu'
         ]
     },
     en: {
@@ -1289,6 +1319,36 @@ const translations = {
             'Branching and merging strategies',
             'GitHub Actions CI/CD',
             'Open source collaboration'
+        ],
+        
+        // Design & Creative Tools - Figma
+        'tech.figma.purpose': 'UI/UX design, prototyping, design systems, team collaboration',
+        'tech.figma.projects': 'App mockups, website designs, user flow diagrams',
+        'tech.figma.why': [
+            'Real-time collaboration',
+            'Component-based design systems',
+            'Interactive prototyping',
+            'Developer handoff tools'
+        ],
+        
+        // Design & Creative Tools - Adobe
+        'tech.adobe.purpose': 'Photoshop, Illustrator, XD for graphic design, icons, branding',
+        'tech.adobe.projects': 'Logo design, app icons, marketing materials',
+        'tech.adobe.why': [
+            'Industry standard tools',
+            'Advanced image editing',
+            'Vector graphics creation',
+            'Professional design capabilities'
+        ],
+        
+        // Design & Creative Tools - Unity
+        'tech.unity.purpose': '2D/3D game development, interactive applications, AR/VR experiences',
+        'tech.unity.projects': 'Mobile games, interactive demos, educational applications',
+        'tech.unity.why': [
+            'Cross-platform game deployment',
+            'Visual scripting options',
+            'Asset store ecosystem',
+            'C# programming integration'
         ]
     }
 };
@@ -1549,6 +1609,11 @@ function updateTechCardContent(lang) {
       
       // Update DevOps & Tools cards
       updateCardByTitle('Git & GitHub', 'tech.git', lang);
+      
+      // Update Design & Creative Tools cards
+      updateCardByTitle('Figma & Design', 'tech.figma', lang);
+      updateCardByTitle('Adobe Creative Suite', 'tech.adobe', lang);
+      updateCardByTitle('Unity & Game Dev', 'tech.unity', lang);
   }
   
   // Helper function to update cards by title
