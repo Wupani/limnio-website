@@ -1,0 +1,1813 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Limnio - Emre Akyol'un geliştirdiği kullanıcı dostu mobil uygulamalar. Basit fikirlerle güçlü deneyimler.">
+    <meta name="keywords" content="Limnio, mobil uygulama, Android, geliştirici, Emre Akyol, Limyum Sayacı">
+    <meta name="author" content="Emre Akyol">
+    <meta name="theme-color" content="#6366f1">
+    
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:title" content="Limnio - Basit fikirlerle güçlü deneyimler">
+    <meta property="og:description" content="Kullanıcı dostu ve sade mobil uygulamalar geliştiren Emre Akyol'un resmi web sitesi.">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="https://via.placeholder.com/1200x630/6366f1/ffffff?text=Limnio">
+    
+    <!-- Twitter Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Limnio">
+    <meta name="twitter:description" content="Basit fikirlerle güçlü deneyimler">
+    
+    <title>Limnio</title>
+    
+    <!-- Favicon -->
+    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Ccircle cx='16' cy='16' r='14' fill='%23FFD700'/%3E%3Cellipse cx='12' cy='12' rx='8' ry='10' fill='%23FFF700'/%3E%3Cpath d='M16 8c-2 0-4 1-4 3s2 3 4 3 4-1 4-3-2-3-4-3z' fill='%23228B22'/%3E%3C/svg%3E" type="image/svg+xml">
+    <link rel="shortcut icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Ccircle cx='16' cy='16' r='14' fill='%23FFD700'/%3E%3Cellipse cx='12' cy='12' rx='8' ry='10' fill='%23FFF700'/%3E%3Cpath d='M16 8c-2 0-4 1-4 3s2 3 4 3 4-1 4-3-2-3-4-3z' fill='%23228B22'/%3E%3C/svg%3E" type="image/svg+xml">
+    
+    <!-- Apple Touch Icons -->
+    <link rel="apple-touch-icon" sizes="180x180" href="https://emojipedia-us.s3.dualstack.us-west-1.amazonaws.com/thumbs/120/apple/354/lemon_1f34b.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="https://emojipedia-us.s3.dualstack.us-west-1.amazonaws.com/thumbs/120/apple/354/lemon_1f34b.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="https://emojipedia-us.s3.dualstack.us-west-1.amazonaws.com/thumbs/120/apple/354/lemon_1f34b.png">
+    
+    <!-- Manifest for PWA -->
+    <link rel="manifest" href="data:application/json;base64,ewogICJuYW1lIjogIkxpbW5pbyIsCiAgInNob3J0X25hbWUiOiAiTGltbmlvIiwKICAiZGVzY3JpcHRpb24iOiAiQmFzaXQgZmlraXJsZXJsZSBnw6_Dp2zDvSBkZW5leWltbGVyIiwKICAiaWNvbnMiOiBbCiAgICB7CiAgICAgICJzcmMiOiAiZGF0YTppbWFnZS9zdmcreG1sLDxzdmcgeG1sbnM9J2h0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnJyB2aWV3Qm94PScwIDAgMTkyIDE5Mic+PHJlY3Qgd2lkdGg9JzE5MicgaGVpZ2h0PScxOTInIGZpbGw9JyU2MzY2ZjEnIHJ4PSc0MicvPjx0ZXh0IHg9Jzk2JyB5PScxNTAnIGZvbnQtc2l6ZT0nMTMwJyB0ZXh0LWFuY2hvcj0nbWlkZGxlJyBmaWxsPSd3aGl0ZSc+8J+NizwvdGV4dD48L3N2Zz4iLAogICAgICAic2l6ZXMiOiAiMTkyeDE5MiIsCiAgICAgICJ0eXBlIjogImltYWdlL3N2Zyt4bWwiCiAgICB9CiAgXSwKICAic3RhcnRfdXJsIjogIi8iLAogICJkaXNwbGF5IjogInN0YW5kYWxvbmUiLAogICJ0aGVtZV9jb2xvciI6ICIjNjM2NmYxIiwKICAiYmFja2dyb3VuZF9jb2xvciI6ICIjZmZmZmZmIgp9">
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    
+    <!-- Styles -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="#hero" class="nav-logo">
+                <i class="fas fa-lemon"></i>
+                <span>Limnio</span>
+            </a>
+            <div class="nav-menu">
+                <a href="#hero" class="nav-link">Ana Sayfa</a>
+                <a href="#projects" class="nav-link">Projelerim</a>
+                <a href="#about" class="nav-link">Hakkımda</a>
+                <a href="#technologies" class="nav-link">Teknolojiler</a>
+                <a href="#contact" class="nav-link">İletişim</a>
+            </div>
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="hero" class="hero">
+        <div class="hero-container">
+            <div class="hero-content">
+                <div class="hero-logo">
+                    <i class="fas fa-lemon"></i>
+                </div>
+                <h1 class="hero-title">Limnio</h1>
+                <p class="hero-subtitle">Basit fikirlerle güçlü deneyimler</p>
+                <button type="button" class="hero-btn" onclick="document.getElementById('projects').scrollIntoView({behavior: 'smooth', block: 'start'});">
+                    <i class="fas fa-rocket"></i>
+                    Projelerim
+                </button>
+            </div>
+            <div class="hero-bg">
+                <div class="floating-shapes">
+                    <div class="shape shape-1"></div>
+                    <div class="shape shape-2"></div>
+                    <div class="shape shape-3"></div>
+                    <div class="shape shape-4"></div>
+                    <div class="shape shape-5"></div>
+                    <div class="shape shape-6"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="projects">
+        <div class="container">
+            <h2 class="section-title">Projelerim</h2>
+            <div class="projects-grid">
+                <div class="project-card">
+                    <div class="project-icon">
+                        <i class="fas fa-spa"></i>
+                    </div>
+                    <h3 class="project-title">Lilyum Sayacı</h3>
+                    <p class="project-description">
+                        Zarif ve kullanıcı dostu geri sayım uygulaması. Önemli etkinlikleriniz için stile geri sayım yapın.
+                    </p>
+                    <div class="project-tech">
+                        <span class="tech-tag">Android</span>
+                        <span class="tech-tag">Material Design</span>
+                    </div>
+                    <a href="#" class="project-btn">
+                        <i class="fab fa-google-play"></i>
+                        Play Store
+                    </a>
+                </div>
+                
+                <!-- HR Portal Project -->
+                <div class="project-card">
+                    <div class="project-icon">
+                        <i class="fas fa-users"></i>
+                    </div>
+                    <h3 class="project-title">HR Portal</h3>
+                    <p class="project-description">
+                        Kapsamlı İnsan Kaynakları CRM uygulaması. Çalışan yönetimi, işe alım süreçleri ve performans takibi için geliştirilmiş modern web uygulaması.
+                    </p>
+                    <div class="project-tech">
+                        <span class="tech-tag">Google Apps Script</span>
+                        <span class="tech-tag">CRM</span>
+                        <span class="tech-tag">HR Management</span>
+                    </div>
+                    <a href="https://script.google.com/macros/s/AKfycbzIV0E8Sqj7xDi2RVu53dBEdm579M7MgtTUifqH02PRArDULp44wIdI-MnDwyWhXFECMA/exec" target="_blank" rel="noopener" class="project-btn">
+                        <i class="fas fa-external-link-alt"></i>
+                        Uygulamayı Aç
+                    </a>
+                </div>
+                
+                <!-- Placeholder for future projects -->
+                <div class="project-card coming-soon">
+                    <div class="project-icon">
+                        <i class="fas fa-plus"></i>
+                    </div>
+                    <h3 class="project-title">Yakında...</h3>
+                    <p class="project-description">
+                        Yeni projeler geliştirme aşamasında. Takipte kalın!
+                    </p>
+                    <div class="project-tech">
+                        <span class="tech-tag">Geliştiriliyor</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about">
+        <div class="container">
+            <h2 class="section-title">Hakkımda</h2>
+            
+            <!-- Personal Story -->
+            <div class="about-hero">
+                <div class="about-hero-content">
+                    <div class="about-avatar">
+                        <div class="avatar-image">
+                                                    <div class="profile-photo">
+                            <img src="profile-photo.jpg" alt="Emre Akyol - Limnio" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                            <div class="profile-fallback" style="display: none;">
+                                <i class="fas fa-lemon"></i>
+                            </div>
+                        </div>
+                        </div>
+                        <div class="avatar-status">
+                            <div class="status-dot"></div>
+                            <span>Proje kabul ediyor</span>
+                        </div>
+                    </div>
+                    <div class="about-intro">
+                        <h3>Merhaba Ben <span class="highlight">Emre Akyol</span> 👋</h3>
+                        <p class="intro-text">
+                            <strong>Limnio</strong> markası altında, hayatı kolaylaştıran mobil uygulamalar ve web çözümleri geliştiriyorum. 
+                            Karmaşık problemleri basit, zarif ve kullanıcı dostu çözümlere dönüştürmekte uzmanım.
+                        </p>
+                        <p class="mission-text">
+                            <i class="fas fa-quote-left"></i>
+                            Teknoloji sadece bir araç, asıl önemli olan insanların hayatına dokunmak ve onlara değer katmaktır.
+                            <i class="fas fa-quote-right"></i>
+                        </p>
+                        <div class="details-dropdown">
+                            <button class="details-toggle" onclick="toggleDetails()">
+                                <i class="fas fa-info-circle"></i>
+                                Daha Fazla Bilgi
+                                <i class="fas fa-chevron-down"></i>
+                            </button>
+                            <div class="details-content" id="detailsContent">
+                                <!-- Temel Bilgiler -->
+                                <div class="details-section">
+                                    <h4><i class="fas fa-user-circle"></i> Temel Bilgiler</h4>
+                                    <div class="detail-grid">
+                                        <div class="detail-item">
+                                            <h5><i class="fas fa-map-marker-alt"></i> Konum</h5>
+                                            <p>Türkiye, Denizli</p>
+                                        </div>
+                                        <div class="detail-item">
+                                            <h5><i class="fas fa-briefcase"></i> Deneyim</h5>
+                                            <p>3+ Yıl Aktif Geliştirme</p>
+                                        </div>
+                                        <div class="detail-item">
+                                            <h5><i class="fas fa-language"></i> Diller</h5>
+                                            <p>Türkçe (Ana dil), İngilizce (İyi)</p>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- Uzmanlık Alanları -->
+                                <div class="details-section">
+                                    <h4><i class="fas fa-brain"></i> Uzmanlık Alanlarım</h4>
+                                    <div class="expertise-detail-grid">
+                                        <div class="expertise-detail-card">
+                                            <div class="expertise-detail-icon">
+                                                <i class="fab fa-android"></i>
+                                            </div>
+                                            <h5>Mobil Uygulama Geliştirme</h5>
+                                            <p>Native Android uygulamalar, React Native ve Flutter ile cross-platform çözümler</p>
+                                            <div class="tech-tags-small">
+                                                <span class="tech-tag-small">Kotlin</span>
+                                                <span class="tech-tag-small">Java</span>
+                                                <span class="tech-tag-small">React Native</span>
+                                            </div>
+                                        </div>
+                                        
+                                        <div class="expertise-detail-card">
+                                            <div class="expertise-detail-icon">
+                                                <i class="fas fa-globe"></i>
+                                            </div>
+                                            <h5>Web Geliştirme</h5>
+                                            <p>Modern web uygulamaları, responsive tasarım ve Google Apps Script entegrasyonları</p>
+                                            <div class="tech-tags-small">
+                                                <span class="tech-tag-small">JavaScript</span>
+                                                <span class="tech-tag-small">HTML5/CSS3</span>
+                                                <span class="tech-tag-small">Google Apps Script</span>
+                                            </div>
+                                        </div>
+                                        
+                                        <div class="expertise-detail-card">
+                                            <div class="expertise-detail-icon">
+                                                <i class="fas fa-palette"></i>
+                                            </div>
+                                            <h5>UI/UX Tasarım</h5>
+                                            <p>Kullanıcı merkezli tasarım, minimalist arayüzler ve modern tasarım prensipleri</p>
+                                            <div class="tech-tags-small">
+                                                <span class="tech-tag-small">Figma</span>
+                                                <span class="tech-tag-small">Adobe XD</span>
+                                                <span class="tech-tag-small">Material Design</span>
+                                            </div>
+                                        </div>
+
+                                        <div class="expertise-detail-card">
+                                            <div class="expertise-detail-icon">
+                                                <i class="fas fa-cogs"></i>
+                                            </div>
+                                            <h5>Sistem Entegrasyonu</h5>
+                                            <p>API geliştirme, veritabanı tasarımı ve üçüncü taraf sistem entegrasyonları</p>
+                                            <div class="tech-tags-small">
+                                                <span class="tech-tag-small">REST API</span>
+                                                <span class="tech-tag-small">Firebase</span>
+                                                <span class="tech-tag-small">MySQL</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- Gelişim Yolculuğu -->
+                                <div class="details-section">
+                                    <h4><i class="fas fa-rocket"></i> Gelişim Yolculuğum</h4>
+                                    <div class="journey-detail-content">
+                                        <div class="journey-detail-timeline">
+                                            <div class="timeline-detail-item">
+                                                <div class="timeline-detail-year">2020</div>
+                                                <div class="timeline-detail-content">
+                                                    <h5>Yazılıma İlk Adım</h5>
+                                                    <p>Programlama dünyasına giriş ve temel dilleri öğrenme süreci. Python ve Java ile başladım.</p>
+                                                </div>
+                                            </div>
+                                            <div class="timeline-detail-item">
+                                                <div class="timeline-detail-year">2022</div>
+                                                <div class="timeline-detail-content">
+                                                    <h5>Mobil Geliştirme</h5>
+                                                    <p>Android geliştirme alanında uzmanlaşmaya başladım. İlk uygulamalarımı yayınladım.</p>
+                                                </div>
+                                            </div>
+                                            <div class="timeline-detail-item">
+                                                <div class="timeline-detail-year">2024</div>
+                                                <div class="timeline-detail-content">
+                                                    <h5>Limnio Markası</h5>
+                                                    <p>Kendi markamı kurdum ve profesyonel hizmet vermeye başladım. İlk müşterilerimle çalıştım.</p>
+                                                </div>
+                                            </div>
+                                            <div class="timeline-detail-item">
+                                                <div class="timeline-detail-year">2025</div>
+                                                <div class="timeline-detail-content">
+                                                    <h5>Yeni Hedefler</h5>
+                                                    <p>Daha büyük projeler, uluslararası müşteri portföyü ve yeni teknolojilere odaklanma.</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="stats-detail-grid">
+                                            <div class="stat-detail-card">
+                                                <div class="stat-detail-number">15+</div>
+                                                <div class="stat-detail-label">Tamamlanan Proje</div>
+                                            </div>
+                                            <div class="stat-detail-card">
+                                                <div class="stat-detail-number">5+</div>
+                                                <div class="stat-detail-label">Memnun Müşteri</div>
+                                            </div>
+                                            <div class="stat-detail-card">
+                                                <div class="stat-detail-number">3+</div>
+                                                <div class="stat-detail-label">Yıllık Deneyim</div>
+                                            </div>
+                                            <div class="stat-detail-card">
+                                                <div class="stat-detail-number">100%</div>
+                                                <div class="stat-detail-label">Müşteri Memnuniyeti</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- Çalışma Değerleri -->
+                                <div class="details-section">
+                                    <h4><i class="fas fa-heart"></i> Çalışma Değerlerim</h4>
+                                    <div class="values-detail-grid">
+                                        <div class="value-detail-item">
+                                            <div class="value-detail-icon">🎯</div>
+                                            <h5>Kalite Odaklı</h5>
+                                            <p>Her kod satırında mükemmeliyeti hedeflerim. Test-driven development yaklaşımı benimserim.</p>
+                                        </div>
+                                        <div class="value-detail-item">
+                                            <div class="value-detail-icon">🤝</div>
+                                            <h5>İşbirliği</h5>
+                                            <p>Müşterilerimle yakın çalışarak en iyi sonucu elde ederim. Şeffaf iletişim önceliğimdir.</p>
+                                        </div>
+                                        <div class="value-detail-item">
+                                            <div class="value-detail-icon">⚡</div>
+                                            <h5>Hızlı Çözüm</h5>
+                                            <p>Zamanında teslim etmek en önemli önceliklerimden. Agile metodoloji kullanırım.</p>
+                                        </div>
+                                        <div class="value-detail-item">
+                                            <div class="value-detail-icon">🔄</div>
+                                            <h5>Sürekli Öğrenme</h5>
+                                            <p>Teknolojideki gelişmeleri yakından takip ederim. Her gün yeni bir şey öğrenirim.</p>
+                                        </div>
+                                        <div class="value-detail-item">
+                                            <div class="value-detail-icon">💡</div>
+                                            <h5>Yaratıcılık</h5>
+                                            <p>Her projede yenilikçi çözümler üretirim. Out-of-the-box düşünmeyi severim.</p>
+                                        </div>
+                                        <div class="value-detail-item">
+                                            <div class="value-detail-icon">🛡️</div>
+                                            <h5>Güvenilirlik</h5>
+                                            <p>Sözümü tutmak ve şeffaf olmak temel prensibim. Uzun vadeli ilişkiler kurarım.</p>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- Çalışma Felsefesi -->
+                                <div class="details-section">
+                                    <h4><i class="fas fa-lightbulb"></i> Çalışma Felsefem</h4>
+                                    <div class="philosophy-points">
+                                        <div class="philosophy-point">
+                                            <i class="fas fa-check-circle"></i>
+                                            <span>Her proje benzersizdir ve özel yaklaşım gerektirir</span>
+                                        </div>
+                                        <div class="philosophy-point">
+                                            <i class="fas fa-check-circle"></i>
+                                            <span>Kullanıcı deneyimi her zaman teknik karmaşıklıktan önemlidir</span>
+                                        </div>
+                                        <div class="philosophy-point">
+                                            <i class="fas fa-check-circle"></i>
+                                            <span>Temiz, okunabilir kod yazarak gelecekteki geliştiricilere saygı gösteririm</span>
+                                        </div>
+                                        <div class="philosophy-point">
+                                            <i class="fas fa-check-circle"></i>
+                                            <span>Sürekli öğrenme ve kendini geliştirme başarının anahtarıdır</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+
+            <!-- Connect Section -->
+            <div class="connect-section">
+                <div class="connect-content">
+                    <h3 class="subsection-title">
+                        <i class="fas fa-link"></i>
+                        Benimle Bağlantı Kurun
+                    </h3>
+                    <p>Projeleriniz, fikirleriniz veya sadece merhaba demek için bana ulaşabilirsiniz!</p>
+                    <div class="social-buttons">
+                        <a href="https://www.linkedin.com/in/emre-akyol-a5667b274/" target="_blank" rel="noopener" class="social-btn linkedin">
+                            <i class="fab fa-linkedin-in"></i>
+                            <span>LinkedIn</span>
+                        </a>
+                        <a href="https://github.com/Wupani" target="_blank" rel="noopener" class="social-btn github">
+                            <i class="fab fa-github"></i>
+                            <span>GitHub</span>
+                        </a>
+                        <a href="https://www.instagram.com/limniodev/" target="_blank" rel="noopener" class="social-btn instagram">
+                            <i class="fab fa-instagram"></i>
+                            <span>Instagram</span>
+                        </a>
+                        <a href="mailto:wupaniyazilim@gmail.com" class="social-btn email">
+                            <i class="fas fa-envelope"></i>
+                            <span>E-posta</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Technologies Section -->
+    <section id="technologies" class="technologies">
+        <div class="container">
+            <h2 class="section-title">Teknolojiler & Yazılım Dilleri</h2>
+            <p class="section-subtitle">Kullandığım teknolojiler ve yazılım dilleri hakkında detaylı bilgiler</p>
+            
+            <div class="tech-categories">
+                <!-- Core Programming Languages -->
+                <div class="tech-category">
+                    <h3 class="category-title">
+                        <i class="fas fa-code"></i>
+                        Core Programlama Dilleri
+                    </h3>
+                    <div class="tech-cards">
+                        <div class="tech-card">
+                            <div class="tech-header">
+                                <div class="tech-icon">
+                                    <i class="fab fa-js-square"></i>
+                                </div>
+                                <div class="tech-name">
+                                    <h4>JavaScript & TypeScript</h4>
+                                    <div class="reliability-bar">
+                                        <div class="reliability-fill" style="width: 98%"></div>
+                                    </div>
+                                    <span class="reliability-text">Güvenilirlik: %98</span>
+                                </div>
+                            </div>
+                            <div class="tech-details">
+                                <div class="tech-purpose">
+                                    <h5><i class="fas fa-bullseye"></i> Kullanım Amacı</h5>
+                                    <p>Full-stack web geliştirme, SPA uygulamaları, API geliştirme ve mobil uygulamalar</p>
+                                </div>
+                                <div class="tech-why">
+                                    <h5><i class="fas fa-lightbulb"></i> Neden Tercih Ediyorum</h5>
+                                    <ul>
+                                        <li>Evrensel dil - hem frontend hem backend geliştirme</li>
+                                        <li>TypeScript ile güçlü tip güvenliği</li>
+                                        <li>Geniş ekosistem ve NPM paket desteği</li>
+                                        <li>Modern ES6+ özellikleri ve asenkron programlama</li>
+                                    </ul>
+                                </div>
+                                <div class="tech-projects">
+                                    <h5><i class="fas fa-code"></i> Projelerimde Kullanımı</h5>
+                                    <p>Web uygulamaları, REST API'lar, gerçek zamanlı uygulamalar, otomasyon araçları</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="tech-card">
+                            <div class="tech-header">
+                                <div class="tech-icon">
+                                    <i class="fab fa-python"></i>
+                                </div>
+                                <div class="tech-name">
+                                    <h4>Python</h4>
+                                    <div class="reliability-bar">
+                                        <div class="reliability-fill" style="width: 95%"></div>
+                                    </div>
+                                    <span class="reliability-text">Güvenilirlik: %95</span>
+                                </div>
+                            </div>
+                            <div class="tech-details">
+                                <div class="tech-purpose">
+                                    <h5><i class="fas fa-bullseye"></i> Kullanım Amacı</h5>
+                                    <p>Backend geliştirme, veri bilimi, otomasyon, AI/ML ve web scraping</p>
+                                </div>
+                                <div class="tech-why">
+                                    <h5><i class="fas fa-lightbulb"></i> Neden Tercih Ediyorum</h5>
+                                    <ul>
+                                        <li>Temiz ve okunabilir söz dizimi</li>
+                                        <li>Kapsamlı kütüphaneler (Django, Flask, Pandas)</li>
+                                        <li>Hızlı prototipleme için mükemmel</li>
+                                        <li>Güçlü veri bilimi ekosistemi</li>
+                                    </ul>
+                                </div>
+                                <div class="tech-projects">
+                                    <h5><i class="fas fa-code"></i> Projelerimde Kullanımı</h5>
+                                    <p>Backend API'lar, veri analizi, otomasyon scriptleri, ML modelleri</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="tech-card">
+                            <div class="tech-header">
+                                <div class="tech-icon">
+                                    <i class="fab fa-java"></i>
+                                </div>
+                                <div class="tech-name">
+                                    <h4>Java & Kotlin</h4>
+                                    <div class="reliability-bar">
+                                        <div class="reliability-fill" style="width: 92%"></div>
+                                    </div>
+                                    <span class="reliability-text">Güvenilirlik: %92</span>
+                                </div>
+                            </div>
+                            <div class="tech-details">
+                                <div class="tech-purpose">
+                                    <h5><i class="fas fa-bullseye"></i> Kullanım Amacı</h5>
+                                    <p>Android geliştirme, kurumsal uygulamalar, backend hizmetleri</p>
+                                </div>
+                                <div class="tech-why">
+                                    <h5><i class="fas fa-lightbulb"></i> Neden Tercih Ediyorum</h5>
+                                    <ul>
+                                        <li>Android'in resmi dili (Kotlin)</li>
+                                        <li>Kurumsal seviye güvenilirlik</li>
+                                        <li>Güçlü tip güvenliği ve performans</li>
+                                        <li>Olgun ekosistem ve Spring framework</li>
+                                    </ul>
+                                </div>
+                                <div class="tech-projects">
+                                    <h5><i class="fas fa-code"></i> Projelerimde Kullanımı</h5>
+                                    <p>Native Android uygulamaları, REST API'lar, kurumsal sistemler</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="tech-card">
+                            <div class="tech-header">
+                                <div class="tech-icon">
+                                    <i class="fab fa-php"></i>
+                                </div>
+                                <div class="tech-name">
+                                    <h4>PHP</h4>
+                                    <div class="reliability-bar">
+                                        <div class="reliability-fill" style="width: 88%"></div>
+                                    </div>
+                                    <span class="reliability-text">Güvenilirlik: %88</span>
+                                </div>
+                            </div>
+                            <div class="tech-details">
+                                <div class="tech-purpose">
+                                    <h5><i class="fas fa-bullseye"></i> Kullanım Amacı</h5>
+                                    <p>Web backend development, CMS solutions, e-commerce platforms</p>
+                                </div>
+                                <div class="tech-why">
+                                    <h5><i class="fas fa-lightbulb"></i> Neden Tercih Ediyorum</h5>
+                                    <ul>
+                                        <li>Web geliştirme için optimize edilmiş</li>
+                                        <li>Laravel ve Symfony framework'leri</li>
+                                        <li>Kolay dağıtım ve hosting</li>
+                                        <li>WordPress ile içerik yönetimi</li>
+                                    </ul>
+                                </div>
+                                <div class="tech-projects">
+                                    <h5><i class="fas fa-code"></i> Projelerimde Kullanımı</h5>
+                                    <p>Dinamik web siteleri, CMS platformları, e-ticaret çözümleri</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="tech-card">
+                            <div class="tech-header">
+                                <div class="tech-icon">
+                                    <i class="fab fa-microsoft"></i>
+                                </div>
+                                <div class="tech-name">
+                                    <h4>C# & .NET</h4>
+                                    <div class="reliability-bar">
+                                        <div class="reliability-fill" style="width: 85%"></div>
+                                    </div>
+                                    <span class="reliability-text">Güvenilirlik: %85</span>
+                                </div>
+                            </div>
+                            <div class="tech-details">
+                                <div class="tech-purpose">
+                                    <h5><i class="fas fa-bullseye"></i> Kullanım Amacı</h5>
+                                    <p>Masaüstü uygulamaları, web API'lar, Unity ile oyun geliştirme</p>
+                                </div>
+                                <div class="tech-why">
+                                    <h5><i class="fas fa-lightbulb"></i> Neden Tercih Ediyorum</h5>
+                                    <ul>
+                                        <li>Güçlü tip sistemi ve OOP desteği</li>
+                                        <li>Visual Studio ile mükemmel araç desteği</li>
+                                        <li>Cross-platform .NET Core</li>
+                                        <li>Unity oyun geliştirme için ideal</li>
+                                    </ul>
+                                </div>
+                                <div class="tech-projects">
+                                    <h5><i class="fas fa-code"></i> Projelerimde Kullanımı</h5>
+                                    <p>Masaüstü uygulamaları, web API'lar, Unity oyunları, Windows servisleri</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="tech-card">
+                            <div class="tech-header">
+                                <div class="tech-icon">
+                                    <i class="fab fa-apple"></i>
+                                </div>
+                                <div class="tech-name">
+                                    <h4>Swift & Dart</h4>
+                                    <div class="reliability-bar">
+                                        <div class="reliability-fill" style="width: 82%"></div>
+                                    </div>
+                                    <span class="reliability-text">Güvenilirlik: %82</span>
+                                </div>
+                            </div>
+                            <div class="tech-details">
+                                <div class="tech-purpose">
+                                    <h5><i class="fas fa-bullseye"></i> Kullanım Amacı</h5>
+                                    <p>iOS development (Swift), Flutter cross-platform apps (Dart)</p>
+                                </div>
+                                <div class="tech-why">
+                                    <h5><i class="fas fa-lightbulb"></i> Neden Tercih Ediyorum</h5>
+                                    <ul>
+                                        <li>Native iOS performansı (Swift)</li>
+                                        <li>Mobil için tek kod tabanı (Flutter/Dart)</li>
+                                        <li>Modern dil özellikleri</li>
+                                        <li>Büyüyen ekosistem</li>
+                                    </ul>
+                                </div>
+                                <div class="tech-projects">
+                                    <h5><i class="fas fa-code"></i> Projelerimde Kullanımı</h5>
+                                    <p>iOS uygulamaları, cross-platform mobil uygulamalar</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Frontend Frameworks & Technologies -->
+                <div class="tech-category">
+                    <h3 class="category-title">
+                        <i class="fas fa-palette"></i>
+                        Frontend Frameworks & UI
+                    </h3>
+                    <div class="tech-cards">
+                        <div class="tech-card">
+                            <div class="tech-header">
+                                <div class="tech-icon">
+                                    <i class="fab fa-react"></i>
+                                </div>
+                                <div class="tech-name">
+                                    <h4>React & Next.js</h4>
+                                    <div class="reliability-bar">
+                                        <div class="reliability-fill" style="width: 96%"></div>
+                                    </div>
+                                    <span class="reliability-text">Güvenilirlik: %96</span>
+                                </div>
+                            </div>
+                            <div class="tech-details">
+                                <div class="tech-purpose">
+                                    <h5><i class="fas fa-bullseye"></i> Kullanım Amacı</h5>
+                                    <p>Modern SPA geliştirme, server-side rendering, statik site oluşturma</p>
+                                </div>
+                                <div class="tech-why">
+                                    <h5><i class="fas fa-lightbulb"></i> Neden Tercih Ediyorum</h5>
+                                    <ul>
+                                        <li>Bileşen tabanlı mimari</li>
+                                        <li>Büyük ekosistem ve topluluk</li>
+                                        <li>Virtual DOM performansı</li>
+                                        <li>Next.js ile SEO optimizasyonu</li>
+                                    </ul>
+                                </div>
+                                <div class="tech-projects">
+                                    <h5><i class="fas fa-code"></i> Projelerimde Kullanımı</h5>
+                                    <p>Dashboard uygulamaları, e-ticaret siteleri, portfolyo web siteleri</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="tech-card">
+                            <div class="tech-header">
+                                <div class="tech-icon">
+                                    <i class="fab fa-vuejs"></i>
+                                </div>
+                                <div class="tech-name">
+                                    <h4>Vue.js & Nuxt</h4>
+                                    <div class="reliability-bar">
+                                        <div class="reliability-fill" style="width: 90%"></div>
+                                    </div>
+                                    <span class="reliability-text">Güvenilirlik: %90</span>
+                                </div>
+                            </div>
+                            <div class="tech-details">
+                                <div class="tech-purpose">
+                                    <h5><i class="fas fa-bullseye"></i> Kullanım Amacı</h5>
+                                    <p>Progressive web uygulamaları, hızlı prototipleme, hafif SPA'lar</p>
+                                </div>
+                                <div class="tech-why">
+                                    <h5><i class="fas fa-lightbulb"></i> Neden Tercih Ediyorum</h5>
+                                    <ul>
+                                        <li>Kolay öğrenme eğrisi</li>
+                                        <li>Mükemmel dokümantasyon</li>
+                                        <li>İki yönlü veri bağlama</li>
+                                        <li>Nuxt.js için server-side rendering</li>
+                                    </ul>
+                                </div>
+                                <div class="tech-projects">
+                                    <h5><i class="fas fa-code"></i> Projelerimde Kullanımı</h5>
+                                    <p>İnteraktif web uygulamaları, admin panelleri, prototipler</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="tech-card">
+                            <div class="tech-header">
+                                <div class="tech-icon">
+                                    <i class="fab fa-angular"></i>
+                                </div>
+                                <div class="tech-name">
+                                    <h4>Angular</h4>
+                                    <div class="reliability-bar">
+                                        <div class="reliability-fill" style="width: 85%"></div>
+                                    </div>
+                                    <span class="reliability-text">Güvenilirlik: %85</span>
+                                </div>
+                            </div>
+                            <div class="tech-details">
+                                <div class="tech-purpose">
+                                    <h5><i class="fas fa-bullseye"></i> Kullanım Amacı</h5>
+                                    <p>Kurumsal uygulamalar, büyük ölçekli SPA'lar, PWA'lar</p>
+                                </div>
+                                <div class="tech-why">
+                                    <h5><i class="fas fa-lightbulb"></i> Neden Tercih Ediyorum</h5>
+                                    <ul>
+                                        <li>Tam özellikli framework</li>
+                                        <li>Varsayılan TypeScript desteği</li>
+                                        <li>Bağımlılık enjeksiyonu</li>
+                                        <li>Google'ın kurumsal desteği</li>
+                                    </ul>
+                                </div>
+                                <div class="tech-projects">
+                                    <h5><i class="fas fa-code"></i> Projelerimde Kullanımı</h5>
+                                    <p>Kurumsal dashboard'lar, karmaşık iş uygulamaları</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="tech-card">
+                            <div class="tech-header">
+                                <div class="tech-icon">
+                                    <i class="fab fa-sass"></i>
+                                </div>
+                                <div class="tech-name">
+                                    <h4>CSS Frameworks</h4>
+                                    <div class="reliability-bar">
+                                        <div class="reliability-fill" style="width: 98%"></div>
+                                    </div>
+                                    <span class="reliability-text">Güvenilirlik: %98</span>
+                                </div>
+                            </div>
+                            <div class="tech-details">
+                                <div class="tech-purpose">
+                                    <h5><i class="fas fa-bullseye"></i> Kullanım Amacı</h5>
+                                    <p>Responsive tasarım, bileşen stillendirme, hızlı UI geliştirme</p>
+                                </div>
+                                <div class="tech-why">
+                                    <h5><i class="fas fa-lightbulb"></i> Neden Tercih Ediyorum</h5>
+                                    <ul>
+                                        <li>Bootstrap - hızlı prototipleme</li>
+                                        <li>Tailwind CSS - utility-first yaklaşımı</li>
+                                        <li>SASS/SCSS - güçlü ön işleme</li>
+                                        <li>CSS Grid ve Flexbox uzmanı</li>
+                                    </ul>
+                                </div>
+                                <div class="tech-projects">
+                                    <h5><i class="fas fa-code"></i> Projelerimde Kullanımı</h5>
+                                    <p>Responsive layoutlar, bileşen kütüphaneleri, tasarım sistemleri</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Backend Technologies -->
+                <div class="tech-category">
+                    <h3 class="category-title">
+                        <i class="fas fa-server"></i>
+                        Backend Technologies & APIs
+                    </h3>
+                    <div class="tech-cards">
+                        <div class="tech-card">
+                            <div class="tech-header">
+                                <div class="tech-icon">
+                                    <i class="fab fa-node-js"></i>
+                                </div>
+                                <div class="tech-name">
+                                    <h4>Node.js & Express</h4>
+                                    <div class="reliability-bar">
+                                        <div class="reliability-fill" style="width: 94%"></div>
+                                    </div>
+                                    <span class="reliability-text">Güvenilirlik: %94</span>
+                                </div>
+                            </div>
+                            <div class="tech-details">
+                                <div class="tech-purpose">
+                                    <h5><i class="fas fa-bullseye"></i> Kullanım Amacı</h5>
+                                    <p>RESTful API'lar, gerçek zamanlı uygulamalar, mikroservisler, backend hizmetleri</p>
+                                </div>
+                                <div class="tech-why">
+                                    <h5><i class="fas fa-lightbulb"></i> Neden Tercih Ediyorum</h5>
+                                    <ul>
+                                        <li>Her yerde JavaScript - full-stack geliştirme</li>
+                                        <li>Non-blocking I/O performansı</li>
+                                        <li>NPM ekosistemi</li>
+                                        <li>Gerçek zamanlı uygulamalar için mükemmel</li>
+                                    </ul>
+                                </div>
+                                <div class="tech-projects">
+                                    <h5><i class="fas fa-code"></i> Projelerimde Kullanımı</h5>
+                                    <p>REST API'lar, sohbet uygulamaları, dosya yükleme servisleri</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="tech-card">
+                            <div class="tech-header">
+                                <div class="tech-icon">
+                                    <i class="fab fa-laravel"></i>
+                                </div>
+                                <div class="tech-name">
+                                    <h4>PHP Frameworks</h4>
+                                    <div class="reliability-bar">
+                                        <div class="reliability-fill" style="width: 90%"></div>
+                                    </div>
+                                    <span class="reliability-text">Güvenilirlik: %90</span>
+                                </div>
+                            </div>
+                            <div class="tech-details">
+                                <div class="tech-purpose">
+                                    <h5><i class="fas fa-bullseye"></i> Kullanım Amacı</h5>
+                                    <p>Laravel web applications, WordPress customization, e-commerce</p>
+                                </div>
+                                <div class="tech-why">
+                                    <h5><i class="fas fa-lightbulb"></i> Neden Tercih Ediyorum</h5>
+                                    <ul>
+                                        <li>Laravel'in zarif söz dizimi</li>
+                                        <li>Dahili ORM (Eloquent)</li>
+                                        <li>Kolay dağıtım</li>
+                                        <li>WordPress esnekliği</li>
+                                    </ul>
+                                </div>
+                                <div class="tech-projects">
+                                    <h5><i class="fas fa-code"></i> Projelerimde Kullanımı</h5>
+                                    <p>CMS platformları, e-ticaret siteleri, özel WordPress temaları</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="tech-card">
+                            <div class="tech-header">
+                                <div class="tech-icon">
+                                    <i class="fab fa-python"></i>
+                                </div>
+                                <div class="tech-name">
+                                    <h4>Django & Flask</h4>
+                                    <div class="reliability-bar">
+                                        <div class="reliability-fill" style="width: 88%"></div>
+                                    </div>
+                                    <span class="reliability-text">Güvenilirlik: %88</span>
+                                </div>
+                            </div>
+                            <div class="tech-details">
+                                <div class="tech-purpose">
+                                    <h5><i class="fas fa-bullseye"></i> Kullanım Amacı</h5>
+                                    <p>Robust web applications, APIs, admin panels, data-driven apps</p>
+                                </div>
+                                <div class="tech-why">
+                                    <h5><i class="fas fa-lightbulb"></i> Neden Tercih Ediyorum</h5>
+                                    <ul>
+                                        <li>Django'nun "piller dahil" yaklaşımı</li>
+                                        <li>Flask'ın mikroframework esnekliği</li>
+                                        <li>Güçlü güvenlik özellikleri</li>
+                                        <li>Veri bilimi entegrasyonu için mükemmel</li>
+                                    </ul>
+                                </div>
+                                <div class="tech-projects">
+                                    <h5><i class="fas fa-code"></i> Projelerimde Kullanımı</h5>
+                                    <p>Veri dashboard'ları, admin sistemleri, ML model API'ları</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="tech-card">
+                            <div class="tech-header">
+                                <div class="tech-icon">
+                                    <i class="fab fa-google"></i>
+                                </div>
+                                <div class="tech-name">
+                                    <h4>Google Apps Script</h4>
+                                    <div class="reliability-bar">
+                                        <div class="reliability-fill" style="width: 92%"></div>
+                                    </div>
+                                    <span class="reliability-text">Güvenilirlik: %92</span>
+                                </div>
+                            </div>
+                            <div class="tech-details">
+                                <div class="tech-purpose">
+                                    <h5><i class="fas fa-bullseye"></i> Kullanım Amacı</h5>
+                                    <p>Rapid web apps, Google Workspace automation, no-cost hosting</p>
+                                </div>
+                                <div class="tech-why">
+                                    <h5><i class="fas fa-lightbulb"></i> Neden Tercih Ediyorum</h5>
+                                    <ul>
+                                        <li>Sıfır altyapı maliyeti</li>
+                                        <li>Sorunsuz Google servisleri entegrasyonu</li>
+                                        <li>Anında dağıtım</li>
+                                        <li>MVP'ler için mükemmel</li>
+                                    </ul>
+                                </div>
+                                <div class="tech-projects">
+                                    <h5><i class="fas fa-code"></i> Projelerimde Kullanımı</h5>
+                                    <p>İş otomasyonu, form işleyicileri, veri toplayıcıları</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Mobile Development -->
+                <div class="tech-category">
+                    <h3 class="category-title">
+                        <i class="fas fa-mobile-alt"></i>
+                        Mobile Development
+                    </h3>
+                    <div class="tech-cards">
+                        <div class="tech-card">
+                            <div class="tech-header">
+                                <div class="tech-icon">
+                                    <i class="fab fa-android"></i>
+                                </div>
+                                <div class="tech-name">
+                                    <h4>Native Android</h4>
+                                    <div class="reliability-bar">
+                                        <div class="reliability-fill" style="width: 95%"></div>
+                                    </div>
+                                    <span class="reliability-text">Güvenilirlik: %95</span>
+                                </div>
+                            </div>
+                            <div class="tech-details">
+                                <div class="tech-purpose">
+                                    <h5><i class="fas fa-bullseye"></i> Kullanım Amacı</h5>
+                                    <p>Yüksek performanslı Android uygulamaları, donanım entegrasyonu, Play Store uygulamaları</p>
+                                </div>
+                                <div class="tech-why">
+                                    <h5><i class="fas fa-lightbulb"></i> Neden Tercih Ediyorum</h5>
+                                    <ul>
+                                        <li>Maksimum performans ve platform özellikleri</li>
+                                        <li>Kotlin modern dil avantajları</li>
+                                        <li>Android API'larına doğrudan erişim</li>
+                                        <li>Material Design implementasyonu</li>
+                                    </ul>
+                                </div>
+                                <div class="tech-projects">
+                                    <h5><i class="fas fa-code"></i> Projelerimde Kullanımı</h5>
+                                    <p>Utility uygulamaları, iş uygulamaları, yayınlanmış Play Store uygulamaları</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="tech-card">
+                            <div class="tech-header">
+                                <div class="tech-icon">
+                                    <i class="fas fa-mobile"></i>
+                                </div>
+                                <div class="tech-name">
+                                    <h4>Flutter</h4>
+                                    <div class="reliability-bar">
+                                        <div class="reliability-fill" style="width: 90%"></div>
+                                    </div>
+                                    <span class="reliability-text">Güvenilirlik: %90</span>
+                                </div>
+                            </div>
+                            <div class="tech-details">
+                                <div class="tech-purpose">
+                                    <h5><i class="fas fa-bullseye"></i> Kullanım Amacı</h5>
+                                    <p>Cross-platform mobil uygulamalar, iOS/Android için tek kod tabanı</p>
+                                </div>
+                                <div class="tech-why">
+                                    <h5><i class="fas fa-lightbulb"></i> Neden Tercih Ediyorum</h5>
+                                    <ul>
+                                        <li>Tek kod tabanı, çoklu platform</li>
+                                        <li>Dart dil verimliliği</li>
+                                        <li>Google'ın desteği ve sponsorluğu</li>
+                                        <li>Hot reload geliştirme hızı</li>
+                                    </ul>
+                                </div>
+                                <div class="tech-projects">
+                                    <h5><i class="fas fa-code"></i> Projelerimde Kullanımı</h5>
+                                    <p>Cross-platform iş uygulamaları, startup MVP'leri</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="tech-card">
+                            <div class="tech-header">
+                                <div class="tech-icon">
+                                    <i class="fab fa-react"></i>
+                                </div>
+                                <div class="tech-name">
+                                    <h4>React Native</h4>
+                                    <div class="reliability-bar">
+                                        <div class="reliability-fill" style="width: 88%"></div>
+                                    </div>
+                                    <span class="reliability-text">Güvenilirlik: %88</span>
+                                </div>
+                            </div>
+                            <div class="tech-details">
+                                <div class="tech-purpose">
+                                    <h5><i class="fas fa-bullseye"></i> Kullanım Amacı</h5>
+                                    <p>JavaScript tabanlı mobil uygulamalar, hızlı prototipleme, takım aşinalığı</p>
+                                </div>
+                                <div class="tech-why">
+                                    <h5><i class="fas fa-lightbulb"></i> Neden Tercih Ediyorum</h5>
+                                    <ul>
+                                        <li>React bilgisi yeniden kullanımı</li>
+                                        <li>Büyük topluluk ve kütüphaneler</li>
+                                        <li>Facebook'un desteği</li>
+                                        <li>Web ile kod paylaşımı</li>
+                                    </ul>
+                                </div>
+                                <div class="tech-projects">
+                                    <h5><i class="fas fa-code"></i> Projelerimde Kullanımı</h5>
+                                    <p>Prototip mobil uygulamalar, takım projeleri</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="tech-card">
+                            <div class="tech-header">
+                                <div class="tech-icon">
+                                    <i class="fab fa-apple"></i>
+                                </div>
+                                <div class="tech-name">
+                                    <h4>iOS Development</h4>
+                                    <div class="reliability-bar">
+                                        <div class="reliability-fill" style="width: 80%"></div>
+                                    </div>
+                                    <span class="reliability-text">Güvenilirlik: %80</span>
+                                </div>
+                            </div>
+                            <div class="tech-details">
+                                <div class="tech-purpose">
+                                    <h5><i class="fas fa-bullseye"></i> Kullanım Amacı</h5>
+                                    <p>Native iOS uygulamaları, App Store yayıncılığı, iOS'a özel özellikler</p>
+                                </div>
+                                <div class="tech-why">
+                                    <h5><i class="fas fa-lightbulb"></i> Neden Tercih Ediyorum</h5>
+                                    <ul>
+                                        <li>Swift modern dil</li>
+                                        <li>Premium iOS kullanıcı deneyimi</li>
+                                        <li>Xcode geliştirme ortamı</li>
+                                        <li>iOS ekosistem entegrasyonu</li>
+                                    </ul>
+                                </div>
+                                <div class="tech-projects">
+                                    <h5><i class="fas fa-code"></i> Projelerimde Kullanımı</h5>
+                                    <p>iOS yardımcı uygulamalar, premium mobil çözümler</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Database & Storage -->
+                <div class="tech-category">
+                    <h3 class="category-title">
+                        <i class="fas fa-database"></i>
+                        Database & Storage Solutions
+                    </h3>
+                    <div class="tech-cards">
+                        <div class="tech-card">
+                            <div class="tech-header">
+                                <div class="tech-icon">
+                                    <i class="fas fa-database"></i>
+                                </div>
+                                <div class="tech-name">
+                                    <h4>SQL Databases</h4>
+                                    <div class="reliability-bar">
+                                        <div class="reliability-fill" style="width: 92%"></div>
+                                    </div>
+                                    <span class="reliability-text">Güvenilirlik: %92</span>
+                                </div>
+                            </div>
+                            <div class="tech-details">
+                                <div class="tech-purpose">
+                                    <h5><i class="fas fa-bullseye"></i> Kullanım Amacı</h5>
+                                    <p>MySQL, PostgreSQL, SQLite for structured data storage</p>
+                                </div>
+                                <div class="tech-why">
+                                    <h5><i class="fas fa-lightbulb"></i> Neden Tercih Ediyorum</h5>
+                                    <ul>
+                                        <li>ACID uyumluluğu ve veri bütünlüğü</li>
+                                        <li>Karmaşık sorgular ve ilişkiler</li>
+                                        <li>Olgun ekosistem</li>
+                                        <li>Performans optimizasyonu</li>
+                                    </ul>
+                                </div>
+                                <div class="tech-projects">
+                                    <h5><i class="fas fa-code"></i> Projelerimde Kullanımı</h5>
+                                    <p>Kullanıcı yönetimi, ürün katalogları, finansal veriler</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="tech-card">
+                            <div class="tech-header">
+                                <div class="tech-icon">
+                                    <i class="fas fa-leaf"></i>
+                                </div>
+                                <div class="tech-name">
+                                    <h4>NoSQL Databases</h4>
+                                    <div class="reliability-bar">
+                                        <div class="reliability-fill" style="width: 88%"></div>
+                                    </div>
+                                    <span class="reliability-text">Güvenilirlik: %88</span>
+                                </div>
+                            </div>
+                            <div class="tech-details">
+                                <div class="tech-purpose">
+                                    <h5><i class="fas fa-bullseye"></i> Kullanım Amacı</h5>
+                                    <p>MongoDB, Firebase Firestore for flexible document storage</p>
+                                </div>
+                                <div class="tech-why">
+                                    <h5><i class="fas fa-lightbulb"></i> Neden Tercih Ediyorum</h5>
+                                    <ul>
+                                        <li>Şema esnekliği</li>
+                                        <li>Hızlı geliştirme</li>
+                                        <li>Yatay ölçeklenebilirlik</li>
+                                        <li>JSON benzeri belgeler</li>
+                                    </ul>
+                                </div>
+                                <div class="tech-projects">
+                                    <h5><i class="fas fa-code"></i> Projelerimde Kullanımı</h5>
+                                    <p>İçerik yönetimi, gerçek zamanlı veri, mobil uygulama backend'leri</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="tech-card">
+                            <div class="tech-header">
+                                <div class="tech-icon">
+                                    <i class="fab fa-google"></i>
+                                </div>
+                                <div class="tech-name">
+                                    <h4>Firebase Platform</h4>
+                                    <div class="reliability-bar">
+                                        <div class="reliability-fill" style="width: 94%"></div>
+                                    </div>
+                                    <span class="reliability-text">Güvenilirlik: %94</span>
+                                </div>
+                            </div>
+                            <div class="tech-details">
+                                <div class="tech-purpose">
+                                    <h5><i class="fas fa-bullseye"></i> Kullanım Amacı</h5>
+                                    <p>Komple mobil/web backend, kimlik doğrulama, gerçek zamanlı veritabanı</p>
+                                </div>
+                                <div class="tech-why">
+                                    <h5><i class="fas fa-lightbulb"></i> Neden Tercih Ediyorum</h5>
+                                    <ul>
+                                        <li>Komple BaaS çözümü</li>
+                                        <li>Gerçek zamanlı senkronizasyon</li>
+                                        <li>Kolay kimlik doğrulama</li>
+                                        <li>Google altyapısı</li>
+                                    </ul>
+                                </div>
+                                <div class="tech-projects">
+                                    <h5><i class="fas fa-code"></i> Projelerimde Kullanımı</h5>
+                                    <p>Mobil uygulama backend'leri, gerçek zamanlı uygulamalar, kullanıcı kimlik doğrulama</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="tech-card">
+                            <div class="tech-header">
+                                <div class="tech-icon">
+                                    <i class="fas fa-cloud"></i>
+                                </div>
+                                <div class="tech-name">
+                                    <h4>Cloud Storage</h4>
+                                    <div class="reliability-bar">
+                                        <div class="reliability-fill" style="width: 90%"></div>
+                                    </div>
+                                    <span class="reliability-text">Güvenilirlik: %90</span>
+                                </div>
+                            </div>
+                            <div class="tech-details">
+                                <div class="tech-purpose">
+                                    <h5><i class="fas fa-bullseye"></i> Kullanım Amacı</h5>
+                                    <p>AWS S3, Google Cloud Storage, dosya yönetimi, CDN</p>
+                                </div>
+                                <div class="tech-why">
+                                    <h5><i class="fas fa-lightbulb"></i> Neden Tercih Ediyorum</h5>
+                                    <ul>
+                                        <li>Ölçeklenebilir dosya depolama</li>
+                                        <li>Global CDN entegrasyonu</li>
+                                        <li>Maliyet etkin çözümler</li>
+                                        <li>Yüksek erişilebilirlik</li>
+                                    </ul>
+                                </div>
+                                <div class="tech-projects">
+                                    <h5><i class="fas fa-code"></i> Projelerimde Kullanımı</h5>
+                                    <p>Resim/video depolama, dosya yüklemeleri, statik varlık hosting'i</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- DevOps & Tools -->
+                <div class="tech-category">
+                    <h3 class="category-title">
+                        <i class="fas fa-tools"></i>
+                        DevOps & Development Tools
+                    </h3>
+                    <div class="tech-cards">
+                        <div class="tech-card">
+                            <div class="tech-header">
+                                <div class="tech-icon">
+                                    <i class="fab fa-git-alt"></i>
+                                </div>
+                                <div class="tech-name">
+                                    <h4>Git & GitHub</h4>
+                                    <div class="reliability-bar">
+                                        <div class="reliability-fill" style="width: 98%"></div>
+                                    </div>
+                                    <span class="reliability-text">Güvenilirlik: %98</span>
+                                </div>
+                            </div>
+                            <div class="tech-details">
+                                <div class="tech-purpose">
+                                    <h5><i class="fas fa-bullseye"></i> Kullanım Amacı</h5>
+                                    <p>Versiyon kontrolü, işbirlikli geliştirme, CI/CD, proje yönetimi</p>
+                                </div>
+                                <div class="tech-why">
+                                    <h5><i class="fas fa-lightbulb"></i> Neden Tercih Ediyorum</h5>
+                                    <ul>
+                                        <li>Endüstri standardı versiyon kontrolü</li>
+                                        <li>Branching ve merging stratejileri</li>
+                                        <li>GitHub Actions CI/CD</li>
+                                        <li>Açık kaynak işbirliği</li>
+                                    </ul>
+                                </div>
+                                <div class="tech-projects">
+                                    <h5><i class="fas fa-code"></i> Projelerimde Kullanımı</h5>
+                                    <p>Tüm proje versiyon kontrolü, takım işbirliği, otomatik dağıtımlar</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="tech-card">
+                            <div class="tech-header">
+                                <div class="tech-icon">
+                                    <i class="fab fa-docker"></i>
+                                </div>
+                                <div class="tech-name">
+                                    <h4>Docker & Containers</h4>
+                                    <div class="reliability-bar">
+                                        <div class="reliability-fill" style="width: 85%"></div>
+                                    </div>
+                                    <span class="reliability-text">Güvenilirlik: %85</span>
+                                </div>
+                            </div>
+                            <div class="tech-details">
+                                <div class="tech-purpose">
+                                    <h5><i class="fas fa-bullseye"></i> Kullanım Amacı</h5>
+                                    <p>Uygulama konteynerleştirme, geliştirme ortamları, mikroservisler</p>
+                                </div>
+                                <div class="tech-why">
+                                    <h5><i class="fas fa-lightbulb"></i> Neden Tercih Ediyorum</h5>
+                                    <ul>
+                                        <li>Tutarlı geliştirme ortamları</li>
+                                        <li>Kolay dağıtım ve ölçeklendirme</li>
+                                        <li>Mikroservis mimarisi</li>
+                                        <li>Cross-platform uyumluluğu</li>
+                                    </ul>
+                                </div>
+                                <div class="tech-projects">
+                                    <h5><i class="fas fa-code"></i> Projelerimde Kullanımı</h5>
+                                    <p>Geliştirme ortamları, uygulama paketleme, bulut dağıtımları</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="tech-card">
+                            <div class="tech-header">
+                                <div class="tech-icon">
+                                    <i class="fas fa-cloud"></i>
+                                </div>
+                                <div class="tech-name">
+                                    <h4>Cloud Platforms</h4>
+                                    <div class="reliability-bar">
+                                        <div class="reliability-fill" style="width: 88%"></div>
+                                    </div>
+                                    <span class="reliability-text">Güvenilirlik: %88</span>
+                                </div>
+                            </div>
+                            <div class="tech-details">
+                                <div class="tech-purpose">
+                                    <h5><i class="fas fa-bullseye"></i> Kullanım Amacı</h5>
+                                    <p>AWS, Google Cloud, Azure for hosting, storage, serverless functions</p>
+                                </div>
+                                <div class="tech-why">
+                                    <h5><i class="fas fa-lightbulb"></i> Neden Tercih Ediyorum</h5>
+                                    <ul>
+                                        <li>Ölçeklenebilir altyapı</li>
+                                        <li>Kullandığın kadar öde modeli</li>
+                                        <li>Global erişilebilirlik</li>
+                                        <li>Yönetilen hizmetler</li>
+                                    </ul>
+                                </div>
+                                <div class="tech-projects">
+                                    <h5><i class="fas fa-code"></i> Projelerimde Kullanımı</h5>
+                                    <p>Web hosting, API dağıtımı, dosya depolama, serverless fonksiyonlar</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="tech-card">
+                            <div class="tech-header">
+                                <div class="tech-icon">
+                                    <i class="fas fa-terminal"></i>
+                                </div>
+                                <div class="tech-name">
+                                    <h4>IDEs & Editors</h4>
+                                    <div class="reliability-bar">
+                                        <div class="reliability-fill" style="width: 96%"></div>
+                                    </div>
+                                    <span class="reliability-text">Güvenilirlik: %96</span>
+                                </div>
+                            </div>
+                            <div class="tech-details">
+                                <div class="tech-purpose">
+                                    <h5><i class="fas fa-bullseye"></i> Kullanım Amacı</h5>
+                                    <p>VS Code, IntelliJ IDEA, Android Studio, Xcode geliştirme ortamları</p>
+                                </div>
+                                <div class="tech-why">
+                                    <h5><i class="fas fa-lightbulb"></i> Neden Tercih Ediyorum</h5>
+                                    <ul>
+                                        <li>Gelişmiş hata ayıklama yetenekleri</li>
+                                        <li>Zengin eklenti ekosistemleri</li>
+                                        <li>Entegre terminal ve Git</li>
+                                        <li>Dile özgü özellikler</li>
+                                    </ul>
+                                </div>
+                                <div class="tech-projects">
+                                    <h5><i class="fas fa-code"></i> Projelerimde Kullanımı</h5>
+                                    <p>Birincil geliştirme ortamları, hata ayıklama, yeniden düzenleme</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Design & Creative Tools -->
+                <div class="tech-category">
+                    <h3 class="category-title">
+                        <i class="fas fa-palette"></i>
+                        Design & Creative Tools
+                    </h3>
+                    <div class="tech-cards">
+                        <div class="tech-card">
+                            <div class="tech-header">
+                                <div class="tech-icon">
+                                    <i class="fas fa-pencil-ruler"></i>
+                                </div>
+                                <div class="tech-name">
+                                    <h4>Figma & Design</h4>
+                                    <div class="reliability-bar">
+                                        <div class="reliability-fill" style="width: 92%"></div>
+                                    </div>
+                                    <span class="reliability-text">Güvenilirlik: %92</span>
+                                </div>
+                            </div>
+                            <div class="tech-details">
+                                <div class="tech-purpose">
+                                    <h5><i class="fas fa-bullseye"></i> Kullanım Amacı</h5>
+                                    <p>UI/UX tasarım, prototipleme, tasarım sistemleri, takım işbirliği</p>
+                                </div>
+                                <div class="tech-why">
+                                    <h5><i class="fas fa-lightbulb"></i> Neden Tercih Ediyorum</h5>
+                                    <ul>
+                                        <li>Gerçek zamanlı işbirliği</li>
+                                        <li>Bileşen tabanlı tasarım sistemleri</li>
+                                        <li>İnteraktif prototipleme</li>
+                                        <li>Geliştirici teslim araçları</li>
+                                    </ul>
+                                </div>
+                                <div class="tech-projects">
+                                    <h5><i class="fas fa-code"></i> Projelerimde Kullanımı</h5>
+                                    <p>Uygulama maketleri, web sitesi tasarımları, kullanıcı akış diyagramları</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="tech-card">
+                            <div class="tech-header">
+                                <div class="tech-icon">
+                                    <i class="fab fa-adobe"></i>
+                                </div>
+                                <div class="tech-name">
+                                    <h4>Adobe Creative Suite</h4>
+                                    <div class="reliability-bar">
+                                        <div class="reliability-fill" style="width: 85%"></div>
+                                    </div>
+                                    <span class="reliability-text">Güvenilirlik: %85</span>
+                                </div>
+                            </div>
+                            <div class="tech-details">
+                                <div class="tech-purpose">
+                                    <h5><i class="fas fa-bullseye"></i> Kullanım Amacı</h5>
+                                    <p>Photoshop, Illustrator, XD ile grafik tasarım, ikonlar, markalaşma</p>
+                                </div>
+                                <div class="tech-why">
+                                    <h5><i class="fas fa-lightbulb"></i> Neden Tercih Ediyorum</h5>
+                                    <ul>
+                                        <li>Endüstri standardı araçlar</li>
+                                        <li>Gelişmiş görüntü düzenleme</li>
+                                        <li>Vektör grafik oluşturma</li>
+                                        <li>Profesyonel tasarım yetenekleri</li>
+                                    </ul>
+                                </div>
+                                <div class="tech-projects">
+                                    <h5><i class="fas fa-code"></i> Projelerimde Kullanımı</h5>
+                                    <p>Logo tasarımı, uygulama ikonları, pazarlama materyalleri</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="tech-card">
+                            <div class="tech-header">
+                                <div class="tech-icon">
+                                    <i class="fas fa-gamepad"></i>
+                                </div>
+                                <div class="tech-name">
+                                    <h4>Unity & Game Dev</h4>
+                                    <div class="reliability-bar">
+                                        <div class="reliability-fill" style="width: 78%"></div>
+                                    </div>
+                                    <span class="reliability-text">Güvenilirlik: %78</span>
+                                </div>
+                            </div>
+                            <div class="tech-details">
+                                <div class="tech-purpose">
+                                    <h5><i class="fas fa-bullseye"></i> Kullanım Amacı</h5>
+                                    <p>2D/3D oyun geliştirme, interaktif uygulamalar, AR/VR deneyimleri</p>
+                                </div>
+                                <div class="tech-why">
+                                    <h5><i class="fas fa-lightbulb"></i> Neden Tercih Ediyorum</h5>
+                                    <ul>
+                                        <li>Cross-platform oyun dağıtımı</li>
+                                        <li>Görsel betik oluşturma seçenekleri</li>
+                                        <li>Asset store ekosistemi</li>
+                                        <li>C# programlama entegrasyonu</li>
+                                    </ul>
+                                </div>
+                                <div class="tech-projects">
+                                    <h5><i class="fas fa-code"></i> Projelerimde Kullanımı</h5>
+                                    <p>Mobil oyunlar, interaktif demolar, eğitim uygulamaları</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="tech-card">
+                            <div class="tech-header">
+                                <div class="tech-icon">
+                                    <i class="fas fa-chart-bar"></i>
+                                </div>
+                                <div class="tech-name">
+                                    <h4>Data Visualization</h4>
+                                    <div class="reliability-bar">
+                                        <div class="reliability-fill" style="width: 82%"></div>
+                                    </div>
+                                    <span class="reliability-text">Güvenilirlik: %82</span>
+                                </div>
+                            </div>
+                            <div class="tech-details">
+                                <div class="tech-purpose">
+                                    <h5><i class="fas fa-bullseye"></i> Kullanım Amacı</h5>
+                                    <p>D3.js, Chart.js, Matplotlib for data presentation and analytics</p>
+                                </div>
+                                <div class="tech-why">
+                                    <h5><i class="fas fa-lightbulb"></i> Neden Tercih Ediyorum</h5>
+                                    <ul>
+                                        <li>İnteraktif veri görselleştirme</li>
+                                        <li>Özel grafik oluşturma</li>
+                                        <li>Gerçek zamanlı veri güncellemeleri</li>
+                                        <li>Güzel sunum katmanları</li>
+                                    </ul>
+                                </div>
+                                <div class="tech-projects">
+                                    <h5><i class="fas fa-code"></i> Projelerimde Kullanımı</h5>
+                                    <p>İş dashboard'ları, analitik raporları, veri içgörüleri</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="tech-summary">
+                <h3><i class="fas fa-chart-line"></i> Teknoloji Seçim Kriterlerim</h3>
+                <div class="criteria-grid">
+                    <div class="criteria-card">
+                        <i class="fas fa-shield-alt"></i>
+                        <h4>Güvenilirlik</h4>
+                        <p>Uzun vadeli destek ve stabilite</p>
+                    </div>
+                    <div class="criteria-card">
+                        <i class="fas fa-users"></i>
+                        <h4>Topluluk Desteği</h4>
+                        <p>Aktif geliştirici topluluğu</p>
+                    </div>
+                    <div class="criteria-card">
+                        <i class="fas fa-rocket"></i>
+                        <h4>Performans</h4>
+                        <p>Hızlı ve verimli çözümler</p>
+                    </div>
+                    <div class="criteria-card">
+                        <i class="fas fa-graduation-cap"></i>
+                        <h4>Öğrenme Kolaylığı</h4>
+                        <p>Anlaşılır ve mantıklı syntax</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+        <div class="container">
+            <h2 class="section-title">İletişim</h2>
+            <div class="contact-content">
+                <div class="contact-info">
+                    <h3>Benimle İletişime Geçin</h3>
+                    <p>Projelerim hakkında sorularınız veya iş birliği önerileriniz için bana ulaşabilirsiniz.</p>
+                    <div class="contact-methods">
+                        <a href="mailto:wupaniyazilim@gmail.com" class="contact-method">
+                            <i class="fas fa-envelope"></i>
+                            <span>wupaniyazilim@gmail.com</span>
+                        </a>
+                    </div>
+                    <button class="contact-form-btn" id="openContactModal">
+                        <i class="fas fa-comments"></i>
+                        Proje Talebi Oluştur
+                    </button>
+                </div>
+                <div class="contact-cta">
+                    <div class="cta-content">
+                        <h3>🚀 Projenizi Hayata Geçirelim!</h3>
+                        <p>Fikirlerinizi gerçeğe dönüştürmek için hemen iletişime geçin. Size özel çözümler sunmak için buradayım.</p>
+                        <div class="cta-features">
+                            <div class="cta-feature">
+                                <i class="fas fa-rocket"></i>
+                                <span>Hızlı Çözüm</span>
+                            </div>
+                            <div class="cta-feature">
+                                <i class="fas fa-shield-alt"></i>
+                                <span>Kaliteli Kod</span>
+                            </div>
+                            <div class="cta-feature">
+                                <i class="fas fa-handshake"></i>
+                                <span>Uzun Vadeli Destek</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- KVKK Modal -->
+            <div class="modal-overlay" id="kvkkModal">
+                <div class="modal-container kvkk-modal">
+                    <div class="modal-header">
+                        <h3><i class="fas fa-shield-alt"></i> Kişisel Verilerin Korunması - Açık Rıza Beyanı</h3>
+                        <button class="modal-close" id="closeKvkkModal" title="Kapat" aria-label="Modalı kapat">
+                            <i class="fas fa-times"></i>
+                        </button>
+                    </div>
+                    <div class="modal-content">
+                        <div class="kvkk-content">
+                            <div class="kvkk-section">
+                                <h4><i class="fas fa-user-shield"></i> Veri Sorumlusu Bilgileri</h4>
+                                <p><strong>Veri Sorumlusu:</strong> Emre Akyol (Limnio)</p>
+                                <p><strong>İletişim:</strong> wupaniyazilim@gmail.com</p>
+                            </div>
+
+                            <div class="kvkk-section">
+                                <h4><i class="fas fa-database"></i> İşlenecek Kişisel Veriler</h4>
+                                <ul class="kvkk-list">
+                                    <li>Kimlik bilgileri (Ad, soyad)</li>
+                                    <li>İletişim bilgileri (E-posta, telefon)</li>
+                                    <li>Çalışma hayatı bilgileri (Şirket/kurum bilgileri)</li>
+                                    <li>Proje talep detayları</li>
+                                </ul>
+                            </div>
+
+                            <div class="kvkk-section">
+                                <h4><i class="fas fa-bullseye"></i> İşleme Amaçları</h4>
+                                <ul class="kvkk-list">
+                                    <li>Proje taleplerinizi değerlendirmek</li>
+                                    <li>Size uygun çözümler sunmak</li>
+                                    <li>İletişim kurmak ve geri bildirim vermek</li>
+                                    <li>Hizmet kalitesini artırmak</li>
+                                </ul>
+                            </div>
+
+                            <div class="kvkk-section">
+                                <h4><i class="fas fa-share-alt"></i> Veri Paylaşımı</h4>
+                                <p>Kişisel verileriniz üçüncü taraflarla paylaşılmaz. Sadece belirtilen amaçlar doğrultusunda işlenir.</p>
+                            </div>
+
+                            <div class="kvkk-section">
+                                <h4><i class="fas fa-clock"></i> Saklama Süresi</h4>
+                                <p>Verileriniz, işleme amacının ortadan kalkması veya yasal yükümlülükler gereği maksimum 3 yıl süreyle saklanır.</p>
+                            </div>
+
+                            <div class="kvkk-section">
+                                <h4><i class="fas fa-balance-scale"></i> Haklarınız</h4>
+                                <ul class="kvkk-list">
+                                    <li>Kişisel verilerinizin işlenip işlenmediğini öğrenme</li>
+                                    <li>İşlenen kişisel verileriniz hakkında bilgi talep etme</li>
+                                    <li>İşleme amacını ve bunların amacına uygun kullanılıp kullanılmadığını öğrenme</li>
+                                    <li>Yurt içinde veya yurt dışında kişisel verilerin aktarıldığı üçüncü kişileri bilme</li>
+                                    <li>Kişisel verilerin eksik veya yanlış işlenmiş olması hâlinde bunların düzeltilmesini isteme</li>
+                                    <li>Kişisel verilerin silinmesini veya yok edilmesini isteme</li>
+                                    <li>İşleme faaliyetlerine itiraz etme</li>
+                                </ul>
+                            </div>
+
+                            <div class="kvkk-important">
+                                <div class="important-box">
+                                    <i class="fas fa-exclamation-triangle"></i>
+                                    <div>
+                                        <h5>Önemli Bilgi</h5>
+                                        <p>Bu rızayı vermek zorunda değilsiniz. Rıza vermemeniz durumunda sadece proje açıklama kısmını doldurarak talebinizi iletebilirsiniz. Verdiğiniz rızayı istediğiniz zaman geri çekebilirsiniz.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="kvkk-actions">
+                            <button class="btn-accept" onclick="acceptKvkk()">
+                                <i class="fas fa-check"></i>
+                                Anladım ve Onaylıyorum
+                            </button>
+                            <button class="btn-decline" onclick="declineKvkk()">
+                                <i class="fas fa-times"></i>
+                                Onaylamıyorum
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Contact Form Modal -->
+            <div class="modal-overlay" id="contactModal">
+                <div class="modal-container">
+                    <div class="modal-header">
+                        <h3>Proje Talebi Oluştur</h3>
+                        <button class="modal-close" id="closeContactModal" title="Kapat" aria-label="Modalı kapat">
+                            <i class="fas fa-times"></i>
+                        </button>
+                    </div>
+                    <div class="modal-content">
+                        <form id="contactForm">
+                            <div class="form-step active" data-step="1">
+                                <h4><i class="fas fa-user"></i> Kişisel Bilgiler</h4>
+                                <div class="form-row">
+                                    <div class="form-group">
+                                        <input type="text" id="name" name="name" placeholder="Ad Soyad (İsteğe bağlı)">
+                                    </div>
+                                    <div class="form-group">
+                                        <input type="email" id="email" name="email" placeholder="E-posta Adresi (İsteğe bağlı)">
+                                    </div>
+                                </div>
+                                <div class="form-row">
+                                    <div class="form-group">
+                                        <input type="tel" id="phone" name="phone" placeholder="Telefon Numarası (İsteğe bağlı)">
+                                    </div>
+                                    <div class="form-group">
+                                        <input type="text" id="company" name="company" placeholder="Şirket/Kurum Adı (İsteğe bağlı)">
+                                    </div>
+                                </div>
+                                <div class="kvkk-consent">
+                                    <div class="consent-checkbox">
+                                        <input type="checkbox" id="kvkkConsent" name="kvkkConsent">
+                                        <label for="kvkkConsent">
+                                            <span class="consent-text">
+                                                Kişisel verilerimin işlenmesine yönelik 
+                                                <button type="button" class="consent-link" onclick="openKvkkModal()">
+                                                    Açık Rıza Beyanı
+                                                </button>
+                                                kapsamında onay veriyorum.
+                                            </span>
+                                        </label>
+                                    </div>
+                                    <p class="consent-note">
+                                        <i class="fas fa-info-circle"></i>
+                                        Kişisel bilgilerinizi paylaşmak istemiyorsanız sadece proje açıklamanızı yazabilirsiniz.
+                                    </p>
+                                </div>
+                                <div class="step-nav">
+                                    <button type="button" class="btn-next" onclick="nextStep()">
+                                        Devam Et <i class="fas fa-arrow-right"></i>
+                                    </button>
+                                </div>
+                            </div>
+
+                            <div class="form-step" data-step="2">
+                                <h4><i class="fas fa-project-diagram"></i> Proje Detayları</h4>
+                                <div class="form-row">
+                                    <div class="form-group">
+                                        <label for="category" class="visually-hidden">Proje Kategorisi</label>
+                                        <select id="category" name="category" title="Proje kategorisi seçin" required>
+                                            <option value="">Kategori Seçin *</option>
+                                            <option value="mobil-uygulama">📱 Mobil Uygulama Geliştirme</option>
+                                            <option value="web-uygulama">💻 Web Uygulaması</option>
+                                            <option value="google-apps-script">⚙️ Google Apps Script</option>
+                                            <option value="ui-ux-tasarim">🎨 UI/UX Tasarım</option>
+                                            <option value="danismanlik">💡 Teknik Danışmanlık</option>
+                                            <option value="diger">🔧 Diğer Hizmetler</option>
+                                        </select>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="budget" class="visually-hidden">Bütçe Aralığı</label>
+                                        <select id="budget" name="budget" title="Bütçe aralığı seçin">
+                                            <option value="">Bütçe Aralığı</option>
+                                            <option value="0-5000">💰 0 - 5.000 TL</option>
+                                            <option value="5000-15000">💎 5.000 - 15.000 TL</option>
+                                            <option value="15000-50000">💍 15.000 - 50.000 TL</option>
+                                            <option value="50000+">👑 50.000+ TL</option>
+                                            <option value="gorusme">🤝 Görüşerek Belirleyelim</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="timeline" class="visually-hidden">Proje Süresi</label>
+                                    <select id="timeline" name="timeline" title="Proje süresi seçin">
+                                        <option value="">Proje Süresi</option>
+                                        <option value="acil">🚀 Acil (1-2 hafta)</option>
+                                        <option value="normal">⏰ Normal (1-2 ay)</option>
+                                        <option value="esnek">🎯 Esnek (2+ ay)</option>
+                                        <option value="belirli-degil">❓ Henüz Belirsiz</option>
+                                    </select>
+                                </div>
+                                <div class="form-group">
+                                    <input type="text" id="subject" name="subject" placeholder="Proje Başlığı/Konusu">
+                                </div>
+                                <div class="step-nav">
+                                    <button type="button" class="btn-prev" onclick="prevStep()">
+                                        <i class="fas fa-arrow-left"></i> Geri
+                                    </button>
+                                    <button type="button" class="btn-next" onclick="nextStep()">
+                                        Devam Et <i class="fas fa-arrow-right"></i>
+                                    </button>
+                                </div>
+                            </div>
+
+                            <div class="form-step" data-step="3">
+                                <h4><i class="fas fa-comment-alt"></i> Proje Açıklaması</h4>
+                                <div class="form-group">
+                                    <textarea id="message" name="message" placeholder="Projenizin detayları, istekleriniz ve özel notlarınızı yazın... *" rows="8" required></textarea>
+                                </div>
+                                <div class="step-nav">
+                                    <button type="button" class="btn-prev" onclick="prevStep()">
+                                        <i class="fas fa-arrow-left"></i> Geri
+                                    </button>
+                                    <button type="submit" class="submit-btn">
+                                        <i class="fas fa-paper-plane"></i>
+                                        Gönder
+                                    </button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <i class="fas fa-lemon"></i>
+                    <span>Limnio</span>
+                </div>
+                <p>&copy; 2025 Limnio - Emre Akyol. Tüm hakları saklıdır.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html> 
