@@ -144,6 +144,15 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         const target = document.querySelector(this.getAttribute('href'));
         
         if (target) {
+            // Close mobile menu first if open
+            if (hamburger.classList.contains('active')) {
+                hamburger.classList.remove('active');
+                navMenu.classList.remove('active');
+                document.body.style.overflow = '';
+                document.body.style.position = '';
+                document.body.style.width = '';
+            }
+            
             // Add loading state to clicked link
             const clickedLink = this;
             if (clickedLink.classList.contains('nav-link')) {
@@ -165,17 +174,6 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
                 top: targetPosition,
                 behavior: 'smooth'
             });
-            
-            // Enhanced mobile menu close with transition
-            if (hamburger.classList.contains('active')) {
-                hamburger.classList.remove('active');
-                navMenu.classList.remove('active');
-                
-                // Add visual feedback for mobile nav close
-                setTimeout(() => {
-                    document.body.style.overflow = '';
-                }, 300);
-            }
         }
     });
 });
