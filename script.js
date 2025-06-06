@@ -614,7 +614,40 @@ const translations = {
         // Contact
         'contact.title': 'Benimle İletişime Geçin',
         'contact.description': 'Projelerim hakkında sorularınız veya iş birliği önerileriniz için bana ulaşabilirsiniz.',
-        'contact.cta': 'Proje Talebi Oluştur'
+        'contact.cta': 'Proje Talebi Oluştur',
+        
+        // About Details
+        'about.details.toggle': 'Daha Fazla Bilgi',
+        'about.basic.title': 'Temel Bilgiler',
+        'about.basic.location.label': 'Konum',
+        'about.basic.location.value': 'Türkiye, Denizli',
+        'about.basic.experience.label': 'Deneyim',
+        'about.basic.experience.value': '3+ Yıl Aktif Geliştirme',
+        'about.basic.languages.label': 'Diller',
+        'about.basic.languages.value': 'Türkçe (Ana dil), İngilizce (İyi)',
+        
+        // Footer
+        'footer.copyright': '© 2025 Limnio - Emre Akyol. Tüm hakları saklıdır.',
+        
+        // Technology Categories
+        'tech.category.core': 'Core Programlama Dilleri',
+        'tech.category.frontend': 'Frontend Frameworks & UI',
+        'tech.category.backend': 'Backend Technologies & APIs',
+        'tech.category.mobile': 'Mobile Development',
+        'tech.category.database': 'Database & Storage Solutions',
+        'tech.category.devops': 'DevOps & Development Tools',
+        'tech.category.design': 'Design & Creative Tools',
+        
+        // Technology Summary
+        'tech.summary.title': 'Teknoloji Seçim Kriterlerim',
+        'tech.criteria.reliability.title': 'Güvenilirlik',
+        'tech.criteria.reliability.desc': 'Uzun vadeli destek ve stabilite',
+        'tech.criteria.community.title': 'Topluluk Desteği',
+        'tech.criteria.community.desc': 'Aktif geliştirici topluluğu',
+        'tech.criteria.performance.title': 'Performans',
+        'tech.criteria.performance.desc': 'Hızlı ve verimli çözümler',
+        'tech.criteria.learning.title': 'Öğrenme Kolaylığı',
+        'tech.criteria.learning.desc': 'Anlaşılır ve mantıklı syntax'
     },
     en: {
         // Navigation
@@ -651,7 +684,40 @@ const translations = {
         // Contact
         'contact.title': 'Get In Touch',
         'contact.description': 'You can reach me for questions about my projects or collaboration suggestions.',
-        'contact.cta': 'Create Project Request'
+        'contact.cta': 'Create Project Request',
+        
+        // About Details
+        'about.details.toggle': 'More Information',
+        'about.basic.title': 'Basic Information',
+        'about.basic.location.label': 'Location',
+        'about.basic.location.value': 'Turkey, Denizli',
+        'about.basic.experience.label': 'Experience',
+        'about.basic.experience.value': '3+ Years Active Development',
+        'about.basic.languages.label': 'Languages',
+        'about.basic.languages.value': 'Turkish (Native), English (Good)',
+        
+        // Footer
+        'footer.copyright': '© 2025 Limnio - Emre Akyol. All rights reserved.',
+        
+        // Technology Categories
+        'tech.category.core': 'Core Programming Languages',
+        'tech.category.frontend': 'Frontend Frameworks & UI',
+        'tech.category.backend': 'Backend Technologies & APIs',
+        'tech.category.mobile': 'Mobile Development',
+        'tech.category.database': 'Database & Storage Solutions',
+        'tech.category.devops': 'DevOps & Development Tools',
+        'tech.category.design': 'Design & Creative Tools',
+        
+        // Technology Summary
+        'tech.summary.title': 'My Technology Selection Criteria',
+        'tech.criteria.reliability.title': 'Reliability',
+        'tech.criteria.reliability.desc': 'Long-term support and stability',
+        'tech.criteria.community.title': 'Community Support',
+        'tech.criteria.community.desc': 'Active developer community',
+        'tech.criteria.performance.title': 'Performance',
+        'tech.criteria.performance.desc': 'Fast and efficient solutions',
+        'tech.criteria.learning.title': 'Ease of Learning',
+        'tech.criteria.learning.desc': 'Clear and logical syntax'
     }
 };
 
