@@ -626,6 +626,56 @@ const translations = {
         'about.basic.languages.label': 'Diller',
         'about.basic.languages.value': 'Türkçe (Ana dil), İngilizce (İyi)',
         
+        // About Expertise
+        'about.expertise.title': 'Uzmanlık Alanlarım',
+        'about.expertise.mobile.title': 'Mobil Uygulama Geliştirme',
+        'about.expertise.mobile.desc': 'Native Android uygulamalar, React Native ve Flutter ile cross-platform çözümler',
+        'about.expertise.web.title': 'Web Geliştirme',
+        'about.expertise.web.desc': 'Modern web uygulamaları, responsive tasarım ve Google Apps Script entegrasyonları',
+        'about.expertise.design.title': 'UI/UX Tasarım',
+        'about.expertise.design.desc': 'Kullanıcı merkezli tasarım, minimalist arayüzler ve modern tasarım prensipleri',
+        'about.expertise.integration.title': 'Sistem Entegrasyonu',
+        'about.expertise.integration.desc': 'API geliştirme, veritabanı tasarımı ve üçüncü taraf sistem entegrasyonları',
+        
+        // About Journey & Values
+        'about.journey.title': 'Gelişim Yolculuğum',
+        'about.values.title': 'Çalışma Değerlerim',
+        'about.philosophy.title': 'Çalışma Felsefem',
+        
+        // About Connect
+        'about.connect.title': 'Benimle Bağlantı Kurun',
+        'about.connect.desc': 'Projeleriniz, fikirleriniz veya sadece merhaba demek için bana ulaşabilirsiniz!',
+        
+        // About Timeline
+        'about.timeline.2020.title': 'Yazılıma İlk Adım',
+        'about.timeline.2020.desc': 'Programlama dünyasına giriş ve temel dilleri öğrenme süreci. Python ve Java ile başladım.',
+        'about.timeline.2022.title': 'Mobil Geliştirme',
+        'about.timeline.2022.desc': 'Android geliştirme alanında uzmanlaşmaya başladım. İlk uygulamalarımı yayınladım.',
+        'about.timeline.2024.title': 'Limnio Markası',
+        'about.timeline.2024.desc': 'Kendi markamı kurdum ve profesyonel hizmet vermeye başladım. İlk müşterilerimle çalıştım.',
+        'about.timeline.2025.title': 'Yeni Hedefler',
+        'about.timeline.2025.desc': 'Daha büyük projeler, uluslararası müşteri portföyü ve yeni teknolojilere odaklanma.',
+        
+        // About Values Details
+        'about.values.quality.title': 'Kalite Odaklı',
+        'about.values.quality.desc': 'Her kod satırında mükemmeliyeti hedeflerim. Test-driven development yaklaşımı benimserim.',
+        'about.values.collaboration.title': 'İşbirliği',
+        'about.values.collaboration.desc': 'Müşterilerimle yakın çalışarak en iyi sonucu elde ederim. Şeffaf iletişim önceliğimdir.',
+        'about.values.speed.title': 'Hızlı Çözüm',
+        'about.values.speed.desc': 'Zamanında teslim etmek en önemli önceliklerimden. Agile metodoloji kullanırım.',
+        'about.values.learning.title': 'Sürekli Öğrenme',
+        'about.values.learning.desc': 'Teknolojideki gelişmeleri yakından takip ederim. Her gün yeni bir şey öğrenirim.',
+        'about.values.creativity.title': 'Yaratıcılık',
+        'about.values.creativity.desc': 'Her projede yenilikçi çözümler üretirim. Out-of-the-box düşünmeyi severim.',
+        'about.values.reliability.title': 'Güvenilirlik',
+        'about.values.reliability.desc': 'Sözümü tutmak ve şeffaf olmak temel prensibim. Uzun vadeli ilişkiler kurarım.',
+        
+        // About Philosophy
+        'about.philosophy.point1': 'Her proje benzersizdir ve özel yaklaşım gerektirir',
+        'about.philosophy.point2': 'Kullanıcı deneyimi her zaman teknik karmaşıklıktan önemlidir',
+        'about.philosophy.point3': 'Temiz, okunabilir kod yazarak gelecekteki geliştiricilere saygı gösteririm',
+        'about.philosophy.point4': 'Sürekli öğrenme ve kendini geliştirme başarının anahtarıdır',
+        
         // Footer
         'footer.copyright': '© 2025 Limnio - Emre Akyol. Tüm hakları saklıdır.',
         
@@ -647,7 +697,13 @@ const translations = {
         'tech.criteria.performance.title': 'Performans',
         'tech.criteria.performance.desc': 'Hızlı ve verimli çözümler',
         'tech.criteria.learning.title': 'Öğrenme Kolaylığı',
-        'tech.criteria.learning.desc': 'Anlaşılır ve mantıklı syntax'
+        'tech.criteria.learning.desc': 'Anlaşılır ve mantıklı syntax',
+        
+        // Technology Card Common Terms
+        'tech.reliability.prefix': 'Güvenilirlik:',
+        'tech.purpose.title': 'Kullanım Amacı',
+        'tech.why.title': 'Neden Tercih Ediyorum',
+        'tech.projects.title': 'Projelerimde Kullanımı'
     },
     en: {
         // Navigation
@@ -696,6 +752,56 @@ const translations = {
         'about.basic.languages.label': 'Languages',
         'about.basic.languages.value': 'Turkish (Native), English (Good)',
         
+        // About Expertise
+        'about.expertise.title': 'My Areas of Expertise',
+        'about.expertise.mobile.title': 'Mobile Application Development',
+        'about.expertise.mobile.desc': 'Native Android applications, cross-platform solutions with React Native and Flutter',
+        'about.expertise.web.title': 'Web Development',
+        'about.expertise.web.desc': 'Modern web applications, responsive design and Google Apps Script integrations',
+        'about.expertise.design.title': 'UI/UX Design',
+        'about.expertise.design.desc': 'User-centered design, minimalist interfaces and modern design principles',
+        'about.expertise.integration.title': 'System Integration',
+        'about.expertise.integration.desc': 'API development, database design and third-party system integrations',
+        
+        // About Journey & Values
+        'about.journey.title': 'My Development Journey',
+        'about.values.title': 'My Work Values',
+        'about.philosophy.title': 'My Work Philosophy',
+        
+        // About Connect
+        'about.connect.title': 'Connect With Me',
+        'about.connect.desc': 'You can reach me for your projects, ideas or just to say hello!',
+        
+        // About Timeline
+        'about.timeline.2020.title': 'First Step into Programming',
+        'about.timeline.2020.desc': 'Introduction to the programming world and learning basic languages. Started with Python and Java.',
+        'about.timeline.2022.title': 'Mobile Development',
+        'about.timeline.2022.desc': 'Started specializing in Android development. Published my first applications.',
+        'about.timeline.2024.title': 'Limnio Brand',
+        'about.timeline.2024.desc': 'Established my own brand and started providing professional services. Worked with my first clients.',
+        'about.timeline.2025.title': 'New Goals',
+        'about.timeline.2025.desc': 'Bigger projects, international client portfolio and focus on new technologies.',
+        
+        // About Values Details
+        'about.values.quality.title': 'Quality Focused',
+        'about.values.quality.desc': 'I aim for perfection in every line of code. I adopt a test-driven development approach.',
+        'about.values.collaboration.title': 'Collaboration',
+        'about.values.collaboration.desc': 'I achieve the best results by working closely with my clients. Transparent communication is my priority.',
+        'about.values.speed.title': 'Fast Solution',
+        'about.values.speed.desc': 'Delivering on time is one of my most important priorities. I use agile methodology.',
+        'about.values.learning.title': 'Continuous Learning',
+        'about.values.learning.desc': 'I closely follow developments in technology. I learn something new every day.',
+        'about.values.creativity.title': 'Creativity',
+        'about.values.creativity.desc': 'I produce innovative solutions in every project. I love thinking out-of-the-box.',
+        'about.values.reliability.title': 'Reliability',
+        'about.values.reliability.desc': 'Keeping my word and being transparent is my basic principle. I build long-term relationships.',
+        
+        // About Philosophy
+        'about.philosophy.point1': 'Every project is unique and requires a special approach',
+        'about.philosophy.point2': 'User experience is always more important than technical complexity',
+        'about.philosophy.point3': 'I respect future developers by writing clean, readable code',
+        'about.philosophy.point4': 'Continuous learning and self-improvement is the key to success',
+        
         // Footer
         'footer.copyright': '© 2025 Limnio - Emre Akyol. All rights reserved.',
         
@@ -717,7 +823,13 @@ const translations = {
         'tech.criteria.performance.title': 'Performance',
         'tech.criteria.performance.desc': 'Fast and efficient solutions',
         'tech.criteria.learning.title': 'Ease of Learning',
-        'tech.criteria.learning.desc': 'Clear and logical syntax'
+        'tech.criteria.learning.desc': 'Clear and logical syntax',
+        
+        // Technology Card Common Terms
+        'tech.reliability.prefix': 'Reliability:',
+        'tech.purpose.title': 'Purpose of Use',
+        'tech.why.title': 'Why I Choose It',
+        'tech.projects.title': 'Usage in My Projects'
     }
 };
 
@@ -762,6 +874,32 @@ function setLanguage(lang) {
             } else {
                 element.textContent = translations[lang][key];
             }
+        }
+    });
+    
+    // Update technology card common terms
+    document.querySelectorAll('.reliability-text').forEach(element => {
+        const percentage = element.textContent.match(/\d+%/);
+        if (percentage) {
+            element.textContent = `${translations[lang]['tech.reliability.prefix']} ${percentage[0]}`;
+        }
+    });
+    
+    document.querySelectorAll('.tech-purpose h5').forEach(element => {
+        if (element.innerHTML.includes('fa-bullseye')) {
+            element.innerHTML = `<i class="fas fa-bullseye"></i> ${translations[lang]['tech.purpose.title']}`;
+        }
+    });
+    
+    document.querySelectorAll('.tech-why h5').forEach(element => {
+        if (element.innerHTML.includes('fa-lightbulb')) {
+            element.innerHTML = `<i class="fas fa-lightbulb"></i> ${translations[lang]['tech.why.title']}`;
+        }
+    });
+    
+    document.querySelectorAll('.tech-projects h5').forEach(element => {
+        if (element.innerHTML.includes('fa-code')) {
+            element.innerHTML = `<i class="fas fa-code"></i> ${translations[lang]['tech.projects.title']}`;
         }
     });
     
