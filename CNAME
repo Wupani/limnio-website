@@ -1,3 +1,5 @@
 # Bu dosyayı sadece custom domain kullanacaksanız aktif hale getirin
-# Örnek: limnio.dev
-# Şimdilik GitHub Pages default URL'sini kullanacağız 
+# Custom domain için:
+# limnio.dev
+# Şimdilik GitHub default domain kullanıyoruz
+# Bu dosyayı domain aldığınızda güncelleyebilirsiniz 
