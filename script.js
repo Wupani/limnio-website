@@ -595,7 +595,26 @@ const translations = {
         'sections.projects': 'Projelerim',
         'sections.about': 'Hakkımda',
         'sections.technologies': 'Teknolojiler & Yazılım Dilleri',
-        'sections.contact': 'İletişim'
+        'sections.technologies.subtitle': 'Kullandığım teknolojiler ve yazılım dilleri hakkında detaylı bilgiler',
+        'sections.contact': 'İletişim',
+        
+        // Projects
+        'project.lilyum.title': 'Lilyum Sayacı',
+        'project.lilyum.description': 'Zarif ve kullanıcı dostu geri sayım uygulaması. Önemli etkinlikleriniz için stile geri sayım yapın.',
+        'project.hr.title': 'HR Portal',
+        'project.hr.description': 'Kapsamlı İnsan Kaynakları CRM uygulaması. Çalışan yönetimi, işe alım süreçleri ve performans takibi için geliştirilmiş modern web uygulaması.',
+        'project.coming.title': 'Yakında...',
+        'project.coming.description': 'Yeni projeler geliştirme aşamasında. Takipte kalın!',
+        
+        // About
+        'about.greeting': 'Merhaba Ben <span class="highlight">Emre Akyol</span> 👋',
+        'about.intro': '<strong>Limnio</strong> markası altında, hayatı kolaylaştıran mobil uygulamalar ve web çözümleri geliştiriyorum. Karmaşık problemleri basit, zarif ve kullanıcı dostu çözümlere dönüştürmekte uzmanım.',
+        'about.mission': '<i class="fas fa-quote-left"></i> Teknoloji sadece bir araç, asıl önemli olan insanların hayatına dokunmak ve onlara değer katmaktır. <i class="fas fa-quote-right"></i>',
+        
+        // Contact
+        'contact.title': 'Benimle İletişime Geçin',
+        'contact.description': 'Projelerim hakkında sorularınız veya iş birliği önerileriniz için bana ulaşabilirsiniz.',
+        'contact.cta': 'Proje Talebi Oluştur'
     },
     en: {
         // Navigation
@@ -613,7 +632,26 @@ const translations = {
         'sections.projects': 'My Projects',
         'sections.about': 'About Me',
         'sections.technologies': 'Technologies & Programming Languages',
-        'sections.contact': 'Contact'
+        'sections.technologies.subtitle': 'Detailed information about the technologies and programming languages I use',
+        'sections.contact': 'Contact',
+        
+        // Projects
+        'project.lilyum.title': 'Lilyum Counter',
+        'project.lilyum.description': 'Elegant and user-friendly countdown application. Stylish countdown for your important events.',
+        'project.hr.title': 'HR Portal',
+        'project.hr.description': 'Comprehensive Human Resources CRM application. Modern web application developed for employee management, recruitment processes and performance tracking.',
+        'project.coming.title': 'Coming Soon...',
+        'project.coming.description': 'New projects are under development. Stay tuned!',
+        
+        // About
+        'about.greeting': 'Hello, I\'m <span class="highlight">Emre Akyol</span> 👋',
+        'about.intro': 'Under the <strong>Limnio</strong> brand, I develop mobile applications and web solutions that make life easier. I specialize in transforming complex problems into simple, elegant and user-friendly solutions.',
+        'about.mission': '<i class="fas fa-quote-left"></i> Technology is just a tool, what really matters is touching people\'s lives and adding value to them. <i class="fas fa-quote-right"></i>',
+        
+        // Contact
+        'contact.title': 'Get In Touch',
+        'contact.description': 'You can reach me for questions about my projects or collaboration suggestions.',
+        'contact.cta': 'Create Project Request'
     }
 };
 
@@ -652,7 +690,12 @@ function setLanguage(lang) {
     document.querySelectorAll('[data-tr]').forEach(element => {
         const key = element.getAttribute('data-tr');
         if (translations[lang][key]) {
-            element.textContent = translations[lang][key];
+            // Check if translation contains HTML
+            if (translations[lang][key].includes('<')) {
+                element.innerHTML = translations[lang][key];
+            } else {
+                element.textContent = translations[lang][key];
+            }
         }
     });
     
