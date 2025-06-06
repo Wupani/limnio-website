@@ -1,4 +1,4 @@
-# OS generated files
+# Operating System Files
 .DS_Store
 .DS_Store?
 ._*
@@ -7,37 +7,67 @@
 ehthumbs.db
 Thumbs.db
 
-# Editor files
-.vscode/
-.idea/
+# Development Files
+*.log
+*.tmp
+*.temp
 *.swp
 *.swo
 *~
 
-# Logs
-logs
-*.log
+# IDE and Editor Files
+.vscode/
+.idea/
+*.sublime-project
+*.sublime-workspace
+.atom/
+
+# Node.js (if used for tooling)
+node_modules/
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
+.npm
+.yarn/cache/
+.yarn/unplugged/
+.yarn/build-state.yml
+.yarn/install-state.gz
+.pnp.*
 
-# Runtime data
-pids
-*.pid
-*.seed
-*.pid.lock
+# Build and Distribution
+dist/
+build/
+out/
 
-# Coverage directory used by tools like istanbul
+# Environment Variables
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+# Cache Files
+.cache/
+.parcel-cache/
+
+# Test Coverage
 coverage/
+.nyc_output/
 
-# nyc test coverage
-.nyc_output
-
-# Dependency directories
-node_modules/
+# Dependency Directories
+jspm_packages/
 
 # Optional npm cache directory
 .npm
+
+# Optional eslint cache
+.eslintcache
+
+# Microbundle cache
+.rpt2_cache/
+.rts2_cache_cjs/
+.rts2_cache_es/
+.rts2_cache_umd/
 
 # Optional REPL history
 .node_repl_history
@@ -48,16 +78,29 @@ node_modules/
 # Yarn Integrity file
 .yarn-integrity
 
-# dotenv environment variables file
-.env
+# Images (development only)
+*.jpg
+*.jpeg
+*.png
+*.gif
+*.svg
+*.ico
+*.webp
 
-# Temporary folders
-tmp/
-temp/
+# Except necessary images
+!favicon.ico
+!logo.png
+!logo.svg
 
-# Build outputs
-dist/
-build/
+# Documentation drafts
+*_DRAFT.md
+*_TODO.md
+*_NOTES.md
+
+# Backup files
+*.bak
+*.backup
 
 # Local development
-.cache/ 
+localhost.*
+127.0.0.1.* 

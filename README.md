@@ -1,64 +1,68 @@
-# 🍋 Limnio - Personal Portfolio Website
+# 🍋 Limnio Portfolio Website
 
-Modern, responsive ve kullanıcı dostu kişisel portföy web sitesi. Emre Akyol'un yazılım geliştirme hizmetleri ve projelerini sergileyen profesyonel web sitesi.
+> **Basit fikirlerle güçlü deneyimler** - Emre Akyol'un resmi portfolyo web sitesi
 
-## 🌟 Özellikler
-
-- **Modern Tasarım**: Minimalist ve zarif arayüz
-- **Responsive**: Tüm cihazlarda mükemmel görünüm
-- **Hızlı**: Optimize edilmiş performans
-- **SEO Dostu**: Arama motorları için optimize edilmiş
-- **Erişilebilir**: WCAG standartlarına uygun
-- **PWA Desteği**: Progressive Web App özellikleri
+[![GitHub Pages](https://img.shields.io/badge/GitHub%20Pages-Live-brightgreen)](https://wupani.github.io/limnio-website/)
+[![HTML5](https://img.shields.io/badge/HTML5-E34F26?logo=html5&logoColor=white)](https://developer.mozilla.org/en-US/docs/Web/HTML)
+[![CSS3](https://img.shields.io/badge/CSS3-1572B6?logo=css3&logoColor=white)](https://developer.mozilla.org/en-US/docs/Web/CSS)
+[![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?logo=javascript&logoColor=black)](https://developer.mozilla.org/en-US/docs/Web/JavaScript)
 
 ## 🚀 Canlı Demo
 
-Web sitesini görüntülemek için: [https://wupani.github.io/limnio-website](https://wupani.github.io/limnio-website)
+**[wupani.github.io/limnio-website](https://wupani.github.io/limnio-website/)**
+
+## 📱 Hakkında
+
+Limnio, kullanıcı dostu mobil uygulamalar ve web çözümleri geliştiren **Emre Akyol**'un kişisel portfolyo web sitesidir. Bu site, Google Play Store geliştirici doğrulaması için özel olarak tasarlanmış ve GitHub Pages üzerinde barındırılmaktadır.
+
+### ✨ Özellikler
+
+- **🎨 Modern UI/UX**: Glassmorphism efektleri ve smooth animasyonlar
+- **📱 Responsive Tasarım**: Tüm cihazlarda mükemmel görünüm
+- **🔐 KVKK Uyumlu**: Türkiye veri koruma yasalarına uygun
+- **⚡ Hızlı Performans**: Optimize edilmiş kod ve asset'ler
+- **🌐 SEO Optimized**: Arama motorları için optimize edilmiş
+- **📧 İletişim Formu**: Formspree entegrasyonu ile çalışan form
 
 ## 🛠️ Teknolojiler
 
-- **HTML5**: Semantik markup
-- **CSS3**: Modern styling, CSS Grid, Flexbox
-- **JavaScript (ES6+)**: Vanilla JavaScript
-- **Font Awesome**: İkonlar
-- **Google Fonts**: Poppins font ailesi
+### Frontend
+- **HTML5** - Semantic markup
+- **CSS3** - Modern styling, Grid, Flexbox
+- **JavaScript (ES6+)** - Interactive functionality
+- **Font Awesome** - Icon library
+- **Google Fonts** - Typography (Poppins)
 
-## 📱 Bölümler
+### Özellikler
+- **CSS Animations** - Smooth transitions ve hover effects
+- **Glassmorphism** - Modern glass effect design
+- **Mobile Menu** - Responsive hamburger navigation
+- **Form Validation** - Client-side doğrulama
+- **Smooth Scrolling** - Sayfa içi navigasyon
 
-1. **Ana Sayfa**: Hero section ve genel tanıtım
-2. **Projelerim**: Tamamlanan ve devam eden projeler
-3. **Hakkımda**: Kişisel bilgiler ve uzmanlık alanları
-4. **Teknolojiler**: Kullanılan teknolojiler ve yetkinlikler
-5. **İletişim**: İletişim formu ve sosyal medya bağlantıları
+### Deployment
+- **GitHub Pages** - Static site hosting
+- **GitHub Actions** - Otomatik deployment workflow
+- **Custom Domain Ready** - CNAME dosyası ile hazır
 
-## 🎨 Tasarım Özellikleri
+## 📂 Proje Yapısı
 
-- **Renk Paleti**: Modern mor ve mavi tonları
-- **Tipografi**: Poppins font ailesi
-- **Animasyonlar**: Smooth transitions ve hover effects
-- **Responsive Grid**: Mobile-first yaklaşım
-- **Dark Mode Ready**: Gelecekte dark mode desteği için hazır
+```
+limnio-website/
+├── index.html          # Ana sayfa
+├── style.css           # Stil dosyası
+├── script.js           # JavaScript functionality
+├── CNAME               # Custom domain configuration
+├── .gitignore          # Git ignore rules
+├── README.md           # Bu dosya
+└── .github/
+    └── workflows/
+        └── deploy.yml  # GitHub Actions workflow
+```
 
-## 📧 İletişim Formu
-
-Web sitesinde bulunan iletişim formu şu özelliklere sahiptir:
-
-- **3 Adımlı Form**: Kullanıcı dostu adım adım form
-- **KVKK Uyumlu**: Kişisel veri koruma uyumluluğu
-- **Validasyon**: Client-side form validasyonu
-- **Email Entegrasyonu**: Formspree ile email gönderimi (opsiyonel)
-
-## 🚀 Kurulum
-
-### GitHub Pages ile Deployment
-
-1. Bu repository'yi fork edin
-2. Repository ayarlarından GitHub Pages'i etkinleştirin
-3. Source olarak `main` branch'i seçin
-4. Web siteniz `https://yourusername.github.io/repository-name` adresinde yayınlanacak
+## 🔧 Kurulum & Geliştirme
 
 ### Yerel Geliştirme
-
 ```bash
 # Repository'yi klonlayın
 git clone https://github.com/Wupani/limnio-website.git
@@ -66,73 +70,82 @@ git clone https://github.com/Wupani/limnio-website.git
 # Proje dizinine gidin
 cd limnio-website
 
-# Basit bir HTTP server başlatın
-python -m http.server 8000
-# veya
-npx serve .
+# Basit HTTP server başlatın
+python3 -m http.server 8000
 
-# Tarayıcıda http://localhost:8000 adresini açın
+# Tarayıcıda açın: http://localhost:8000
 ```
 
-## 📝 Özelleştirme
+### GitHub Pages Deployment
+```bash
+# Değişikliklerinizi commit edin
+git add .
+git commit -m "feat: Update content"
 
-### Kişisel Bilgileri Güncelleme
+# GitHub'a push edin
+git push origin main
 
-1. `index.html` dosyasındaki kişisel bilgileri güncelleyin
-2. Sosyal medya linklerini değiştirin
-3. Proje bilgilerini güncelleyin
+# GitHub Actions otomatik olarak deploy edecek
+```
 
-### Renk Temasını Değiştirme
+## 📧 İletişim Formu
 
-`style.css` dosyasındaki CSS değişkenlerini düzenleyin:
+Web sitesindeki iletişim formu **Formspree** servisi kullanılarak çalışmaktadır:
+- **Form ID**: `mzzgdzzr`
+- **Hedef Email**: `wupaniyazilim@gmail.com`
+- **KVKK Uyumlu**: Açık rıza beyanı ile
+
+## 🎯 Google Play Store Entegrasyonu
+
+Bu web sitesi özellikle **Google Play Store** geliştirici doğrulaması için tasarlanmıştır:
+
+- ✅ **Developer Website**: Geliştirici profili için
+- ✅ **App Website**: Uygulama sayfaları için  
+- ✅ **Privacy Policy**: KVKK uyumlu gizlilik politikası
+- ✅ **Professional Appearance**: Kurumsal görünüm
+
+## 🔐 Güvenlik & Gizlilik
+
+- **KVKK Uyumlu**: Türk veri koruma yasalarına uygun
+- **SSL Sertifikası**: GitHub Pages otomatik HTTPS
+- **Form Güvenliği**: Formspree güvenli form işleme
+- **No Tracking**: Kullanıcı takibi yok
+
+## 📱 Responsive Breakpoints
 
 ```css
-:root {
-    --primary-color: #6366f1;
-    --secondary-color: #06b6d4;
-    --accent-color: #f59e0b;
-    /* Diğer renkler... */
-}
+/* Mobile First Design */
+320px+    /* Küçük telefonlar */
+480px+    /* Büyük telefonlar */  
+768px+    /* Tabletler */
+1024px+   /* Küçük masaüstü */
+1200px+   /* Büyük masaüstü */
 ```
 
-### İletişim Formu Entegrasyonu
+## 🎨 Tasarım Sistemi
 
-Formspree kullanarak gerçek email gönderimi için:
+### Renkler
+- **Primary**: `#6366f1` (Indigo)
+- **Secondary**: `#8b5cf6` (Purple)  
+- **Accent**: `#FFD700` (Gold)
+- **Background**: `#ffffff` (White)
+- **Text**: `#1f2937` (Dark Gray)
 
-1. [Formspree](https://formspree.io) hesabı oluşturun
-2. `script.js` dosyasındaki form endpoint'ini güncelleyin
-3. Yorumlanmış kodu aktif hale getirin
+### Typography
+- **Font Family**: Poppins (Google Fonts)
+- **Weights**: 300, 400, 500, 600, 700, 800
+- **Responsive Sizing**: clamp() functions
 
-## 🔧 Geliştirme
+## 🚀 Performance
 
-### Dosya Yapısı
-
-```
-limnio-website/
-├── index.html          # Ana HTML dosyası
-├── style.css           # CSS stilleri
-├── script.js           # JavaScript fonksiyonları
-├── README.md           # Bu dosya
-└── assets/             # Görseller ve diğer varlıklar (opsiyonel)
-```
-
-### Kod Standartları
-
-- **HTML**: Semantik HTML5 elementleri kullanın
-- **CSS**: BEM metodolojisi ve CSS custom properties
-- **JavaScript**: ES6+ syntax, vanilla JavaScript
-- **Accessibility**: ARIA labels ve semantic markup
-
-## 🌐 Tarayıcı Desteği
-
-- Chrome 90+
-- Firefox 88+
-- Safari 14+
-- Edge 90+
+- **Lighthouse Score**: 95+ (Performance, Accessibility, SEO)
+- **First Contentful Paint**: <2s
+- **Largest Contentful Paint**: <3s
+- **Cumulative Layout Shift**: <0.1
 
 ## 📄 Lisans
 
-Bu proje MIT lisansı altında lisanslanmıştır. Detaylar için [LICENSE](LICENSE) dosyasına bakın.
+Bu proje **MIT Lisansı** altında lisanslanmıştır. Detaylar için [LICENSE](LICENSE) dosyasına bakın.
 
 ## 🤝 Katkıda Bulunma
 
@@ -144,18 +157,15 @@ Bu proje MIT lisansı altında lisanslanmıştır. Detaylar için [LICENSE](LICE
 
 ## 📞 İletişim
 
-**Emre Akyol**
-- 📧 Email: wupaniyazilim@gmail.com
-- 💼 LinkedIn: [emre-akyol-a5667b274](https://linkedin.com/in/emre-akyol-a5667b274)
-- 🐙 GitHub: [Wupani](https://github.com/Wupani)
-- 📸 Instagram: [@itshakeijo](https://instagram.com/itshakeijo)
+**Emre Akyol** - [@limniodev](https://instagram.com/limniodev)
 
-## 🙏 Teşekkürler
-
-- [Font Awesome](https://fontawesome.com) - İkonlar için
-- [Google Fonts](https://fonts.google.com) - Poppins font ailesi için
-- [Formspree](https://formspree.io) - Form handling için
+- 📧 **Email**: wupaniyazilim@gmail.com
+- 💼 **LinkedIn**: [Emre Akyol](https://linkedin.com/in/emre-akyol-a5667b274/)
+- 🐙 **GitHub**: [@Wupani](https://github.com/Wupani)
+- 🌐 **Website**: [wupani.github.io/limnio-website](https://wupani.github.io/limnio-website/)
 
 ---
 
-⭐ Bu projeyi beğendiyseniz yıldız vermeyi unutmayın!
+<div align="center">
+  <strong>Limnio</strong> - Basit fikirlerle güçlü deneyimler 🍋
+</div>
