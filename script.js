@@ -44,10 +44,13 @@ const navLinks = document.querySelectorAll('.nav-link');
 
 hamburger.addEventListener('click', (e) => {
     e.stopPropagation();
+    console.log('Hamburger menu clicked'); // Debug log
     const isActive = hamburger.classList.contains('active');
+    console.log('Menu was active:', isActive); // Debug log
     
     hamburger.classList.toggle('active');
     navMenu.classList.toggle('active');
+    console.log('Menu now active:', hamburger.classList.contains('active')); // Debug log
     
     // Enhanced body scroll management
     if (!isActive) {
@@ -139,13 +142,17 @@ document.addEventListener('DOMContentLoaded', function() {
 
 // Enhanced smooth scrolling for navigation links
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-    anchor.addEventListener('click', function (e) {
+    // Add both click and touchend events for better mobile support
+    const handleNavigation = function (e) {
         e.preventDefault();
+        console.log('Navigation link clicked:', this.getAttribute('href')); // Debug log
         const target = document.querySelector(this.getAttribute('href'));
+        console.log('Target element found:', target); // Debug log
         
         if (target) {
             // Close mobile menu first if open
-            if (hamburger.classList.contains('active')) {
+            if (hamburger && hamburger.classList.contains('active')) {
+                console.log('Closing mobile menu...'); // Debug log
                 hamburger.classList.remove('active');
                 navMenu.classList.remove('active');
                 document.body.style.overflow = '';
@@ -166,16 +173,22 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             }
             
             // Calculate navbar offset for accurate positioning
-            const navbarHeight = navbar.offsetHeight;
+            const navbarHeight = navbar ? navbar.offsetHeight : 0;
             const targetPosition = target.offsetTop - navbarHeight;
+            console.log('Scrolling to position:', targetPosition); // Debug log
             
             // Smooth scroll with easing
             window.scrollTo({
                 top: targetPosition,
                 behavior: 'smooth'
             });
+            console.log('Scroll initiated'); // Debug log
         }
-    });
+    };
+    
+    // Add event listeners for both click and touch events
+    anchor.addEventListener('click', handleNavigation);
+    anchor.addEventListener('touchend', handleNavigation);
 });
 
 // Initialize active nav link on page load
