@@ -571,4 +571,100 @@ If you're a developer too, let's connect!
 📧 wupaniyazilim@gmail.com
 🔗 https://linkedin.com/in/emre-akyol-a5667b274
 🐙 https://github.com/Wupani
-`); 
+`);
+
+// ============================
+// MULTILINGUAL SUPPORT SYSTEM
+// ============================
+
+// Translation data
+const translations = {
+    tr: {
+        // Navigation
+        'nav.home': 'Ana Sayfa',
+        'nav.projects': 'Projelerim',
+        'nav.about': 'Hakkımda',
+        'nav.technologies': 'Teknolojiler',
+        'nav.contact': 'İletişim',
+        
+        // Hero Section
+        'hero.subtitle': 'Basit fikirlerle güçlü deneyimler',
+        'hero.cta': 'Projelerim',
+        
+        // Sections
+        'sections.projects': 'Projelerim',
+        'sections.about': 'Hakkımda',
+        'sections.technologies': 'Teknolojiler & Yazılım Dilleri',
+        'sections.contact': 'İletişim'
+    },
+    en: {
+        // Navigation
+        'nav.home': 'Home',
+        'nav.projects': 'Projects',
+        'nav.about': 'About',
+        'nav.technologies': 'Technologies',
+        'nav.contact': 'Contact',
+        
+        // Hero Section
+        'hero.subtitle': 'Simple ideas, powerful experiences',
+        'hero.cta': 'My Projects',
+        
+        // Sections
+        'sections.projects': 'My Projects',
+        'sections.about': 'About Me',
+        'sections.technologies': 'Technologies & Programming Languages',
+        'sections.contact': 'Contact'
+    }
+};
+
+// Current language
+let currentLanguage = localStorage.getItem('preferred-language') || 'tr';
+
+// Language switching functionality
+function initLanguageSystem() {
+    const langButtons = document.querySelectorAll('.lang-btn');
+    
+    // Set initial language
+    setLanguage(currentLanguage);
+    
+    // Add click handlers
+    langButtons.forEach(btn => {
+        btn.addEventListener('click', (e) => {
+            e.preventDefault();
+            const lang = btn.getAttribute('data-lang');
+            setLanguage(lang);
+        });
+    });
+}
+
+function setLanguage(lang) {
+    if (!translations[lang]) return;
+    
+    currentLanguage = lang;
+    localStorage.setItem('preferred-language', lang);
+    
+    // Update button states
+    document.querySelectorAll('.lang-btn').forEach(btn => {
+        btn.classList.toggle('active', btn.getAttribute('data-lang') === lang);
+    });
+    
+    // Update all translatable elements
+    document.querySelectorAll('[data-tr]').forEach(element => {
+        const key = element.getAttribute('data-tr');
+        if (translations[lang][key]) {
+            element.textContent = translations[lang][key];
+        }
+    });
+    
+    // Update HTML lang attribute
+    document.documentElement.lang = lang;
+    
+    // Show language change notification
+    const langName = lang === 'tr' ? 'Türkçe' : 'English';
+    showNotification(`🌐 ${lang === 'tr' ? 'Dil değiştirildi: ' + langName : 'Language changed: ' + langName}`, 'info');
+}
+
+// Initialize language system when DOM is loaded
+document.addEventListener('DOMContentLoaded', () => {
+    initLanguageSystem();
+}); 

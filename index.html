@@ -53,11 +53,21 @@
                 <span>Limnio</span>
             </a>
             <div class="nav-menu">
-                <a href="#hero" class="nav-link">Ana Sayfa</a>
-                <a href="#projects" class="nav-link">Projelerim</a>
-                <a href="#about" class="nav-link">Hakkımda</a>
-                <a href="#technologies" class="nav-link">Teknolojiler</a>
-                <a href="#contact" class="nav-link">İletişim</a>
+                <a href="#hero" class="nav-link" data-tr="nav.home">Ana Sayfa</a>
+                <a href="#projects" class="nav-link" data-tr="nav.projects">Projelerim</a>
+                <a href="#about" class="nav-link" data-tr="nav.about">Hakkımda</a>
+                <a href="#technologies" class="nav-link" data-tr="nav.technologies">Teknolojiler</a>
+                <a href="#contact" class="nav-link" data-tr="nav.contact">İletişim</a>
+                <div class="language-switcher">
+                    <button class="lang-btn active" data-lang="tr" title="Türkçe">
+                        <i class="fas fa-globe"></i>
+                        <span>TR</span>
+                    </button>
+                    <button class="lang-btn" data-lang="en" title="English">
+                        <i class="fas fa-globe"></i>
+                        <span>EN</span>
+                    </button>
+                </div>
             </div>
             <div class="hamburger">
                 <span></span>
@@ -75,10 +85,10 @@
                     <i class="fas fa-lemon"></i>
                 </div>
                 <h1 class="hero-title">Limnio</h1>
-                <p class="hero-subtitle">Basit fikirlerle güçlü deneyimler</p>
+                <p class="hero-subtitle" data-tr="hero.subtitle">Basit fikirlerle güçlü deneyimler</p>
                 <button type="button" class="hero-btn" onclick="document.getElementById('projects').scrollIntoView({behavior: 'smooth', block: 'start'});">
                     <i class="fas fa-rocket"></i>
-                    Projelerim
+                    <span data-tr="hero.cta">Projelerim</span>
                 </button>
             </div>
             <div class="hero-bg">
@@ -97,7 +107,7 @@
     <!-- Projects Section -->
     <section id="projects" class="projects">
         <div class="container">
-            <h2 class="section-title">Projelerim</h2>
+            <h2 class="section-title" data-tr="sections.projects">Projelerim</h2>
             <div class="projects-grid">
                 <div class="project-card">
                     <div class="project-icon">
@@ -157,7 +167,7 @@
     <!-- About Section -->
     <section id="about" class="about">
         <div class="container">
-            <h2 class="section-title">Hakkımda</h2>
+            <h2 class="section-title" data-tr="sections.about">Hakkımda</h2>
             
             <!-- Personal Story -->
             <div class="about-hero">
@@ -427,7 +437,7 @@
     <!-- Technologies Section -->
     <section id="technologies" class="technologies">
         <div class="container">
-            <h2 class="section-title">Teknolojiler & Yazılım Dilleri</h2>
+            <h2 class="section-title" data-tr="sections.technologies">Teknolojiler & Yazılım Dilleri</h2>
             <p class="section-subtitle">Kullandığım teknolojiler ve yazılım dilleri hakkında detaylı bilgiler</p>
             
             <div class="tech-categories">
@@ -1546,7 +1556,7 @@
     <!-- Contact Section -->
     <section id="contact" class="contact">
         <div class="container">
-            <h2 class="section-title">İletişim</h2>
+            <h2 class="section-title" data-tr="sections.contact">İletişim</h2>
             <div class="contact-content">
                 <div class="contact-info">
                     <h3>Benimle İletişime Geçin</h3>
