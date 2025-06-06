@@ -715,7 +715,29 @@ const translations = {
         'tech.reliability.prefix': 'Güvenilirlik:',
         'tech.purpose.title': 'Kullanım Amacı',
         'tech.why.title': 'Neden Tercih Ediyorum',
-        'tech.projects.title': 'Projelerimde Kullanımı'
+        'tech.projects.title': 'Projelerimde Kullanımı',
+        
+        // Technology Card Content - JavaScript
+        'tech.js.purpose': 'Full-stack web geliştirme, SPA uygulamaları, API geliştirme ve mobil uygulamalar',
+        'tech.js.projects': 'Web uygulamaları, REST API\'lar, gerçek zamanlı uygulamalar, otomasyon araçları',
+        
+        // Technology Card Content - Python
+        'tech.python.purpose': 'Backend geliştirme, veri bilimi, otomasyon, AI/ML ve web scraping',
+        'tech.python.projects': 'Backend API\'lar, veri analizi, otomasyon scriptleri, ML modelleri',
+        
+        // Technology Card Content - Java/Kotlin
+        'tech.java.purpose': 'Android geliştirme, kurumsal uygulamalar, backend hizmetleri',
+        'tech.java.projects': 'Native Android uygulamaları, REST API\'lar, kurumsal sistemler',
+        
+        // Technology Card Content - PHP
+        'tech.php.projects': 'Dinamik web siteleri, CMS platformları, e-ticaret çözümleri',
+        
+        // Technology Card Content - C#
+        'tech.csharp.purpose': 'Masaüstü uygulamaları, web API\'lar, Unity ile oyun geliştirme',
+        'tech.csharp.projects': 'Masaüstü uygulamaları, web API\'lar, Unity oyunları, Windows servisleri',
+        
+        // Technology Card Content - Swift/Dart
+        'tech.swift.projects': 'iOS uygulamaları, cross-platform mobil uygulamalar'
     },
     en: {
         // Navigation
@@ -853,7 +875,29 @@ const translations = {
         'tech.reliability.prefix': 'Reliability:',
         'tech.purpose.title': 'Purpose of Use',
         'tech.why.title': 'Why I Choose It',
-        'tech.projects.title': 'Usage in My Projects'
+        'tech.projects.title': 'Usage in My Projects',
+        
+        // Technology Card Content - JavaScript
+        'tech.js.purpose': 'Full-stack web development, SPA applications, API development and mobile applications',
+        'tech.js.projects': 'Web applications, REST APIs, real-time applications, automation tools',
+        
+        // Technology Card Content - Python
+        'tech.python.purpose': 'Backend development, data science, automation, AI/ML and web scraping',
+        'tech.python.projects': 'Backend APIs, data analysis, automation scripts, ML models',
+        
+        // Technology Card Content - Java/Kotlin
+        'tech.java.purpose': 'Android development, enterprise applications, backend services',
+        'tech.java.projects': 'Native Android applications, REST APIs, enterprise systems',
+        
+        // Technology Card Content - PHP
+        'tech.php.projects': 'Dynamic websites, CMS platforms, e-commerce solutions',
+        
+        // Technology Card Content - C#
+        'tech.csharp.purpose': 'Desktop applications, web APIs, Unity game development',
+        'tech.csharp.projects': 'Desktop applications, web APIs, Unity games, Windows services',
+        
+        // Technology Card Content - Swift/Dart
+        'tech.swift.projects': 'iOS applications, cross-platform mobile applications'
     }
 };
 
@@ -927,12 +971,100 @@ function setLanguage(lang) {
         }
     });
     
+    // Update specific technology card content
+    updateTechCardContent(lang);
+    
     // Update HTML lang attribute
     document.documentElement.lang = lang;
     
     // Show language change notification
     const langName = lang === 'tr' ? 'Türkçe' : 'English';
     showNotification(`🌐 ${lang === 'tr' ? 'Dil değiştirildi: ' + langName : 'Language changed: ' + langName}`, 'info');
+}
+
+// Function to update technology card content
+function updateTechCardContent(lang) {
+    // JavaScript & TypeScript card
+    const jsCard = Array.from(document.querySelectorAll('.tech-card h4')).find(h4 => h4.textContent.includes('JavaScript'));
+    if (jsCard) {
+        const jsCardContainer = jsCard.closest('.tech-card');
+        const jsPurpose = jsCardContainer.querySelector('.tech-purpose p');
+        const jsProjects = jsCardContainer.querySelector('.tech-projects p');
+        
+        if (jsPurpose && translations[lang]['tech.js.purpose']) {
+            jsPurpose.textContent = translations[lang]['tech.js.purpose'];
+        }
+        if (jsProjects && translations[lang]['tech.js.projects']) {
+            jsProjects.textContent = translations[lang]['tech.js.projects'];
+        }
+    }
+    
+    // Python card
+    const pythonCard = Array.from(document.querySelectorAll('.tech-card h4')).find(h4 => h4.textContent.includes('Python'));
+    if (pythonCard) {
+        const pythonCardContainer = pythonCard.closest('.tech-card');
+        const pythonPurpose = pythonCardContainer.querySelector('.tech-purpose p');
+        const pythonProjects = pythonCardContainer.querySelector('.tech-projects p');
+        
+        if (pythonPurpose && translations[lang]['tech.python.purpose']) {
+            pythonPurpose.textContent = translations[lang]['tech.python.purpose'];
+        }
+        if (pythonProjects && translations[lang]['tech.python.projects']) {
+            pythonProjects.textContent = translations[lang]['tech.python.projects'];
+        }
+    }
+    
+    // Java & Kotlin card
+    const javaCard = Array.from(document.querySelectorAll('.tech-card h4')).find(h4 => h4.textContent.includes('Java'));
+    if (javaCard) {
+        const javaCardContainer = javaCard.closest('.tech-card');
+        const javaPurpose = javaCardContainer.querySelector('.tech-purpose p');
+        const javaProjects = javaCardContainer.querySelector('.tech-projects p');
+        
+        if (javaPurpose && translations[lang]['tech.java.purpose']) {
+            javaPurpose.textContent = translations[lang]['tech.java.purpose'];
+        }
+        if (javaProjects && translations[lang]['tech.java.projects']) {
+            javaProjects.textContent = translations[lang]['tech.java.projects'];
+        }
+    }
+    
+    // PHP card
+    const phpCard = Array.from(document.querySelectorAll('.tech-card h4')).find(h4 => h4.textContent.includes('PHP'));
+    if (phpCard) {
+        const phpCardContainer = phpCard.closest('.tech-card');
+        const phpProjects = phpCardContainer.querySelector('.tech-projects p');
+        
+        if (phpProjects && translations[lang]['tech.php.projects']) {
+            phpProjects.textContent = translations[lang]['tech.php.projects'];
+        }
+    }
+    
+    // C# & .NET card
+    const csharpCard = Array.from(document.querySelectorAll('.tech-card h4')).find(h4 => h4.textContent.includes('C#'));
+    if (csharpCard) {
+        const csharpCardContainer = csharpCard.closest('.tech-card');
+        const csharpPurpose = csharpCardContainer.querySelector('.tech-purpose p');
+        const csharpProjects = csharpCardContainer.querySelector('.tech-projects p');
+        
+        if (csharpPurpose && translations[lang]['tech.csharp.purpose']) {
+            csharpPurpose.textContent = translations[lang]['tech.csharp.purpose'];
+        }
+        if (csharpProjects && translations[lang]['tech.csharp.projects']) {
+            csharpProjects.textContent = translations[lang]['tech.csharp.projects'];
+        }
+    }
+    
+    // Swift & Dart card
+    const swiftCard = Array.from(document.querySelectorAll('.tech-card h4')).find(h4 => h4.textContent.includes('Swift'));
+    if (swiftCard) {
+        const swiftCardContainer = swiftCard.closest('.tech-card');
+        const swiftProjects = swiftCardContainer.querySelector('.tech-projects p');
+        
+        if (swiftProjects && translations[lang]['tech.swift.projects']) {
+            swiftProjects.textContent = translations[lang]['tech.swift.projects'];
+        }
+    }
 }
 
 // Initialize language system when DOM is loaded
