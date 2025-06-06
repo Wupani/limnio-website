@@ -893,6 +893,46 @@ const translations = {
             'Premium iOS kullanıcı deneyimi',
             'Xcode geliştirme ortamı',
             'iOS ekosistem entegrasyonu'
+        ],
+        
+        // Database & Storage - SQL
+        'tech.sql.purpose': 'MySQL, PostgreSQL, SQLite for structured data storage',
+        'tech.sql.projects': 'Kullanıcı yönetimi, ürün katalogları, finansal veriler',
+        'tech.sql.why': [
+            'ACID uyumluluğu ve veri bütünlüğü',
+            'Karmaşık sorgular ve ilişkiler',
+            'Olgun ekosistem',
+            'Performans optimizasyonu'
+        ],
+        
+        // Database & Storage - NoSQL
+        'tech.nosql.purpose': 'MongoDB, Firebase Firestore for flexible document storage',
+        'tech.nosql.projects': 'İçerik yönetimi, gerçek zamanlı veri, mobil uygulama backend\'leri',
+        'tech.nosql.why': [
+            'Şema esnekliği',
+            'Hızlı geliştirme',
+            'Yatay ölçeklenebilirlik',
+            'JSON benzeri belgeler'
+        ],
+        
+        // Database & Storage - Firebase
+        'tech.firebase.purpose': 'Komple mobil/web backend, kimlik doğrulama, gerçek zamanlı veritabanı',
+        'tech.firebase.projects': 'Mobil uygulama backend\'leri, gerçek zamanlı uygulamalar, kullanıcı kimlik doğrulama',
+        'tech.firebase.why': [
+            'Komple BaaS çözümü',
+            'Gerçek zamanlı senkronizasyon',
+            'Kolay kimlik doğrulama',
+            'Google altyapısı'
+        ],
+        
+        // DevOps & Tools - Git
+        'tech.git.purpose': 'Versiyon kontrolü, işbirlikli geliştirme, CI/CD, proje yönetimi',
+        'tech.git.projects': 'Tüm proje versiyon kontrolü, takım işbirliği, otomatik dağıtımlar',
+        'tech.git.why': [
+            'Endüstri standardı versiyon kontrolü',
+            'Branching ve merging stratejileri',
+            'GitHub Actions CI/CD',
+            'Açık kaynak işbirliği'
         ]
     },
     en: {
@@ -1209,6 +1249,46 @@ const translations = {
             'Premium iOS user experience',
             'Xcode development environment',
             'iOS ecosystem integration'
+        ],
+        
+        // Database & Storage - SQL
+        'tech.sql.purpose': 'MySQL, PostgreSQL, SQLite for structured data storage',
+        'tech.sql.projects': 'User management, product catalogs, financial data',
+        'tech.sql.why': [
+            'ACID compliance and data integrity',
+            'Complex queries and relationships',
+            'Mature ecosystem',
+            'Performance optimization'
+        ],
+        
+        // Database & Storage - NoSQL
+        'tech.nosql.purpose': 'MongoDB, Firebase Firestore for flexible document storage',
+        'tech.nosql.projects': 'Content management, real-time data, mobile app backends',
+        'tech.nosql.why': [
+            'Schema flexibility',
+            'Rapid development',
+            'Horizontal scalability',
+            'JSON-like documents'
+        ],
+        
+        // Database & Storage - Firebase
+        'tech.firebase.purpose': 'Complete mobile/web backend, authentication, real-time database',
+        'tech.firebase.projects': 'Mobile app backends, real-time applications, user authentication',
+        'tech.firebase.why': [
+            'Complete BaaS solution',
+            'Real-time synchronization',
+            'Easy authentication',
+            'Google infrastructure'
+        ],
+        
+        // DevOps & Tools - Git
+        'tech.git.purpose': 'Version control, collaborative development, CI/CD, project management',
+        'tech.git.projects': 'All project version control, team collaboration, automated deployments',
+        'tech.git.why': [
+            'Industry standard version control',
+            'Branching and merging strategies',
+            'GitHub Actions CI/CD',
+            'Open source collaboration'
         ]
     }
 };
@@ -1461,6 +1541,14 @@ function updateTechCardContent(lang) {
       updateCardByTitle('Flutter', 'tech.flutter', lang);
       updateCardByTitle('React Native', 'tech.reactnative', lang);
       updateCardByTitle('iOS Development', 'tech.ios', lang);
+      
+      // Update Database & Storage cards
+      updateCardByTitle('SQL Databases', 'tech.sql', lang);
+      updateCardByTitle('NoSQL Databases', 'tech.nosql', lang);
+      updateCardByTitle('Firebase Platform', 'tech.firebase', lang);
+      
+      // Update DevOps & Tools cards
+      updateCardByTitle('Git & GitHub', 'tech.git', lang);
   }
   
   // Helper function to update cards by title
