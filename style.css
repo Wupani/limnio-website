@@ -524,6 +524,22 @@ body {
     transform: scale(1.05);
 }
 
+.project-buttons {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+.project-btn-secondary {
+    background: linear-gradient(135deg, #22c55e, #16a34a);
+    color: white;
+}
+
+.project-btn-secondary:hover {
+    background: linear-gradient(135deg, #16a34a, #15803d);
+    transform: scale(1.05);
+}
+
 .project-card.coming-soon {
     background: linear-gradient(135deg, #f3f4f6, #e5e7eb);
     color: var(--text-secondary);

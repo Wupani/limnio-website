@@ -608,6 +608,8 @@ const translations = {
         'project.hr.description': 'Kapsamlı İnsan Kaynakları CRM uygulaması. Çalışan yönetimi, işe alım süreçleri ve performans takibi için geliştirilmiş modern web uygulaması.',
         'project.gymdesk.title': 'GymDesk',
         'project.gymdesk.description': 'Modern spor salonu yönetim sistemi. Üye yönetimi, ödeme takibi, antrenman programları ve vücut ölçümleri için geliştirilmiş cross-platform desktop uygulaması.',
+        'project.gymdesk.github': 'GitHub\'da Görüntüle',
+        'project.gymdesk.download': 'İndir v1.0.0',
         'project.coming.title': 'Yakında...',
         'project.coming.description': 'Yeni projeler geliştirme aşamasında. Takipte kalın!',
         
@@ -996,6 +998,8 @@ const translations = {
         'project.hr.description': 'Comprehensive Human Resources CRM application. Modern web application developed for employee management, recruitment processes and performance tracking.',
         'project.gymdesk.title': 'GymDesk',
         'project.gymdesk.description': 'Modern gym management system. Cross-platform desktop application developed for member management, payment tracking, workout programs and body measurements.',
+        'project.gymdesk.github': 'View on GitHub',
+        'project.gymdesk.download': 'Download v1.0.0',
         'project.coming.title': 'Coming Soon...',
         'project.coming.description': 'New projects are under development. Stay tuned!',
         
