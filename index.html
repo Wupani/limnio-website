@@ -36,7 +36,7 @@
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;900&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
     
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
@@ -58,15 +58,20 @@
                 <a href="#about" class="nav-link" data-tr="nav.about">Hakkımda</a>
                 <a href="#technologies" class="nav-link" data-tr="nav.technologies">Teknolojiler</a>
                 <a href="#contact" class="nav-link" data-tr="nav.contact">İletişim</a>
-                <div class="language-switcher">
-                    <button class="lang-btn active" data-lang="tr" title="Türkçe">
-                        <i class="fas fa-globe"></i>
-                        <span>TR</span>
+                <div class="nav-controls">
+                    <button class="theme-toggle" title="Tema Değiştir" data-tr-title="theme.toggle">
+                        <i class="fas fa-sun" id="theme-icon"></i>
                     </button>
-                    <button class="lang-btn" data-lang="en" title="English">
-                        <i class="fas fa-globe"></i>
-                        <span>EN</span>
-                    </button>
+                    <div class="language-switcher">
+                        <button class="lang-btn active" data-lang="tr" title="Türkçe">
+                            <i class="fas fa-globe"></i>
+                            <span>TR</span>
+                        </button>
+                        <button class="lang-btn" data-lang="en" title="English">
+                            <i class="fas fa-globe"></i>
+                            <span>EN</span>
+                        </button>
+                    </div>
                 </div>
             </div>
             <div class="hamburger">

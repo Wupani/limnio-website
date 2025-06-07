@@ -6,29 +6,111 @@
 }
 
 :root {
-    --primary-color: #6366f1;
-    --primary-dark: #4f46e5;
-    --primary-light: #818cf8;
-    --secondary-color: #06b6d4;
-    --accent-color: #f59e0b;
-    --text-primary: #1f2937;
-    --text-secondary: #6b7280;
-    --text-light: #9ca3af;
+    /* Limnio Brand Colors - Lemon Theme */
+    --primary-color: #eab308;      /* Limon sarısı - ana marka rengi */
+    --primary-dark: #ca8a04;       /* Koyu sarı - hover states */
+    --primary-light: #fde047;      /* Açık sarı - highlights */
+    --secondary-color: #22c55e;    /* Limon yaprağı yeşili */
+    --accent-color: #f97316;       /* Turuncu - call-to-action */
+    --tertiary-color: #06b6d4;     /* Cyan - teknoloji vurgusu */
+    
+    /* Text Colors */
+    --text-primary: #1f2937;       /* Ana metin */
+    --text-secondary: #4b5563;     /* İkincil metin */
+    --text-light: #6b7280;         /* Açık metin */
+    --text-muted: #9ca3af;         /* Soluk metin */
+    
+    /* Background Colors */
     --bg-primary: #ffffff;
-    --bg-secondary: #f9fafb;
-    --bg-dark: #111827;
+    --bg-secondary: #fffbeb;       /* Açık sarı arka plan */
+    --bg-tertiary: #fef3c7;        /* Sarı ton arka plan */
+    --bg-dark: #0f172a;            /* Dark mode ana */
+    --bg-dark-secondary: #1e293b;  /* Dark mode ikincil */
+    
+    /* Border & Shadows */
     --border-color: #e5e7eb;
+    --border-accent: #fbbf24;       /* Sarı border */
     --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.05);
     --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
     --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
     --shadow-xl: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);
+    --shadow-brand: 0 10px 25px -5px rgb(234 179 8 / 0.3);
+    
+    /* Modern Gradients */
     --gradient-primary: linear-gradient(135deg, var(--primary-color), var(--primary-dark));
-    --gradient-secondary: linear-gradient(135deg, var(--secondary-color), #0891b2);
+    --gradient-secondary: linear-gradient(135deg, var(--secondary-color), #16a34a);
+    --gradient-warm: linear-gradient(135deg, #fbbf24, #f59e0b, #f97316);
+    --gradient-cool: linear-gradient(135deg, #06b6d4, #0891b2);
+    --gradient-brand: linear-gradient(135deg, #fde047, #eab308, #ca8a04);
+    
+    /* Border Radius */
     --border-radius: 12px;
     --border-radius-lg: 16px;
     --border-radius-xl: 24px;
+    --border-radius-2xl: 32px;
+    
+    /* Transitions */
     --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-    --font-family: 'Poppins', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    --transition-fast: all 0.15s ease;
+    --transition-slow: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+    
+    /* Typography */
+    --font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    --font-mono: 'JetBrains Mono', 'Fira Code', Consolas, monospace;
+    --font-weight-light: 300;
+    --font-weight-normal: 400;
+    --font-weight-medium: 500;
+    --font-weight-semibold: 600;
+    --font-weight-bold: 700;
+    --font-weight-black: 900;
+    
+    /* Typography Scale */
+    --text-xs: 0.75rem;     /* 12px */
+    --text-sm: 0.875rem;    /* 14px */
+    --text-base: 1rem;      /* 16px */
+    --text-lg: 1.125rem;    /* 18px */
+    --text-xl: 1.25rem;     /* 20px */
+    --text-2xl: 1.5rem;     /* 24px */
+    --text-3xl: 1.875rem;   /* 30px */
+    --text-4xl: 2.25rem;    /* 36px */
+    --text-5xl: 3rem;       /* 48px */
+    
+    /* Spacing Scale */
+    --space-1: 0.25rem;     /* 4px */
+    --space-2: 0.5rem;      /* 8px */
+    --space-3: 0.75rem;     /* 12px */
+    --space-4: 1rem;        /* 16px */
+    --space-5: 1.25rem;     /* 20px */
+    --space-6: 1.5rem;      /* 24px */
+    --space-8: 2rem;        /* 32px */
+    --space-10: 2.5rem;     /* 40px */
+    --space-12: 3rem;       /* 48px */
+    --space-16: 4rem;       /* 64px */
+    --space-20: 5rem;       /* 80px */
+    
+    /* Z-index Scale */
+    --z-dropdown: 1000;
+    --z-sticky: 1020;
+    --z-fixed: 1030;
+    --z-modal-backdrop: 1040;
+    --z-modal: 1050;
+    --z-popover: 1060;
+    --z-tooltip: 1070;
+    --z-toast: 1080;
+}
+
+/* Dark Mode Variables */
+[data-theme="dark"] {
+    --text-primary: #f8fafc;
+    --text-secondary: #cbd5e1;
+    --text-light: #94a3b8;
+    --text-muted: #64748b;
+    --bg-primary: var(--bg-dark);
+    --bg-secondary: var(--bg-dark-secondary);
+    --bg-tertiary: #334155;
+    --border-color: #374151;
+    --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.3), 0 2px 4px -2px rgb(0 0 0 / 0.3);
+    --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.3), 0 4px 6px -4px rgb(0 0 0 / 0.3);
 }
 
 html {
@@ -227,11 +309,47 @@ body {
     background: var(--primary-color);
 }
 
+/* Navigation Controls */
+.nav-controls {
+    display: flex;
+    align-items: center;
+    gap: var(--space-3);
+    margin-left: auto;
+}
+
+.theme-toggle {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    border: none;
+    border-radius: var(--border-radius);
+    background: rgba(234, 179, 8, 0.1);
+    color: var(--primary-color);
+    cursor: pointer;
+    transition: var(--transition);
+    font-size: 1.1rem;
+}
+
+.theme-toggle:hover {
+    background: rgba(234, 179, 8, 0.2);
+    transform: scale(1.05);
+}
+
+[data-theme="dark"] .theme-toggle {
+    background: rgba(251, 191, 36, 0.1);
+    color: var(--primary-light);
+}
+
+[data-theme="dark"] .theme-toggle:hover {
+    background: rgba(251, 191, 36, 0.2);
+}
+
 /* Language Switcher */
 .language-switcher {
     display: flex;
     gap: 0.5rem;
-    margin-left: auto;
     align-items: center;
 }
 
@@ -452,8 +570,8 @@ body {
 }
 
 .project-card:hover {
-    transform: translateY(-8px);
-    box-shadow: var(--shadow-xl);
+    transform: translateY(-8px) scale(1.02);
+    box-shadow: var(--shadow-brand);
 }
 
 .project-card:hover::before {
@@ -604,9 +722,10 @@ body {
 .status-dot {
     width: 8px;
     height: 8px;
-    background: #22c55e;
+    background: var(--secondary-color);
     border-radius: 50%;
     animation: pulse 2s infinite;
+    box-shadow: 0 0 10px rgba(34, 197, 94, 0.4);
 }
 
 .about-intro h3 {
@@ -821,9 +940,10 @@ body {
 .status-dot {
     width: 8px;
     height: 8px;
-    background: #22c55e;
+    background: var(--secondary-color);
     border-radius: 50%;
     animation: pulse 2s infinite;
+    box-shadow: 0 0 10px rgba(34, 197, 94, 0.4);
 }
 
 .about-intro h3 {
@@ -1091,8 +1211,8 @@ body {
 }
 
 .tech-card:hover {
-    transform: translateY(-4px);
-    box-shadow: var(--shadow-lg);
+    transform: translateY(-5px);
+    box-shadow: 0 15px 35px rgba(234, 179, 8, 0.15);
 }
 
 .tech-header {
@@ -2348,4 +2468,66 @@ button.hero-btn {
     display: flex;
     align-items: center;
     justify-content: center;
+}
+
+/* 🍋 Enhanced Animations for Limnio Brand */
+.animate-on-scroll {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.animate-on-scroll.animate-in {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Staggered animation delays */
+.project-card:nth-child(1) { transition-delay: 0ms; }
+.project-card:nth-child(2) { transition-delay: 100ms; }
+.project-card:nth-child(3) { transition-delay: 200ms; }
+
+.tech-card:nth-child(odd) { transition-delay: 0ms; }
+.tech-card:nth-child(even) { transition-delay: 150ms; }
+
+/* Improved hover effects with Limnio brand colors */
+.project-card:hover {
+    transform: translateY(-8px) scale(1.02);
+    box-shadow: var(--shadow-brand);
+}
+
+.tech-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 35px rgba(234, 179, 8, 0.15);
+}
+
+/* Performance optimizations */
+.project-card,
+.tech-card,
+.criteria-card {
+    will-change: transform;
+    backface-visibility: hidden;
+}
+
+/* Brand color updates */
+.status-dot {
+    background: var(--secondary-color);
+    box-shadow: 0 0 10px rgba(34, 197, 94, 0.4);
+}
+
+/* Dark mode improvements */
+[data-theme="dark"] .hero {
+    background: linear-gradient(135deg, #0f172a 0%, #1e293b 50%, #334155 100%);
+}
+
+[data-theme="dark"] .project-card,
+[data-theme="dark"] .tech-card {
+    background: var(--bg-dark-secondary);
+    border: 1px solid rgba(234, 179, 8, 0.2);
+}
+
+[data-theme="dark"] .project-card:hover,
+[data-theme="dark"] .tech-card:hover {
+    border-color: rgba(234, 179, 8, 0.4);
+    box-shadow: 0 15px 35px rgba(234, 179, 8, 0.2);
 } 
