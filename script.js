@@ -606,6 +606,8 @@ const translations = {
         'project.lilyum.description': 'Zarif ve kullanıcı dostu geri sayım uygulaması. Önemli etkinlikleriniz için stile geri sayım yapın.',
         'project.hr.title': 'HR Portal',
         'project.hr.description': 'Kapsamlı İnsan Kaynakları CRM uygulaması. Çalışan yönetimi, işe alım süreçleri ve performans takibi için geliştirilmiş modern web uygulaması.',
+        'project.gymdesk.title': 'GymDesk',
+        'project.gymdesk.description': 'Modern spor salonu yönetim sistemi. Üye yönetimi, ödeme takibi, antrenman programları ve vücut ölçümleri için geliştirilmiş cross-platform desktop uygulaması.',
         'project.coming.title': 'Yakında...',
         'project.coming.description': 'Yeni projeler geliştirme aşamasında. Takipte kalın!',
         
@@ -992,6 +994,8 @@ const translations = {
         'project.lilyum.description': 'Elegant and user-friendly countdown application. Stylish countdown for your important events.',
         'project.hr.title': 'HR Portal',
         'project.hr.description': 'Comprehensive Human Resources CRM application. Modern web application developed for employee management, recruitment processes and performance tracking.',
+        'project.gymdesk.title': 'GymDesk',
+        'project.gymdesk.description': 'Modern gym management system. Cross-platform desktop application developed for member management, payment tracking, workout programs and body measurements.',
         'project.coming.title': 'Coming Soon...',
         'project.coming.description': 'New projects are under development. Stay tuned!',
         
