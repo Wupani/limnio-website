@@ -526,7 +526,7 @@ body {
 
 .project-buttons {
     display: flex;
-    gap: 10px;
+    gap: 16px;
     flex-wrap: wrap;
 }
 
