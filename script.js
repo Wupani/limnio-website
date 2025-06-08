@@ -1789,6 +1789,167 @@ function initPerformanceOptimizations() {
     });
 }
 
+// SCROLL PROGRESS BAR
+function initScrollProgressBar() {
+    const progressBar = document.querySelector('.scroll-progress-bar');
+    
+    if (progressBar) {
+        window.addEventListener('scroll', () => {
+            const windowHeight = document.documentElement.scrollHeight - window.innerHeight;
+            const scrolled = (window.scrollY / windowHeight) * 100;
+            progressBar.style.width = Math.min(scrolled, 100) + '%';
+        });
+    }
+}
+
+// LOADING SCREEN
+function initLoadingScreen() {
+    const loadingScreen = document.getElementById('loadingScreen');
+    
+    if (loadingScreen) {
+        // Simulate loading time
+        setTimeout(() => {
+            loadingScreen.classList.add('fade-out');
+            
+            // Remove loading screen completely after animation
+            setTimeout(() => {
+                loadingScreen.style.display = 'none';
+                
+                // Start other animations after loading
+                initScrollAnimations();
+            }, 800);
+        }, 3000);
+    }
+}
+
+// CUSTOM CURSOR
+function initCustomCursor() {
+    const cursor = document.getElementById('cursor');
+    const cursorFollower = document.getElementById('cursorFollower');
+    
+    if (cursor && cursorFollower && window.innerWidth > 768) {
+        let isMoving = false;
+        
+        // Mouse move event
+        document.addEventListener('mousemove', (e) => {
+            if (!isMoving) {
+                requestAnimationFrame(() => {
+                    cursor.style.left = e.clientX + 'px';
+                    cursor.style.top = e.clientY + 'px';
+                    
+                    cursorFollower.style.left = e.clientX + 'px';
+                    cursorFollower.style.top = e.clientY + 'px';
+                    
+                    isMoving = false;
+                });
+                isMoving = true;
+            }
+        });
+        
+        // Add hover effects to interactive elements
+        const interactiveElements = document.querySelectorAll('a, button, .project-card, .tech-card, .nav-link, .hero-btn, .theme-toggle, .lang-btn');
+        
+        interactiveElements.forEach(el => {
+            el.addEventListener('mouseenter', () => {
+                cursor.classList.add('hover');
+                cursorFollower.classList.add('hover');
+            });
+            
+            el.addEventListener('mouseleave', () => {
+                cursor.classList.remove('hover');
+                cursorFollower.classList.remove('hover');
+            });
+        });
+        
+        // Hide cursor when leaving window
+        document.addEventListener('mouseleave', () => {
+            cursor.style.opacity = '0';
+            cursorFollower.style.opacity = '0';
+        });
+        
+        document.addEventListener('mouseenter', () => {
+            cursor.style.opacity = '1';
+            cursorFollower.style.opacity = '1';
+        });
+    }
+}
+
+// SMOOTH SCROLL ANIMATIONS
+function initScrollAnimations() {
+    const observerOptions = {
+        threshold: 0.1,
+        rootMargin: '0px 0px -50px 0px'
+    };
+    
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('animate-in');
+                
+                // Add staggered delay for multiple elements
+                const siblings = Array.from(entry.target.parentNode.children);
+                const index = siblings.indexOf(entry.target);
+                entry.target.style.transitionDelay = `${index * 0.1}s`;
+            }
+        });
+    }, observerOptions);
+    
+    // Observe all animate-on-scroll elements
+    document.querySelectorAll('.animate-on-scroll').forEach(el => {
+        observer.observe(el);
+    });
+}
+
+// ENHANCED INTERACTIONS
+function initEnhancedInteractions() {
+    // Add ripple effect to buttons
+    document.querySelectorAll('.hero-btn, .project-btn, .theme-toggle').forEach(button => {
+        button.addEventListener('click', function(e) {
+            const ripple = document.createElement('span');
+            const rect = this.getBoundingClientRect();
+            const size = Math.max(rect.width, rect.height);
+            const x = e.clientX - rect.left - size / 2;
+            const y = e.clientY - rect.top - size / 2;
+            
+            ripple.style.cssText = `
+                position: absolute;
+                width: ${size}px;
+                height: ${size}px;
+                left: ${x}px;
+                top: ${y}px;
+                background: rgba(255, 255, 255, 0.3);
+                border-radius: 50%;
+                transform: scale(0);
+                animation: ripple 0.6s ease-out;
+                pointer-events: none;
+            `;
+            
+            this.style.position = 'relative';
+            this.style.overflow = 'hidden';
+            this.appendChild(ripple);
+            
+            setTimeout(() => {
+                ripple.remove();
+            }, 600);
+        });
+    });
+    
+    // Add CSS for ripple animation
+    if (!document.getElementById('ripple-styles')) {
+        const style = document.createElement('style');
+        style.id = 'ripple-styles';
+        style.textContent = `
+            @keyframes ripple {
+                to {
+                    transform: scale(2);
+                    opacity: 0;
+                }
+            }
+        `;
+        document.head.appendChild(style);
+    }
+}
+
 // Initialize all systems when DOM is loaded
 document.addEventListener('DOMContentLoaded', () => {
     initLanguageSystem();
@@ -1796,4 +1957,18 @@ document.addEventListener('DOMContentLoaded', () => {
     initLazyLoading();
     initEnhancedAnimations();
     initPerformanceOptimizations();
+    
+    // Initialize new features
+    initScrollProgressBar();
+    initLoadingScreen();
+    initCustomCursor();
+    initEnhancedInteractions();
+    
+    // Start animations after a delay (will be triggered by loading screen completion)
+    setTimeout(() => {
+        if (!document.getElementById('loadingScreen') || 
+            document.getElementById('loadingScreen').style.display === 'none') {
+            initScrollAnimations();
+        }
+    }, 100);
 }); 

@@ -45,6 +45,38 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
+    <!-- Scroll Progress Bar -->
+    <div class="scroll-progress">
+        <div class="scroll-progress-bar"></div>
+    </div>
+
+    <!-- Loading Screen -->
+    <div class="loading-screen" id="loadingScreen">
+        <div class="loading-content">
+            <div class="loading-logo">
+                <i class="fas fa-lemon"></i>
+            </div>
+            <div class="loading-text">
+                <span class="loading-letter">L</span>
+                <span class="loading-letter">i</span>
+                <span class="loading-letter">m</span>
+                <span class="loading-letter">n</span>
+                <span class="loading-letter">i</span>
+                <span class="loading-letter">o</span>
+            </div>
+            <div class="loading-bar">
+                <div class="loading-progress"></div>
+            </div>
+            <div class="loading-copyright">
+                © 2025 Limnio - Emre Akyol. Tüm hakları saklıdır.
+            </div>
+        </div>
+    </div>
+
+    <!-- Custom Cursor -->
+    <div class="cursor" id="cursor"></div>
+    <div class="cursor-follower" id="cursorFollower"></div>
+
     <!-- Navigation -->
     <nav class="navbar">
         <div class="nav-container">
@@ -112,9 +144,9 @@
     <!-- Projects Section -->
     <section id="projects" class="projects">
         <div class="container">
-            <h2 class="section-title" data-tr="sections.projects">Projelerim</h2>
+            <h2 class="section-title animate-on-scroll" data-tr="sections.projects">Projelerim</h2>
             <div class="projects-grid">
-                <div class="project-card">
+                <div class="project-card animate-on-scroll slide-left">
                     <div class="project-icon">
                         <i class="fas fa-spa"></i>
                     </div>
@@ -133,7 +165,7 @@
                 </div>
                 
                 <!-- HR Portal Project -->
-                <div class="project-card">
+                <div class="project-card animate-on-scroll scale-up">
                     <div class="project-icon">
                         <i class="fas fa-users"></i>
                     </div>
@@ -153,7 +185,7 @@
                 </div>
                 
                 <!-- GymDesk Project -->
-                <div class="project-card">
+                <div class="project-card animate-on-scroll slide-right">
                     <div class="project-icon">
                         <i class="fas fa-dumbbell"></i>
                     </div>
@@ -184,7 +216,7 @@
     <!-- About Section -->
     <section id="about" class="about">
         <div class="container">
-            <h2 class="section-title" data-tr="sections.about">Hakkımda</h2>
+            <h2 class="section-title animate-on-scroll" data-tr="sections.about">Hakkımda</h2>
             
             <!-- Personal Story -->
             <div class="about-hero">

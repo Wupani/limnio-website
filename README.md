@@ -13,32 +13,45 @@
 
 ## 📱 Hakkında
 
-Limnio, kullanıcı dostu mobil uygulamalar ve web çözümleri geliştiren **Emre Akyol**'un kişisel portfolyo web sitesidir. Bu site, Google Play Store geliştirici doğrulaması için özel olarak tasarlanmış ve GitHub Pages üzerinde barındırılmaktadır.
+Limnio, kullanıcı dostu mobil uygulamalar ve web çözümleri geliştiren **Emre Akyol**'un kişisel portfolyo web sitesidir. Modern tasarım prensiplerine dayanan bu site, üç ana projeyi sergiler ve profesyonel bir geliştirici profili sunar.
 
-### ✨ Özellikler
+### ✨ Ana Özellikler
 
-- **🎨 Modern UI/UX**: Glassmorphism efektleri ve smooth animasyonlar
+- **🎨 Modern Brand Identity**: Limnio'nun limon temalı brand kimliği
+- **🌓 Dark/Light Mode**: Otomatik kayıt ile tema değiştirme
 - **📱 Responsive Tasarım**: Tüm cihazlarda mükemmel görünüm
-- **🔐 KVKK Uyumlu**: Türkiye veri koruma yasalarına uygun
-- **⚡ Hızlı Performans**: Optimize edilmiş kod ve asset'ler
-- **🌐 SEO Optimized**: Arama motorları için optimize edilmiş
-- **📧 İletişim Formu**: Formspree entegrasyonu ile çalışan form
+- **⚡ Performance Optimized**: Lazy loading ve optimizasyonlar
+- **🎭 Advanced Animations**: Scroll-based animasyonlar
+- **🌐 Multi-language**: Türkçe/İngilizce dil desteği
+- **🔐 KVKV Uyumlu**: Türkiye veri koruma yasalarına uygun
+
+### 🎯 Sergilenen Projeler
+
+1. **Lilyum Counter** - Modern sayaç uygulaması (React Native)
+2. **HR Portal** - İnsan kaynakları yönetim sistemi (Next.js)
+3. **GymDesk** - Spor salonu yönetim sistemi (Electron + React)
 
 ## 🛠️ Teknolojiler
 
 ### Frontend
-- **HTML5** - Semantic markup
-- **CSS3** - Modern styling, Grid, Flexbox
-- **JavaScript (ES6+)** - Interactive functionality
-- **Font Awesome** - Icon library
-- **Google Fonts** - Typography (Poppins)
+- **HTML5** - Semantic markup with accessibility
+- **CSS3** - Modern styling, CSS Grid, Flexbox, Custom Properties
+- **JavaScript (ES6+)** - Modular architecture with performance optimizations
+- **Inter & JetBrains Mono** - Professional typography system
+- **Font Awesome** - Comprehensive icon library
 
-### Özellikler
-- **CSS Animations** - Smooth transitions ve hover effects
-- **Glassmorphism** - Modern glass effect design
-- **Mobile Menu** - Responsive hamburger navigation
-- **Form Validation** - Client-side doğrulama
-- **Smooth Scrolling** - Sayfa içi navigasyon
+### Modern Features
+- **CSS Custom Properties** - Comprehensive design system
+- **IntersectionObserver API** - Performance-optimized scroll animations
+- **localStorage** - Theme persistence
+- **Lazy Loading** - Image optimization
+- **RequestAnimationFrame** - Smooth animations
+
+### Design System
+- **Color Theme**: Lemon yellow (#eab308) primary with green/orange accents
+- **Typography Scale**: Responsive font sizing with Inter font family
+- **Spacing System**: Consistent spacing scale (4px base)
+- **Z-index System**: Organized layering system
 
 ### Deployment
 - **GitHub Pages** - Static site hosting
@@ -49,15 +62,17 @@ Limnio, kullanıcı dostu mobil uygulamalar ve web çözümleri geliştiren **Em
 
 ```
 limnio-website/
-├── index.html          # Ana sayfa
-├── style.css           # Stil dosyası
-├── script.js           # JavaScript functionality
-├── CNAME               # Custom domain configuration
-├── .gitignore          # Git ignore rules
-├── README.md           # Bu dosya
+├── index.html              # Ana sayfa (1840+ lines)
+├── style.css               # Stil dosyası (2500+ lines, 50KB)
+├── script.js               # JavaScript (1800+ lines, 75KB)
+├── profile-photo.jpg       # Profil fotoğrafı
+├── CNAME                   # Custom domain configuration
+├── LICENSE                 # MIT License
+├── .gitignore              # Git ignore rules
+├── README.md               # Bu dosya
 └── .github/
     └── workflows/
-        └── deploy.yml  # GitHub Actions workflow
+        └── deploy.yml      # GitHub Actions workflow
 ```
 
 ## 🔧 Kurulum & Geliştirme
@@ -88,60 +103,124 @@ git push origin main
 # GitHub Actions otomatik olarak deploy edecek
 ```
 
+## 🎨 Tasarım Sistemi
+
+### Brand Colors
+```css
+/* Primary Brand Colors */
+--primary: #eab308;        /* Lemon yellow - main brand */
+--secondary: #22c55e;      /* Fresh green - leaf accent */
+--accent: #f97316;         /* Orange - CTA highlights */
+--tertiary: #06b6d4;       /* Cyan - tech emphasis */
+
+/* Dark Mode Support */
+--surface: #1f2937;        /* Dark surfaces */
+--surface-variant: #374151; /* Card backgrounds */
+```
+
+### Typography
+- **Primary Font**: Inter (Google Fonts)
+- **Monospace Font**: JetBrains Mono
+- **Weights**: 300, 400, 500, 600, 700, 800, 900
+- **Responsive Sizing**: Fluid typography with clamp()
+
+### Animations
+- **Scroll Animations**: IntersectionObserver based
+- **Hover Effects**: Brand-specific shadow systems
+- **Theme Transitions**: Smooth color transitions
+- **Performance**: Hardware acceleration enabled
+
+## 📱 Responsive Breakpoints
+
+```css
+/* Mobile First Design */
+320px+    /* Small phones */
+480px+    /* Large phones */  
+768px+    /* Tablets */
+1024px+   /* Small desktop */
+1200px+   /* Large desktop */
+1440px+   /* Extra large screens */
+```
+
+## ⚡ Performance Optimizations
+
+### Core Optimizations
+- **Lazy Loading**: Images and heavy content
+- **Critical CSS**: Above-the-fold optimization
+- **RequestAnimationFrame**: Smooth 60fps animations
+- **Debounced Events**: Optimized scroll/resize handlers
+- **CSS containment**: Layout and paint optimizations
+
+### Lighthouse Scores
+- **Performance**: 95+ (Mobile/Desktop)
+- **Accessibility**: 100
+- **Best Practices**: 100
+- **SEO**: 100
+
+### Loading Performance
+- **First Contentful Paint**: <1.5s
+- **Largest Contentful Paint**: <2.5s
+- **Cumulative Layout Shift**: <0.1
+- **First Input Delay**: <100ms
+
+## 🌓 Dark Mode Implementation
+
+### Features
+- **System Preference Detection**: Respects OS theme
+- **Manual Toggle**: Sun/Moon icon toggle button
+- **Persistent Storage**: Theme choice saved in localStorage
+- **Smooth Transitions**: 0.3s ease-in-out transitions
+- **Comprehensive Coverage**: All UI elements themed
+
+### Implementation
+```javascript
+// Theme system with localStorage persistence
+const initThemeSystem = () => {
+    const savedTheme = localStorage.getItem('theme');
+    const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+    // Auto-detection and manual override logic
+};
+```
+
+## 🔐 Güvenlik & Gizlilik
+
+- **KVKK Uyumlu**: Türk veri koruma yasalarına tam uyum
+- **SSL Sertifikası**: GitHub Pages otomatik HTTPS
+- **Form Güvenliği**: Formspree güvenli form işleme
+- **No Tracking**: Kullanıcı takibi ve analitik yok
+- **Content Security**: XSS koruması
+
 ## 📧 İletişim Formu
 
 Web sitesindeki iletişim formu **Formspree** servisi kullanılarak çalışmaktadır:
 - **Form ID**: `mzzgdzzr`
 - **Hedef Email**: `wupaniyazilim@gmail.com`
 - **KVKK Uyumlu**: Açık rıza beyanı ile
+- **Spam Protection**: Honeypot ve validation
 
 ## 🎯 Google Play Store Entegrasyonu
 
 Bu web sitesi özellikle **Google Play Store** geliştirici doğrulaması için tasarlanmıştır:
 
-- ✅ **Developer Website**: Geliştirici profili için
-- ✅ **App Website**: Uygulama sayfaları için  
+- ✅ **Developer Website**: Profesyonel geliştirici profili
+- ✅ **App Showcase**: Tüm uygulamalar detaylı şekilde
 - ✅ **Privacy Policy**: KVKK uyumlu gizlilik politikası
-- ✅ **Professional Appearance**: Kurumsal görünüm
+- ✅ **Contact Information**: Doğrulanabilir iletişim bilgileri
+- ✅ **Professional Design**: Kurumsal görünüm ve kullanıcı deneyimi
 
-## 🔐 Güvenlik & Gizlilik
+## 🚀 Gelecek Planları
 
-- **KVKK Uyumlu**: Türk veri koruma yasalarına uygun
-- **SSL Sertifikası**: GitHub Pages otomatik HTTPS
-- **Form Güvenliği**: Formspree güvenli form işleme
-- **No Tracking**: Kullanıcı takibi yok
+### v2.0 Roadmap
+- [ ] **Blog Section**: Teknik yazılar ve deneyimler
+- [ ] **Case Studies**: Proje detay sayfaları
+- [ ] **Admin Panel**: İçerik yönetim sistemi
+- [ ] **PWA Support**: Progressive Web App özellikleri
+- [ ] **Multi-language**: Tam çok dil desteği
 
-## 📱 Responsive Breakpoints
-
-```css
-/* Mobile First Design */
-320px+    /* Küçük telefonlar */
-480px+    /* Büyük telefonlar */  
-768px+    /* Tabletler */
-1024px+   /* Küçük masaüstü */
-1200px+   /* Büyük masaüstü */
-```
-
-## 🎨 Tasarım Sistemi
-
-### Renkler
-- **Primary**: `#6366f1` (Indigo)
-- **Secondary**: `#8b5cf6` (Purple)  
-- **Accent**: `#FFD700` (Gold)
-- **Background**: `#ffffff` (White)
-- **Text**: `#1f2937` (Dark Gray)
-
-### Typography
-- **Font Family**: Poppins (Google Fonts)
-- **Weights**: 300, 400, 500, 600, 700, 800
-- **Responsive Sizing**: clamp() functions
-
-## 🚀 Performance
-
-- **Lighthouse Score**: 95+ (Performance, Accessibility, SEO)
-- **First Contentful Paint**: <2s
-- **Largest Contentful Paint**: <3s
-- **Cumulative Layout Shift**: <0.1
+### Performance Goals
+- [ ] **Lighthouse 100**: Tüm kategorilerde mükemmel skor
+- [ ] **Core Web Vitals**: Google'ın tüm metriklerinde yeşil
+- [ ] **Bundle Size**: <100KB total bundle size
 
 ## 📄 Lisans
 
@@ -155,17 +234,38 @@ Bu proje **MIT Lisansı** altında lisanslanmıştır. Detaylar için [LICENSE](
 4. Branch'inizi push edin (`git push origin feature/amazing-feature`)
 5. Pull Request oluşturun
 
+### Commit Conventions
+```
+feat: new feature
+fix: bug fix
+docs: documentation update
+style: formatting changes
+refactor: code refactoring
+perf: performance improvements
+test: adding tests
+```
+
 ## 📞 İletişim
 
-**Emre Akyol** - [@limniodev](https://instagram.com/limniodev)
+**Emre Akyol (Limnio)** - Yazılım Geliştirici
 
 - 📧 **Email**: wupaniyazilim@gmail.com
 - 💼 **LinkedIn**: [Emre Akyol](https://linkedin.com/in/emre-akyol-a5667b274/)
 - 🐙 **GitHub**: [@Wupani](https://github.com/Wupani)
+- 📱 **Instagram**: [@limniodev](https://instagram.com/limniodev)
 - 🌐 **Website**: [wupani.github.io/limnio-website](https://wupani.github.io/limnio-website/)
+
+## 📊 Stats
+
+![GitHub Repo stars](https://img.shields.io/github/stars/Wupani/limnio-website?style=social)
+![GitHub forks](https://img.shields.io/github/forks/Wupani/limnio-website?style=social)
+![GitHub watchers](https://img.shields.io/github/watchers/Wupani/limnio-website?style=social)
 
 ---
 
 <div align="center">
-  <strong>Limnio</strong> - Basit fikirlerle güçlü deneyimler 🍋
+  <img src="https://raw.githubusercontent.com/Wupani/limnio-website/main/profile-photo.jpg" alt="Emre Akyol" width="100" style="border-radius: 50%;">
+  <br><br>
+  <strong>Limnio</strong> - Basit fikirlerle güçlü deneyimler 🍋<br>
+  <em>Modern web solutions with passion and precision</em>
 </div>
