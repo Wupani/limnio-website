@@ -126,6 +126,9 @@ body {
     letter-spacing: 0.2px;
     background-color: var(--bg-primary);
     overflow-x: hidden;
+    -webkit-text-size-adjust: 100%;
+    -ms-text-size-adjust: 100%;
+    text-size-adjust: 100%;
 }
 
 .container {
@@ -468,23 +471,28 @@ body {
     box-shadow: 
         0 4px 20px rgba(59, 130, 246, 0.4),
         0 1px 3px rgba(0, 0, 0, 0.1) !important;
-    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1) !important;
+    transition: all 0.2s ease !important;
     animation: slideInUp 1s ease-out 0.4s both;
     border: none !important;
     outline: none !important;
     text-shadow: none !important;
     position: relative !important;
-    overflow: hidden !important;
     cursor: pointer !important;
     backdrop-filter: none !important;
     -webkit-backdrop-filter: none !important;
+    width: auto !important;
+    height: auto !important;
+    min-width: auto !important;
+    min-height: auto !important;
+    max-width: none !important;
+    max-height: none !important;
 }
 
 .hero-btn:hover {
-    transform: translateY(-2px) !important;
+    transform: translateY(-1px) !important;
     box-shadow: 
-        0 8px 30px rgba(59, 130, 246, 0.6),
-        0 4px 8px rgba(0, 0, 0, 0.15) !important;
+        0 6px 20px rgba(59, 130, 246, 0.5),
+        0 2px 4px rgba(0, 0, 0, 0.1) !important;
     background: linear-gradient(135deg, #1d4ed8 0%, #4f46e5 100%) !important;
     outline: none !important;
 }
@@ -493,8 +501,8 @@ body {
     transform: translateY(0px) !important;
     transition: all 0.1s ease !important;
     box-shadow: 
-        0 2px 10px rgba(59, 130, 246, 0.4),
-        0 1px 3px rgba(0, 0, 0, 0.1) !important;
+        0 2px 8px rgba(59, 130, 246, 0.3),
+        0 1px 2px rgba(0, 0, 0, 0.1) !important;
     outline: none !important;
 }
 
@@ -506,67 +514,15 @@ body {
         0 0 0 3px rgba(59, 130, 246, 0.3) !important;
 }
 
-.hero-btn::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: -100%;
-    width: 100%;
-    height: 100%;
-    background: linear-gradient(90deg, 
-        transparent 0%, 
-        rgba(255, 255, 255, 0.1) 25%, 
-        rgba(255, 255, 255, 0.3) 50%, 
-        rgba(255, 255, 255, 0.1) 75%, 
-        transparent 100%);
-    transition: left 0.7s cubic-bezier(0.4, 0, 0.2, 1);
-    z-index: 1;
-}
-
-.hero-btn:hover::before {
-    left: 100%;
-}
-
-.hero-btn::after {
-    content: '';
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    width: 0;
-    height: 0;
-    background: radial-gradient(circle, rgba(255, 255, 255, 0.3) 0%, transparent 70%);
-    border-radius: 50%;
-    transform: translate(-50%, -50%);
-    transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
-    z-index: 0;
-}
-
-.hero-btn:hover::after {
-    width: 200px;
-    height: 200px;
-}
+/* Pseudo-elementler kaldırıldı - sadece basit hover efekti */
 
 .hero-btn i {
-    font-size: 1.5rem !important;
-    filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.3)) !important;
-    transition: all 0.3s ease !important;
-    z-index: 2 !important;
-    position: relative !important;
-}
-
-.hero-btn:hover i {
-    transform: translateX(3px) scale(1.1) !important;
-    filter: drop-shadow(0 3px 6px rgba(0, 0, 0, 0.4)) !important;
+    font-size: 1.2rem !important;
+    transition: none !important;
 }
 
 .hero-btn span {
-    z-index: 2 !important;
-    position: relative !important;
-    transition: all 0.3s ease !important;
-}
-
-.hero-btn:hover span {
-    transform: translateX(-2px) !important;
+    transition: none !important;
 }
 
 /* Button element için de aynı stiller */
@@ -584,23 +540,24 @@ button.hero-btn {
     box-shadow: 
         0 4px 20px rgba(59, 130, 246, 0.4),
         0 1px 3px rgba(0, 0, 0, 0.1) !important;
-    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1) !important;
+    transition: all 0.2s ease !important;
     animation: slideInUp 1s ease-out 0.4s both;
     border: none !important;
     outline: none !important;
     text-shadow: none !important;
     position: relative !important;
-    overflow: hidden !important;
     cursor: pointer !important;
     backdrop-filter: none !important;
     -webkit-backdrop-filter: none !important;
+    width: auto !important;
+    height: auto !important;
 }
 
 button.hero-btn:hover {
-    transform: translateY(-2px) !important;
+    transform: translateY(-1px) !important;
     box-shadow: 
-        0 8px 30px rgba(59, 130, 246, 0.6),
-        0 4px 8px rgba(0, 0, 0, 0.15) !important;
+        0 6px 20px rgba(59, 130, 246, 0.5),
+        0 2px 4px rgba(0, 0, 0, 0.1) !important;
     background: linear-gradient(135deg, #1d4ed8 0%, #4f46e5 100%) !important;
     outline: none !important;
 }
@@ -609,10 +566,12 @@ button.hero-btn:active {
     transform: translateY(0px) !important;
     transition: all 0.1s ease !important;
     box-shadow: 
-        0 2px 10px rgba(59, 130, 246, 0.4),
-        0 1px 3px rgba(0, 0, 0, 0.1) !important;
+        0 2px 8px rgba(59, 130, 246, 0.3),
+        0 1px 2px rgba(0, 0, 0, 0.1) !important;
     outline: none !important;
 }
+
+/* Child element active states kaldırıldı - artık gereksiz */
 
 button.hero-btn:focus {
     outline: none !important;
@@ -2342,6 +2301,58 @@ button.hero-btn {
 
     .projects-grid {
         grid-template-columns: 1fr;
+        gap: 1.5rem;
+        margin-top: 2rem;
+    }
+
+    .project-card {
+        padding: 1.5rem;
+        grid-template-columns: 1fr;
+        grid-template-rows: auto auto auto;
+        gap: 1.5rem;
+        min-height: auto;
+        text-align: center;
+    }
+
+    .project-icon {
+        width: 60px;
+        height: 60px;
+        margin: 0 auto;
+        align-self: center;
+        justify-self: center;
+    }
+
+    .project-icon i {
+        font-size: 1.5rem;
+    }
+
+    .project-content {
+        min-height: auto;
+        text-align: center;
+    }
+
+    .project-title {
+        font-size: 1.4rem;
+    }
+
+    .project-description {
+        font-size: 0.9rem;
+    }
+
+    .project-action {
+        align-items: center;
+        justify-content: center;
+        min-height: auto;
+    }
+
+    .project-buttons {
+        align-items: center;
+        margin-top: 0;
+    }
+
+    .project-btn {
+        padding: 10px 20px;
+        font-size: 0.9rem;
     }
 
     .about-hero-content {
@@ -2414,7 +2425,39 @@ button.hero-btn {
         font-size: 2rem;
     }
 
-    .project-card,
+    .project-card {
+        padding: 1.25rem;
+        gap: 1rem;
+    }
+
+    .project-icon {
+        width: 50px;
+        height: 50px;
+    }
+
+    .project-icon i {
+        font-size: 1.25rem;
+    }
+
+    .project-title {
+        font-size: 1.2rem;
+    }
+
+    .project-description {
+        font-size: 0.85rem;
+        line-height: 1.5;
+    }
+
+    .project-btn {
+        padding: 8px 16px;
+        font-size: 0.85rem;
+    }
+
+    .tech-tag {
+        font-size: 0.7rem;
+        padding: 3px 8px;
+    }
+
     .tech-card {
         padding: 1.5rem;
     }
@@ -3986,22 +4029,178 @@ button.security-btn:active,
     box-shadow: 0 4px 12px rgba(165, 180, 252, 0.2);
 }
 
+/* Dark theme mobil güvenlik modal optimizasyonları */
+@media (max-width: 768px) {
+    [data-theme="dark"] .security-modal .modal-container {
+        background: rgba(15, 23, 42, 0.98);
+        border: 1px solid rgba(165, 180, 252, 0.2);
+    }
+    
+    [data-theme="dark"] .security-header {
+        border-bottom-color: rgba(165, 180, 252, 0.2);
+    }
+    
+    [data-theme="dark"] .security-item {
+        background: rgba(165, 180, 252, 0.05);
+        border-color: rgba(165, 180, 252, 0.15);
+    }
+    
+    [data-theme="dark"] .platform {
+        background: rgba(99, 102, 241, 0.15);
+        color: #a5b4fc;
+        border-color: rgba(99, 102, 241, 0.3);
+    }
+    
+    [data-theme="dark"] .status-active {
+        background: rgba(34, 197, 94, 0.15);
+        color: #4ade80;
+        border-color: rgba(34, 197, 94, 0.3);
+    }
+}
+
+@media (max-width: 480px) {
+    [data-theme="dark"] .security-modal .modal-container {
+        background: rgba(15, 23, 42, 0.99);
+        border: 1px solid rgba(165, 180, 252, 0.25);
+    }
+}
+
+/* Modal kapatma butonu mobil optimizasyonu */
+@media (max-width: 768px) {
+    .modal-close {
+        width: 44px;
+        height: 44px;
+        top: 0.75rem;
+        right: 0.75rem;
+        font-size: 1.2rem;
+        border-radius: 12px;
+        background: rgba(0, 0, 0, 0.1);
+        transition: all 0.3s ease;
+    }
+    
+    .modal-close:hover {
+        background: rgba(0, 0, 0, 0.2);
+        transform: scale(1.1);
+    }
+    
+    [data-theme="dark"] .modal-close {
+        background: rgba(255, 255, 255, 0.1);
+        color: white;
+    }
+    
+    [data-theme="dark"] .modal-close:hover {
+        background: rgba(255, 255, 255, 0.2);
+    }
+}
+
+@media (max-width: 480px) {
+    .modal-close {
+        width: 40px;
+        height: 40px;
+        font-size: 1.1rem;
+        top: 0.5rem;
+        right: 0.5rem;
+    }
+    
+    .security-modal .modal-header {
+        padding: 1rem 1rem 0.75rem 1rem;
+    }
+    
+    .security-info {
+        padding: 0 1rem 1rem 1rem;
+    }
+}
+
 /* Mobile responsiveness */
 @media (max-width: 768px) {
     .security-modal .modal-container {
         width: 95vw;
         margin: 1rem;
+        max-height: 90vh;
+        overflow-y: auto;
+        border-radius: 16px;
+    }
+    
+    .security-header {
+        margin-bottom: 1.5rem;
+        padding-bottom: 1rem;
+        text-align: center;
+    }
+    
+    .security-header h4 {
+        font-size: 1.2rem;
+        margin-bottom: 0.75rem;
+    }
+    
+    .security-meta {
+        flex-direction: column;
+        gap: 0.75rem;
+        align-items: center;
+        text-align: center;
+    }
+    
+    .platform, .status {
+        padding: 0.6rem 1.2rem;
+        font-size: 0.8rem;
+        border-radius: 25px;
+        min-width: 120px;
+        justify-content: center;
+    }
+    
+    .project-url {
+        flex-direction: column;
+        gap: 0.25rem;
+        text-align: center;
+        font-size: 0.85rem;
+    }
+    
+    .project-url a {
+        word-break: break-all;
+        text-align: center;
+    }
+    
+    .security-items {
+        gap: 1.25rem;
     }
     
     .security-item {
         flex-direction: column;
         text-align: center;
         gap: 1rem;
+        padding: 1.25rem;
+        border-radius: 16px;
     }
     
-    .security-meta {
-        flex-direction: column;
-        gap: 0.5rem;
+    .security-icon {
+        width: 60px;
+        height: 60px;
+        margin: 0 auto;
+        font-size: 1.4rem;
+        border-radius: 16px;
+    }
+    
+    .security-content h5 {
+        font-size: 1rem;
+        margin-bottom: 0.75rem;
+    }
+    
+    .security-content p {
+        font-size: 0.9rem;
+        line-height: 1.6;
+        max-width: 280px;
+        margin: 0 auto;
+    }
+    
+    .security-status {
+        margin-top: 0.5rem;
+    }
+    
+    .status-badge {
+        padding: 0.6rem 1rem;
+        font-size: 0.75rem;
+        border-radius: 20px;
+        justify-content: center;
+        min-width: 100px;
     }
     
     .project-buttons {
@@ -4017,6 +4216,8 @@ button.security-btn:active,
         justify-content: center !important;
         padding: 1rem 1.5rem !important;
         font-size: 1rem !important;
+        min-height: 48px !important;
+        border-radius: 12px !important;
     }
 }
 
@@ -4059,6 +4260,208 @@ html body .project-buttons button[class~="security-btn"] i,
 html body div button[class~="security-btn"] i {
     color: white !important;
     font-size: 1rem !important;
+}
+
+/* Güvenlik modalları için küçük ekran optimizasyonu */
+@media (max-width: 480px) {
+    .security-modal .modal-container {
+        width: 98vw;
+        margin: 0.5rem;
+        max-height: 95vh;
+        border-radius: 12px;
+    }
+    
+    .security-header {
+        padding-bottom: 0.75rem;
+        margin-bottom: 1rem;
+    }
+    
+    .security-header h4 {
+        font-size: 1.1rem;
+        margin-bottom: 0.5rem;
+    }
+    
+    .security-item {
+        padding: 1rem;
+        gap: 0.75rem;
+        border-radius: 12px;
+    }
+    
+    .security-icon {
+        width: 50px;
+        height: 50px;
+        font-size: 1.2rem;
+        border-radius: 12px;
+    }
+    
+    .security-content h5 {
+        font-size: 0.95rem;
+        margin-bottom: 0.5rem;
+    }
+    
+    .security-content p {
+        font-size: 0.85rem;
+        line-height: 1.5;
+        max-width: 250px;
+    }
+    
+    .status-badge {
+        padding: 0.5rem 0.8rem;
+        font-size: 0.7rem;
+        min-width: 80px;
+    }
+    
+    .platform, .status {
+        padding: 0.5rem 1rem;
+        font-size: 0.75rem;
+        min-width: 100px;
+    }
+    
+    .project-url {
+        font-size: 0.8rem;
+    }
+}
+
+/* Kapsamlı mobil responsive optimizasyonları */
+@media (max-width: 576px) {
+    .container {
+        padding: 0 12px;
+    }
+    
+    .hero {
+        padding: 5rem 0 3rem;
+        min-height: 100vh;
+    }
+    
+    .hero-title {
+        font-size: 1.6rem;
+        line-height: 1.3;
+    }
+    
+    .hero-subtitle {
+        font-size: 0.9rem;
+        margin-bottom: 2rem;
+    }
+    
+    .hero-btn {
+        padding: 12px 20px;
+        font-size: 0.9rem;
+    }
+    
+    .projects {
+        padding: 3rem 0;
+    }
+    
+    .section-title {
+        font-size: 1.4rem;
+        margin-bottom: 1.5rem;
+    }
+    
+    .project-card {
+        padding: 1rem;
+        gap: 1rem;
+        margin-bottom: 1rem;
+    }
+    
+    .project-icon {
+        width: 45px;
+        height: 45px;
+    }
+    
+    .project-icon i {
+        font-size: 1.1rem;
+    }
+    
+    .project-title {
+        font-size: 1.1rem;
+        margin-bottom: 0.5rem;
+    }
+    
+    .project-description {
+        font-size: 0.8rem;
+        line-height: 1.4;
+        margin-bottom: 0.75rem;
+    }
+    
+    .tech-tag {
+        font-size: 0.65rem;
+        padding: 2px 6px;
+    }
+    
+    .project-btn {
+        padding: 8px 14px;
+        font-size: 0.8rem;
+    }
+    
+    .project-buttons {
+        gap: 0.5rem;
+    }
+}
+
+/* Mobil landscape modunda özel ayarlar */
+@media (max-width: 920px) and (orientation: landscape) and (max-height: 500px) {
+    .hero {
+        min-height: 90vh;
+        padding: 3rem 0 2rem;
+    }
+    
+    .hero-title {
+        font-size: 2rem;
+    }
+    
+    .hero-subtitle {
+        font-size: 1rem;
+        margin-bottom: 1.5rem;
+    }
+    
+    .floating-shapes {
+        display: none;
+    }
+    
+    .hero-logo {
+        margin-bottom: 1rem;
+    }
+    
+    .hero-logo i {
+        font-size: 3rem;
+    }
+}
+
+/* Touch-friendly button sizes */
+@media (max-width: 768px) {
+    button, .project-btn, .social-btn, .nav-link {
+        min-height: 44px;
+        min-width: 44px;
+    }
+    
+    .tech-tag {
+        min-height: 24px;
+        display: inline-flex;
+        align-items: center;
+    }
+    
+    /* Özel proje kartı düzenlemesi mobil için */
+    .project-card {
+        grid-template-columns: 1fr !important;
+        text-align: center !important;
+        max-width: 100% !important;
+        margin: 0 0 1.5rem 0 !important;
+    }
+    
+    .project-content {
+        order: 2;
+    }
+    
+    .project-action {
+        order: 3;
+        margin-top: 0 !important;
+    }
+    
+    .project-icon {
+        order: 1;
+        justify-self: center !important;
+        margin: 0 auto 1rem auto !important;
+    }
 }
 
  
