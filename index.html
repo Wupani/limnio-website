@@ -42,7 +42,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     
     <!-- Styles -->
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="style.css?v=20250609006">
 </head>
 <body>
     <!-- Scroll Progress Bar -->
@@ -147,88 +147,146 @@
             <h2 class="section-title animate-on-scroll" data-tr="sections.projects">Projelerim</h2>
             <div class="projects-grid">
                 <div class="project-card animate-on-scroll slide-left">
+                    <!-- Left: Icon -->
                     <div class="project-icon">
                         <i class="fas fa-spa"></i>
                     </div>
-                    <h3 class="project-title" data-tr="project.lilyum.title">Lilyum Sayacı</h3>
-                    <p class="project-description" data-tr="project.lilyum.description">
-                        Zarif ve kullanıcı dostu geri sayım uygulaması. Önemli etkinlikleriniz için stile geri sayım yapın.
-                    </p>
-                    <div class="project-tech">
-                        <span class="tech-tag">Android</span>
-                        <span class="tech-tag">Material Design</span>
+                    
+                    <!-- Middle: Content -->
+                    <div class="project-content">
+                        <h3 class="project-title" data-tr="project.lilyum.title">Lilyum Sayacı</h3>
+                        <p class="project-description" data-tr="project.lilyum.description">
+                            Zarif ve kullanıcı dostu geri sayım uygulaması. Önemli etkinlikleriniz için stile geri sayım yapın.
+                        </p>
+                        <div class="project-tech">
+                            <span class="tech-tag">Android</span>
+                            <span class="tech-tag">Material Design</span>
+                        </div>
                     </div>
-                    <a href="#" class="project-btn">
-                        <i class="fab fa-google-play"></i>
-                        Play Store
-                    </a>
+                    
+                    <!-- Right: Action -->
+                    <div class="project-action">
+                        <div class="project-buttons">
+                            <a href="#" class="project-btn">
+                                <i class="fab fa-google-play"></i>
+                                Play Store
+                            </a>
+                            <button class="security-btn" onclick="showSecurityInfo('lilyum')">
+                                <i class="fas fa-certificate"></i>
+                                <span data-tr="security.button">Güvenlik</span>
+                            </button>
+                        </div>
+                    </div>
                 </div>
                 
-                <!-- HR Portal Project -->
-                <div class="project-card animate-on-scroll scale-up">
-                    <div class="project-icon">
-                        <i class="fas fa-users"></i>
-                    </div>
-                    <h3 class="project-title" data-tr="project.hr.title">HR Portal</h3>
-                    <p class="project-description" data-tr="project.hr.description">
-                        Kapsamlı İnsan Kaynakları CRM uygulaması. Çalışan yönetimi, işe alım süreçleri ve performans takibi için geliştirilmiş modern web uygulaması.
-                    </p>
-                    <div class="project-tech">
-                        <span class="tech-tag">Google Apps Script</span>
-                        <span class="tech-tag">CRM</span>
-                        <span class="tech-tag">HR Management</span>
-                    </div>
-                    <a href="https://script.google.com/macros/s/AKfycbzIV0E8Sqj7xDi2RVu53dBEdm579M7MgtTUifqH02PRArDULp44wIdI-MnDwyWhXFECMA/exec" target="_blank" rel="noopener" class="project-btn">
-                        <i class="fas fa-external-link-alt"></i>
-                        Uygulamayı Aç
-                    </a>
-                </div>
-                
-                <!-- GymDesk Project -->
-                <div class="project-card animate-on-scroll slide-right">
-                    <div class="project-icon">
-                        <i class="fas fa-dumbbell"></i>
-                    </div>
-                    <h3 class="project-title" data-tr="project.gymdesk.title">GymDesk</h3>
-                    <p class="project-description" data-tr="project.gymdesk.description">
-                        Modern spor salonu yönetim sistemi. Üye yönetimi, ödeme takibi, antrenman programları ve vücut ölçümleri için geliştirilmiş cross-platform desktop uygulaması.
-                    </p>
-                    <div class="project-tech">
-                        <span class="tech-tag">Electron</span>
-                        <span class="tech-tag">React</span>
-                        <span class="tech-tag">SQLite</span>
-                    </div>
-                    <div class="project-buttons">
-                        <a href="https://github.com/Wupani/gymdesk" target="_blank" rel="noopener" class="project-btn">
-                            <i class="fab fa-github"></i>
-                            <span data-tr="project.gymdesk.github">GitHub'da Görüntüle</span>
-                        </a>
-                        <a href="https://github.com/Wupani/gymdesk/releases/tag/v1.0.0" target="_blank" rel="noopener" class="project-btn project-btn-secondary">
-                            <i class="fas fa-download"></i>
-                            <span data-tr="project.gymdesk.download">İndir v1.0.0</span>
-                        </a>
-                    </div>
-                </div>
-
                 <!-- CV Builder Project -->
-                <div class="project-card animate-on-scroll slide-left">
+                <div class="project-card animate-on-scroll scale-up" data-preview-url="https://wupani.github.io/cv-app/">
+                    <!-- Left: Icon -->
                     <div class="project-icon">
                         <i class="fas fa-file-alt"></i>
                     </div>
-                    <h3 class="project-title" data-tr="project.cvapp.title">CV Oluşturucu</h3>
-                    <p class="project-description" data-tr="project.cvapp.description">
-                        Türkçe CV oluşturucu uygulaması. Profesyonel CV'lerinizi dakikalar içinde hazırlayın. Modern tasarım şablonları ve kullanıcı dostu arayüz ile CV oluşturma sürecini kolaylaştırır.
-                    </p>
-                    <div class="project-tech">
-                        <span class="tech-tag">React</span>
-                        <span class="tech-tag">JavaScript</span>
-                        <span class="tech-tag">CSS3</span>
-                        <span class="tech-tag">HTML5</span>
+                    
+                    <!-- Middle: Content -->
+                    <div class="project-content">
+                        <h3 class="project-title" data-tr="project.cvapp.title">CV Oluşturucu</h3>
+                        <p class="project-description" data-tr="project.cvapp.description">
+                            Türkçe CV oluşturucu uygulaması. Profesyonel CV'lerinizi dakikalar içinde hazırlayın. Modern tasarım şablonları ve kullanıcı dostu arayüz ile CV oluşturma sürecini kolaylaştırır.
+                        </p>
+                        <div class="project-tech">
+                            <span class="tech-tag">React</span>
+                            <span class="tech-tag">JavaScript</span>
+                            <span class="tech-tag">CSS3</span>
+                            <span class="tech-tag">HTML5</span>
+                        </div>
                     </div>
-                    <a href="https://wupani.github.io/cv-app/" target="_blank" rel="noopener" class="project-btn">
-                        <i class="fas fa-external-link-alt"></i>
-                        <span data-tr="project.cvapp.visit">Uygulamayı Dene</span>
-                    </a>
+                    
+                    <!-- Right: Action -->
+                    <div class="project-action">
+                        <div class="project-buttons">
+                            <a href="https://wupani.github.io/cv-app/" target="_blank" rel="noopener" class="project-btn">
+                                <i class="fas fa-external-link-alt"></i>
+                                <span data-tr="project.cvapp.visit">Uygulamayı Dene</span>
+                            </a>
+                            <button class="security-btn" onclick="showSecurityInfo('cvapp')">
+                                <i class="fas fa-certificate"></i>
+                                <span data-tr="security.button">Güvenlik</span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- GymDesk Project -->
+                <div class="project-card animate-on-scroll slide-right">
+                    <!-- Left: Icon -->
+                    <div class="project-icon">
+                        <i class="fas fa-dumbbell"></i>
+                    </div>
+                    
+                    <!-- Middle: Content -->
+                    <div class="project-content">
+                        <h3 class="project-title" data-tr="project.gymdesk.title">GymDesk</h3>
+                        <p class="project-description" data-tr="project.gymdesk.description">
+                            Modern spor salonu yönetim sistemi. Üye yönetimi, ödeme takibi, antrenman programları ve vücut ölçümleri için geliştirilmiş cross-platform desktop uygulaması.
+                        </p>
+                        <div class="project-tech">
+                            <span class="tech-tag">Electron</span>
+                            <span class="tech-tag">React</span>
+                            <span class="tech-tag">SQLite</span>
+                        </div>
+                    </div>
+                    
+                    <!-- Right: Actions -->
+                    <div class="project-action">
+                        <div class="project-buttons">
+                            <a href="https://github.com/Wupani/gymdesk" target="_blank" rel="noopener" class="project-btn">
+                                <i class="fab fa-github"></i>
+                                <span data-tr="project.gymdesk.github">GitHub'da Görüntüle</span>
+                            </a>
+                            <a href="https://github.com/Wupani/gymdesk/releases/tag/v1.0.0" target="_blank" rel="noopener" class="project-btn project-btn-secondary">
+                                <i class="fas fa-download"></i>
+                                <span data-tr="project.gymdesk.download">İndir v1.0.0</span>
+                            </a>
+                            <button class="security-btn" onclick="showSecurityInfo('gymdesk')">
+                                <i class="fas fa-certificate"></i>
+                                <span data-tr="security.button">Güvenlik</span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- HR Portal Project -->
+                <div class="project-card animate-on-scroll slide-left">
+                    <!-- Left: Icon -->
+                    <div class="project-icon">
+                        <i class="fas fa-users"></i>
+                    </div>
+                    
+                    <!-- Middle: Content -->
+                    <div class="project-content">
+                        <h3 class="project-title" data-tr="project.hr.title">HR Portal</h3>
+                        <p class="project-description" data-tr="project.hr.description">
+                            Kapsamlı İnsan Kaynakları CRM uygulaması. Çalışan yönetimi, işe alım süreçleri ve performans takibi için geliştirilmiş modern web uygulaması.
+                        </p>
+                        <div class="project-tech">
+                            <span class="tech-tag">Google Apps Script</span>
+                            <span class="tech-tag">CRM</span>
+                            <span class="tech-tag">HR Management</span>
+                        </div>
+                    </div>
+                    
+                    <!-- Right: Action -->
+                    <div class="project-action">
+                        <div class="project-buttons">
+                            <a href="https://script.google.com/macros/s/AKfycbzIV0E8Sqj7xDi2RVu53dBEdm579M7MgtTUifqH02PRArDULp44wIdI-MnDwyWhXFECMA/exec" target="_blank" rel="noopener" class="project-btn">
+                                <i class="fas fa-external-link-alt"></i>
+                                Uygulamayı Aç
+                            </a>
+                            <button class="security-btn" onclick="showSecurityInfo('hrportal')">
+                                <i class="fas fa-certificate"></i>
+                                <span data-tr="security.button">Güvenlik</span>
+                            </button>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -1874,6 +1932,26 @@
             </div>
         </div>
     </section>
+
+    <!-- Security Info Modal -->
+    <div class="modal-overlay" id="securityModal">
+        <div class="modal-container security-modal">
+            <div class="modal-header">
+                <h3>
+                    <i class="fas fa-shield-alt"></i>
+                    <span data-tr="security.modal.title">Güvenlik Detayları</span>
+                </h3>
+                <button class="modal-close" onclick="closeSecurityModal()" title="Kapat" aria-label="Güvenlik modalını kapat">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <div class="modal-content">
+                <div id="securityContent">
+                    <!-- Dynamic content will be loaded here -->
+                </div>
+            </div>
+        </div>
+    </div>
 
     <!-- Footer -->
     <footer class="footer">

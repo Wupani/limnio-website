@@ -577,6 +577,8 @@ If you're a developer too, let's connect!
 `);
 
 // ============================
+
+
 // MULTILINGUAL SUPPORT SYSTEM
 // ============================
 
@@ -613,6 +615,22 @@ const translations = {
         'project.cvapp.title': 'CV Oluşturucu',
         'project.cvapp.description': 'Türkçe CV oluşturucu uygulaması. Profesyonel CV\'lerinizi dakikalar içinde hazırlayın. Modern tasarım şablonları ve kullanıcı dostu arayüz ile CV oluşturma sürecini kolaylaştırır.',
         'project.cvapp.visit': 'Uygulamayı Dene',
+        
+        // Security translations
+        'security.button': 'Güvenlik Raporu',
+        'security.modal.title': 'Güvenlik Detayları',
+        'security.https': 'HTTPS Şifreleme',
+        'security.certificate': 'SSL Sertifikası',
+        'security.domain': 'Domain Güvenliği',
+        'security.privacy': 'Gizlilik',
+        'security.updates': 'Güncel Sürüm',
+        'security.verified': 'Doğrulanmış',
+        'security.secure': 'Güvenli',
+        'security.protected': 'Korumalı',
+        'security.encrypted': 'Şifrelenmiş',
+        'security.trusted': 'Güvenilir',
+        'security.close': 'Kapat',
+
         'project.coming.title': 'Yakında...',
         'project.coming.description': 'Yeni projeler geliştirme aşamasında. Takipte kalın!',
         
@@ -1006,6 +1024,59 @@ const translations = {
         'project.cvapp.title': 'CV Builder',
         'project.cvapp.description': 'Turkish CV builder application. Create your professional CVs in minutes. Simplifies the CV creation process with modern design templates and user-friendly interface.',
         'project.cvapp.visit': 'Try the App',
+        
+        // Security translations
+        'security.button': 'Security Report',
+        'security.modal.title': 'Security Details',
+        'security.https': 'HTTPS Encryption',
+        'security.certificate': 'SSL Certificate',
+        'security.domain': 'Domain Security',
+        'security.privacy': 'Privacy',
+        'security.updates': 'Latest Version',
+        'security.verified': 'Verified',
+        'security.secure': 'Secure',
+        'security.protected': 'Protected',
+        'security.encrypted': 'Encrypted',
+        'security.trusted': 'Trusted',
+        'security.close': 'Close',
+
+        'project.cvapp.updated': 'Last Updated: 2025',
+        'project.cvapp.license': 'License: MIT',
+        'project.cvapp.lang': 'Language: Turkish',
+        'project.gymdesk.version': 'Version: v1.0.0',
+        'project.gymdesk.license': 'License: MIT',
+        'project.gymdesk.platform': 'Platform: Cross-platform',
+        'project.hr.platform': 'Platform: Google Apps Script',
+        'project.hr.security': 'Security: OAuth 2.0',
+        'project.hr.access': 'Access: Web-based',
+        
+        // Security translations
+        'security.verified': 'Verified',
+        'security.opensource': 'Open Source',
+        'security.clean': 'Clean',
+        'security.desktop': 'Desktop',
+        'security.google': 'Google Cloud',
+        'security.enterprise': 'Enterprise',
+        'security.details.toggle': 'Security Details',
+        'security.virustotal': 'VirusTotal Scan',
+        'security.virustotal.result': '✅ 0/67 antivirus engines detected threats',
+        'security.virustotal.result.gymdesk': '✅ 0/70 antivirus engines detected threats',
+        'security.virustotal.view': 'View Results',
+        'security.https': 'HTTPS Security',
+        'security.https.desc': '✅ Secure connection with SSL certificate (GitHub Pages)',
+        'security.code': 'Source Code',
+        'security.code.desc': '✅ Completely open source - You can review the code on GitHub',
+        'security.privacy': 'Privacy',
+        'security.privacy.desc': '✅ No personal data is collected or stored',
+        'security.privacy.hr': '✅ Data is securely stored in Google Drive',
+        'security.data': 'Data Security',
+        'security.data.desc': '✅ Data is stored in local SQLite database',
+        'security.electron': 'Electron Security',
+        'security.electron.desc': '✅ Latest Electron version with security measures',
+        'security.google.platform': 'Google Cloud Platform',
+        'security.google.desc': '✅ Runs on Google\'s security infrastructure',
+        'security.oauth': 'OAuth 2.0 Authentication',
+        'security.oauth.desc': '✅ Secure login with your Google account',
         'project.coming.title': 'Coming Soon...',
         'project.coming.description': 'New projects are under development. Stay tuned!',
         
@@ -1955,6 +2026,341 @@ function initEnhancedInteractions() {
         document.head.appendChild(style);
     }
 }
+
+
+
+// SECURITY INFO FUNCTIONALITY
+function showSecurityInfo(projectId) {
+    const modal = document.getElementById('securityModal');
+    const content = document.getElementById('securityContent');
+    
+    // Get current language
+    const currentLang = document.documentElement.lang || 'tr';
+    
+    // Security data for each project
+    const securityData = {
+        lilyum: {
+            tr: {
+                title: 'Lilyum Sayacı Güvenlik Bilgileri',
+                platform: 'Google Play Store',
+                status: 'Yakında Yayınlanacak',
+                items: [
+                    {
+                        icon: 'fab fa-google-play',
+                        title: 'Google Play Store',
+                        description: 'Uygulamayı resmi Google Play Store\'dan indirmeniz güvenliğiniz için önemlidir.',
+                        status: 'Güvenilir'
+                    },
+                    {
+                        icon: 'fas fa-shield-alt',
+                        title: 'Google Play Protect',
+                        description: 'Tüm Android uygulamaları Google Play Protect tarafından taranır.',
+                        status: 'Korumalı'
+                    },
+                    {
+                        icon: 'fas fa-user-shield',
+                        title: 'Gizlilik',
+                        description: 'Uygulama internet izni gerektirmez ve kişisel veri toplamaz.',
+                        status: 'Gizli'
+                    }
+                ]
+            },
+            en: {
+                title: 'Lilyum Counter Security Information',
+                platform: 'Google Play Store',
+                status: 'Coming Soon',
+                items: [
+                    {
+                        icon: 'fas fa-google-play',
+                        title: 'Google Play Store',
+                        description: 'Downloading the app from official Google Play Store is important for your security.',
+                        status: 'Trusted'
+                    },
+                    {
+                        icon: 'fas fa-shield-alt',
+                        title: 'Google Play Protect',
+                        description: 'All Android apps are scanned by Google Play Protect.',
+                        status: 'Protected'
+                    },
+                    {
+                        icon: 'fas fa-user-shield',
+                        title: 'Privacy',
+                        description: 'App doesn\'t require internet permission and collects no personal data.',
+                        status: 'Private'
+                    }
+                ]
+            }
+        },
+        cvapp: {
+            tr: {
+                title: 'CV Oluşturucu Güvenlik Bilgileri',
+                platform: 'GitHub Pages',
+                status: 'Aktif',
+                url: 'https://wupani.github.io/cv-app/',
+                items: [
+                    {
+                        icon: 'fas fa-lock',
+                        title: 'HTTPS Şifreleme',
+                        description: 'Site HTTPS protokolü ile şifrelenmiş bağlantı kullanır.',
+                        status: 'Şifrelenmiş'
+                    },
+                    {
+                        icon: 'fab fa-github',
+                        title: 'Açık Kaynak',
+                        description: 'Kaynak kodu GitHub\'da açık olarak görüntülenebilir.',
+                        status: 'Şeffaf'
+                    },
+                    {
+                        icon: 'fas fa-user-secret',
+                        title: 'Veri Gizliliği',
+                        description: 'Hiçbir kişisel veri sunucuya gönderilmez, tüm işlemler tarayıcıda yapılır.',
+                        status: 'Güvenli'
+                    },
+                    {
+                        icon: 'fas fa-download',
+                        title: 'Offline Çalışma',
+                        description: 'CV\'niz tamamen tarayıcınızda oluşturulur ve bilgisayarınıza indirilir.',
+                        status: 'Yerel'
+                    }
+                ]
+            },
+            en: {
+                title: 'CV Builder Security Information',
+                platform: 'GitHub Pages',
+                status: 'Active',
+                url: 'https://wupani.github.io/cv-app/',
+                items: [
+                    {
+                        icon: 'fas fa-lock',
+                        title: 'HTTPS Encryption',
+                        description: 'Site uses encrypted connection with HTTPS protocol.',
+                        status: 'Encrypted'
+                    },
+                    {
+                        icon: 'fab fa-github',
+                        title: 'Open Source',
+                        description: 'Source code can be viewed openly on GitHub.',
+                        status: 'Transparent'
+                    },
+                    {
+                        icon: 'fas fa-user-secret',
+                        title: 'Data Privacy',
+                        description: 'No personal data is sent to server, all operations are done in browser.',
+                        status: 'Secure'
+                    },
+                    {
+                        icon: 'fas fa-download',
+                        title: 'Offline Working',
+                        description: 'Your CV is created entirely in your browser and downloaded to your computer.',
+                        status: 'Local'
+                    }
+                ]
+            }
+        },
+        gymdesk: {
+            tr: {
+                title: 'GymDesk Güvenlik Bilgileri',
+                platform: 'GitHub Releases',
+                status: 'v1.0.0',
+                url: 'https://github.com/Wupani/gymdesk',
+                items: [
+                    {
+                        icon: 'fab fa-github',
+                        title: 'Açık Kaynak',
+                        description: 'Kaynak kodu tamamen açık ve GitHub\'da incelenebilir.',
+                        status: 'Şeffaf'
+                    },
+                    {
+                        icon: 'fas fa-database',
+                        title: 'Yerel Veri Depolama',
+                        description: 'Tüm veriler bilgisayarınızdaki SQLite veritabanında saklanır.',
+                        status: 'Yerel'
+                    },
+                    {
+                        icon: 'fas fa-desktop',
+                        title: 'Desktop Uygulama',
+                        description: 'Electron tabanlı masaüstü uygulaması, internet bağlantısı gerektirmez.',
+                        status: 'Offline'
+                    },
+                    {
+                        icon: 'fas fa-shield-virus',
+                        title: 'Virüs Taraması',
+                        description: 'Uygulama dosyası virüs taramasından geçmiştir.',
+                        status: 'Temiz'
+                    }
+                ]
+            },
+            en: {
+                title: 'GymDesk Security Information',
+                platform: 'GitHub Releases',
+                status: 'v1.0.0',
+                url: 'https://github.com/Wupani/gymdesk',
+                items: [
+                    {
+                        icon: 'fab fa-github',
+                        title: 'Open Source',
+                        description: 'Source code is completely open and can be reviewed on GitHub.',
+                        status: 'Transparent'
+                    },
+                    {
+                        icon: 'fas fa-database',
+                        title: 'Local Data Storage',
+                        description: 'All data is stored in SQLite database on your computer.',
+                        status: 'Local'
+                    },
+                    {
+                        icon: 'fas fa-desktop',
+                        title: 'Desktop Application',
+                        description: 'Electron-based desktop app, doesn\'t require internet connection.',
+                        status: 'Offline'
+                    },
+                    {
+                        icon: 'fas fa-shield-virus',
+                        title: 'Virus Scan',
+                        description: 'Application file has been scanned for viruses.',
+                        status: 'Clean'
+                    }
+                ]
+            }
+        },
+        hrportal: {
+            tr: {
+                title: 'HR Portal Güvenlik Bilgileri',
+                platform: 'Google Apps Script',
+                status: 'Aktif',
+                url: 'https://script.google.com/macros/s/AKfycbzIV0E8Sqj7xDi2RVu53dBEdm579M7MgtTUifqH02PRArDULp44wIdI-MnDwyWhXFECMA/exec',
+                items: [
+                    {
+                        icon: 'fab fa-google',
+                        title: 'Google Cloud Platform',
+                        description: 'Google\'ın güvenli bulut altyapısında çalışır.',
+                        status: 'Güvenilir'
+                    },
+                    {
+                        icon: 'fas fa-key',
+                        title: 'OAuth 2.0',
+                        description: 'Google hesabınız ile güvenli giriş yapılır.',
+                        status: 'Korumalı'
+                    },
+                    {
+                        icon: 'fas fa-cloud',
+                        title: 'Google Drive Entegrasyonu',
+                        description: 'Veriler Google Drive\'ınızda güvenle saklanır.',
+                        status: 'Şifrelenmiş'
+                    },
+                    {
+                        icon: 'fas fa-user-lock',
+                        title: 'Erişim Kontrolü',
+                        description: 'Sadece yetkilendirilmiş kullanıcılar erişebilir.',
+                        status: 'Kontrollü'
+                    }
+                ]
+            },
+            en: {
+                title: 'HR Portal Security Information',
+                platform: 'Google Apps Script',
+                status: 'Active',
+                url: 'https://script.google.com/macros/s/AKfycbzIV0E8Sqj7xDi2RVu53dBEdm579M7MgtTUifqH02PRArDULp44wIdI-MnDwyWhXFECMA/exec',
+                items: [
+                    {
+                        icon: 'fab fa-google',
+                        title: 'Google Cloud Platform',
+                        description: 'Runs on Google\'s secure cloud infrastructure.',
+                        status: 'Trusted'
+                    },
+                    {
+                        icon: 'fas fa-key',
+                        title: 'OAuth 2.0',
+                        description: 'Secure login with your Google account.',
+                        status: 'Protected'
+                    },
+                    {
+                        icon: 'fas fa-cloud',
+                        title: 'Google Drive Integration',
+                        description: 'Data is securely stored in your Google Drive.',
+                        status: 'Encrypted'
+                    },
+                    {
+                        icon: 'fas fa-user-lock',
+                        title: 'Access Control',
+                        description: 'Only authorized users can access.',
+                        status: 'Controlled'
+                    }
+                ]
+            }
+        }
+    };
+    
+    const projectData = securityData[projectId][currentLang];
+    
+    // Generate security content
+    content.innerHTML = `
+        <div class="security-info">
+            <div class="security-header">
+                <h4>${projectData.title}</h4>
+                <div class="security-meta">
+                    <span class="platform">
+                        <i class="fas fa-server"></i>
+                        ${projectData.platform}
+                    </span>
+                    <span class="status status-active">
+                        <i class="fas fa-check-circle"></i>
+                        ${projectData.status}
+                    </span>
+                </div>
+                ${projectData.url ? `<div class="project-url">
+                    <i class="fas fa-link"></i>
+                    <a href="${projectData.url}" target="_blank" rel="noopener">${projectData.url}</a>
+                </div>` : ''}
+            </div>
+            
+            <div class="security-items">
+                ${projectData.items.map(item => `
+                    <div class="security-item">
+                        <div class="security-icon">
+                            <i class="${item.icon}"></i>
+                        </div>
+                        <div class="security-content">
+                            <h5>${item.title}</h5>
+                            <p>${item.description}</p>
+                        </div>
+                        <div class="security-status">
+                            <span class="status-badge status-${item.status.toLowerCase()}">
+                                <i class="fas fa-check"></i>
+                                ${item.status}
+                            </span>
+                        </div>
+                    </div>
+                `).join('')}
+            </div>
+        </div>
+    `;
+    
+    // Show modal
+    modal.classList.add('active');
+    document.body.style.overflow = 'hidden';
+}
+
+function closeSecurityModal() {
+    const modal = document.getElementById('securityModal');
+    modal.classList.remove('active');
+    document.body.style.overflow = '';
+}
+
+// Close modal when clicking outside
+document.addEventListener('click', (e) => {
+    const modal = document.getElementById('securityModal');
+    if (e.target === modal) {
+        closeSecurityModal();
+    }
+});
+
+// Close modal with escape key
+document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape') {
+        closeSecurityModal();
+    }
+});
 
 // Initialize all systems when DOM is loaded
 document.addEventListener('DOMContentLoaded', () => {

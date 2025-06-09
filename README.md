@@ -13,7 +13,7 @@
 
 ## 📱 Hakkında
 
-Limnio, kullanıcı dostu mobil uygulamalar ve web çözümleri geliştiren **Emre Akyol**'un kişisel portfolyo web sitesidir. Modern tasarım prensiplerine dayanan bu site, üç ana projeyi sergiler ve profesyonel bir geliştirici profili sunar.
+Limnio, kullanıcı dostu mobil uygulamalar ve web çözümleri geliştiren **Emre Akyol**'un kişisel portfolyo web sitesidir. Modern tasarım prensiplerine dayanan bu site, dört ana projeyi sergiler ve profesyonel bir geliştirici profili sunar.
 
 ### ✨ Ana Özellikler
 
@@ -24,12 +24,15 @@ Limnio, kullanıcı dostu mobil uygulamalar ve web çözümleri geliştiren **Em
 - **🎭 Advanced Animations**: Scroll-based animasyonlar
 - **🌐 Multi-language**: Türkçe/İngilizce dil desteği
 - **🔐 KVKV Uyumlu**: Türkiye veri koruma yasalarına uygun
+- **🛡️ Security Reports**: Her proje için detaylı güvenlik bilgileri
+- **🎯 Modern CTA Button**: Optimized hero button with smooth interactions
 
 ### 🎯 Sergilenen Projeler
 
-1. **Lilyum Counter** - Modern sayaç uygulaması (React Native)
-2. **HR Portal** - İnsan kaynakları yönetim sistemi (Next.js)
-3. **GymDesk** - Spor salonu yönetim sistemi (Electron + React)
+1. **🌸 Lilyum Counter** - Zarif sayaç uygulaması (Android, Material Design)
+2. **📄 CV Builder** - Türkçe CV oluşturucu (React, GitHub Pages)
+3. **💪 GymDesk** - Spor salonu yönetim sistemi (Electron + React)
+4. **👥 HR Portal** - İnsan kaynakları CRM sistemi (Google Apps Script)
 
 ## 🛠️ Teknolojiler
 
@@ -62,10 +65,10 @@ Limnio, kullanıcı dostu mobil uygulamalar ve web çözümleri geliştiren **Em
 
 ```
 limnio-website/
-├── index.html              # Ana sayfa (1840+ lines)
-├── style.css               # Stil dosyası (2500+ lines, 50KB)
-├── script.js               # JavaScript (1800+ lines, 75KB)
-├── profile-photo.jpg       # Profil fotoğrafı
+├── index.html              # Ana sayfa (1970+ lines)
+├── style.css               # Stil dosyası (4000+ lines, 87KB)
+├── script.js               # JavaScript (2386+ lines, 98KB)
+├── profile-photo.jpg       # Profil fotoğrafı (103KB)
 ├── CNAME                   # Custom domain configuration
 ├── LICENSE                 # MIT License
 ├── .gitignore              # Git ignore rules
@@ -74,6 +77,15 @@ limnio-website/
     └── workflows/
         └── deploy.yml      # GitHub Actions workflow
 ```
+
+### 🔥 Yeni Özellikler (v1.2)
+
+- **🛡️ Security Modal System**: Her proje için kapsamlı güvenlik raporları
+- **🎨 Modern Blue Security Buttons**: Mavi gradient güvenlik butonları  
+- **🔧 Enhanced Project Cards**: Tutarlı grid layout ve responsive design
+- **⚡ Optimized Hero Button**: Modern, minimal ve responsive CTA butonu
+- **🌍 Improved Translations**: Tam Türkçe/İngilizce dil desteği
+- **📱 Mobile-First Design**: Gelişmiş mobil deneyim
 
 ## 🔧 Kurulum & Geliştirme
 
@@ -111,7 +123,12 @@ git push origin main
 --primary: #eab308;        /* Lemon yellow - main brand */
 --secondary: #22c55e;      /* Fresh green - leaf accent */
 --accent: #f97316;         /* Orange - CTA highlights */
+--security: #3b82f6;       /* Blue - security elements */
 --tertiary: #06b6d4;       /* Cyan - tech emphasis */
+
+/* Modern Hero Button */
+--hero-primary: #3b82f6;   /* Blue gradient start */
+--hero-secondary: #6366f1; /* Blue gradient end */
 
 /* Dark Mode Support */
 --surface: #1f2937;        /* Dark surfaces */
@@ -129,6 +146,13 @@ git push origin main
 - **Hover Effects**: Brand-specific shadow systems
 - **Theme Transitions**: Smooth color transitions
 - **Performance**: Hardware acceleration enabled
+
+### UI Components
+- **Hero Button**: Modern blue gradient with subtle hover effects
+- **Security Buttons**: Certificate icon with blue styling
+- **Project Cards**: Consistent grid layout with responsive design
+- **Modal System**: Comprehensive security reports for each project
+- **Theme Toggle**: Smooth dark/light mode transitions
 
 ## 📱 Responsive Breakpoints
 
@@ -210,14 +234,28 @@ Bu web sitesi özellikle **Google Play Store** geliştirici doğrulaması için 
 
 ## 🚀 Gelecek Planları
 
-### v2.0 Roadmap
+### ✅ v1.2 Tamamlanan Özellikler
+- [x] **Security Reports**: Kapsamlı güvenlik modal sistemi
+- [x] **Modern UI**: Hero buton optimizasyonu ve card layout iyileştirmeleri
+- [x] **Enhanced Translations**: Tam çift dil desteği
+- [x] **Project Showcase**: 4 proje ile genişletilmiş portfolyo
+
+### 🎯 v1.3 Roadmap
 - [ ] **Blog Section**: Teknik yazılar ve deneyimler
 - [ ] **Case Studies**: Proje detay sayfaları
+- [ ] **CV Download**: PDF CV indirme özelliği
+- [ ] **Contact Form Enhancement**: Gelişmiş iletişim formu
+- [ ] **Analytics Dashboard**: Ziyaretçi istatistikleri
+
+### 🚀 v2.0 Long-term Goals
 - [ ] **Admin Panel**: İçerik yönetim sistemi
-- [ ] **PWA Support**: Progressive Web App özellikleri
-- [ ] **Multi-language**: Tam çok dil desteği
+- [ ] **PWA Support**: Progressive Web App özellikleri  
+- [ ] **Multi-language**: Tam çok dil desteği (EN/TR/DE)
+- [ ] **API Integration**: GitHub ve Google Play Store API'leri
 
 ### Performance Goals
+- [x] **Modern Design**: ✅ Tamamlandı (mavi security butonları)
+- [x] **Responsive Layout**: ✅ Tamamlandı (grid sistem)
 - [ ] **Lighthouse 100**: Tüm kategorilerde mükemmel skor
 - [ ] **Core Web Vitals**: Google'ın tüm metriklerinde yeşil
 - [ ] **Bundle Size**: <100KB total bundle size
