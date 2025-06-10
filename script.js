@@ -2982,26 +2982,57 @@ setTimeout(() => {
 
 // FOOTER LEGAL MODAL FUNCTIONALITY
 function openLegalModal(type) {
+    console.log('Opening legal modal:', type); // Debug log
     const modal = document.getElementById('legalModal');
     const title = document.getElementById('legalModalTitle');
     const content = document.getElementById('legalContent');
     
-    if (!modal || !title || !content) return;
+    if (!modal) {
+        console.error('Legal modal not found!');
+        return;
+    }
     
-    // Set title and content based on type
-    const legalContent = getLegalContent(type);
-    title.textContent = legalContent.title;
-    content.innerHTML = legalContent.content;
+    if (!title || !content) {
+        console.error('Legal modal elements not found!');
+        return;
+    }
     
-    modal.classList.add('active');
-    document.body.style.overflow = 'hidden';
+    try {
+        // Set title and content based on type
+        const legalContent = getLegalContent(type);
+        title.textContent = legalContent.title;
+        content.innerHTML = legalContent.content;
+        
+        // Add modal active state with enhanced mobile support
+        modal.classList.add('active');
+        
+        // Prevent body scroll on mobile
+        document.body.style.overflow = 'hidden';
+        document.body.style.position = 'fixed';
+        document.body.style.width = '100%';
+        document.body.style.height = '100%';
+        
+        // Force a reflow to ensure modal is properly positioned
+        modal.offsetHeight;
+        
+        console.log('Legal modal opened successfully');
+    } catch (error) {
+        console.error('Error opening legal modal:', error);
+    }
 }
 
 function closeLegalModal() {
     const modal = document.getElementById('legalModal');
     if (modal) {
         modal.classList.remove('active');
+        
+        // Restore body scroll
         document.body.style.overflow = '';
+        document.body.style.position = '';
+        document.body.style.width = '';
+        document.body.style.height = '';
+        
+        console.log('Legal modal closed');
     }
 }
 
@@ -3555,11 +3586,55 @@ document.addEventListener('DOMContentLoaded', function() {
             }
         });
         
+        // Close on overlay touch (mobile support)
+        legalModal.addEventListener('touchend', function(e) {
+            if (e.target === this) {
+                e.preventDefault();
+                closeLegalModal();
+            }
+        });
+        
         // Close on escape key
         document.addEventListener('keydown', function(e) {
             if (e.key === 'Escape' && legalModal.classList.contains('active')) {
                 closeLegalModal();
             }
+        });
+    }
+    
+    // Enhanced footer link interactions for mobile
+    const footerLinks = document.querySelectorAll('.footer-links a[onclick*="openLegalModal"]');
+    footerLinks.forEach(link => {
+        // Add touch event for better mobile support
+        link.addEventListener('touchend', function(e) {
+            e.preventDefault();
+            // Extract the modal type from onclick attribute
+            const onclickAttr = this.getAttribute('onclick');
+            const match = onclickAttr.match(/openLegalModal\('([^']+)'\)/);
+            if (match) {
+                openLegalModal(match[1]);
+            }
+        });
+        
+        // Add visual feedback for touch
+        link.addEventListener('touchstart', function(e) {
+            this.style.opacity = '0.7';
+        });
+        
+        link.addEventListener('touchend', function(e) {
+            setTimeout(() => {
+                this.style.opacity = '';
+            }, 150);
+        });
+    });
+    
+    // Enhanced close button for mobile
+    const legalCloseBtn = document.querySelector('#legalModal .modal-close');
+    if (legalCloseBtn) {
+        legalCloseBtn.addEventListener('touchend', function(e) {
+            e.preventDefault();
+            e.stopPropagation();
+            closeLegalModal();
         });
     }
 });
