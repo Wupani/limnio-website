@@ -2691,3 +2691,884 @@ window.getCookieConsentStatus = function() {
 
 // Export for potential external use
 window.cookieManager = cookieManager; 
+
+// Certificate Management System
+class CertificateViewer {
+    constructor() {
+        this.modal = null;
+        this.createModal();
+    }
+    
+    createModal() {
+        // Create modal HTML structure
+        const modalHTML = `
+            <div class="certificate-modal" id="certificateModal">
+                <div class="certificate-modal-content">
+                    <div class="certificate-modal-header">
+                        <h3>Sertifika Görüntüleyici</h3>
+                        <button class="certificate-modal-close" onclick="closeCertificateModal()">
+                            <i class="fas fa-times"></i>
+                        </button>
+                    </div>
+                    <div class="certificate-frame-container">
+                        <iframe class="certificate-iframe" id="certificateIframe" src=""></iframe>
+                        <div class="certificate-watermark">
+                            <div class="watermark-text">📋 PORTFOLYO AMAÇLI</div>
+                            <div class="watermark-subtext">Doğrulama: wupaniyazilim@gmail.com</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        `;
+        
+        // Add modal to body
+        document.body.insertAdjacentHTML('beforeend', modalHTML);
+        this.modal = document.getElementById('certificateModal');
+        this.iframe = document.getElementById('certificateIframe');
+        
+        // Add event listeners
+        this.addEventListeners();
+    }
+    
+    addEventListeners() {
+        // Close modal when clicking outside
+        this.modal.addEventListener('click', (e) => {
+            if (e.target === this.modal) {
+                this.closeModal();
+            }
+        });
+        
+        // Close modal with escape key
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape' && this.modal.classList.contains('active')) {
+                this.closeModal();
+            }
+        });
+    }
+    
+    openModal(certificatePath) {
+        // Check if mobile device
+        const isMobile = window.innerWidth <= 768 || /Android|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
+        
+        if (isMobile) {
+            // On mobile, open PDF in new tab instead of iframe
+            window.open(certificatePath, '_blank');
+            // Show notification to user
+            if (typeof showNotification === 'function') {
+                showNotification('Sertifika yeni sekmede açılıyor...', 'info');
+            }
+            return;
+        }
+        
+        // Desktop: use iframe
+        this.iframe.src = certificatePath;
+        
+        // Show modal
+        this.modal.classList.add('active');
+        document.body.style.overflow = 'hidden';
+        
+        // Add loading state
+        this.iframe.addEventListener('load', () => {
+            // Certificate loaded successfully
+            console.log('Certificate loaded:', certificatePath);
+        });
+        
+        this.iframe.addEventListener('error', () => {
+            // Handle loading error - fallback to opening in new tab
+            console.error('Failed to load certificate:', certificatePath);
+            window.open(certificatePath, '_blank');
+            this.closeModal();
+        });
+    }
+    
+    closeModal() {
+        this.modal.classList.remove('active');
+        document.body.style.overflow = '';
+        
+        // Clear iframe source
+        setTimeout(() => {
+            this.iframe.src = '';
+        }, 300);
+    }
+}
+
+// Global certificate viewer instance
+let certificateViewer;
+
+// Global functions for certificate viewing
+window.viewCertificate = function(certificatePath) {
+    if (!certificateViewer) {
+        certificateViewer = new CertificateViewer();
+    }
+    
+    // Add timestamp to prevent caching issues
+    const timestamp = new Date().getTime();
+    const fullPath = `${certificatePath}?t=${timestamp}`;
+    
+    certificateViewer.openModal(fullPath);
+    
+    // Track certificate view (for analytics)
+    console.log('Certificate viewed:', certificatePath);
+};
+
+window.closeCertificateModal = function() {
+    if (certificateViewer) {
+        certificateViewer.closeModal();
+    }
+};
+
+// Certificate animations and interactions
+function initCertificateAnimations() {
+    const observerOptions = {
+        threshold: 0.1,
+        rootMargin: '0px 0px -50px 0px'
+    };
+    
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('animate-in');
+                
+                // Stagger animation for certificate cards
+                if (entry.target.classList.contains('certificate-card')) {
+                    const cards = entry.target.parentElement.querySelectorAll('.certificate-card');
+                    cards.forEach((card, index) => {
+                        setTimeout(() => {
+                            card.style.opacity = '1';
+                            card.style.transform = 'translateY(0)';
+                        }, index * 100);
+                    });
+                }
+            }
+        });
+    }, observerOptions);
+    
+    // Observe certificate sections
+    const certificateElements = document.querySelectorAll('.certificate-card, .cert-category-header, .certificate-stats');
+    certificateElements.forEach(el => {
+        // Set initial state for animation
+        if (el.classList.contains('certificate-card')) {
+            el.style.opacity = '0';
+            el.style.transform = 'translateY(20px)';
+            el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+        }
+        observer.observe(el);
+    });
+}
+
+// Certificate search and filter functionality
+function initCertificateFilters() {
+    // Add filter buttons if needed in the future
+    const categories = ['all', 'business', 'tech'];
+    
+    // This can be extended to add filter functionality
+    window.filterCertificates = function(category) {
+        const cards = document.querySelectorAll('.certificate-card');
+        
+        cards.forEach(card => {
+            if (category === 'all' || card.dataset.category === category) {
+                card.style.display = 'flex';
+                setTimeout(() => {
+                    card.style.opacity = '1';
+                    card.style.transform = 'translateY(0)';
+                }, 50);
+            } else {
+                card.style.opacity = '0';
+                card.style.transform = 'translateY(20px)';
+                setTimeout(() => {
+                    card.style.display = 'none';
+                }, 300);
+            }
+        });
+    };
+}
+
+// Certificate statistics counter animation
+function animateCertificateStats() {
+    const statNumbers = document.querySelectorAll('.stat-number');
+    
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                const target = entry.target;
+                const finalValue = parseInt(target.textContent);
+                let currentValue = 0;
+                const increment = finalValue / 50; // 50 steps for smooth animation
+                
+                const updateCounter = () => {
+                    currentValue += increment;
+                    if (currentValue < finalValue) {
+                        target.textContent = Math.ceil(currentValue);
+                        requestAnimationFrame(updateCounter);
+                    } else {
+                        target.textContent = finalValue;
+                    }
+                };
+                
+                updateCounter();
+                observer.unobserve(target);
+            }
+        });
+    }, { threshold: 0.5 });
+    
+    statNumbers.forEach(stat => observer.observe(stat));
+}
+
+// Initialize certificate functionality when DOM is loaded
+document.addEventListener('DOMContentLoaded', function() {
+    // Wait for other initializations to complete
+    setTimeout(() => {
+        initCertificateAnimations();
+        initCertificateFilters();
+        animateCertificateStats();
+    }, 1000);
+});
+
+// Certificate hover effects
+function addCertificateInteractions() {
+    const certificateCards = document.querySelectorAll('.certificate-card');
+    
+    certificateCards.forEach(card => {
+        card.addEventListener('mouseenter', function() {
+            // Add subtle scale effect
+            this.style.transform = 'translateY(-5px) scale(1.02)';
+        });
+        
+        card.addEventListener('mouseleave', function() {
+            this.style.transform = 'translateY(0) scale(1)';
+        });
+        
+        // Add click ripple effect
+        card.addEventListener('click', function(e) {
+            if (e.target.closest('.cert-btn')) return; // Skip if clicking button
+            
+            const ripple = document.createElement('div');
+            ripple.style.position = 'absolute';
+            ripple.style.borderRadius = '50%';
+            ripple.style.background = 'rgba(234, 179, 8, 0.3)';
+            ripple.style.transform = 'scale(0)';
+            ripple.style.animation = 'ripple 0.6s linear';
+            ripple.style.left = e.clientX - card.offsetLeft - 10 + 'px';
+            ripple.style.top = e.clientY - card.offsetTop - 10 + 'px';
+            ripple.style.width = '20px';
+            ripple.style.height = '20px';
+            
+            card.style.position = 'relative';
+            card.appendChild(ripple);
+            
+            setTimeout(() => {
+                ripple.remove();
+            }, 600);
+        });
+    });
+    
+    // Add ripple animation to CSS
+    const style = document.createElement('style');
+    style.textContent = `
+        @keyframes ripple {
+            to {
+                transform: scale(4);
+                opacity: 0;
+            }
+        }
+    `;
+    document.head.appendChild(style);
+}
+
+// Call after DOM is loaded
+setTimeout(() => {
+    addCertificateInteractions();
+}, 1500);
+
+// FOOTER LEGAL MODAL FUNCTIONALITY
+function openLegalModal(type) {
+    const modal = document.getElementById('legalModal');
+    const title = document.getElementById('legalModalTitle');
+    const content = document.getElementById('legalContent');
+    
+    if (!modal || !title || !content) return;
+    
+    // Set title and content based on type
+    const legalContent = getLegalContent(type);
+    title.textContent = legalContent.title;
+    content.innerHTML = legalContent.content;
+    
+    modal.classList.add('active');
+    document.body.style.overflow = 'hidden';
+}
+
+function closeLegalModal() {
+    const modal = document.getElementById('legalModal');
+    if (modal) {
+        modal.classList.remove('active');
+        document.body.style.overflow = '';
+    }
+}
+
+function getLegalContent(type) {
+    const content = {
+        'genel-kosullar': {
+            title: 'Genel Koşullar',
+            content: `
+                <div class="legal-section">
+                    <h4>1. Genel Hükümler</h4>
+                    <p>Bu genel koşullar, Limnio web sitesinin kullanımı için belirlenen şartları içermektedir. Siteyi kullanarak bu koşulları kabul etmiş sayılırsınız.</p>
+                    
+                    <h4>2. Hizmet Kapsamı</h4>
+                    <p>Limnio, mobil uygulama geliştirme hizmetleri sunan bir platformdur. Sunulan hizmetler şunlardır:</p>
+                    <ul>
+                        <li>Mobil uygulama geliştirme</li>
+                        <li>Web uygulaması geliştirme</li>
+                        <li>UI/UX tasarım hizmetleri</li>
+                        <li>Teknik danışmanlık</li>
+                    </ul>
+                    
+                    <h4>3. Kullanıcı Sorumlulukları</h4>
+                    <p>Kullanıcılar siteyi yasal amaçlarla kullanmayı, diğer kullanıcıların haklarını ihlal etmemeyi taahhüt eder.</p>
+                </div>
+            `
+        },
+        'kullanim-sartlari': {
+            title: 'Kullanım Şartları',
+            content: `
+                <div class="legal-section">
+                    <h4>Kullanım Şartları ve Koşulları</h4>
+                    <p>Limnio web sitesi ve hizmetlerini kullanırken aşağıdaki şartlara uymanız gerekmektedir:</p>
+                    
+                    <h4>1. Kabul Edilebilir Kullanım</h4>
+                    <ul>
+                        <li>Siteyi yasal amaçlarla kullanmak</li>
+                        <li>Doğru ve güncel bilgiler sağlamak</li>
+                        <li>Başkalarının haklarını ihlal etmemek</li>
+                        <li>Sisteme zarar verecek aktivitelerden kaçınmak</li>
+                    </ul>
+                    
+                    <h4>2. Yasaklanan Faaliyetler</h4>
+                    <ul>
+                        <li>Kötü amaçlı yazılım yayma</li>
+                        <li>Başka kullanıcıları rahatsız etme</li>
+                        <li>Spam gönderme</li>
+                        <li>Telif hakları ihlali</li>
+                    </ul>
+                </div>
+            `
+        },
+        'aydinlatma-metni': {
+            title: 'Kişisel Verilerin İşlenmesi Aydınlatma Metni',
+            content: `
+                <div class="legal-section">
+                    <h4>Kişisel Verilerin İşlenmesi Hakkında Bilgilendirme</h4>
+                    <p>6698 sayılı Kişisel Verilerin Korunması Kanunu uyarınca, kişisel verilerinizin işlenmesi hakkında bilgilendirilmeniz amacıyla bu metin hazırlanmıştır.</p>
+                    
+                    <h4>1. Veri Sorumlusu</h4>
+                    <p><strong>Limnio - Emre Akyol</strong><br>
+                    E-posta: wupaniyazilim@gmail.com</p>
+                    
+                    <h4>2. İşlenen Kişisel Veriler</h4>
+                    <ul>
+                        <li>İletişim bilgileri (ad, soyad, e-posta, telefon)</li>
+                        <li>Proje detayları</li>
+                        <li>Şirket bilgileri</li>
+                        <li>Teknik analiz verileri</li>
+                    </ul>
+                    
+                    <h4>3. İşleme Amaçları</h4>
+                    <ul>
+                        <li>Proje taleplerinizi değerlendirmek</li>
+                        <li>Size hizmet sunmak</li>
+                        <li>İletişim kurmak</li>
+                        <li>Müşteri memnuniyetini sağlamak</li>
+                    </ul>
+                    
+                    <h4>4. Haklarınız</h4>
+                    <p>KVKK uyarınca sahip olduğunuz haklar:</p>
+                    <ul>
+                        <li>Kişisel verilerinizin işlenip işlenmediğini öğrenme</li>
+                        <li>Kişisel verileriniz hakkında bilgi talep etme</li>
+                        <li>İşleme amacını öğrenme</li>
+                        <li>Düzeltilmesini isteme</li>
+                        <li>Silinmesini isteme</li>
+                        <li>İşlemeye itiraz etme</li>
+                    </ul>
+                </div>
+            `
+        },
+        'cerez-politikasi': {
+            title: 'Çerez Politikası',
+            content: `
+                <div class="legal-section">
+                    <h4>Çerez Politikası</h4>
+                    <p>Bu politika, web sitemizde kullanılan çerezler hakkında bilgi vermektedir.</p>
+                    
+                    <h4>1. Çerez Nedir?</h4>
+                    <p>Çerezler, web sitelerinin tarayıcınızda sakladığı küçük metin dosyalarıdır. Bu dosyalar, site deneyiminizi geliştirmek için kullanılır.</p>
+                    
+                    <h4>2. Kullandığımız Çerez Türleri</h4>
+                    <ul>
+                        <li><strong>Zorunlu Çerezler:</strong> Sitenin düzgün çalışması için gerekli</li>
+                        <li><strong>Analitik Çerezler:</strong> Site kullanımını analiz etmek için</li>
+                        <li><strong>Pazarlama Çerezler:</strong> Kişiselleştirilmiş reklamlar için</li>
+                        <li><strong>Sosyal Medya Çerezler:</strong> Sosyal medya entegrasyonu için</li>
+                    </ul>
+                    
+                    <h4>3. Çerezleri Yönetme</h4>
+                    <p>Çerez tercihlerinizi istediğiniz zaman çerez ayarları menüsünden değiştirebilirsiniz.</p>
+                </div>
+            `
+        },
+        'kvkk': {
+            title: 'KVKK Uyumluluk',
+            content: `
+                <div class="legal-section">
+                    <h4>KVKK Uyumluluk Beyanı</h4>
+                    <p>Limnio olarak, 6698 sayılı Kişisel Verilerin Korunması Kanunu'na tam uyumluluk sağlamaktayız.</p>
+                    
+                    <h4>Uyumluluk Önlemleri</h4>
+                    <ul>
+                        <li>Veri minimizasyon ilkesi</li>
+                        <li>Açık rıza mekanizması</li>
+                        <li>Güvenlik tedbirleri</li>
+                        <li>Veri saklama süreleri</li>
+                        <li>Veri sahibi hakları</li>
+                    </ul>
+                    
+                    <h4>İletişim</h4>
+                    <p>KVKK kapsamındaki talepleriniz için: <strong>wupaniyazilim@gmail.com</strong></p>
+                </div>
+            `
+        },
+                 'sss': {
+             title: 'Sık Sorulan Sorular',
+             content: `
+                 <div class="legal-section">
+                     <h4>Sık Sorulan Sorular</h4>
+                     
+                     <h4>1. Proje süreci nasıl işliyor?</h4>
+                     <p>Proje talebinizi aldıktan sonra 24 saat içinde size dönüş yapıyoruz. Detaylı görüşme sonrası proje planı oluşturulur.</p>
+                     
+                     <h4>2. Fiyatlandırma nasıl yapılıyor?</h4>
+                     <p>Fiyatlandırma proje kapsamına, karmaşıklığa ve süreye göre belirlenir. Detaylı teklif için iletişime geçebilirsiniz.</p>
+                     
+                     <h4>3. Proje teslim süreleri nedir?</h4>
+                     <p>Basit uygulamalar 2-4 hafta, karmaşık projeler 2-3 ay sürebilir. Kesin süre proje planlaması sırasında belirlenir.</p>
+                     
+                     <h4>4. Destek hizmeti sunuyor musunuz?</h4>
+                     <p>Evet, teslim sonrası 3 ay ücretsiz destek sağlıyoruz. Sonrasında anlaşmalı destek hizmeti alabilirsiniz.</p>
+                     
+                     <h4>5. Hangi teknolojileri kullanıyorsunuz?</h4>
+                     <p>Android (Java/Kotlin), React.js, Python, Google Apps Script gibi modern teknolojiler kullanıyoruz.</p>
+                 </div>
+             `
+         },
+         'site-haritasi': {
+             title: 'Site Haritası',
+             content: `
+                 <div class="legal-section">
+                     <h4>Limnio Web Sitesi Haritası</h4>
+                     <p>Web sitemizde bulunan tüm sayfalar ve bölümler:</p>
+                     
+                     <h4>Ana Sayfalar</h4>
+                     <ul>
+                         <li><strong>Ana Sayfa:</strong> Limnio hakkında genel bilgiler</li>
+                         <li><strong>Projelerim:</strong> Geliştirdiğimiz mobil uygulamalar</li>
+                         <li><strong>Hakkımda:</strong> Detaylı profil ve deneyim bilgileri</li>
+                         <li><strong>Sertifikalar:</strong> Aldığımız eğitim sertifikaları</li>
+                         <li><strong>Teknolojiler:</strong> Kullandığımız yazılım teknolojileri</li>
+                         <li><strong>İletişim:</strong> Proje talebi ve iletişim formu</li>
+                     </ul>
+                     
+                     <h4>Projeler</h4>
+                     <ul>
+                         <li>Lilyum Sayacı - Taş sayım uygulaması</li>
+                         <li>CV Oluşturucu - Ücretsiz CV yapım aracı</li>
+                         <li>GymDesk - Spor salonu yönetim sistemi</li>
+                     </ul>
+                     
+                     <h4>Yasal Sayfalar</h4>
+                     <ul>
+                         <li>Aydınlatma Metni</li>
+                         <li>Çerez Politikası</li>
+                         <li>Kullanım Şartları</li>
+                         <li>Gizlilik Politikası</li>
+                     </ul>
+                 </div>
+             `
+         },
+         'erişilebilirlik': {
+             title: 'Erişilebilirlik Beyanı',
+             content: `
+                 <div class="legal-section">
+                     <h4>Erişilebilirlik Taahhüdümüz</h4>
+                     <p>Limnio olarak, web sitemizin herkese eşit erişim imkanı sunmasını sağlamaya kararlıyız.</p>
+                     
+                     <h4>Uyguladığımız Standartlar</h4>
+                     <ul>
+                         <li><strong>WCAG 2.1 AA:</strong> Web İçerik Erişilebilirlik Kılavuzu uyumu</li>
+                         <li><strong>Klavye Navigasyonu:</strong> Tüm fonksiyonlara klavye ile erişim</li>
+                         <li><strong>Ekran Okuyucu Desteği:</strong> Görme engelliler için uyumlu kodlama</li>
+                         <li><strong>Renk Kontrastı:</strong> Yeterli renk kontrastı sağlanması</li>
+                         <li><strong>Metin Boyutu:</strong> Esnek ve büyütülebilir yazı boyutları</li>
+                     </ul>
+                     
+                     <h4>Erişilebilirlik Özellikleri</h4>
+                     <ul>
+                         <li>Alt etiketli görseller</li>
+                         <li>Açıklayıcı link metinleri</li>
+                         <li>Semantik HTML yapısı</li>
+                         <li>Focus göstergeleri</li>
+                         <li>Responsive tasarım</li>
+                         <li>Dark mode desteği</li>
+                     </ul>
+                     
+                     <h4>Geri Bildirim</h4>
+                     <p>Erişilebilirlik konusunda önerileriniz için: <strong>wupaniyazilim@gmail.com</strong></p>
+                 </div>
+             `
+         },
+         'kişisel-verilerin-korunması': {
+             title: 'Kişisel Verilerin Korunması Politikası',
+             content: `
+                 <div class="legal-section">
+                     <h4>Kişisel Verilerin Korunması Politikası</h4>
+                     <p>Bu politika, 6698 sayılı Kişisel Verilerin Korunması Kanunu uyarınca hazırlanmıştır.</p>
+                     
+                     <h4>1. Veri İşleme İlkeleri</h4>
+                     <ul>
+                         <li><strong>Hukuka Uygunluk:</strong> Yasal dayanaklar çerçevesinde işleme</li>
+                         <li><strong>Doğruluk:</strong> Verilerin doğru ve güncel tutulması</li>
+                         <li><strong>Amaçla Sınırlılık:</strong> Belirli amaçlarla işleme</li>
+                         <li><strong>Orantılılık:</strong> Amaçla ilgili, sınırlı ve ölçülü işleme</li>
+                         <li><strong>Doğruluk:</strong> Verilerin doğru ve gerektiğinde güncel tutulması</li>
+                         <li><strong>Saklama Süresi:</strong> Gerekli süre kadar saklama</li>
+                     </ul>
+                     
+                     <h4>2. İşlenen Veri Türleri</h4>
+                     <ul>
+                         <li>Kimlik bilgileri (ad, soyad)</li>
+                         <li>İletişim bilgileri (e-posta, telefon)</li>
+                         <li>Proje detay bilgileri</li>
+                         <li>Şirket/kurum bilgileri</li>
+                         <li>Teknik log verileri</li>
+                     </ul>
+                     
+                     <h4>3. Veri Güvenliği</h4>
+                     <ul>
+                         <li>SSL/TLS şifreleme</li>
+                         <li>Güvenli sunucu altyapısı</li>
+                         <li>Erişim kontrolü</li>
+                         <li>Düzenli güvenlik güncellemeleri</li>
+                         <li>Veri yedekleme</li>
+                     </ul>
+                     
+                     <h4>4. Veri Sahibi Hakları</h4>
+                     <p>KVKK kapsamında sahip olduğunuz haklarınızı kullanmak için bizimle iletişime geçebilirsiniz.</p>
+                 </div>
+             `
+         },
+         'bilgi-guvenligi': {
+             title: 'Bilgi Güvenliği Politikası',
+             content: `
+                 <div class="legal-section">
+                     <h4>Bilgi Güvenliği Politikası</h4>
+                     <p>Limnio olarak, müşteri bilgilerinin ve sistem güvenliğinin korunması önceliğimizdir.</p>
+                     
+                     <h4>1. Güvenlik Prensipleri</h4>
+                     <ul>
+                         <li><strong>Gizlilik:</strong> Bilgilerin yetkisiz erişime karşı korunması</li>
+                         <li><strong>Bütünlük:</strong> Verilerin değiştirilmeden korunması</li>
+                         <li><strong>Erişilebilirlik:</strong> Yetkili kullanıcıların erişim sağlaması</li>
+                         <li><strong>Hesap Verebilirlik:</strong> Tüm işlemlerin kayıt altında tutulması</li>
+                     </ul>
+                     
+                     <h4>2. Teknik Güvenlik Tedbirleri</h4>
+                     <ul>
+                         <li>HTTPS/SSL şifreleme</li>
+                         <li>Güvenlik duvarı koruması</li>
+                         <li>Antivirüs sistemleri</li>
+                         <li>Güncel yazılım kullanımı</li>
+                         <li>Güvenli kod geliştirme</li>
+                         <li>Penetrasyon testleri</li>
+                     </ul>
+                     
+                     <h4>3. Organizasyonel Tedbirler</h4>
+                     <ul>
+                         <li>Güvenlik farkındalığı eğitimleri</li>
+                         <li>Erişim yetki yönetimi</li>
+                         <li>İnsan hatası minimizasyonu</li>
+                         <li>Düzenli güvenlik denetimleri</li>
+                         <li>Olay müdahale planları</li>
+                     </ul>
+                     
+                     <h4>4. Güvenlik İhlali Durumunda</h4>
+                     <p>Herhangi bir güvenlik ihlali durumunda, ilgili otoritelere ve etkilenen kullanıcılara yasal süreler içinde bildirim yapılır.</p>
+                     
+                     <h4>İletişim</h4>
+                     <p>Güvenlik konularında: <strong>wupaniyazilim@gmail.com</strong></p>
+                 </div>
+             `
+         },
+         'veri-saklama': {
+             title: 'Veri Saklama Politikası',
+             content: `
+                 <div class="legal-section">
+                     <h4>Veri Saklama Politikası</h4>
+                     <p>Bu politika, toplanan kişisel verilerin ne kadar süreyle saklanacağını belirler.</p>
+                     
+                     <h4>1. Saklama Süreleri</h4>
+                     <ul>
+                         <li><strong>İletişim Verileri:</strong> 3 yıl</li>
+                         <li><strong>Proje Bilgileri:</strong> 5 yıl</li>
+                         <li><strong>Teknik Log Verileri:</strong> 1 yıl</li>
+                         <li><strong>Çerez Verileri:</strong> 1 yıl</li>
+                         <li><strong>E-posta Kayıtları:</strong> 2 yıl</li>
+                     </ul>
+                     
+                     <h4>2. Saklama Amacı</h4>
+                     <ul>
+                         <li>Hukuki yükümlülüklerin yerine getirilmesi</li>
+                         <li>Müşteri hizmetlerinin devamı</li>
+                         <li>Teknik destek sağlanması</li>
+                         <li>Güvenlik ve denetim gereklilikleri</li>
+                         <li>İstatistiksel analiz ve raporlama</li>
+                     </ul>
+                     
+                     <h4>3. Veri İmhası</h4>
+                     <p>Saklama süresi dolan veriler güvenli yöntemlerle imha edilir:</p>
+                     <ul>
+                         <li>Dijital verilerin güvenli silinmesi</li>
+                         <li>Yedeklerin temizlenmesi</li>
+                         <li>İmha kayıtlarının tutulması</li>
+                         <li>Düzenli temizlik prosedürleri</li>
+                     </ul>
+                     
+                     <h4>4. Veri Sahibi Talepleri</h4>
+                     <p>Veri sahipleri, saklama süresinden önce verilerinin silinmesini talep edebilirler. Bu talepler yasal çerçevede değerlendirilir.</p>
+                     
+                     <h4>İletişim</h4>
+                     <p>Veri saklama konularında: <strong>wupaniyazilim@gmail.com</strong></p>
+                 </div>
+             `
+         },
+         'teknik-destek': {
+             title: 'Teknik Destek',
+             content: `
+                 <div class="legal-section">
+                     <h4>Limnio Teknik Destek Hizmetleri</h4>
+                     <p>Projelerinizde karşılaştığınız teknik sorunlar için profesyonel destek hizmeti sunuyoruz.</p>
+                     
+                     <h4>1. Destek Kapsamı</h4>
+                     <ul>
+                         <li><strong>Mobil Uygulamalar:</strong> Android uygulama sorunları ve güncellemeleri</li>
+                         <li><strong>Web Uygulamaları:</strong> React, HTML/CSS/JS sorunları</li>
+                         <li><strong>Desktop Uygulamaları:</strong> Electron uygulamaları</li>
+                         <li><strong>Google Apps Script:</strong> Otomasyon ve entegrasyon sorunları</li>
+                         <li><strong>Hosting & Domain:</strong> Sunucu ve alan adı sorunları</li>
+                     </ul>
+                     
+                     <h4>2. Destek Seviyeleri</h4>
+                     <ul>
+                         <li><strong>Ücretsiz Destek:</strong> Proje tesliminden sonraki ilk 3 ay</li>
+                         <li><strong>Standart Destek:</strong> 24-48 saat yanıt süresi</li>
+                         <li><strong>Acil Destek:</strong> 2-4 saat yanıt süresi</li>
+                         <li><strong>Premium Destek:</strong> 1 saat yanıt süresi + öncelikli işlem</li>
+                     </ul>
+                     
+                     <h4>3. İletişim Kanalları</h4>
+                     <ul>
+                         <li><strong>E-posta:</strong> wupaniyazilim@gmail.com</li>
+                         <li><strong>WhatsApp:</strong> Acil durumlar için</li>
+                         <li><strong>Uzaktan Erişim:</strong> TeamViewer / AnyDesk</li>
+                         <li><strong>Video Görüşme:</strong> Google Meet / Zoom</li>
+                     </ul>
+                     
+                     <h4>4. Destek Talep Süreci</h4>
+                     <ol>
+                         <li>Sorun detaylarını e-posta ile bildirin</li>
+                         <li>Hata ekran görüntüleri/videolarını paylaşın</li>
+                         <li>Sistem bilgilerinizi belirtin</li>
+                         <li>Aciliyet seviyesini belirtin</li>
+                         <li>Çözüm sürecini takip edin</li>
+                     </ol>
+                 </div>
+             `
+         },
+         'proje-sureci': {
+             title: 'Proje Geliştirme Süreci',
+             content: `
+                 <div class="legal-section">
+                     <h4>Limnio Proje Geliştirme Süreci</h4>
+                     <p>Projelerinizi profesyonel bir süreçle yönetir, kaliteli sonuçlar elde etmenizi sağlarız.</p>
+                     
+                     <h4>1. Proje Başlangıç Süreci</h4>
+                     <ol>
+                         <li><strong>İlk İletişim (0-24 saat):</strong> Proje talebinizi alır, ön değerlendirme yaparız</li>
+                         <li><strong>Detaylı Görüşme (1-3 gün):</strong> İhtiyaçlarınızı analiz eder, teknik detayları belirlenir</li>
+                         <li><strong>Teklif Hazırlama (3-5 gün):</strong> Kapsamlı teklif ve zaman planı sunulur</li>
+                         <li><strong>Sözleşme (1-2 gün):</strong> Anlaşma imzalanır, ön ödeme alınır</li>
+                     </ol>
+                     
+                     <h4>2. Geliştirme Aşamaları</h4>
+                     <ul>
+                         <li><strong>Analiz & Tasarım (10-20%):</strong> Wireframe, mockup, teknik mimarı</li>
+                         <li><strong>Backend Geliştirme (20-40%):</strong> Veritabanı, API, sunucu tarafı</li>
+                         <li><strong>Frontend Geliştirme (40-70%):</strong> Kullanıcı arayüzü ve deneyimi</li>
+                         <li><strong>Test & Debug (70-90%):</strong> Kapsamlı test ve hata düzeltme</li>
+                         <li><strong>Deploy & Teslim (90-100%):</strong> Canlıya alım ve dokumentasyon</li>
+                     </ul>
+                     
+                     <h4>3. İletişim ve Raporlama</h4>
+                     <ul>
+                         <li><strong>Haftalık Raporlar:</strong> İlerleme durumu ve ekran görüntüleri</li>
+                         <li><strong>Demo Sunumları:</strong> Milestone'larda canlı gösterim</li>
+                         <li><strong>Sürekli İletişim:</strong> Sorular ve değişiklik talepleri</li>
+                         <li><strong>Dokumentasyon:</strong> Teknik belgeler ve kullanım kılavuzu</li>
+                     </ul>
+                     
+                     <h4>4. Kalite Güvencesi</h4>
+                     <ul>
+                         <li>Modern yazılım geliştirme metodolojileri</li>
+                         <li>Kod kalitesi ve güvenlik standartları</li>
+                         <li>Cross-platform uyumluluk testleri</li>
+                         <li>Performans optimizasyonu</li>
+                         <li>3 ay ücretsiz bakım ve destek</li>
+                     </ul>
+                 </div>
+             `
+         },
+         'kariyer': {
+             title: 'Kariyer Fırsatları',
+             content: `
+                 <div class="legal-section">
+                     <h4>Limnio'da Kariyer Fırsatları</h4>
+                     <p>Teknoloji tutkunu geliştiriciler ve tasarımcılarla birlikte çalışma fırsatları.</p>
+                     
+                     <h4>1. Açık Pozisyonlar</h4>
+                     <p><em>Şu anda aktif işe alım sürecimiz bulunmamaktadır, ancak yetenekli adayları değerlendirmeye açığız.</em></p>
+                     
+                     <h4>2. Aradığımız Profiller</h4>
+                     <ul>
+                         <li><strong>Frontend Developer:</strong> React, Vue.js, Angular deneyimi</li>
+                         <li><strong>Mobile Developer:</strong> Android (Java/Kotlin) veya React Native</li>
+                         <li><strong>Backend Developer:</strong> Node.js, Python, PHP deneyimi</li>
+                         <li><strong>UI/UX Designer:</strong> Figma, Adobe XD deneyimi</li>
+                         <li><strong>DevOps Engineer:</strong> AWS, Docker, CI/CD deneyimi</li>
+                     </ul>
+                     
+                     <h4>3. Çalışma Koşulları</h4>
+                     <ul>
+                         <li><strong>Çalışma Modeli:</strong> Hibrit (uzaktan + ofis)</li>
+                         <li><strong>Çalışma Saatleri:</strong> Esnek mesai saatleri</li>
+                         <li><strong>Teknoloji:</strong> Son teknoloji araçlar ve yazılımlar</li>
+                         <li><strong>Eğitim:</strong> Sürekli öğrenme ve gelişim desteği</li>
+                         <li><strong>Projeler:</strong> Çeşitli sektörlerden yenilikçi projeler</li>
+                     </ul>
+                     
+                     <h4>4. Başvuru Süreci</h4>
+                     <ol>
+                         <li><strong>CV Gönderimi:</strong> wupaniyazilim@gmail.com</li>
+                         <li><strong>Portfolyo İncelemesi:</strong> GitHub, Behance, Dribbble</li>
+                         <li><strong>Teknik Mülakat:</strong> Online coding interview</li>
+                         <li><strong>Proje Görüşmesi:</strong> Geçmiş deneyimler ve yaklaşım</li>
+                         <li><strong>Referans Kontrolü:</strong> Önceki çalışma deneyimleri</li>
+                     </ol>
+                     
+                     <h4>5. Beklentilerimiz</h4>
+                     <ul>
+                         <li>Modern teknolojilere ilgi ve öğrenmeye açıklık</li>
+                         <li>Takım çalışmasına yatkınlık</li>
+                         <li>Problem çözme becerisi</li>
+                         <li>İletişim becerisi</li>
+                         <li>Detaya dikkat ve kalite odaklılık</li>
+                     </ul>
+                 </div>
+             `
+         },
+         'basin-kiti': {
+             title: 'Basın Kiti',
+             content: `
+                 <div class="legal-section">
+                     <h4>Limnio Basın Kiti</h4>
+                     <p>Medya ve basın mensupları için hazırlanmış kurumsal bilgiler ve görseller.</p>
+                     
+                     <h4>1. Kurumsal Bilgiler</h4>
+                     <ul>
+                         <li><strong>Kurucu:</strong> Emre Akyol</li>
+                         <li><strong>Kuruluş:</strong> 2025</li>
+                         <li><strong>Konum:</strong> Türkiye</li>
+                         <li><strong>Sektör:</strong> Yazılım Geliştirme ve Danışmanlık</li>
+                         <li><strong>Uzmanlik Alanları:</strong> Mobil, Web, Desktop Uygulamaları</li>
+                     </ul>
+                     
+                     <h4>2. Şirket Açıklaması</h4>
+                     <p>Limnio, modern yazılım çözümleri geliştiren bir teknoloji stüdyosudur. Mobil uygulamalardan web platformlarına, desktop çözümlerinden otomasyon sistemlerine kadar geniş bir yelpazede hizmet vermektedir.</p>
+                     
+                     <h4>3. Öne Çıkan Projeler</h4>
+                     <ul>
+                         <li><strong>Lilyum Sayacı:</strong> Android geri sayım uygulaması</li>
+                         <li><strong>CV Oluşturucu:</strong> Türkçe CV hazırlama web uygulaması</li>
+                         <li><strong>GymDesk:</strong> Spor salonu yönetim sistemi</li>
+                         <li><strong>HR Portal:</strong> İnsan kaynakları CRM çözümü</li>
+                     </ul>
+                     
+                     <h4>4. Teknoloji Stack</h4>
+                     <ul>
+                         <li><strong>Mobile:</strong> Android (Java/Kotlin)</li>
+                         <li><strong>Web:</strong> React.js, HTML5, CSS3, JavaScript</li>
+                         <li><strong>Desktop:</strong> Electron</li>
+                         <li><strong>Backend:</strong> Google Apps Script, Node.js</li>
+                         <li><strong>Database:</strong> SQLite, Google Sheets</li>
+                     </ul>
+                     
+                     <h4>5. İletişim Bilgileri</h4>
+                     <ul>
+                         <li><strong>E-posta:</strong> wupaniyazilim@gmail.com</li>
+                         <li><strong>Website:</strong> limnio.dev</li>
+                         <li><strong>GitHub:</strong> github.com/Wupani</li>
+                         <li><strong>LinkedIn:</strong> linkedin.com/in/emre-akyol-a5667b274</li>
+                     </ul>
+                     
+                     <h4>6. Logo ve Görseller</h4>
+                     <p>Logo ve kurumsal görseller için lütfen bizimle iletişime geçin. Yüksek çözünürlüklü dosyalar ve farklı formatlar temin edilebilir.</p>
+                     
+                     <h4>7. Basın İletişimi</h4>
+                     <p>Basın duyuruları, röportaj talepleri ve medya işbirlikleri için: <strong>wupaniyazilim@gmail.com</strong></p>
+                 </div>
+             `
+         }
+    };
+    
+    return content[type] || {
+        title: 'Bilgi Bulunamadı',
+        content: '<p>İstenen içerik bulunamadı.</p>'
+    };
+}
+
+// Footer modal event listeners
+document.addEventListener('DOMContentLoaded', function() {
+    // Legal modal close events
+    const legalModal = document.getElementById('legalModal');
+    if (legalModal) {
+        // Close on overlay click
+        legalModal.addEventListener('click', function(e) {
+            if (e.target === this) {
+                closeLegalModal();
+            }
+        });
+        
+        // Close on escape key
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape' && legalModal.classList.contains('active')) {
+                closeLegalModal();
+            }
+        });
+    }
+});
+
+// Add to existing contact modal opener to match footer links
+function openContactModal() {
+    const modal = document.getElementById('contactModal');
+    if (modal) {
+        modal.classList.add('active');
+        document.body.style.overflow = 'hidden';
+    }
+}
