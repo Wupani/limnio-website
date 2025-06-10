@@ -6714,7 +6714,9 @@ html body div button[class~="security-btn"] i {
 
 /* EMERGENCY MOBILE NAV CONTROLS FIX - FINAL OVERRIDE */
 @media (max-width: 768px) {
-    /* Brute force nav-controls visibility */
+    /* CHROME & ALL MOBILE BROWSERS FORCE FIX */
+    .nav-menu.active .nav-controls,
+    .nav-menu .nav-controls,
     [class*="nav-controls"],
     *[class*="nav-controls"],
     .nav-controls,
@@ -6736,9 +6738,19 @@ html body div button[class~="security-btn"] i {
         background: rgba(255, 255, 255, 0.02) !important;
         min-height: 60px !important;
         flex-direction: row !important;
+        /* Force for Chrome and Safari */
+        -webkit-box-flex: 1 !important;
+        -webkit-flex: 1 !important;
+        -ms-flex: 1 !important;
+        flex: 1 !important;
+        /* Additional Chrome-specific fixes */
+        transform: translateZ(0) !important;
+        will-change: transform !important;
     }
     
-    /* Brute force theme toggle visibility */
+    /* CHROME & ALL BROWSERS - Theme toggle force visibility */
+    .nav-menu.active .theme-toggle,
+    .nav-menu .nav-controls .theme-toggle,
     [class*="theme-toggle"],
     *[class*="theme-toggle"],
     .theme-toggle,
@@ -6757,9 +6769,18 @@ html body div button[class~="security-btn"] i {
         border: none !important;
         cursor: pointer !important;
         font-size: 1.2rem !important;
+        /* Chrome-specific rendering fixes */
+        -webkit-appearance: none !important;
+        -webkit-transform: translateZ(0) !important;
+        transform: translateZ(0) !important;
+        backface-visibility: hidden !important;
+        /* Force hardware acceleration */
+        will-change: background-color, transform !important;
     }
     
-    /* Brute force language switcher visibility */
+    /* CHROME & ALL BROWSERS - Language switcher force visibility */
+    .nav-menu.active .language-switcher,
+    .nav-menu .nav-controls .language-switcher,
     [class*="language-switcher"],
     *[class*="language-switcher"],
     .language-switcher,
@@ -6769,9 +6790,14 @@ html body div button[class~="security-btn"] i {
         opacity: 1 !important;
         gap: 0.5rem !important;
         pointer-events: auto !important;
+        /* Chrome rendering fixes */
+        transform: translateZ(0) !important;
+        will-change: transform !important;
     }
     
-    /* Brute force lang button visibility */
+    /* CHROME & ALL BROWSERS - Lang button force visibility */
+    .nav-menu.active .lang-btn,
+    .nav-menu .nav-controls .lang-btn,
     [class*="lang-btn"],
     *[class*="lang-btn"],
     .lang-btn,
@@ -6791,6 +6817,14 @@ html body div button[class~="security-btn"] i {
         pointer-events: auto !important;
         cursor: pointer !important;
         font-size: 0.9rem !important;
+        /* Chrome-specific fixes */
+        -webkit-appearance: none !important;
+        -webkit-transform: translateZ(0) !important;
+        transform: translateZ(0) !important;
+        backface-visibility: hidden !important;
+        will-change: background-color, border-color !important;
+        /* Force display even on Chrome */
+        content: "" !important;
     }
     
     /* Dark mode overrides for emergency styles */

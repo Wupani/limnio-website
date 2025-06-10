@@ -49,6 +49,56 @@ hamburger.addEventListener('click', (e) => {
     hamburger.classList.toggle('active');
     navMenu.classList.toggle('active');
     
+    // FORCE NAV-CONTROLS VISIBILITY FOR ALL BROWSERS (ESPECIALLY CHROME)
+    if (!isActive) {
+        // Force show nav-controls when menu opens
+        setTimeout(() => {
+            const navControls = document.querySelector('.nav-controls');
+            const themeToggle = document.querySelector('.theme-toggle');
+            const languageSwitcher = document.querySelector('.language-switcher');
+            const langBtns = document.querySelectorAll('.lang-btn');
+            
+            if (navControls) {
+                navControls.style.display = 'flex';
+                navControls.style.visibility = 'visible';
+                navControls.style.opacity = '1';
+                navControls.style.position = 'static';
+                navControls.style.width = '100%';
+                navControls.style.marginTop = '1.5rem';
+                navControls.style.paddingTop = '1.5rem';
+                navControls.style.borderTop = '1px solid rgba(234, 179, 8, 0.2)';
+                navControls.style.justifyContent = 'center';
+                navControls.style.alignItems = 'center';
+                navControls.style.gap = '1rem';
+                navControls.style.order = '999';
+                navControls.style.zIndex = '99999';
+                navControls.style.pointerEvents = 'auto';
+                console.log('Nav-controls forced visible!');
+            }
+            
+            if (themeToggle) {
+                themeToggle.style.display = 'flex';
+                themeToggle.style.visibility = 'visible';
+                themeToggle.style.opacity = '1';
+                console.log('Theme toggle forced visible!');
+            }
+            
+            if (languageSwitcher) {
+                languageSwitcher.style.display = 'flex';
+                languageSwitcher.style.visibility = 'visible';
+                languageSwitcher.style.opacity = '1';
+                console.log('Language switcher forced visible!');
+            }
+            
+            langBtns.forEach(btn => {
+                btn.style.display = 'flex';
+                btn.style.visibility = 'visible';
+                btn.style.opacity = '1';
+            });
+            console.log('Lang buttons forced visible!');
+        }, 50);
+    }
+    
     // Enhanced body scroll management
     if (!isActive) {
         document.body.style.overflow = 'hidden';
@@ -185,6 +235,54 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
 
 // Initialize active nav link on page load
 setActiveNavLink();
+
+// FORCE NAV-CONTROLS VISIBILITY ON PAGE LOAD FOR ALL BROWSERS
+document.addEventListener('DOMContentLoaded', function() {
+    // Wait for everything to load, then force nav-controls visibility
+    setTimeout(() => {
+        if (window.innerWidth <= 768) {
+            const navControls = document.querySelector('.nav-controls');
+            const themeToggle = document.querySelector('.theme-toggle');
+            const languageSwitcher = document.querySelector('.language-switcher');
+            const langBtns = document.querySelectorAll('.lang-btn');
+            
+            console.log('Checking nav-controls on page load...');
+            console.log('Nav-controls found:', !!navControls);
+            console.log('Theme toggle found:', !!themeToggle);
+            console.log('Language switcher found:', !!languageSwitcher);
+            console.log('Lang buttons count:', langBtns.length);
+            
+            if (navControls) {
+                // Force initial styling for mobile
+                navControls.style.display = 'flex';
+                navControls.style.visibility = 'visible';
+                navControls.style.opacity = '1';
+                console.log('Page load: Nav-controls forced visible!');
+            }
+            
+            if (themeToggle) {
+                themeToggle.style.display = 'flex';
+                themeToggle.style.visibility = 'visible';
+                themeToggle.style.opacity = '1';
+                console.log('Page load: Theme toggle forced visible!');
+            }
+            
+            if (languageSwitcher) {
+                languageSwitcher.style.display = 'flex';
+                languageSwitcher.style.visibility = 'visible';
+                languageSwitcher.style.opacity = '1';
+                console.log('Page load: Language switcher forced visible!');
+            }
+            
+            langBtns.forEach((btn, index) => {
+                btn.style.display = 'flex';
+                btn.style.visibility = 'visible';
+                btn.style.opacity = '1';
+                console.log(`Page load: Lang button ${index + 1} forced visible!`);
+            });
+        }
+    }, 100);
+});
 
 // Modal functionality
 const openModalBtn = document.getElementById('openContactModal');
