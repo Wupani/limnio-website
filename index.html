@@ -45,6 +45,102 @@
     <link rel="stylesheet" href="style.css?v=20250609010">
 </head>
 <body>
+    <!-- Cookie Consent Banner -->
+    <div class="cookie-banner" id="cookieBanner">
+        <div class="cookie-content">
+            <div class="cookie-text">
+                <p>Tanımlama bilgilerini, sitemizin doğru şekilde çalışmasını sağlamak, içerikleri ve reklamları kişiselleştirmek, sosyal medya özellikleri sunmak ve site trafiğimizi analiz etmek için kullanıyoruz. Aynı zamanda site kullanımınızla ilgili bilgileri, sosyal medya, reklamcılık ve analiz ortaklarımızla paylaşıyoruz.</p>
+            </div>
+            <div class="cookie-actions">
+                <button class="cookie-btn cookie-btn-manage" onclick="showCookieSettings()">
+                    <span>Çerezleri Yönet</span>
+                </button>
+                <button class="cookie-btn cookie-btn-reject" onclick="rejectAllCookies()">
+                    <span>Tüm Çerezleri Reddet</span>
+                </button>
+                <button class="cookie-btn cookie-btn-accept" onclick="acceptAllCookies()">
+                    <span>Tüm çerezleri kabul et</span>
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Cookie Settings Modal -->
+    <div class="modal-overlay cookie-settings-modal" id="cookieSettingsModal">
+        <div class="modal-container">
+            <div class="modal-header">
+                <h3><i class="fas fa-cookie-bite"></i> Çerez Ayarları</h3>
+                <button class="modal-close" onclick="closeCookieSettings()" title="Kapat" aria-label="Çerez ayarlarını kapat">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <div class="modal-content">
+                <div class="cookie-category">
+                    <div class="cookie-category-header">
+                        <h4><i class="fas fa-shield-alt"></i> Zorunlu Çerezler</h4>
+                        <div class="cookie-toggle">
+                            <input type="checkbox" id="necessaryCookies" checked disabled aria-label="Zorunlu çerezler (devre dışı bırakılamaz)">
+                            <label for="necessaryCookies" class="toggle-label">
+                                <span class="toggle-slider"></span>
+                            </label>
+                        </div>
+                    </div>
+                    <p>Bu çerezler web sitesinin düzgün çalışması için gereklidir ve devre dışı bırakılamazlar. Genellikle gizlilik tercihlerinizi belirleme gibi eylemlerinize yanıt olarak ayarlanırlar.</p>
+                </div>
+
+                <div class="cookie-category">
+                    <div class="cookie-category-header">
+                        <h4><i class="fas fa-chart-line"></i> Analitik Çerezler</h4>
+                        <div class="cookie-toggle">
+                            <input type="checkbox" id="analyticsCookies" aria-label="Analitik çerezleri etkinleştir">
+                            <label for="analyticsCookies" class="toggle-label">
+                                <span class="toggle-slider"></span>
+                            </label>
+                        </div>
+                    </div>
+                    <p>Bu çerezler site kullanımı hakkında bilgi toplamamızı sağlar. Hangi sayfaların popüler olduğunu ve ziyaretçilerin sitede nasıl hareket ettiğini anlamamıza yardımcı olur.</p>
+                </div>
+
+                <div class="cookie-category">
+                    <div class="cookie-category-header">
+                        <h4><i class="fas fa-bullseye"></i> Pazarlama Çerezleri</h4>
+                        <div class="cookie-toggle">
+                            <input type="checkbox" id="marketingCookies" aria-label="Pazarlama çerezleri etkinleştir">
+                            <label for="marketingCookies" class="toggle-label">
+                                <span class="toggle-slider"></span>
+                            </label>
+                        </div>
+                    </div>
+                    <p>Bu çerezler size daha alakalı reklamlar göstermek için kullanılır. Ayrıca aynı reklamın sürekli gösterilmesini önler ve reklam kampanyalarının etkinliğini ölçer.</p>
+                </div>
+
+                <div class="cookie-category">
+                    <div class="cookie-category-header">
+                        <h4><i class="fas fa-users"></i> Sosyal Medya Çerezleri</h4>
+                        <div class="cookie-toggle">
+                            <input type="checkbox" id="socialCookies" aria-label="Sosyal medya çerezleri etkinleştir">
+                            <label for="socialCookies" class="toggle-label">
+                                <span class="toggle-slider"></span>
+                            </label>
+                        </div>
+                    </div>
+                    <p>Bu çerezler sosyal medya platformları tarafından ayarlanır ve içeriği sosyal medyada paylaşmanızı sağlar. Ayrıca sosyal medya özelliklerinin düzgün çalışmasını sağlar.</p>
+                </div>
+
+                <div class="cookie-settings-actions">
+                    <button class="cookie-settings-btn cookie-btn-reject" onclick="saveAndRejectCookies()">
+                        <i class="fas fa-times"></i>
+                        Reddet ve Kaydet
+                    </button>
+                    <button class="cookie-settings-btn cookie-btn-accept" onclick="saveAndAcceptCookies()">
+                        <i class="fas fa-check"></i>
+                        Kaydet ve Kabul Et
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
     <!-- Scroll Progress Bar -->
     <div class="scroll-progress">
         <div class="scroll-progress-bar"></div>

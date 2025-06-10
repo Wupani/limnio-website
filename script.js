@@ -2383,4 +2383,311 @@ document.addEventListener('DOMContentLoaded', () => {
             initScrollAnimations();
         }
     }, 100);
-}); 
+});
+
+// Cookie Consent Management System
+class CookieManager {
+    constructor() {
+        this.cookieName = 'limnio_cookie_consent';
+        this.cookieExpiry = 365; // days
+        this.banner = document.getElementById('cookieBanner');
+        this.settingsModal = document.getElementById('cookieSettingsModal');
+        
+        this.init();
+    }
+    
+    init() {
+        // Check if user has already made a choice
+        const consent = this.getConsent();
+        if (!consent) {
+            this.showBanner();
+        } else {
+            this.applyCookieSettings(consent);
+        }
+        
+        // Add event listeners for settings toggles
+        this.initToggleListeners();
+    }
+    
+    showBanner() {
+        if (this.banner) {
+            setTimeout(() => {
+                this.banner.classList.add('show');
+            }, 1000); // Show after 1 second
+        }
+    }
+    
+    hideBanner() {
+        if (this.banner) {
+            this.banner.classList.remove('show');
+        }
+    }
+    
+    getConsent() {
+        const cookie = document.cookie
+            .split('; ')
+            .find(row => row.startsWith(this.cookieName + '='));
+        
+        if (cookie) {
+            try {
+                return JSON.parse(decodeURIComponent(cookie.split('=')[1]));
+            } catch (e) {
+                return null;
+            }
+        }
+        return null;
+    }
+    
+    setConsent(consent) {
+        const expires = new Date();
+        expires.setTime(expires.getTime() + (this.cookieExpiry * 24 * 60 * 60 * 1000));
+        
+        document.cookie = `${this.cookieName}=${encodeURIComponent(JSON.stringify(consent))}; expires=${expires.toUTCString()}; path=/; SameSite=Lax`;
+        
+        this.applyCookieSettings(consent);
+    }
+    
+    applyCookieSettings(consent) {
+        // Apply analytics cookies
+        if (consent.analytics) {
+            this.loadAnalytics();
+        }
+        
+        // Apply marketing cookies
+        if (consent.marketing) {
+            this.loadMarketing();
+        }
+        
+        // Apply social media cookies
+        if (consent.social) {
+            this.loadSocialMedia();
+        }
+        
+        console.log('Cookie settings applied:', consent);
+    }
+    
+    loadAnalytics() {
+        // Placeholder for analytics loading (Google Analytics, etc.)
+        console.log('Analytics cookies loaded');
+        
+        // Example: Load Google Analytics
+        // gtag('config', 'GA_TRACKING_ID');
+    }
+    
+    loadMarketing() {
+        // Placeholder for marketing cookies
+        console.log('Marketing cookies loaded');
+        
+        // Example: Load marketing scripts
+        // Facebook Pixel, Google Ads, etc.
+    }
+    
+    loadSocialMedia() {
+        // Placeholder for social media cookies
+        console.log('Social media cookies loaded');
+        
+        // Example: Load social media widgets
+        // Facebook SDK, Twitter widgets, etc.
+    }
+    
+    initToggleListeners() {
+        const toggles = ['analyticsCookies', 'marketingCookies', 'socialCookies'];
+        
+        toggles.forEach(toggleId => {
+            const toggle = document.getElementById(toggleId);
+            if (toggle) {
+                toggle.addEventListener('change', () => {
+                    // Update UI feedback
+                    this.updateToggleState(toggle);
+                });
+            }
+        });
+    }
+    
+    updateToggleState(toggle) {
+        // Add visual feedback for toggle changes
+        const label = toggle.nextElementSibling;
+        if (label) {
+            if (toggle.checked) {
+                label.style.backgroundColor = 'var(--primary-color)';
+            } else {
+                label.style.backgroundColor = '#ccc';
+            }
+        }
+    }
+    
+    getCurrentSettings() {
+        return {
+            necessary: true, // Always true
+            analytics: document.getElementById('analyticsCookies')?.checked || false,
+            marketing: document.getElementById('marketingCookies')?.checked || false,
+            social: document.getElementById('socialCookies')?.checked || false,
+            timestamp: new Date().toISOString()
+        };
+    }
+    
+    loadSavedSettings() {
+        const consent = this.getConsent();
+        if (consent) {
+            document.getElementById('analyticsCookies').checked = consent.analytics || false;
+            document.getElementById('marketingCookies').checked = consent.marketing || false;
+            document.getElementById('socialCookies').checked = consent.social || false;
+            
+            // Update toggle visual states
+            ['analyticsCookies', 'marketingCookies', 'socialCookies'].forEach(id => {
+                const toggle = document.getElementById(id);
+                if (toggle) {
+                    this.updateToggleState(toggle);
+                }
+            });
+        }
+    }
+}
+
+// Global cookie manager instance
+let cookieManager;
+
+// Cookie consent functions called by HTML buttons
+window.acceptAllCookies = function() {
+    const consent = {
+        necessary: true,
+        analytics: true,
+        marketing: true,
+        social: true,
+        timestamp: new Date().toISOString()
+    };
+    
+    cookieManager.setConsent(consent);
+    cookieManager.hideBanner();
+    
+    // Show success notification
+    showNotification('Tüm çerezler kabul edildi. Teşekkür ederiz!', 'success');
+};
+
+window.rejectAllCookies = function() {
+    const consent = {
+        necessary: true,
+        analytics: false,
+        marketing: false,
+        social: false,
+        timestamp: new Date().toISOString()
+    };
+    
+    cookieManager.setConsent(consent);
+    cookieManager.hideBanner();
+    
+    // Show info notification
+    showNotification('Sadece gerekli çerezler kullanılacak.', 'info');
+};
+
+window.showCookieSettings = function() {
+    cookieManager.hideBanner();
+    
+    // Load current settings into modal
+    cookieManager.loadSavedSettings();
+    
+    // Show settings modal
+    if (cookieManager.settingsModal) {
+        cookieManager.settingsModal.classList.add('active');
+        document.body.style.overflow = 'hidden';
+    }
+};
+
+window.closeCookieSettings = function() {
+    if (cookieManager.settingsModal) {
+        cookieManager.settingsModal.classList.remove('active');
+        document.body.style.overflow = '';
+    }
+    
+    // Show banner again if no consent exists
+    const consent = cookieManager.getConsent();
+    if (!consent) {
+        setTimeout(() => {
+            cookieManager.showBanner();
+        }, 300);
+    }
+};
+
+window.saveAndAcceptCookies = function() {
+    const consent = cookieManager.getCurrentSettings();
+    cookieManager.setConsent(consent);
+    
+    // Close modal
+    if (cookieManager.settingsModal) {
+        cookieManager.settingsModal.classList.remove('active');
+        document.body.style.overflow = '';
+    }
+    
+    // Show success notification
+    showNotification('Çerez ayarlarınız kaydedildi!', 'success');
+};
+
+window.saveAndRejectCookies = function() {
+    // Set all optional cookies to false
+    document.getElementById('analyticsCookies').checked = false;
+    document.getElementById('marketingCookies').checked = false;
+    document.getElementById('socialCookies').checked = false;
+    
+    const consent = {
+        necessary: true,
+        analytics: false,
+        marketing: false,
+        social: false,
+        timestamp: new Date().toISOString()
+    };
+    
+    cookieManager.setConsent(consent);
+    
+    // Close modal
+    if (cookieManager.settingsModal) {
+        cookieManager.settingsModal.classList.remove('active');
+        document.body.style.overflow = '';
+    }
+    
+    // Show info notification
+    showNotification('Sadece gerekli çerezler kullanılacak.', 'info');
+};
+
+// Initialize cookie manager when DOM is loaded
+document.addEventListener('DOMContentLoaded', function() {
+    // Wait a bit for other initializations to complete
+    setTimeout(() => {
+        cookieManager = new CookieManager();
+    }, 500);
+});
+
+// Close cookie settings modal when clicking outside
+document.addEventListener('click', function(e) {
+    const modal = document.getElementById('cookieSettingsModal');
+    if (modal && modal.classList.contains('active')) {
+        if (e.target === modal) {
+            closeCookieSettings();
+        }
+    }
+});
+
+// Handle escape key for cookie settings modal
+document.addEventListener('keydown', function(e) {
+    if (e.key === 'Escape') {
+        const modal = document.getElementById('cookieSettingsModal');
+        if (modal && modal.classList.contains('active')) {
+            closeCookieSettings();
+        }
+    }
+});
+
+// Additional utility functions for cookie management
+window.resetCookieConsent = function() {
+    // Clear the consent cookie
+    document.cookie = `${cookieManager.cookieName}=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;`;
+    
+    // Reload the page to show banner again
+    location.reload();
+};
+
+window.getCookieConsentStatus = function() {
+    return cookieManager.getConsent();
+};
+
+// Export for potential external use
+window.cookieManager = cookieManager; 
