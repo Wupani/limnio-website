@@ -64,36 +64,56 @@ hamburger.addEventListener('click', (e) => {
                 navControls.style.opacity = '1';
                 navControls.style.position = 'static';
                 navControls.style.width = '100%';
-                navControls.style.marginTop = '1.5rem';
-                navControls.style.paddingTop = '1.5rem';
+                navControls.style.marginTop = '1rem';
+                navControls.style.padding = '1rem 0.5rem 0.5rem 0.5rem';
                 navControls.style.borderTop = '1px solid rgba(234, 179, 8, 0.2)';
                 navControls.style.justifyContent = 'center';
                 navControls.style.alignItems = 'center';
-                navControls.style.gap = '1rem';
+                navControls.style.gap = '0.75rem';
                 navControls.style.order = '999';
                 navControls.style.zIndex = '99999';
                 navControls.style.pointerEvents = 'auto';
-                console.log('Nav-controls forced visible!');
+                navControls.style.minHeight = '50px';
+                navControls.style.maxHeight = '60px';
+                console.log('Nav-controls forced visible! (compact)');
             }
             
             if (themeToggle) {
                 themeToggle.style.display = 'flex';
                 themeToggle.style.visibility = 'visible';
                 themeToggle.style.opacity = '1';
-                console.log('Theme toggle forced visible!');
+                themeToggle.style.width = '36px';
+                themeToggle.style.height = '36px';
+                themeToggle.style.minWidth = '36px';
+                themeToggle.style.minHeight = '36px';
+                themeToggle.style.fontSize = '1rem';
+                themeToggle.style.padding = '0';
+                themeToggle.style.margin = '0';
+                console.log('Theme toggle forced visible! (compact)');
             }
             
             if (languageSwitcher) {
                 languageSwitcher.style.display = 'flex';
                 languageSwitcher.style.visibility = 'visible';
                 languageSwitcher.style.opacity = '1';
-                console.log('Language switcher forced visible!');
+                languageSwitcher.style.gap = '0.4rem';
+                languageSwitcher.style.height = '36px';
+                languageSwitcher.style.margin = '0';
+                languageSwitcher.style.padding = '0';
+                console.log('Language switcher forced visible! (compact)');
             }
             
-            langBtns.forEach(btn => {
+            langBtns.forEach((btn, index) => {
                 btn.style.display = 'flex';
                 btn.style.visibility = 'visible';
                 btn.style.opacity = '1';
+                btn.style.width = '50px';
+                btn.style.height = '36px';
+                btn.style.minHeight = '36px';
+                btn.style.padding = '0.5rem 0.6rem';
+                btn.style.fontSize = '0.8rem';
+                btn.style.margin = '0';
+                console.log(`Lang button ${index + 1} forced visible! (compact)`);
             });
             console.log('Lang buttons forced visible!');
         }, 50);
@@ -253,32 +273,46 @@ document.addEventListener('DOMContentLoaded', function() {
             console.log('Lang buttons count:', langBtns.length);
             
             if (navControls) {
-                // Force initial styling for mobile
+                // Force initial styling for mobile - compact version
                 navControls.style.display = 'flex';
                 navControls.style.visibility = 'visible';
                 navControls.style.opacity = '1';
-                console.log('Page load: Nav-controls forced visible!');
+                navControls.style.gap = '0.75rem';
+                navControls.style.padding = '1rem 0.5rem 0.5rem 0.5rem';
+                navControls.style.minHeight = '50px';
+                navControls.style.maxHeight = '60px';
+                console.log('Page load: Nav-controls forced visible! (compact)');
             }
             
             if (themeToggle) {
                 themeToggle.style.display = 'flex';
                 themeToggle.style.visibility = 'visible';
                 themeToggle.style.opacity = '1';
-                console.log('Page load: Theme toggle forced visible!');
+                themeToggle.style.width = '36px';
+                themeToggle.style.height = '36px';
+                themeToggle.style.fontSize = '1rem';
+                themeToggle.style.padding = '0';
+                console.log('Page load: Theme toggle forced visible! (compact)');
             }
             
             if (languageSwitcher) {
                 languageSwitcher.style.display = 'flex';
                 languageSwitcher.style.visibility = 'visible';
                 languageSwitcher.style.opacity = '1';
-                console.log('Page load: Language switcher forced visible!');
+                languageSwitcher.style.gap = '0.4rem';
+                languageSwitcher.style.height = '36px';
+                console.log('Page load: Language switcher forced visible! (compact)');
             }
             
             langBtns.forEach((btn, index) => {
                 btn.style.display = 'flex';
                 btn.style.visibility = 'visible';
                 btn.style.opacity = '1';
-                console.log(`Page load: Lang button ${index + 1} forced visible!`);
+                btn.style.width = '50px';
+                btn.style.height = '36px';
+                btn.style.fontSize = '0.8rem';
+                btn.style.padding = '0.5rem 0.6rem';
+                console.log(`Page load: Lang button ${index + 1} forced visible! (compact)`);
             });
         }
     }, 100);

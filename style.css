@@ -6714,7 +6714,7 @@ html body div button[class~="security-btn"] i {
 
 /* EMERGENCY MOBILE NAV CONTROLS FIX - FINAL OVERRIDE */
 @media (max-width: 768px) {
-    /* CHROME & ALL MOBILE BROWSERS FORCE FIX */
+    /* CHROME & ALL MOBILE BROWSERS FORCE FIX - COMPACT SIZE */
     .nav-menu.active .nav-controls,
     .nav-menu .nav-controls,
     [class*="nav-controls"],
@@ -6726,18 +6726,24 @@ html body div button[class~="security-btn"] i {
         opacity: 1 !important;
         position: static !important;
         width: 100% !important;
-        margin-top: 1.5rem !important;
-        padding-top: 1.5rem !important;
+        max-width: 100% !important;
+        margin-top: 1rem !important;
+        padding: 1rem 0.5rem 0.5rem 0.5rem !important;
         border-top: 1px solid rgba(234, 179, 8, 0.2) !important;
         justify-content: center !important;
         align-items: center !important;
-        gap: 1rem !important;
+        gap: 0.75rem !important;
         order: 999 !important;
         z-index: 99999 !important;
         pointer-events: auto !important;
         background: rgba(255, 255, 255, 0.02) !important;
-        min-height: 60px !important;
+        min-height: 50px !important;
+        max-height: 60px !important;
+        height: auto !important;
         flex-direction: row !important;
+        flex-wrap: nowrap !important;
+        overflow: visible !important;
+        box-sizing: border-box !important;
         /* Force for Chrome and Safari */
         -webkit-box-flex: 1 !important;
         -webkit-flex: 1 !important;
@@ -6748,7 +6754,7 @@ html body div button[class~="security-btn"] i {
         will-change: transform !important;
     }
     
-    /* CHROME & ALL BROWSERS - Theme toggle force visibility */
+    /* CHROME & ALL BROWSERS - Theme toggle force visibility - SMALLER SIZE */
     .nav-menu.active .theme-toggle,
     .nav-menu .nav-controls .theme-toggle,
     [class*="theme-toggle"],
@@ -6758,17 +6764,23 @@ html body div button[class~="security-btn"] i {
         display: flex !important;
         visibility: visible !important;
         opacity: 1 !important;
-        width: 44px !important;
-        height: 44px !important;
+        width: 36px !important;
+        height: 36px !important;
+        min-width: 36px !important;
+        min-height: 36px !important;
+        max-width: 36px !important;
+        max-height: 36px !important;
         background: rgba(234, 179, 8, 0.15) !important;
-        border-radius: 8px !important;
+        border-radius: 6px !important;
         align-items: center !important;
         justify-content: center !important;
         pointer-events: auto !important;
         color: var(--primary-color) !important;
         border: none !important;
         cursor: pointer !important;
-        font-size: 1.2rem !important;
+        font-size: 1rem !important;
+        padding: 0 !important;
+        margin: 0 !important;
         /* Chrome-specific rendering fixes */
         -webkit-appearance: none !important;
         -webkit-transform: translateZ(0) !important;
@@ -6776,9 +6788,11 @@ html body div button[class~="security-btn"] i {
         backface-visibility: hidden !important;
         /* Force hardware acceleration */
         will-change: background-color, transform !important;
+        flex-shrink: 0 !important;
+        overflow: hidden !important;
     }
     
-    /* CHROME & ALL BROWSERS - Language switcher force visibility */
+    /* CHROME & ALL BROWSERS - Language switcher force visibility - COMPACT */
     .nav-menu.active .language-switcher,
     .nav-menu .nav-controls .language-switcher,
     [class*="language-switcher"],
@@ -6788,14 +6802,21 @@ html body div button[class~="security-btn"] i {
         display: flex !important;
         visibility: visible !important;
         opacity: 1 !important;
-        gap: 0.5rem !important;
+        gap: 0.4rem !important;
         pointer-events: auto !important;
+        margin: 0 !important;
+        padding: 0 !important;
+        flex-shrink: 0 !important;
+        align-items: center !important;
+        height: 36px !important;
+        max-height: 36px !important;
         /* Chrome rendering fixes */
         transform: translateZ(0) !important;
         will-change: transform !important;
+        overflow: visible !important;
     }
     
-    /* CHROME & ALL BROWSERS - Lang button force visibility */
+    /* CHROME & ALL BROWSERS - Lang button force visibility - SMALLER SIZE */
     .nav-menu.active .lang-btn,
     .nav-menu .nav-controls .lang-btn,
     [class*="lang-btn"],
@@ -6805,26 +6826,33 @@ html body div button[class~="security-btn"] i {
         display: flex !important;
         visibility: visible !important;
         opacity: 1 !important;
-        min-height: 44px !important;
-        min-width: 60px !important;
-        padding: 0.75rem 1rem !important;
+        height: 36px !important;
+        min-height: 36px !important;
+        max-height: 36px !important;
+        min-width: 50px !important;
+        max-width: 55px !important;
+        width: 50px !important;
+        padding: 0.5rem 0.6rem !important;
         background: transparent !important;
-        border: 2px solid rgba(234, 179, 8, 0.3) !important;
-        border-radius: 8px !important;
+        border: 1px solid rgba(234, 179, 8, 0.4) !important;
+        border-radius: 6px !important;
         color: var(--text-primary) !important;
         align-items: center !important;
         justify-content: center !important;
         pointer-events: auto !important;
         cursor: pointer !important;
-        font-size: 0.9rem !important;
+        font-size: 0.8rem !important;
+        font-weight: 500 !important;
+        margin: 0 !important;
+        overflow: hidden !important;
         /* Chrome-specific fixes */
         -webkit-appearance: none !important;
         -webkit-transform: translateZ(0) !important;
         transform: translateZ(0) !important;
         backface-visibility: hidden !important;
         will-change: background-color, border-color !important;
-        /* Force display even on Chrome */
-        content: "" !important;
+        flex-shrink: 0 !important;
+        box-sizing: border-box !important;
     }
     
     /* Dark mode overrides for emergency styles */
