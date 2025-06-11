@@ -236,4 +236,165 @@ If you discover unauthorized use of my work, please report to:
 **📧 Contact:** wupaniyazilim@gmail.com  
 **⚖️ Legal Notice:** This document serves as a public declaration of intellectual property ownership and may be used as evidence in legal proceedings if necessary.
 
-**🔐 Hash Verification:** This document is stored in the public GitHub repository with commit timestamps for verification of creation date and authorship claims. 
+**🔐 Hash Verification:** This document is stored in the public GitHub repository with commit timestamps for verification of creation date and authorship claims.
+
+---
+
+## 🇹🇷 **TÜRKÇE VERSİYON / TURKISH VERSION**
+
+# 🍋 LİMNİO PROJE SAHİPLİĞİ VE FİKRİ MÜLKİYET BEYANI
+
+## 📋 **RESMİ BEYAN**
+
+**Proje Adı:** Limnio Portfolyo Web Sitesi  
+**Orijinal Yaratıcısı:** Emre Akyol  
+**E-posta:** wupaniyazilim@gmail.com  
+**GitHub Kullanıcı Adı:** @Wupani  
+**İlk Commit Tarihi:** 6 Haziran 2025, 09:49:41 +0300  
+**Repository:** https://github.com/Wupani/limnio-website  
+
+---
+
+## 🎯 **PROJE KONSEPTİ VE ORİJİNAL FİKİR**
+
+### **Konsept Yaratıcısı**
+**Ben, Emre Akyol**, bu projenin **orijinal fikir sahibi** ve **tek geliştiricisiyim**. "Limnio" marka adı ve portfolyo web sitesi konsepti tamamen **benim fikri mülkiyetimdir**.
+
+### **Orijinal Vizyon**
+- **Marka Adı:** "Limnio" - Türkiye'de ilk defa ben tarafından kullanıldı
+- **Tasarım Konsepti:** Limon temalı sarı renk paleti ve modern portfolyo yaklaşımı
+- **Teknik Mimari:** Vanilla JavaScript, modern CSS ve responsive tasarım
+- **İçerik Stratejisi:** Türkçe/İngilizce çift dilli profesyonel portfolyo
+
+---
+
+## 💻 **TEKNİK SAHİPLİK KANITI**
+
+### **Geliştirme Zaman Çizelgesi**
+```
+📅 6 Haziran 2025, 09:49:41 +0300 - İlk commit
+🔗 Commit Hash: f1bc4a470bea98c3f762bf2413500e810f304e8a
+👨‍💻 Yazar: Emre Akyol <wupaniyazilim@gmail.com>
+📝 Mesaj: "feat: Complete Limnio portfolio website"
+```
+
+### **Sürekli Geliştirme Kanıtları**
+- **37 commit** 5 günde (6-11 Haziran 2025)
+- **2.800+ satır** orijinal JavaScript kodu
+- **6.150+ satır** özel CSS stillemesi
+- **2.500+ satır** semantik HTML yapısı
+- **Profesyonel commit geçmişi** detaylı mesajlarla
+
+### **Kod Yazarlığı**
+Bu repository'deki her kod satırı **şahsen benim (Emre Akyol) tarafımdan yazılmıştır**:
+- ✅ **Orijinal HTML yapısı** - El ile kodlanmış semantik markup
+- ✅ **Özel CSS sistemi** - Orijinal tasarım sistemi ve stillemesi
+- ✅ **JavaScript fonksiyonelliği** - Özel animasyonlar, dark mode, çeviriler
+- ✅ **İçerik oluşturma** - Tüm metinler, çeviriler ve dokümantasyon
+- ✅ **Tasarım kararları** - Renk şemaları, tipografi, layout konseptleri
+
+---
+
+## 🎨 **YARATICI VE FİKRİ MÜLKİYET**
+
+### **Marka Kimliği Yaratımı**
+**"Limnio" Marka Elementleri (Orijinal Yaratımlar):**
+- 🍋 **Marka Adı:** "Limnio" - Yazılım markam için yarattığım benzersiz isim
+- 🎨 **Renk Paleti:** Limon sarısı (#eab308) birincil tema
+- 📱 **Logo Konsepti:** Profesyonel tipografi ile limon ikonu
+- 💡 **Marka Pozisyonlaması:** "Basit fikirlerle güçlü deneyimler"
+
+### **İçerik Sahipliği**
+**Tüm içerik benim orijinal çalışmamdır:**
+- ✅ **Proje açıklamaları** - Kişisel proje izahlarım
+- ✅ **Hakkımda bölümü** - Profesyonel biyografim ve felsefem
+- ✅ **Teknoloji açıklamaları** - Uzmanlığım ve deneyim tanımlarım
+- ✅ **Hukuki belgeler** - Araştırıp yazdığım KVKK uyum metinleri
+- ✅ **Çeviri sistemi** - Şahsen çevirdiğim iki dilli içerik
+
+---
+
+## 📄 **HUKUKİ BEYANLAR**
+
+### **Fikri Mülkiyet Hakları**
+**Ben, Emre Akyol, burada şunu beyan ederim:**
+
+1. **Orijinal Yaratım:** Bu proje %100 benim orijinal çalışmamdır
+2. **Üçüncü Taraf İddiaları Yok:** Projenin hiçbir kısmı mevcut IP'yi ihlal etmez
+3. **Tek Sahiplik:** Tüm proje elementlerinin münhasır sahibiyim
+4. **Ticari Haklar:** Tüm ticari ve lisanslama haklarını saklı tutarım
+5. **Marka Sahipliği:** "Limnio" marka adı ve ilgili elementler benim mülkümdür
+
+### **Önceki Sanat Durumu Beyanı**
+- ✅ **Türk pazarında mevcut "Limnio" yazılım markası** bulunamadı
+- ✅ **Limon markalaması + portfolyo web sitesi** benzersiz konsept kombinasyonu
+- ✅ **Mevcut projelerden kopyalamadan** orijinal kod mimarisi
+- ✅ **Gerçek deneyimime dayalı** kişisel içerik
+
+### **Açık Kaynak vs Ticari**
+Bu repository **gösteri amaçlı public** olmasına rağmen şunları içerir:
+- **Fikri mülkiyetim olan** kişisel marka elementleri
+- **Profesyonel deneyimim hakkında** orijinal içerik
+- **Spesifik zorluklar için geliştirdiğim** özel kod çözümleri
+- **Geliştirme yaklaşımlarım hakkında** ticari sırlar
+
+---
+
+## ⚖️ **KULLANIM HAKLARI VE İZİNLER**
+
+### **Başkalarının Yapabilecekleri**
+✅ **Kod yapısını görüntülemek ve öğrenmek**  
+✅ **Eğitim amaçlı tekniklere referans vermek**  
+✅ **Implementasyon patterns ve çözümleri incelemek**  
+✅ **Öğrenme için fork** (uygun atıf ile)  
+
+### **Başkalarının Yapamayacakları**
+❌ **Marka elementlerini kopyalamak** ("Limnio" adı, logo konseptleri)  
+❌ **Tasarım konseptleri veya kod çözümlerinin sahipliğini iddia etmek**  
+❌ **Kişisel içerik kullanmak** (hakkımda, projelerim, deneyimim)  
+❌ **Açık izin olmadan ticari kullanım**  
+❌ **"Limnio" veya ilgili terimler için marka başvuruları**  
+
+### **İzin Talepleri**
+Eğitim amaçları dışındaki herhangi bir kullanım için lütfen iletişime geçin:
+- **E-posta:** wupaniyazilim@gmail.com
+- **Konu:** "Limnio Proje Kullanım İzni Talebi"
+- **İçerik:** Amaçlanan kullanım durumu ve kapsamı
+
+---
+
+## 🛡️ **İNTİHAL KARŞITI UYARI**
+
+### **İzleme ve Koruma**
+Şunların yetkisiz kullanımını aktif olarak izliyorum:
+- **"Limnio" marka adı** platformlar ve servisler genelinde
+- **Kod patterns** ve benzersiz implementasyon yaklaşımları
+- **Tasarım elementleri** ve görsel marka bileşenleri
+- **Uygun atıf olmadan içerik kopyalanması**
+
+### **Hukuki İşlem Uyarısı**
+**Fikri mülkiyetimin yetkisiz kullanımı şunlarla sonuçlanabilir:**
+- ⚖️ **Telif hakkı ihlali** iddiaları
+- 🚨 **Marka ihlali** prosedürleri (resmi olarak tescil edildikten sonra)
+- 💰 **Ticari kötüye kullanım için** tazminat talepleri
+- 🔒 **Durdur ve vazgeç** emirleri
+
+---
+
+## ✍️ **BEYAN İMZASI**
+
+**Ben, Emre Akyol, bu belgede yer alan tüm bilgilerin bildiğim kadarıyla doğru ve kesin olduğunu beyan ederim. Bu proje benim orijinal çalışmam ve fikri mülkiyetimi temsil eder.**
+
+**Dijital İmza:** Emre Akyol  
+**Tarih:** 11 Haziran 2025  
+**Yer:** Denizli, Türkiye  
+**E-posta:** wupaniyazilim@gmail.com  
+
+---
+
+**📅 Belge Oluşturulma:** 11 Haziran 2025  
+**🔄 Son Güncelleme:** 11 Haziran 2025  
+**📧 İletişim:** wupaniyazilim@gmail.com  
+**⚖️ Hukuki Uyarı:** Bu belge fikri mülkiyet sahipliğinin aleni beyanı olarak hizmet eder ve gerekirse yasal işlemlerde delil olarak kullanılabilir.
+
+**🔐 Hash Doğrulaması:** Bu belge, oluşturulma tarihi ve yazarlık iddialarının doğrulanması için commit zaman damgaları ile birlikte public GitHub repository'de saklanmaktadır. 
