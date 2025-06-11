@@ -1,0 +1,396 @@
+commit 698d933b6230b85924ce9ddb195f3c89138cc8a5
+Author: Emre Akyol <wupaniyazilim@gmail.com>
+Date:   Wed Jun 11 03:56:26 2025 +0300
+
+    🔧 Footer modal scroll position fix - Enhanced Legal, Contact, and Certificate modals with proper scroll position restoration
+
+ index.html | 104 +++++-----
+ script.js  | 366 +++++++++++++++++++++++++++++------
+ style.css  | 630 +++++++++++++++++++++++++++++++++++++++++++++++++++++++------
+ 3 files changed, 945 insertions(+), 155 deletions(-)
+
+commit 86f253109af1b0c882b288c421d1c0eed91c6a58
+Author: Emre Akyol <wupaniyazilim@gmail.com>
+Date:   Wed Jun 11 02:41:00 2025 +0300
+
+    📱 Nav-controls compact design - Butonlar küçültüldü, mobilde daha iyi sığacak şekilde optimize edildi
+
+ script.js | 58 +++++++++++++++++++++++++++++++++++++++++-----------
+ style.css | 70 ++++++++++++++++++++++++++++++++++++++++++++-------------------
+ 2 files changed, 95 insertions(+), 33 deletions(-)
+
+commit 3b2526b584455bdca1c94b7a491dd1fba6feb2ad
+Author: Emre Akyol <wupaniyazilim@gmail.com>
+Date:   Wed Jun 11 02:37:05 2025 +0300
+
+    🔧 Chrome Browser Compatibility Fix - Nav-controls artık tüm tarayıcılarda görünüyor (Instagram in-app vs Chrome sorunu çözüldü)
+
+ script.js | 98 +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+ style.css | 50 ++++++++++++++++++++++++++------
+ 2 files changed, 140 insertions(+), 8 deletions(-)
+
+commit 7f82bb62cd63004d6f724f4228061429a62e790c
+Author: Emre Akyol <wupaniyazilim@gmail.com>
+Date:   Wed Jun 11 02:30:05 2025 +0300
+
+    🎉 Mobil responsive nav-controls sorunu çözüldü - Dark mode ve dil butonları artık mobilde görünüyor + Footer responsive + Legal modal optimizasyonları
+
+ script.js |  89 +++++++-
+ style.css | 703 +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++---
+ 2 files changed, 761 insertions(+), 31 deletions(-)
+
+commit 49680d1c6654af3bea996267341f25273529fb9a
+Author: Emre Akyol <wupaniyazilim@gmail.com>
+Date:   Tue Jun 10 23:31:24 2025 +0300
+
+    feat: Complete legal footer system and professional branding updates - Added comprehensive 5-category footer with 25+ legal documents - Updated branding from Mobile to Software Development Studio - Fixed logo visibility and enhanced typography with Inter font - Complete KVKK compliance and professional documentation
+
+ .DS_Store                                          |  Bin 0 -> 6148 bytes
+ .github/workflows/deploy.yml                       |   38 -
+ .gitignore                                         |  107 --
+ .../Ekip_Kurma_ve_Y\303\266netme_Sertifika.pdf"    |  Bin 0 -> 629215 bytes
+ ...i_M\303\274lkiyet_Haklar\304\261_Sertifika.pdf" |  Bin 0 -> 628945 bytes
+ .../Giri\305\237imcilik_Temelleri_Sertifika.pdf"   |  Bin 0 -> 629133 bytes
+ ...60leti\305\237im_Y\303\266netimi_Sertifika.pdf" |  Bin 0 -> 629374 bytes
+ ...274\305\237teriyi_Tan\304\261mak_Sertifika.pdf" |  Bin 0 -> 628898 bytes
+ ...iyatland\304\261rma_Stratejileri_Sertifika.pdf" |  Bin 0 -> 629082 bytes
+ .../Proje_ve_Risk_Y\303\266netimi_Sertifika.pdf"   |  Bin 0 -> 629168 bytes
+ ...305\237me_Y\303\266netimi_Hukuku_Sertifika.pdf" |  Bin 0 -> 628958 bytes
+ ...60\305\237_Modeli_\303\234retimi_Sertifika.pdf" |  Bin 0 -> 629161 bytes
+ ...237im_ve_Network_Y\303\266netimi_Sertifika.pdf" |  Bin 0 -> 629033 bytes
+ ...304\261m_S\303\274re\303\247leri_Sertifika.pdf" |  Bin 0 -> 629086 bytes
+ README.md                                          |   33 +-
+ .../Ekip_Kurma_ve_Y\303\266netme_Sertifika.pdf"    |  Bin 0 -> 629215 bytes
+ ...i_M\303\274lkiyet_Haklar\304\261_Sertifika.pdf" |  Bin 0 -> 628945 bytes
+ .../Giri\305\237imcilik_Temelleri_Sertifika.pdf"   |  Bin 0 -> 629133 bytes
+ ...60leti\305\237im_Y\303\266netimi_Sertifika.pdf" |  Bin 0 -> 629374 bytes
+ ...274\305\237teriyi_Tan\304\261mak_Sertifika.pdf" |  Bin 0 -> 628898 bytes
+ ...iyatland\304\261rma_Stratejileri_Sertifika.pdf" |  Bin 0 -> 629082 bytes
+ .../Proje_ve_Risk_Y\303\266netimi_Sertifika.pdf"   |  Bin 0 -> 629168 bytes
+ ...305\237me_Y\303\266netimi_Hukuku_Sertifika.pdf" |  Bin 0 -> 628958 bytes
+ ...60\305\237_Modeli_\303\234retimi_Sertifika.pdf" |  Bin 0 -> 629161 bytes
+ ...237im_ve_Network_Y\303\266netimi_Sertifika.pdf" |  Bin 0 -> 629033 bytes
+ ...304\261m_S\303\274re\303\247leri_Sertifika.pdf" |  Bin 0 -> 629086 bytes
+ .../Yaz\304\261l\304\261m/React_JS__Sertifika.pdf" |  Bin 0 -> 628900 bytes
+ ...60leri_Seviye_Python_Programlama_Sertifika.pdf" |  Bin 0 -> 629290 bytes
+ index.html                                         |  454 ++++++-
+ script.js                                          |  883 ++++++++++++-
+ style.css                                          | 1344 +++++++++++++++++++-
+ 31 files changed, 2684 insertions(+), 175 deletions(-)
+
+commit 7e0bde7a4b80c7e6bdf8ff7b6dda8de87c29f4b7
+Author: Emre Akyol <wupaniyazilim@gmail.com>
+Date:   Tue Jun 10 21:59:43 2025 +0300
+
+    🍪 Çerez yönetimi sistemi eklendi - GDPR uyumlu banner, detaylı ayarlar modalı, 4 çerez kategorisi, modern toggle switchler, dark mode desteği ve responsive tasarım
+
+ index.html |  96 ++++++++++++++++
+ script.js  | 309 +++++++++++++++++++++++++++++++++++++++++++++++++-
+ style.css  | 378 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++-
+ 3 files changed, 781 insertions(+), 2 deletions(-)
+
+commit 4c4807ac38a0d751f0f2f08db20e34b93feb5c08
+Author: Emre Akyol <wupaniyazilim@gmail.com>
+Date:   Mon Jun 9 19:51:59 2025 +0300
+
+    feat: Mobil responsive ve hero buton optimizasyonları - Mobil karlar düzeltildi, güvenlik modalları optimize edildi, hero buton büyüme problemi çözüldü
+
+ index.html |   2 +-
+ style.css  | 551 ++++++++++++++++++++++++++++++++++++++++++++++++++++---------
+ 2 files changed, 478 insertions(+), 75 deletions(-)
+
+commit ba5e80d715c982db6ea686eda5a7716cec51f723
+Author: Emre Akyol <wupaniyazilim@gmail.com>
+Date:   Mon Jun 9 19:30:37 2025 +0300
+
+    feat(v1.2): Enhanced UI with security reports and modern design - Added security modals, optimized hero button, improved project cards, updated translations, enhanced responsive design
+
+ README.md  |  60 +++++--
+ index.html | 200 ++++++++++++++-------
+ script.js  | 406 ++++++++++++++++++++++++++++++++++++++++++
+ style.css  | 582 +++++++++++++++++++++++++++++++++++++++++++++++++++++--------
+ 4 files changed, 1103 insertions(+), 145 deletions(-)
+
+commit 480955bc279815ae9d5d4d87cb5b5cb0018b5342
+Author: Emre Akyol <wupaniyazilim@gmail.com>
+Date:   Mon Jun 9 18:01:36 2025 +0300
+
+    feat: Add CV Builder project to portfolio - Added CV Builder project card with Turkish/English translations - Included React, JavaScript, CSS3, HTML5 tech tags - Added direct link to live application - Project features modern design templates and user-friendly interface
+
+ index.html | 21 +++++++++++++++++++++
+ script.js  |  6 ++++++
+ 2 files changed, 27 insertions(+)
+
+commit 62c26cb1cbb215dc3b0c8ef7177f316dccd41aa8
+Author: Emre Akyol <wupaniyazilim@gmail.com>
+Date:   Sun Jun 8 03:26:27 2025 +0300
+
+    🍋 Major Limnio Brand Update: Complete Dark Mode Fix, Mobile Responsive Enhancement & Modern Web Features - Added scroll progress bar, loading screen, custom cursor, smooth animations - Fixed all dark mode text readability issues - Enhanced mobile touch targets & responsive design - Ultra-premium hero button with 3D effects - Complete README.md rewrite with brand guidelines - Performance optimizations & technical enhancements
+
+ README.md  |  232 ++++++++----
+ index.html |   42 ++-
+ script.js  |  175 +++++++++
+ style.css  | 1155 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++--
+ 4 files changed, 1503 insertions(+), 101 deletions(-)
+
+commit c99be85089e96522d478e09df597a82c7847dee7
+Author: Emre Akyol <wupaniyazilim@gmail.com>
+Date:   Sun Jun 8 02:53:25 2025 +0300
+
+    🍋 Limnio Brand Overhaul: Dark Mode + Enhanced Animations + Performance - Lemon-themed colors, smooth dark mode toggle, Inter typography, staggered animations, mobile optimization
+
+ index.html |  23 ++++---
+ script.js  | 130 +++++++++++++++++++++++++++++++++++-
+ style.css  | 220 +++++++++++++++++++++++++++++++++++++++++++++++++++++++------
+ 3 files changed, 344 insertions(+), 29 deletions(-)
+
+commit 0fcfe7b2f1f00292235ea75374f434b97f84c0e6
+Author: Emre Akyol <wupaniyazilim@gmail.com>
+Date:   Sun Jun 8 02:43:22 2025 +0300
+
+    Profil fotoğrafı eklendi ve .gitignore güncellendi
+
+ .gitignore        |   1 +
+ profile-photo.jpg | Bin 0 -> 105479 bytes
+ 2 files changed, 1 insertion(+)
+
+commit 882dbeb1c20794d4f39a4ce286537396a4ac1cf7
+Author: Emre Akyol <wupaniyazilim@gmail.com>
+Date:   Sun Jun 8 02:35:16 2025 +0300
+
+    Proje butonları arasındaki boşluk daha da artırıldı (16px -> 24px)
+
+ style.css | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit 29185f3b2320999d11246ef65b35aba466359e6c
+Author: Emre Akyol <wupaniyazilim@gmail.com>
+Date:   Sun Jun 8 02:30:37 2025 +0300
+
+    Proje butonları arasındaki boşluk artırıldı (10px -> 16px)
+
+ style.css | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit 60441d5170f610d372eae887ff849f99e62f06bf
+Author: Emre Akyol <wupaniyazilim@gmail.com>
+Date:   Sun Jun 8 02:26:51 2025 +0300
+
+    GymDesk için indirme butonu eklendi - v1.0.0 releases sayfasına link
+
+ index.html | 14 ++++++++++----
+ script.js  |  4 ++++
+ style.css  | 16 ++++++++++++++++
+ 3 files changed, 30 insertions(+), 4 deletions(-)
+
+commit c95a752cfd70e29e9ec712b8058422b73c778e12
+Author: Emre Akyol <wupaniyazilim@gmail.com>
+Date:   Sun Jun 8 01:20:20 2025 +0300
+
+    GymDesk projesi için Türkçe ve İngilizce çeviriler eklendi
+
+ script.js | 4 ++++
+ 1 file changed, 4 insertions(+)
+
+commit 27603bbcec5d6f9098102e77457fa139965bd6d9
+Author: Emre Akyol <wupaniyazilim@gmail.com>
+Date:   Sun Jun 8 01:15:07 2025 +0300
+
+    GymDesk projesini portfolyoya ekle - Spor salonu yönetim sistemi (Electron + React + SQLite)
+
+ index.html | 20 +++++++++++++-------
+ 1 file changed, 13 insertions(+), 7 deletions(-)
+
+commit c353d393158e0434efaab45ecaa278f125e7f18d
+Author: Emre Akyol <wupaniyazilim@gmail.com>
+Date:   Fri Jun 6 11:26:04 2025 +0300
+
+    Clean up debug logs - keep enhanced mobile navigation features
+
+ script.js | 8 --------
+ 1 file changed, 8 deletions(-)
+
+commit 2eb8bdc4b61252273454442867cf6585beebcaec
+Author: Emre Akyol <wupaniyazilim@gmail.com>
+Date:   Fri Jun 6 11:24:41 2025 +0300
+
+    Add debug logs and touch support for mobile navigation - Added console logs to debug mobile navigation issues - Added touchend event support for better mobile responsiveness - Enhanced mobile menu debugging capabilities
+
+ script.js | 21 +++++++++++++++++----
+ 1 file changed, 17 insertions(+), 4 deletions(-)
+
+commit fc77e4a456fffd2734fc9313703d10eadc008f3e
+Author: Emre Akyol <wupaniyazilim@gmail.com>
+Date:   Fri Jun 6 11:15:30 2025 +0300
+
+    Fix mobile navigation menu scroll issue - Fixed mobile menu not closing properly on link clicks - Improved smooth scrolling on mobile devices - Enhanced mobile navigation user experience
+
+ script.js | 20 +++++++++-----------
+ 1 file changed, 9 insertions(+), 11 deletions(-)
+
+commit 1e14eadee92a9ab63e914b42714ba73bdf59f032
+Author: Emre Akyol <wupaniyazilim@gmail.com>
+Date:   Fri Jun 6 11:11:31 2025 +0300
+
+    Complete tech cards bilingual support - all categories covered
+
+ script.js | 65 +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+ 1 file changed, 65 insertions(+)
+
+commit ef34dcb0656bf65e87f8fa5d8b433d561b282265
+Author: Emre Akyol <wupaniyazilim@gmail.com>
+Date:   Fri Jun 6 11:10:33 2025 +0300
+
+    Add database and DevOps tech cards bilingual support
+
+ script.js | 88 +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+ 1 file changed, 88 insertions(+)
+
+commit 4c0c8d23532d82f8bb416a01b1fb163be572e6fd
+Author: Emre Akyol <wupaniyazilim@gmail.com>
+Date:   Fri Jun 6 11:09:27 2025 +0300
+
+    Add comprehensive bilingual support for frontend and mobile tech cards
+
+ script.js | 302 +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++-
+ 1 file changed, 299 insertions(+), 3 deletions(-)
+
+commit 18d0e45529edd01d8a71730d1d50c162e0b013bc
+Author: Emre Akyol <wupaniyazilim@gmail.com>
+Date:   Fri Jun 6 11:02:23 2025 +0300
+
+    Enhance tech card why lists for bilingual support
+
+ script.js | 142 +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++-
+ 1 file changed, 140 insertions(+), 2 deletions(-)
+
+commit 9f199d9efb05f752b70de3a27bffb16ed739b1d7
+Author: Emre Akyol <wupaniyazilim@gmail.com>
+Date:   Fri Jun 6 10:57:05 2025 +0300
+
+    Add dynamic translation system for technology cards - Created updateTechCardContent function for tech card translations - Added translations for JavaScript, Python, Java/Kotlin, PHP, C#, Swift/Dart cards - Implemented dynamic content switching for purpose and projects descriptions - Enhanced technology section bilingual support with automatic content updates
+
+ script.js | 136 +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++-
+ 1 file changed, 134 insertions(+), 2 deletions(-)
+
+commit 9b4f1f4b10d93bfeb400cea82f0006b24a3b3dfd
+Author: Emre Akyol <wupaniyazilim@gmail.com>
+Date:   Fri Jun 6 10:53:28 2025 +0300
+
+    Add translations for Contact CTA and About stats - Translated Contact section CTA title, description and features - Added About section statistics labels translations - Fixed social media email button translation - Enhanced bilingual coverage for user-facing elements
+
+ index.html | 20 ++++++++++----------
+ script.js  | 24 ++++++++++++++++++++++++
+ 2 files changed, 34 insertions(+), 10 deletions(-)
+
+commit f1430b08d049c5b519d144e9233473e04f3804d1
+Author: Emre Akyol <wupaniyazilim@gmail.com>
+Date:   Fri Jun 6 10:48:39 2025 +0300
+
+    Complete bilingual translation system - Added comprehensive translations for About section details - Translated expertise areas, timeline, values, and philosophy - Added dynamic translation for technology card headers - Implemented automatic translation of reliability percentages - Enhanced translation system to cover all remaining Turkish content - Now fully bilingual with complete English/Turkish coverage
+
+ index.html |  76 ++++++++++++++++-----------------
+ script.js  | 142 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++-
+ 2 files changed, 178 insertions(+), 40 deletions(-)
+
+commit afc106f17646a2629326cc010b8250105e1ed869
+Author: Emre Akyol <wupaniyazilim@gmail.com>
+Date:   Fri Jun 6 10:39:16 2025 +0300
+
+    feat: Complete comprehensive multilingual system - Full Turkish/English translation for about details, technology categories, criteria section, footer, improved translation engine with HTML support, complete bilingual website experience
+
+ index.html | 58 +++++++++++++++++++++++++--------------------------
+ script.js  | 70 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++--
+ 2 files changed, 97 insertions(+), 31 deletions(-)
+
+commit d3eca6e36af4c88e9d82dae99a86f03ba3d62fbb
+Author: Emre Akyol <wupaniyazilim@gmail.com>
+Date:   Fri Jun 6 10:33:13 2025 +0300
+
+    enhance: Expand multilingual support with complete content translation - Added translations for projects, about section, contact, and detailed content, improved translation engine to handle HTML content, comprehensive Turkish/English coverage
+
+ index.html | 26 +++++++++++++-------------
+ script.js  | 49 ++++++++++++++++++++++++++++++++++++++++++++++---
+ 2 files changed, 59 insertions(+), 16 deletions(-)
+
+commit ee45e68dcc5fed73f113ad94ef276d5e326d4d6f
+Author: Emre Akyol <wupaniyazilim@gmail.com>
+Date:   Fri Jun 6 10:28:53 2025 +0300
+
+    feat: Add multilingual support (Turkish/English) - Language switcher in navbar, translation system with localStorage persistence, responsive design for mobile, data-tr attributes for translatable content, smooth language transitions with notifications
+
+ index.html | 32 +++++++++++++-------
+ script.js  | 98 +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++-
+ style.css  | 56 +++++++++++++++++++++++++++++++++++
+ 3 files changed, 174 insertions(+), 12 deletions(-)
+
+commit ba707199b2c241991b4971663bc71da238acff8c
+Author: Emre Akyol <wupaniyazilim@gmail.com>
+Date:   Fri Jun 6 10:21:36 2025 +0300
+
+    docs: Add MIT License file - Complete licensing documentation for open source compliance
+
+ LICENSE | 21 +++++++++++++++++++++
+ 1 file changed, 21 insertions(+)
+
+commit e806c224d7a234182638981d6fd6985e0e1318c4
+Author: Emre Akyol <wupaniyazilim@gmail.com>
+Date:   Fri Jun 6 10:17:25 2025 +0300
+
+    cleanup: Remove unnecessary files and update documentation - Removed jpeg/png files, test files, and updated README.md with comprehensive project documentation, enhanced .gitignore for better project management
+
+ .gitignore                 |  97 +++++++++++++++------
+ 1741184780545.jpeg         | Bin 105479 -> 0 bytes
+ Developer_Icon_512x512.png | Bin 186801 -> 0 bytes
+ Limnio_Devsite_Prompt.md   |  46 ----------
+ README.md                  | 208 ++++++++++++++++++++++++---------------------
+ emailjs-alternative.js     |  52 ------------
+ test-github-integration.md |  16 ----
+ 7 files changed, 179 insertions(+), 240 deletions(-)
+
+commit 3cd615722bcb28384c0df18db5d0f48152232a4b
+Author: Emre Akyol <wupaniyazilim@gmail.com>
+Date:   Fri Jun 6 10:02:51 2025 +0300
+
+    test: Add GitHub integration test file
+
+ test-github-integration.md | 16 ++++++++++++++++
+ 1 file changed, 16 insertions(+)
+
+commit 8fab0ea410f888acc3dd65be9cf4a0c95c86e853
+Author: Emre Akyol <wupaniyazilim@gmail.com>
+Date:   Fri Jun 6 09:59:42 2025 +0300
+
+    feat: Add GitHub Pages deployment configuration - GitHub Actions workflow, CNAME setup, ready for Play Store developer verification
+
+ .github/workflows/deploy.yml | 38 ++++++++++++++++++++++++++++++++++++++
+ CNAME                        |  6 ++++--
+ 2 files changed, 42 insertions(+), 2 deletions(-)
+
+commit 331d967f9a098cb9246e2467980abfde1919bcc3
+Author: Emre Akyol <wupaniyazilim@gmail.com>
+Date:   Fri Jun 6 09:54:42 2025 +0300
+
+    feat: Enhanced responsive navbar with improved loading spinner and mobile UX - Glass morphism effects, responsive loading spinner scaling, enhanced hamburger menu, better mobile transitions, and improved accessibility
+
+ script.js |  77 +++++++++++++++++++++++++++++++++++-----
+ style.css | 118 +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++---
+ 2 files changed, 181 insertions(+), 14 deletions(-)
+
+commit f1bc4a470bea98c3f762bf2413500e810f304e8a
+Author: Emre Akyol <wupaniyazilim@gmail.com>
+Date:   Fri Jun 6 09:49:41 2025 +0300
+
+    feat: Complete Limnio portfolio website - Enhanced visuals, typography, responsive design, KVKK compliance, Turkish localization, contact form integration, and GitHub Pages ready deployment
+
+ .gitignore                 |   63 ++
+ 1741184780545.jpeg         |  Bin 0 -> 105479 bytes
+ CNAME                      |    3 +
+ Developer_Icon_512x512.png |  Bin 0 -> 186801 bytes
+ Limnio_Devsite_Prompt.md   |   46 +
+ README.md                  |  161 ++++
+ emailjs-alternative.js     |   52 ++
+ index.html                 | 1813 ++++++++++++++++++++++++++++++++++++
+ script.js                  |  515 +++++++++++
+ style.css                  | 2171 ++++++++++++++++++++++++++++++++++++++++++++
+ 10 files changed, 4824 insertions(+)

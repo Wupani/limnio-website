@@ -2,6 +2,13 @@
 
 > **Basit fikirlerle güçlü deneyimler** - Emre Akyol'un resmi portfolyo web sitesi
 
+## 🏷️ **INTELLECTUAL PROPERTY NOTICE**
+
+**⚖️ Bu proje tamamen Emre Akyol'un orijinal çalışmasıdır.**  
+📄 **Detaylı sahiplik beyanı:** [LIMNIO_PROJECT_OWNERSHIP.md](./LIMNIO_PROJECT_OWNERSHIP.md)  
+📅 **İlk commit:** 6 Haziran 2025, 09:49:41 +0300  
+🔐 **Fikir sahibi:** Emre Akyol (wupaniyazilim@gmail.com)
+
 [![GitHub Pages](https://img.shields.io/badge/GitHub%20Pages-Live-brightgreen)](https://wupani.github.io/limnio-website/)
 [![HTML5](https://img.shields.io/badge/HTML5-E34F26?logo=html5&logoColor=white)](https://developer.mozilla.org/en-US/docs/Web/HTML)
 [![CSS3](https://img.shields.io/badge/CSS3-1572B6?logo=css3&logoColor=white)](https://developer.mozilla.org/en-US/docs/Web/CSS)
@@ -291,6 +298,30 @@ refactor: code refactoring
 perf: performance improvements
 test: adding tests
 ```
+
+## ⚖️ **INTELLECTUAL PROPERTY & OWNERSHIP**
+
+### **🏷️ Project Ownership Declaration**
+Bu proje **%100 Emre Akyol'un orijinal çalışmasıdır**. Tüm kod, tasarım, içerik ve "Limnio" marka elementi tamamen benim fikri mülkiyetimdir.
+
+**📄 Resmi Sahiplik Beyanı:** [LIMNIO_PROJECT_OWNERSHIP.md](./LIMNIO_PROJECT_OWNERSHIP.md)
+
+### **🔐 Verification Data**
+- **İlk Commit:** 2025-06-06 09:49:41 +0300
+- **Commit Hash:** `f1bc4a470bea98c3f762bf2413500e810f304e8a`
+- **Total Commits:** 37+ (5 gün sürekli geliştirme)
+- **Code Lines:** 10,000+ lines (100% original)
+- **Author:** Emre Akyol <wupaniyazilim@gmail.com>
+
+### **⚠️ Usage Rights**
+- ✅ **Educational use** with proper attribution allowed
+- ❌ **Commercial use** without permission prohibited
+- ❌ **"Limnio" brand usage** strictly forbidden
+- ❌ **Content copying** without attribution prohibited
+
+**Unauthorized use may result in legal action.** 
+
+---
 
 ## 📞 İletişim
 
