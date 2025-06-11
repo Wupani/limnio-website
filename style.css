@@ -175,7 +175,7 @@ body {
     align-items: center;
     max-width: 1200px;
     margin: 0 auto;
-    padding: 0 20px;
+    padding: 0 24px;
 }
 
 .nav-logo {
@@ -202,6 +202,7 @@ body {
     display: flex;
     list-style: none;
     gap: 2rem;
+    margin-left: 1.5rem;
 }
 
 .nav-link {
@@ -212,6 +213,9 @@ body {
     border-radius: 8px;
     transition: var(--transition);
     position: relative;
+    white-space: nowrap;
+    min-width: 80px;
+    text-align: center;
 }
 
 .nav-link:hover,
@@ -317,18 +321,34 @@ body {
     display: flex;
     align-items: center;
     gap: var(--space-3);
-    margin-left: auto;
+    margin-left: 1rem;
 }
 
 /* Desktop nav controls positioning */
 @media (min-width: 769px) {
     .nav-controls {
         position: static !important;
-        margin: 0 0 0 auto !important;
+        margin: 0 0 0 1rem !important;
         order: initial !important;
         width: auto !important;
         padding: 0 !important;
         border: none !important;
+    }
+}
+
+/* Tablet/Medium screen adjustments */
+@media (min-width: 769px) and (max-width: 1024px) {
+    .nav-menu {
+        margin-left: 1rem;
+        gap: 1.5rem;
+    }
+    
+    .nav-controls {
+        margin-left: 0.8rem !important;
+    }
+    
+    .nav-container {
+        padding: 0 20px;
     }
 }
 
@@ -2972,6 +2992,7 @@ button.hero-btn {
         z-index: 1000;
         display: flex;
         align-items: stretch;
+        margin-left: 0;
     }
     
     /* Ensure nav links come first */
@@ -3001,7 +3022,7 @@ button.hero-btn {
         z-index: 1001;
     }
 
-    /* Nav controls - include theme toggle in mobile menu */
+    /* Nav controls - UPDATED FOR IMPROVED VISIBILITY */
     .nav-menu .nav-controls {
         display: flex !important;
         position: static !important;
@@ -3010,23 +3031,33 @@ button.hero-btn {
         width: 100% !important;
         justify-content: center !important;
         margin-top: 1.5rem !important;
-        padding-top: 1.5rem !important;
-        border-top: 1px solid rgba(234, 179, 8, 0.2) !important;
+        padding: 1.2rem 1rem 0.8rem 1rem !important;
+        border-top: 2px solid rgba(234, 179, 8, 0.4) !important;
         flex-direction: row !important;
         align-items: center !important;
-        gap: 1rem !important;
+        gap: 1.2rem !important;
+        background: rgba(234, 179, 8, 0.05) !important;
+        border-radius: 8px !important;
+        box-shadow: 0 2px 10px rgba(234, 179, 8, 0.1) !important;
+        min-height: 70px !important;
+        max-height: 80px !important;
     }
 
-    /* Theme toggle mobile */
+    /* Theme toggle mobile - LARGER AND MORE VISIBLE */
     .nav-menu .theme-toggle {
         position: static !important;
-        width: 44px !important;
-        height: 44px !important;
-        font-size: 1.2rem !important;
+        width: 48px !important;
+        height: 48px !important;
+        font-size: 1.3rem !important;
         display: flex !important;
+        background: rgba(234, 179, 8, 0.2) !important;
+        border: 2px solid rgba(234, 179, 8, 0.4) !important;
+        border-radius: 12px !important;
+        box-shadow: 0 4px 12px rgba(234, 179, 8, 0.15) !important;
+        transition: all 0.3s ease !important;
     }
 
-    /* Language switcher mobile */
+    /* Language switcher mobile - IMPROVED VISIBILITY */
     .nav-menu .language-switcher {
         display: flex !important;
         margin-left: 0 !important;
@@ -3035,7 +3066,42 @@ button.hero-btn {
         padding-top: 0 !important;
         border-top: none !important;
         order: initial !important;
-        gap: 0.5rem !important;
+        gap: 0.6rem !important;
+        height: 48px !important;
+        align-items: center !important;
+    }
+
+    /* Language buttons mobile - LARGER AND MORE PROMINENT */
+    .nav-menu .lang-btn {
+        width: 60px !important;
+        height: 48px !important;
+        min-height: 48px !important;
+        padding: 0.7rem 0.8rem !important;
+        background: rgba(255, 255, 255, 0.8) !important;
+        border: 2px solid rgba(234, 179, 8, 0.5) !important;
+        border-radius: 12px !important;
+        font-size: 0.9rem !important;
+        font-weight: 600 !important;
+        box-shadow: 0 3px 8px rgba(234, 179, 8, 0.1) !important;
+        transition: all 0.3s ease !important;
+        display: flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+    }
+
+    .nav-menu .lang-btn:hover {
+        background: rgba(234, 179, 8, 0.1) !important;
+        border-color: rgba(234, 179, 8, 0.7) !important;
+        transform: translateY(-2px) !important;
+        box-shadow: 0 5px 12px rgba(234, 179, 8, 0.2) !important;
+    }
+
+    .nav-menu .lang-btn.active {
+        background: var(--primary-color) !important;
+        border-color: var(--primary-color) !important;
+        color: white !important;
+        box-shadow: 0 6px 16px rgba(234, 179, 8, 0.4) !important;
+        transform: scale(1.02) !important;
     }
 
     /* Loading spinner adjustments for mobile */
@@ -6712,9 +6778,9 @@ html body div button[class~="security-btn"] i {
     }
 }
 
-/* EMERGENCY MOBILE NAV CONTROLS FIX - FINAL OVERRIDE */
+/* MOBILE NAV CONTROLS - IMPROVED VISIBILITY */
 @media (max-width: 768px) {
-    /* CHROME & ALL MOBILE BROWSERS FORCE FIX - COMPACT SIZE */
+    /* Navigation controls container - more prominent */
     .nav-menu.active .nav-controls,
     .nav-menu .nav-controls,
     [class*="nav-controls"],
@@ -6727,23 +6793,25 @@ html body div button[class~="security-btn"] i {
         position: static !important;
         width: 100% !important;
         max-width: 100% !important;
-        margin-top: 1rem !important;
-        padding: 1rem 0.5rem 0.5rem 0.5rem !important;
-        border-top: 1px solid rgba(234, 179, 8, 0.2) !important;
+        margin-top: 1.5rem !important;
+        padding: 1.2rem 1rem 0.8rem 1rem !important;
+        border-top: 2px solid rgba(234, 179, 8, 0.4) !important;
         justify-content: center !important;
         align-items: center !important;
-        gap: 0.75rem !important;
+        gap: 1.2rem !important;
         order: 999 !important;
         z-index: 99999 !important;
         pointer-events: auto !important;
-        background: rgba(255, 255, 255, 0.02) !important;
-        min-height: 50px !important;
-        max-height: 60px !important;
+        background: rgba(234, 179, 8, 0.05) !important;
+        min-height: 70px !important;
+        max-height: 80px !important;
         height: auto !important;
         flex-direction: row !important;
         flex-wrap: nowrap !important;
         overflow: visible !important;
         box-sizing: border-box !important;
+        border-radius: 8px !important;
+        box-shadow: 0 2px 10px rgba(234, 179, 8, 0.1) !important;
         /* Force for Chrome and Safari */
         -webkit-box-flex: 1 !important;
         -webkit-flex: 1 !important;
@@ -6754,7 +6822,7 @@ html body div button[class~="security-btn"] i {
         will-change: transform !important;
     }
     
-    /* CHROME & ALL BROWSERS - Theme toggle force visibility - SMALLER SIZE */
+    /* Theme toggle - larger and more visible */
     .nav-menu.active .theme-toggle,
     .nav-menu .nav-controls .theme-toggle,
     [class*="theme-toggle"],
@@ -6764,23 +6832,25 @@ html body div button[class~="security-btn"] i {
         display: flex !important;
         visibility: visible !important;
         opacity: 1 !important;
-        width: 36px !important;
-        height: 36px !important;
-        min-width: 36px !important;
-        min-height: 36px !important;
-        max-width: 36px !important;
-        max-height: 36px !important;
-        background: rgba(234, 179, 8, 0.15) !important;
-        border-radius: 6px !important;
+        width: 48px !important;
+        height: 48px !important;
+        min-width: 48px !important;
+        min-height: 48px !important;
+        max-width: 48px !important;
+        max-height: 48px !important;
+        background: rgba(234, 179, 8, 0.2) !important;
+        border: 2px solid rgba(234, 179, 8, 0.4) !important;
+        border-radius: 12px !important;
         align-items: center !important;
         justify-content: center !important;
         pointer-events: auto !important;
         color: var(--primary-color) !important;
-        border: none !important;
         cursor: pointer !important;
-        font-size: 1rem !important;
+        font-size: 1.3rem !important;
         padding: 0 !important;
         margin: 0 !important;
+        transition: all 0.3s ease !important;
+        box-shadow: 0 4px 12px rgba(234, 179, 8, 0.15) !important;
         /* Chrome-specific rendering fixes */
         -webkit-appearance: none !important;
         -webkit-transform: translateZ(0) !important;
@@ -6792,7 +6862,16 @@ html body div button[class~="security-btn"] i {
         overflow: hidden !important;
     }
     
-    /* CHROME & ALL BROWSERS - Language switcher force visibility - COMPACT */
+    /* Theme toggle hover effect */
+    .nav-menu.active .theme-toggle:hover,
+    .nav-menu .nav-controls .theme-toggle:hover,
+    .theme-toggle:hover {
+        background: rgba(234, 179, 8, 0.3) !important;
+        transform: scale(1.05) !important;
+        box-shadow: 0 6px 16px rgba(234, 179, 8, 0.2) !important;
+    }
+    
+    /* Language switcher container */
     .nav-menu.active .language-switcher,
     .nav-menu .nav-controls .language-switcher,
     [class*="language-switcher"],
@@ -6802,21 +6881,21 @@ html body div button[class~="security-btn"] i {
         display: flex !important;
         visibility: visible !important;
         opacity: 1 !important;
-        gap: 0.4rem !important;
+        gap: 0.6rem !important;
         pointer-events: auto !important;
         margin: 0 !important;
         padding: 0 !important;
         flex-shrink: 0 !important;
         align-items: center !important;
-        height: 36px !important;
-        max-height: 36px !important;
+        height: 48px !important;
+        max-height: 48px !important;
         /* Chrome rendering fixes */
         transform: translateZ(0) !important;
         will-change: transform !important;
         overflow: visible !important;
     }
     
-    /* CHROME & ALL BROWSERS - Lang button force visibility - SMALLER SIZE */
+    /* Language buttons - larger and more prominent */
     .nav-menu.active .lang-btn,
     .nav-menu .nav-controls .lang-btn,
     [class*="lang-btn"],
@@ -6826,25 +6905,27 @@ html body div button[class~="security-btn"] i {
         display: flex !important;
         visibility: visible !important;
         opacity: 1 !important;
-        height: 36px !important;
-        min-height: 36px !important;
-        max-height: 36px !important;
-        min-width: 50px !important;
-        max-width: 55px !important;
-        width: 50px !important;
-        padding: 0.5rem 0.6rem !important;
-        background: transparent !important;
-        border: 1px solid rgba(234, 179, 8, 0.4) !important;
-        border-radius: 6px !important;
+        height: 48px !important;
+        min-height: 48px !important;
+        max-height: 48px !important;
+        min-width: 60px !important;
+        max-width: 65px !important;
+        width: 60px !important;
+        padding: 0.7rem 0.8rem !important;
+        background: rgba(255, 255, 255, 0.8) !important;
+        border: 2px solid rgba(234, 179, 8, 0.5) !important;
+        border-radius: 12px !important;
         color: var(--text-primary) !important;
         align-items: center !important;
         justify-content: center !important;
         pointer-events: auto !important;
         cursor: pointer !important;
-        font-size: 0.8rem !important;
-        font-weight: 500 !important;
+        font-size: 0.9rem !important;
+        font-weight: 600 !important;
         margin: 0 !important;
         overflow: hidden !important;
+        transition: all 0.3s ease !important;
+        box-shadow: 0 3px 8px rgba(234, 179, 8, 0.1) !important;
         /* Chrome-specific fixes */
         -webkit-appearance: none !important;
         -webkit-transform: translateZ(0) !important;
@@ -6855,28 +6936,467 @@ html body div button[class~="security-btn"] i {
         box-sizing: border-box !important;
     }
     
-    /* Dark mode overrides for emergency styles */
+    /* Language button hover effect */
+    .nav-menu.active .lang-btn:hover,
+    .nav-menu .nav-controls .lang-btn:hover,
+    .lang-btn:hover {
+        background: rgba(234, 179, 8, 0.1) !important;
+        border-color: rgba(234, 179, 8, 0.7) !important;
+        transform: translateY(-2px) !important;
+        box-shadow: 0 5px 12px rgba(234, 179, 8, 0.2) !important;
+    }
+    
+    /* Active language button */
+    .nav-menu.active .lang-btn.active,
+    .nav-menu .nav-controls .lang-btn.active,
+    .lang-btn.active {
+        background: var(--primary-color) !important;
+        border-color: var(--primary-color) !important;
+        color: white !important;
+        box-shadow: 0 6px 16px rgba(234, 179, 8, 0.4) !important;
+        transform: scale(1.02) !important;
+    }
+    
+    /* Dark mode overrides */
     [data-theme="dark"] [class*="nav-controls"],
     [data-theme="dark"] .nav-controls {
-        background: rgba(0, 0, 0, 0.02) !important;
-        border-top: 1px solid rgba(234, 179, 8, 0.2) !important;
+        background: rgba(0, 0, 0, 0.1) !important;
+        border-top: 2px solid rgba(234, 179, 8, 0.4) !important;
     }
     
     [data-theme="dark"] [class*="theme-toggle"],
     [data-theme="dark"] .theme-toggle {
         background: rgba(234, 179, 8, 0.15) !important;
+        border-color: rgba(234, 179, 8, 0.4) !important;
         color: var(--primary-color) !important;
+    }
+    
+    [data-theme="dark"] [class*="theme-toggle"]:hover,
+    [data-theme="dark"] .theme-toggle:hover {
+        background: rgba(234, 179, 8, 0.25) !important;
     }
     
     [data-theme="dark"] [class*="lang-btn"],
     [data-theme="dark"] .lang-btn {
+        background: rgba(0, 0, 0, 0.3) !important;
         color: rgba(248, 250, 252, 0.9) !important;
-        border-color: rgba(234, 179, 8, 0.3) !important;
+        border-color: rgba(234, 179, 8, 0.4) !important;
+    }
+    
+    [data-theme="dark"] [class*="lang-btn"]:hover,
+    [data-theme="dark"] .lang-btn:hover {
+        background: rgba(234, 179, 8, 0.1) !important;
+        border-color: rgba(234, 179, 8, 0.6) !important;
     }
     
     [data-theme="dark"] [class*="lang-btn"].active,
     [data-theme="dark"] .lang-btn.active {
         background: var(--primary-color) !important;
         color: white !important;
+        border-color: var(--primary-color) !important;
     }
 } 
+
+/* ULTIMATE MOBILE NAV CONTROLS FIX - HIGHEST PRIORITY OVERRIDE */
+@media (max-width: 768px) {
+    /* Compact nav controls for better space usage */
+    html body .navbar .nav-container .nav-menu.active .nav-controls,
+    html body .nav-menu.active .nav-controls,
+    html body .nav-menu .nav-controls {
+        display: flex !important;
+        visibility: visible !important;
+        opacity: 1 !important;
+        position: static !important;
+        width: 100% !important;
+        max-width: 100% !important;
+        margin: 1rem 0 0.5rem 0 !important;
+        padding: 0.8rem !important;
+        background: linear-gradient(135deg, rgba(234, 179, 8, 0.1), rgba(234, 179, 8, 0.05)) !important;
+        border: 2px solid rgba(234, 179, 8, 0.4) !important;
+        border-radius: 12px !important;
+        box-shadow: 0 4px 16px rgba(234, 179, 8, 0.15) !important;
+        justify-content: center !important;
+        align-items: center !important;
+        gap: 0.8rem !important;
+        order: 999 !important;
+        z-index: 99999 !important;
+        pointer-events: auto !important;
+        flex-direction: row !important;
+        min-height: 50px !important;
+        transform: none !important;
+        transition: all 0.3s ease !important;
+    }
+
+    /* Compact theme toggle */
+    html body .navbar .nav-container .nav-menu.active .nav-controls .theme-toggle,
+    html body .nav-menu.active .theme-toggle,
+    html body .nav-menu .theme-toggle {
+        display: flex !important;
+        width: 36px !important;
+        height: 36px !important;
+        font-size: 1rem !important;
+        background: linear-gradient(135deg, rgba(234, 179, 8, 0.2), rgba(234, 179, 8, 0.1)) !important;
+        border: 1.5px solid rgba(234, 179, 8, 0.5) !important;
+        border-radius: 8px !important;
+        color: #d97706 !important;
+        cursor: pointer !important;
+        position: static !important;
+        justify-content: center !important;
+        align-items: center !important;
+        box-shadow: 0 2px 8px rgba(234, 179, 8, 0.2) !important;
+        transition: all 0.3s ease !important;
+        transform: none !important;
+    }
+
+    /* Theme toggle hover */
+    html body .navbar .nav-container .nav-menu.active .nav-controls .theme-toggle:hover,
+    html body .nav-menu.active .theme-toggle:hover,
+    html body .nav-menu .theme-toggle:hover {
+        background: linear-gradient(135deg, rgba(234, 179, 8, 0.4), rgba(234, 179, 8, 0.3)) !important;
+        border-color: rgba(234, 179, 8, 0.9) !important;
+        transform: scale(1.05) translateY(-2px) !important;
+        box-shadow: 0 10px 30px rgba(234, 179, 8, 0.4) !important;
+    }
+
+    /* Compact language switcher */
+    html body .navbar .nav-container .nav-menu.active .nav-controls .language-switcher,
+    html body .nav-menu.active .language-switcher,
+    html body .nav-menu .language-switcher {
+        display: flex !important;
+        gap: 0.5rem !important;
+        align-items: center !important;
+        justify-content: center !important;
+        position: static !important;
+        margin: 0 !important;
+        padding: 0 !important;
+        height: 36px !important;
+        border: none !important;
+        order: initial !important;
+    }
+
+    /* Compact language buttons */
+    html body .navbar .nav-container .nav-menu.active .nav-controls .language-switcher .lang-btn,
+    html body .nav-menu.active .lang-btn,
+    html body .nav-menu .lang-btn {
+        display: flex !important;
+        width: 42px !important;
+        height: 36px !important;
+        min-height: 36px !important;
+        padding: 0.4rem !important;
+        background: linear-gradient(135deg, rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0.8)) !important;
+        border: 1.5px solid rgba(234, 179, 8, 0.5) !important;
+        border-radius: 8px !important;
+        font-size: 0.75rem !important;
+        font-weight: 600 !important;
+        color: #d97706 !important;
+        cursor: pointer !important;
+        position: static !important;
+        justify-content: center !important;
+        align-items: center !important;
+        flex-direction: row !important;
+        gap: 0.2rem !important;
+        box-shadow: 0 2px 8px rgba(234, 179, 8, 0.15) !important;
+        transition: all 0.3s ease !important;
+        transform: none !important;
+        text-transform: uppercase !important;
+        letter-spacing: 0.3px !important;
+    }
+
+    /* Language button hover */
+    html body .navbar .nav-container .nav-menu.active .nav-controls .language-switcher .lang-btn:hover,
+    html body .nav-menu.active .lang-btn:hover,
+    html body .nav-menu .lang-btn:hover {
+        background: linear-gradient(135deg, rgba(234, 179, 8, 0.2), rgba(234, 179, 8, 0.1)) !important;
+        border-color: rgba(234, 179, 8, 0.8) !important;
+        transform: scale(1.05) translateY(-3px) !important;
+        box-shadow: 0 10px 30px rgba(234, 179, 8, 0.3) !important;
+        color: #b45309 !important;
+    }
+
+    /* Active language button */
+    html body .navbar .nav-container .nav-menu.active .nav-controls .language-switcher .lang-btn.active,
+    html body .nav-menu.active .lang-btn.active,
+    html body .nav-menu .lang-btn.active {
+        background: linear-gradient(135deg, #eab308, #d97706) !important;
+        border-color: #b45309 !important;
+        color: white !important;
+        transform: scale(1.02) !important;
+        box-shadow: 0 8px 25px rgba(234, 179, 8, 0.5) !important;
+    }
+
+    /* Dark theme overrides */
+    [data-theme="dark"] html body .nav-menu.active .nav-controls,
+    [data-theme="dark"] html body .nav-menu .nav-controls {
+        background: linear-gradient(135deg, rgba(234, 179, 8, 0.25), rgba(234, 179, 8, 0.15)) !important;
+        border-color: rgba(234, 179, 8, 0.7) !important;
+    }
+
+    [data-theme="dark"] html body .nav-menu.active .theme-toggle,
+    [data-theme="dark"] html body .nav-menu .theme-toggle {
+        background: linear-gradient(135deg, rgba(251, 191, 36, 0.3), rgba(251, 191, 36, 0.2)) !important;
+        border-color: rgba(251, 191, 36, 0.7) !important;
+        color: #fbbf24 !important;
+    }
+
+    [data-theme="dark"] html body .nav-menu.active .lang-btn,
+    [data-theme="dark"] html body .nav-menu .lang-btn {
+        background: linear-gradient(135deg, rgba(15, 23, 42, 0.95), rgba(30, 41, 59, 0.85)) !important;
+        border-color: rgba(234, 179, 8, 0.6) !important;
+        color: #fbbf24 !important;
+    }
+
+    [data-theme="dark"] html body .nav-menu.active .lang-btn:hover,
+    [data-theme="dark"] html body .nav-menu .lang-btn:hover {
+        background: linear-gradient(135deg, rgba(234, 179, 8, 0.25), rgba(234, 179, 8, 0.15)) !important;
+        color: #fbbf24 !important;
+    }
+
+    [data-theme="dark"] html body .nav-menu.active .lang-btn.active,
+    [data-theme="dark"] html body .nav-menu .lang-btn.active {
+        background: linear-gradient(135deg, #fbbf24, #eab308) !important;
+        color: #0f172a !important;
+    }
+}
+
+/* Additional mobile-specific fixes */
+@media (max-width: 480px) {
+    html body .nav-menu.active .nav-controls,
+    html body .nav-menu .nav-controls {
+        margin: 1.5rem 0 0.5rem 0 !important;
+        padding: 1.2rem !important;
+        gap: 1.2rem !important;
+        min-height: 70px !important;
+    }
+
+    html body .nav-menu.active .theme-toggle,
+    html body .nav-menu .theme-toggle {
+        width: 52px !important;
+        height: 52px !important;
+        font-size: 1.3rem !important;
+    }
+
+    html body .nav-menu.active .lang-btn,
+    html body .nav-menu .lang-btn {
+        width: 65px !important;
+        height: 52px !important;
+        font-size: 0.9rem !important;
+    }
+}
+
+/* Ensure hamburger menu is always visible and functional */
+@media (max-width: 768px) {
+    .hamburger {
+        display: flex !important;
+        z-index: 1001 !important;
+        position: relative !important;
+    }
+    
+    .nav-menu {
+        position: fixed !important;
+        top: 100% !important;
+        left: 0 !important;
+        right: 0 !important;
+        background: rgba(255, 255, 255, 0.98) !important;
+        backdrop-filter: blur(20px) !important;
+        -webkit-backdrop-filter: blur(20px) !important;
+        flex-direction: column !important;
+        padding: 2rem !important;
+        box-shadow: 0 -4px 20px rgba(0, 0, 0, 0.15) !important;
+        border-top: 1px solid rgba(234, 179, 8, 0.2) !important;
+        transform: translateY(-100%) !important;
+        opacity: 0 !important;
+        visibility: hidden !important;
+        transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1) !important;
+        z-index: 1000 !important;
+        display: flex !important;
+        align-items: stretch !important;
+        margin-left: 0 !important;
+    }
+    
+    .nav-menu.active {
+        transform: translateY(0) !important;
+        opacity: 1 !important;
+        visibility: visible !important;
+    }
+    
+            [data-theme="dark"] .nav-menu {
+        background: rgba(15, 23, 42, 0.98) !important;
+        border-top: 1px solid rgba(234, 179, 8, 0.2) !important;
+        box-shadow: 0 -4px 20px rgba(0, 0, 0, 0.3) !important;
+    }
+}
+
+/* SCROLLABLE NAVBAR FOR LONG NAVIGATION LISTS */
+@media (max-width: 768px) {
+    .nav-menu {
+        max-height: calc(100vh - 60px) !important; /* Account for navbar height */
+        overflow-y: auto !important;
+        overflow-x: hidden !important;
+        -webkit-overflow-scrolling: touch !important; /* Smooth scrolling on iOS */
+        scrollbar-width: thin !important; /* Firefox */
+        scrollbar-color: rgba(234, 179, 8, 0.3) transparent !important; /* Firefox */
+    }
+    
+    /* Custom scrollbar for webkit browsers */
+    .nav-menu::-webkit-scrollbar {
+        width: 4px !important;
+    }
+    
+    .nav-menu::-webkit-scrollbar-track {
+        background: rgba(234, 179, 8, 0.1) !important;
+        border-radius: 2px !important;
+    }
+    
+    .nav-menu::-webkit-scrollbar-thumb {
+        background: rgba(234, 179, 8, 0.3) !important;
+        border-radius: 2px !important;
+    }
+    
+    .nav-menu::-webkit-scrollbar-thumb:hover {
+        background: rgba(234, 179, 8, 0.5) !important;
+    }
+    
+    /* Dark theme scrollbar */
+    [data-theme="dark"] .nav-menu::-webkit-scrollbar-track {
+        background: rgba(234, 179, 8, 0.15) !important;
+    }
+    
+    [data-theme="dark"] .nav-menu::-webkit-scrollbar-thumb {
+        background: rgba(234, 179, 8, 0.4) !important;
+    }
+    
+    [data-theme="dark"] .nav-menu::-webkit-scrollbar-thumb:hover {
+        background: rgba(234, 179, 8, 0.6) !important;
+    }
+}
+
+/* COMPACT NAVIGATION ITEMS FOR BETTER SCROLLING */
+@media (max-width: 768px) {
+    .nav-link {
+        padding: 0.6rem 0 !important; /* Reduced padding for more items */
+        margin: 0.3rem 0 !important; /* Smaller margin */
+        font-size: 1rem !important; /* Smaller font */
+        min-height: auto !important;
+    }
+}
+
+@media (max-width: 480px) {
+    .nav-link {
+        padding: 0.5rem 0 !important;
+        margin: 0.2rem 0 !important;
+        font-size: 0.9rem !important;
+    }
+}
+
+/* BALANCED MOBILE NAVBAR - VISIBLE BUT COMPACT */
+@media (max-width: 768px) {
+    .navbar {
+        padding: 8px 0 !important; /* Increased padding for better visibility */
+        min-height: auto !important;
+        border-bottom-width: 1px !important; /* Standard border */
+    }
+    
+    .nav-container {
+        padding: 0 16px !important; /* Better side padding */
+        min-height: 54px !important; /* Increased height for better touch targets */
+        align-items: center !important;
+    }
+    
+    .nav-logo {
+        font-size: 1.4rem !important; /* Larger logo text for brand visibility */
+        gap: 6px !important; /* Better spacing */
+        font-weight: 700 !important; /* Bold for brand recognition */
+    }
+    
+    .nav-logo i {
+        font-size: 1.6rem !important; /* Larger icon for brand recognition */
+    }
+    
+    .hamburger {
+        padding: 6px !important; /* Better padding for touch */
+        width: 38px !important; /* Larger hamburger for easier tapping */
+        height: 38px !important;
+        border-radius: 6px !important; /* Rounded corners */
+    }
+    
+    .hamburger span {
+        width: 22px !important; /* Longer lines for visibility */
+        height: 2px !important; /* Standard thickness */
+        margin: 2px 0 !important; /* Better spacing */
+    }
+}
+
+/* COMPACT BUT USABLE FOR SMALL SCREENS */
+@media (max-width: 480px) {
+    .navbar {
+        padding: 6px 0 !important; /* Reasonable padding */
+        border-bottom-width: 1px !important;
+    }
+    
+    .nav-container {
+        padding: 0 12px !important; /* Better side padding */
+        min-height: 48px !important; /* Usable height */
+    }
+    
+    .nav-logo {
+        font-size: 1.25rem !important; /* Readable logo text */
+        gap: 5px !important; /* Adequate gap */
+        font-weight: 700 !important; /* Bold for visibility */
+    }
+    
+    .nav-logo i {
+        font-size: 1.4rem !important; /* Visible icon */
+    }
+    
+    .hamburger {
+        width: 34px !important; /* Touch-friendly hamburger */
+        height: 34px !important;
+        padding: 5px !important; /* Better padding */
+        border-radius: 5px !important;
+    }
+    
+    .hamburger span {
+        width: 20px !important; /* Visible lines */
+        height: 2px !important; /* Standard thickness */
+        margin: 2px 0 !important; /* Better spacing */
+    }
+}
+
+/* OPTIMIZED CONTENT SPACING FOR BALANCED NAVBAR */
+@media (max-width: 768px) {
+    body {
+        padding-top: 0 !important;
+    }
+    
+    .hero {
+        margin-top: 70px !important; /* Adjusted for larger navbar */
+        padding-top: 1rem !important; /* Extra content padding */
+    }
+}
+
+@media (max-width: 480px) {
+    .hero {
+        margin-top: 60px !important; /* Adjusted for readable navbar */
+        padding-top: 0.8rem !important;
+    }
+}
+
+/* ADDITIONAL OPTIMIZATIONS FOR MOBILE CONTENT */
+@media (max-width: 768px) {
+    /* Make all sections start at proper distance from navbar */
+    section {
+        scroll-margin-top: 70px !important; /* Account for balanced navbar */
+    }
+}
+
+@media (max-width: 480px) {
+    section {
+        scroll-margin-top: 60px !important; /* Account for readable navbar */
+    }
+    
+    /* Slightly reduce section padding to maximize content */
+    .container {
+        padding-left: 1rem !important;
+        padding-right: 1rem !important;
+    }
+}

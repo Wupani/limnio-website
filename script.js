@@ -49,9 +49,9 @@ hamburger.addEventListener('click', (e) => {
     hamburger.classList.toggle('active');
     navMenu.classList.toggle('active');
     
-    // FORCE NAV-CONTROLS VISIBILITY FOR ALL BROWSERS (ESPECIALLY CHROME)
+    // FORCE NAV-CONTROLS VISIBILITY - UPDATED FOR NEW DESIGN
     if (!isActive) {
-        // Force show nav-controls when menu opens
+        // Force show nav-controls when menu opens - Remove inline styles that may override CSS
         setTimeout(() => {
             const navControls = document.querySelector('.nav-controls');
             const themeToggle = document.querySelector('.theme-toggle');
@@ -59,63 +59,44 @@ hamburger.addEventListener('click', (e) => {
             const langBtns = document.querySelectorAll('.lang-btn');
             
             if (navControls) {
+                // Only set essential display properties, let CSS handle the rest
                 navControls.style.display = 'flex';
                 navControls.style.visibility = 'visible';
                 navControls.style.opacity = '1';
-                navControls.style.position = 'static';
-                navControls.style.width = '100%';
-                navControls.style.marginTop = '1rem';
-                navControls.style.padding = '1rem 0.5rem 0.5rem 0.5rem';
-                navControls.style.borderTop = '1px solid rgba(234, 179, 8, 0.2)';
-                navControls.style.justifyContent = 'center';
-                navControls.style.alignItems = 'center';
-                navControls.style.gap = '0.75rem';
-                navControls.style.order = '999';
-                navControls.style.zIndex = '99999';
-                navControls.style.pointerEvents = 'auto';
-                navControls.style.minHeight = '50px';
-                navControls.style.maxHeight = '60px';
-                console.log('Nav-controls forced visible! (compact)');
+                console.log('Nav-controls forced visible!');
             }
             
             if (themeToggle) {
+                // Only set essential display properties
                 themeToggle.style.display = 'flex';
                 themeToggle.style.visibility = 'visible';
                 themeToggle.style.opacity = '1';
-                themeToggle.style.width = '36px';
-                themeToggle.style.height = '36px';
-                themeToggle.style.minWidth = '36px';
-                themeToggle.style.minHeight = '36px';
-                themeToggle.style.fontSize = '1rem';
-                themeToggle.style.padding = '0';
-                themeToggle.style.margin = '0';
-                console.log('Theme toggle forced visible! (compact)');
+                console.log('Theme toggle forced visible!');
             }
             
             if (languageSwitcher) {
+                // Only set essential display properties
                 languageSwitcher.style.display = 'flex';
                 languageSwitcher.style.visibility = 'visible';
                 languageSwitcher.style.opacity = '1';
-                languageSwitcher.style.gap = '0.4rem';
-                languageSwitcher.style.height = '36px';
-                languageSwitcher.style.margin = '0';
-                languageSwitcher.style.padding = '0';
-                console.log('Language switcher forced visible! (compact)');
+                console.log('Language switcher forced visible!');
             }
             
             langBtns.forEach((btn, index) => {
+                // Only set essential display properties
                 btn.style.display = 'flex';
                 btn.style.visibility = 'visible';
                 btn.style.opacity = '1';
-                btn.style.width = '50px';
-                btn.style.height = '36px';
-                btn.style.minHeight = '36px';
-                btn.style.padding = '0.5rem 0.6rem';
-                btn.style.fontSize = '0.8rem';
-                btn.style.margin = '0';
-                console.log(`Lang button ${index + 1} forced visible! (compact)`);
+                console.log(`Lang button ${index + 1} forced visible!`);
             });
-            console.log('Lang buttons forced visible!');
+            
+            // Force update navbar certificates link when mobile menu opens
+            if (currentLanguage) {
+                updateNavCertificatesLink(currentLanguage);
+                console.log('Navbar certificates link updated in mobile menu');
+            }
+            
+            console.log('All navigation controls forced visible!');
         }, 50);
     }
     
@@ -848,8 +829,32 @@ const translations = {
         'about.philosophy.point3': 'Temiz, okunabilir kod yazarak gelecekteki geliştiricilere saygı gösteririm',
         'about.philosophy.point4': 'Sürekli öğrenme ve kendini geliştirme başarının anahtarıdır',
         
+        // Certificates Section
+        'certificates.title': 'Sertifikalarım & Başarılarım',
+        'certificates.subtitle': 'Sürekli öğrenme ve gelişim yolculuğumda elde ettiğim profesyonel sertifikalar',
+        'certificates.total': 'Toplam Sertifika',
+        'certificates.active': 'Aktif Yıl',
+        'certificates.view': 'Görüntüle',
+        'certificates.business.title': '🚀 Girişimcilik & İş Dünyası',
+        'certificates.business.desc': 'Profesyonel iş hayatı ve girişimcilik alanında kazandığım yetkinlikler',
+        'certificates.tech.title': '📱 Mobil & Web Geliştirme',
+        'certificates.tech.desc': 'Çeşitli eğitim platformlarından alınan, Limnio uygulamalarında kullandığım teknolojiler ve programlama dilleri',
+        'certificates.info': '📋 Portfolyo Bilgilendirmesi: Bu sertifikalar profesyonel yetkinlik gösterimi amaçlı paylaşılmaktadır. Mevcut sertifikalar çeşitli eğitim kurumlarından alınmıştır. Doğrulama talepleriniz için: wupaniyazilim@gmail.com',
+        'certificates.stats.total': 'Toplam Sertifika',
+        'certificates.stats.business': 'Girişimcilik',
+        'certificates.stats.tech': 'Yazılım',
+        'certificates.stats.updated': 'Son Güncelleme',
+        
         // Footer
         'footer.copyright': '© 2025 Limnio - Emre Akyol. Tüm hakları saklıdır.',
+        'footer.site.title': 'SİTE KULLANIMI',
+        'footer.data.title': 'VERİ POLİTİKAM',
+        'footer.help.title': 'YARDIM',
+        'footer.about.title': 'HAKKIMDA',
+        'footer.social.title': 'SOSYAL MEDYA',
+        'footer.certificates.badge': 'Sertifika',
+        'footer.legal.desc': 'Bu site bireysel freelancer hizmetleri sunan kişisel bir portföy sitesidir.',
+        'footer.legal.brand': 'Önemli Açıklama: Limnio, Emre Akyol\'a ait kişisel marka adıdır. Bu site tescilli bir şirket değil, bireysel freelancer hizmetlerini tanıtan kişisel portföy sitesidir.',
         
         // Technology Categories
         'tech.category.core': 'Core Programlama Dilleri',
@@ -1131,6 +1136,7 @@ const translations = {
         'nav.projects': 'Projects',
         'nav.about': 'About',
         'nav.technologies': 'Technologies',
+        'nav.certificates': 'Certificates',
         'nav.contact': 'Contact',
         
         // Hero Section
@@ -1227,6 +1233,22 @@ const translations = {
         'contact.cta.feature2': 'Quality Code',
         'contact.cta.feature3': 'Long-term Support',
         
+        // Certificates Section
+        'certificates.title': 'My Certificates & Achievements',
+        'certificates.subtitle': 'Professional certificates I obtained in my continuous learning and development journey',
+        'certificates.total': 'Total Certificates',
+        'certificates.active': 'Active Year',
+        'certificates.view': 'View',
+        'certificates.business.title': '🚀 Entrepreneurship & Business World',
+        'certificates.business.desc': 'Competencies I gained in professional business life and entrepreneurship',
+        'certificates.tech.title': '💻 Mobile & Web Development',
+        'certificates.tech.desc': 'Technologies and programming languages I use in Limnio applications, obtained from various educational platforms',
+        'certificates.info': '📋 Portfolio Information: These certificates are shared for professional competency demonstration purposes. Current certificates are obtained from various educational institutions. For verification requests: wupaniyazilim@gmail.com',
+        'certificates.stats.total': 'Total Certificates',
+        'certificates.stats.business': 'Entrepreneurship',
+        'certificates.stats.tech': 'Software',
+        'certificates.stats.updated': 'Last Update',
+        
         // About Details
         'about.details.toggle': 'More Information',
         'about.basic.title': 'Basic Information',
@@ -1296,6 +1318,14 @@ const translations = {
         
         // Footer
         'footer.copyright': '© 2025 Limnio - Emre Akyol. All rights reserved.',
+        'footer.site.title': 'SITE USAGE',
+        'footer.data.title': 'MY DATA POLICY',
+        'footer.help.title': 'HELP',
+        'footer.about.title': 'ABOUT ME',
+        'footer.social.title': 'SOCIAL MEDIA',
+        'footer.certificates.badge': 'Certificates',
+        'footer.legal.desc': 'This is a personal portfolio site offering individual freelancer services.',
+        'footer.legal.brand': 'Important Notice: Limnio is a personal brand name owned by Emre Akyol. This site is not a registered company, but a personal portfolio site introducing individual freelancer services.',
         
         // Technology Categories
         'tech.category.core': 'Core Programming Languages',
@@ -1593,6 +1623,30 @@ function initLanguageSystem() {
     });
 }
 
+// Global function to update navbar certificates link
+function updateNavCertificatesLink(lang) {
+    const navCertificatesLink = document.querySelector('.nav-link[data-tr="nav.certificates"]');
+    const navCertificatesLink2 = document.querySelector('a[href="#certificates"].nav-link');
+    
+    if (navCertificatesLink && translations[lang] && translations[lang]['nav.certificates']) {
+        navCertificatesLink.textContent = translations[lang]['nav.certificates'];
+        console.log('Navbar certificates link updated (method 1):', translations[lang]['nav.certificates']);
+    }
+    
+    if (navCertificatesLink2 && translations[lang] && translations[lang]['nav.certificates']) {
+        navCertificatesLink2.textContent = translations[lang]['nav.certificates'];
+        console.log('Navbar certificates link updated (method 2):', translations[lang]['nav.certificates']);
+    }
+    
+    // Force update all nav links
+    document.querySelectorAll('.nav-link').forEach(link => {
+        if (link.getAttribute('href') === '#certificates' && translations[lang] && translations[lang]['nav.certificates']) {
+            link.textContent = translations[lang]['nav.certificates'];
+            console.log('Navbar certificates link updated (method 3):', translations[lang]['nav.certificates']);
+        }
+    });
+}
+
 function setLanguage(lang) {
     if (!translations[lang]) return;
     
@@ -1616,6 +1670,24 @@ function setLanguage(lang) {
             }
         }
     });
+    
+    // Force refresh for dynamic elements - run twice to ensure all elements are caught
+    setTimeout(() => {
+        document.querySelectorAll('[data-tr]').forEach(element => {
+            const key = element.getAttribute('data-tr');
+            if (translations[lang][key]) {
+                // Check if translation contains HTML
+                if (translations[lang][key].includes('<')) {
+                    element.innerHTML = translations[lang][key];
+                } else {
+                    element.textContent = translations[lang][key];
+                }
+            }
+        });
+        
+        // Extra navbar update in second timeout
+        updateNavCertificatesLink(lang);
+    }, 50);
     
     // Update technology card common terms
     document.querySelectorAll('.reliability-text').forEach(element => {
@@ -1645,6 +1717,70 @@ function setLanguage(lang) {
     
     // Update specific technology card content
     updateTechCardContent(lang);
+    
+    // Force update navbar links specifically
+    updateNavCertificatesLink(lang);
+    
+    // Force update certificate section elements that might not update properly
+    setTimeout(() => {
+        // Update navbar certificates link again to ensure it updates
+        updateNavCertificatesLink(lang);
+        
+        // Update footer certificates link
+        const footerCertLink = document.querySelector('a[href="#certificates"][data-tr="nav.certificates"]');
+        if (footerCertLink && translations[lang]['nav.certificates']) {
+            if (lang === 'tr') {
+                footerCertLink.textContent = 'Sertifikalarım';
+            } else {
+                footerCertLink.textContent = 'Certificates';
+            }
+        }
+        
+        // Update certificate stats labels if they exist
+        const certLabels = document.querySelectorAll('.cert-label');
+        certLabels.forEach(label => {
+            const trKey = label.getAttribute('data-tr');
+            if (trKey && translations[lang][trKey]) {
+                label.textContent = translations[lang][trKey];
+            }
+        });
+        
+        // Update footer certificate badge if it exists
+        const footerCertBadge = document.querySelector('[data-tr="footer.certificates.badge"]');
+        if (footerCertBadge && translations[lang]['footer.certificates.badge']) {
+            footerCertBadge.textContent = translations[lang]['footer.certificates.badge'];
+        }
+        
+        // Update certificate info paragraph with HTML content
+        const certInfo = document.querySelector('[data-tr="certificates.info"]');
+        if (certInfo && translations[lang]['certificates.info']) {
+            // Special handling for HTML content in certificate info
+            if (lang === 'tr') {
+                certInfo.innerHTML = '<i class="fas fa-shield-check"></i> <strong>Portfolyo Bilgilendirmesi:</strong> Bu sertifikalar profesyonel yetkinlik gösterimi amaçlı paylaşılmaktadır. Mevcut sertifikalar çeşitli eğitim kurumlarından alınmıştır. Doğrulama talepleriniz için: <strong>wupaniyazilim@gmail.com</strong>';
+            } else {
+                certInfo.innerHTML = translations[lang]['certificates.info'];
+            }
+        }
+        
+        // Update all footer legal text with HTML content
+        const footerLegalDesc = document.querySelector('[data-tr="footer.legal.desc"]');
+        if (footerLegalDesc && translations[lang]['footer.legal.desc']) {
+            if (lang === 'tr') {
+                footerLegalDesc.innerHTML = 'Bu site bireysel freelancer hizmetleri sunan kişisel bir portföy sitesidir. <a href="#" onclick="openLegalModal(\'kvkk\')">KVKK</a> ve <a href="#" onclick="openLegalModal(\'kullanim-sartlari\')">Kullanım Şartları</a> kapsamında işletilmektedir.';
+            } else {
+                footerLegalDesc.textContent = translations[lang]['footer.legal.desc'];
+            }
+        }
+        
+        const footerLegalBrand = document.querySelector('[data-tr="footer.legal.brand"]');
+        if (footerLegalBrand && translations[lang]['footer.legal.brand']) {
+            if (lang === 'tr') {
+                footerLegalBrand.innerHTML = '<strong>Önemli Açıklama:</strong> Limnio, Emre Akyol\'a ait kişisel marka adıdır. Bu site tescilli bir şirket değil, bireysel freelancer hizmetlerini tanıtan kişisel portföy sitesidir.';
+            } else {
+                footerLegalBrand.textContent = translations[lang]['footer.legal.brand'];
+            }
+        }
+    }, 100);
     
     // Update HTML lang attribute
     document.documentElement.lang = lang;
@@ -2828,6 +2964,7 @@ window.cookieManager = cookieManager;
 class CertificateViewer {
     constructor() {
         this.modal = null;
+        this.scrollPosition = 0;
         this.createModal();
     }
     
@@ -2892,12 +3029,25 @@ class CertificateViewer {
             return;
         }
         
+        // Store current scroll position more accurately
+        this.scrollPosition = window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop || 0;
+        
         // Desktop: use iframe
         this.iframe.src = certificatePath;
         
+        // Prevent body scroll while maintaining position (improved method)
+        const scrollBarWidth = window.innerWidth - document.documentElement.clientWidth;
+        document.body.style.overflow = 'hidden';
+        document.body.style.position = 'fixed';
+        document.body.style.top = `-${this.scrollPosition}px`;
+        document.body.style.width = '100%';
+        document.body.style.paddingRight = `${scrollBarWidth}px`;
+        
         // Show modal
         this.modal.classList.add('active');
-        document.body.style.overflow = 'hidden';
+        
+        // Force a reflow to ensure modal is properly positioned
+        this.modal.offsetHeight;
         
         // Add loading state
         this.iframe.addEventListener('load', () => {
@@ -2915,9 +3065,37 @@ class CertificateViewer {
     
     closeModal() {
         this.modal.classList.remove('active');
-        document.body.style.overflow = '';
         
-        // Clear iframe source
+        // Force repaint before restoring scroll
+        this.modal.offsetHeight;
+        
+        // Use setTimeout to ensure modal is fully closed before restoring scroll
+        setTimeout(() => {
+            // Restore body scroll and position properly
+            document.body.style.overflow = '';
+            document.body.style.position = '';
+            document.body.style.top = '';
+            document.body.style.width = '';
+            document.body.style.paddingRight = '';
+            
+            // Restore scroll position smoothly
+            if (this.scrollPosition !== undefined && this.scrollPosition !== null) {
+                window.scrollTo({
+                    top: this.scrollPosition,
+                    behavior: 'instant'
+                });
+            }
+            
+            // Re-enable pointer events on body
+            document.body.style.pointerEvents = '';
+            
+            // Force reflow to ensure all changes are applied
+            document.body.offsetHeight;
+            
+            console.log('Certificate modal closed, restored scroll position:', this.scrollPosition);
+        }, 10);
+        
+        // Clear iframe source after delay
         setTimeout(() => {
             this.iframe.src = '';
         }, 300);
@@ -3113,6 +3291,9 @@ setTimeout(() => {
 }, 1500);
 
 // FOOTER LEGAL MODAL FUNCTIONALITY
+// Store scroll position before modal opens
+let modalScrollPosition = 0;
+
 function openLegalModal(type) {
     console.log('Opening legal modal:', type); // Debug log
     const modal = document.getElementById('legalModal');
@@ -3130,24 +3311,29 @@ function openLegalModal(type) {
     }
     
     try {
+        // Store current scroll position more accurately
+        modalScrollPosition = window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop || 0;
+        
         // Set title and content based on type
         const legalContent = getLegalContent(type);
         title.textContent = legalContent.title;
         content.innerHTML = legalContent.content;
         
-        // Add modal active state with enhanced mobile support
-        modal.classList.add('active');
-        
-        // Prevent body scroll on mobile
+        // Prevent body scroll while maintaining position (improved method)
+        const scrollBarWidth = window.innerWidth - document.documentElement.clientWidth;
         document.body.style.overflow = 'hidden';
         document.body.style.position = 'fixed';
+        document.body.style.top = `-${modalScrollPosition}px`;
         document.body.style.width = '100%';
-        document.body.style.height = '100%';
+        document.body.style.paddingRight = `${scrollBarWidth}px`;
+        
+        // Add modal active state with enhanced mobile support
+        modal.classList.add('active');
         
         // Force a reflow to ensure modal is properly positioned
         modal.offsetHeight;
         
-        console.log('Legal modal opened successfully');
+        console.log('Legal modal opened successfully, scroll position:', modalScrollPosition);
     } catch (error) {
         console.error('Error opening legal modal:', error);
     }
@@ -3158,13 +3344,34 @@ function closeLegalModal() {
     if (modal) {
         modal.classList.remove('active');
         
-        // Restore body scroll
-        document.body.style.overflow = '';
-        document.body.style.position = '';
-        document.body.style.width = '';
-        document.body.style.height = '';
+        // Force repaint before restoring scroll
+        modal.offsetHeight;
         
-        console.log('Legal modal closed');
+        // Use setTimeout to ensure modal is fully closed before restoring scroll
+        setTimeout(() => {
+            // Restore body scroll and position properly
+            document.body.style.overflow = '';
+            document.body.style.position = '';
+            document.body.style.top = '';
+            document.body.style.width = '';
+            document.body.style.paddingRight = '';
+            
+            // Restore scroll position smoothly
+            if (modalScrollPosition !== undefined && modalScrollPosition !== null) {
+                window.scrollTo({
+                    top: modalScrollPosition,
+                    behavior: 'instant'
+                });
+            }
+            
+            // Re-enable pointer events on body
+            document.body.style.pointerEvents = '';
+            
+            // Force reflow to ensure all changes are applied
+            document.body.offsetHeight;
+            
+            console.log('Legal modal closed, restored scroll position:', modalScrollPosition);
+        }, 10);
     }
 }
 
@@ -3772,10 +3979,63 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 
 // Add to existing contact modal opener to match footer links
+let contactModalScrollPosition = 0;
+
 function openContactModal() {
     const modal = document.getElementById('contactModal');
     if (modal) {
-        modal.classList.add('active');
+        // Store current scroll position more accurately
+        contactModalScrollPosition = window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop || 0;
+        
+        // Prevent body scroll while maintaining position (improved method)
+        const scrollBarWidth = window.innerWidth - document.documentElement.clientWidth;
         document.body.style.overflow = 'hidden';
+        document.body.style.position = 'fixed';
+        document.body.style.top = `-${contactModalScrollPosition}px`;
+        document.body.style.width = '100%';
+        document.body.style.paddingRight = `${scrollBarWidth}px`;
+        
+        modal.classList.add('active');
+        
+        // Force a reflow to ensure modal is properly positioned
+        modal.offsetHeight;
+        
+        console.log('Contact modal opened, scroll position:', contactModalScrollPosition);
+    }
+}
+
+function closeContactModal() {
+    const modal = document.getElementById('contactModal');
+    if (modal) {
+        modal.classList.remove('active');
+        
+        // Force repaint before restoring scroll
+        modal.offsetHeight;
+        
+        // Use setTimeout to ensure modal is fully closed before restoring scroll
+        setTimeout(() => {
+            // Restore body scroll and position properly
+            document.body.style.overflow = '';
+            document.body.style.position = '';
+            document.body.style.top = '';
+            document.body.style.width = '';
+            document.body.style.paddingRight = '';
+            
+            // Restore scroll position smoothly
+            if (contactModalScrollPosition !== undefined && contactModalScrollPosition !== null) {
+                window.scrollTo({
+                    top: contactModalScrollPosition,
+                    behavior: 'instant'
+                });
+            }
+            
+            // Re-enable pointer events on body
+            document.body.style.pointerEvents = '';
+            
+            // Force reflow to ensure all changes are applied
+            document.body.offsetHeight;
+            
+            console.log('Contact modal closed, restored scroll position:', contactModalScrollPosition);
+        }, 10);
     }
 }
